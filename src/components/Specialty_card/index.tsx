@@ -12,7 +12,7 @@ interface IProps {
 
 const SpecialtyCard: React.FC<IProps> = ({
   category,
-  img,
+  //   img,
   desc,
   title,
   hiddenText,
