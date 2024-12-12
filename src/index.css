@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter"),
+    url("./fonts/Inter.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+    url("./fonts/Montserrat.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: "Plus_Jakarta_Sans";
+    src: local("Plus_Jakarta_Sans"),
+    url("./fonts/Plus_Jakarta_Sans.ttf") format("truetype")
+}

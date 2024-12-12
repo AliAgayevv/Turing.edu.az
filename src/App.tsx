@@ -3,7 +3,7 @@ import { router } from "./const/router/router";
 
 function App() {
   return (
-    <div>
+    <div className="">
       <RouterProvider router={router} />
     </div>
   );
