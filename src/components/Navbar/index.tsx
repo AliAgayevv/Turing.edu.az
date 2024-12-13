@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import turingLogo from "../../assets/Turing-logo.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import { useState } from "react";
@@ -23,18 +24,16 @@ export default function Navbar() {
           }`}
         >
           <ul className="flex flex-col md:flex-row md:gap-6 lg:gap-10 text-white_solid mt-4 md:mt-0">
-            <li className="py-2 md:py-0">
-              <a href="#academy">Academy</a>
-            </li>
-            <li className="py-2 md:py-0">
-              <a href="#fields">Fields Of Study</a>
-            </li>
-            <li className="py-2 md:py-0">
-              <a href="#events">Events</a>
-            </li>
-            <li className="py-2 md:py-0">
-              <a href="#programs">Scholarship Programs</a>
-            </li>
+            {/* <Link to={}> */}
+            <li className="py-2 md:py-0">Academy</li>
+            {/* </Link> */}
+            <li className="py-2 md:py-0">Fields Of Study</li>
+            {/* <Link to={}> */}
+            <li className="py-2 md:py-0">Events</li>
+            {/* </Link> */}
+            {/* <Link to={}> */}
+            <li className="py-2 md:py-0">Scholarship Programs</li>
+            {/* </Link> */}
           </ul>
         </div>
 

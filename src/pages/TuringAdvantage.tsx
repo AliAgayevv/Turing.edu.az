@@ -53,6 +53,7 @@ const fakeData = [
 export default function TuringAdvantage() {
   return (
     <div className="h-[1500px] w-11/12 mx-auto  pt-16 relative">
+      {/* TODO: overflow problemi */}
       <div className="absolute -top-80 -right-80 w-[500px] h-[500px] bg-gradient-to-br from-blue-200 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div>
 
       <h3 className="uppercase text-white_dark">Turing Advantage</h3>

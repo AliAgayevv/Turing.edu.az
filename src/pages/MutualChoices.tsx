@@ -1,6 +1,7 @@
 import MutualChoices_card from "../components/MutualChoices_card";
 import icon from "../assets/vectors/Frame.png";
 import textVector from "../assets/vectors/textVector.png";
+import SeeAll_btn from "../components/SeeAll_btn";
 
 export default function MutualChoices() {
   return (
@@ -14,9 +15,7 @@ export default function MutualChoices() {
               Skill up, stand out
             </p>
           </p>
-          <button className="border-[#4a5567]  border rounded-3xl p-4 w-[150px]">
-            See All
-          </button>
+          <SeeAll_btn />
         </div>
       </div>
       <div className="grid grid-cols-2 space-x-3">
