@@ -4,7 +4,7 @@ import textVector from "../assets/vectors/textVector.png";
 
 export default function MutualChoices() {
   return (
-    <div className="h-[452px] w-full flex gap-[220px]">
+    <div className="h-[452px] w-full flex gap-[220px] justify-center items-center bg-white">
       <div className="w-[220px]">
         <div className="flex flex-col gap-14">
           <p className="font-[500] text-[14px] text-white_ultraDark relative">

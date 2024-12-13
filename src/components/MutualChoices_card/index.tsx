@@ -6,7 +6,7 @@ interface IProps {
   desc: string;
 }
 
-export default function MutualChoices_card({ icon, title, desc }) {
+export default function MutualChoices_card({ icon, title, desc }: IProps) {
   return (
     <div className="flex gap-5 p-4 w-[416px] flex-col h-[252px] bg-white border rounded-2xl">
       <div className=" w-12 p-3 h-12 rounded-full bg-[#f8f9fa] border flex justify-center items-center">
