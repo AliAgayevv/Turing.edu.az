@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // useNavigate'ı import ediyoruz
 import ApplyNow_btn from "../ApplyNow_btn";
 import LearnMore_btn from "../LearnMore_btn";
 
@@ -8,6 +9,7 @@ interface IProps {
   desc: string;
   title: string;
   hiddenText: string;
+  route: string; // Yönlendirme yapılacak URL parametresi
 }
 
 const SpecialtyCard: React.FC<IProps> = ({
@@ -16,9 +18,20 @@ const SpecialtyCard: React.FC<IProps> = ({
   desc,
   title,
   hiddenText,
+  route, // URL'yi alıyoruz
 }) => {
+  const navigate = useNavigate(); // useNavigate hook'unu kullanıyoruz
+
+  // Kart tıklandığında yönlendirme yapacak fonksiyon
+  const handleCardClick = () => {
+    navigate(route); // Yönlendirme yapılacak URL'ye yönlendiriyoruz
+  };
+
   return (
-    <div className="border group h-[411px] w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative">
+    <div
+      className="border group h-[411px] w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
+      onClick={handleCardClick} // Kart tıklanabilir hale geliyor
+    >
       <div className="h-[274px] w-[274px] p-2 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
         <img
           src={img}

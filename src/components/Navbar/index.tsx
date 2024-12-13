@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
@@ -19,11 +20,13 @@ export default function Navbar({ isDark }) {
           "max-w-7xl mx-auto flex flex-wrap items-center justify-between"
         }
       >
-        <img
-          className={`w-24 h-auto`}
-          src={!isDark ? turingLogo : turingLogoWhite}
-          alt="Turing Logo"
-        />
+        <Link to={"/"}>
+          <img
+            className={`w-24 h-auto`}
+            src={!isDark ? turingLogo : turingLogoWhite}
+            alt="Turing Logo"
+          />
+        </Link>
 
         <button
           className={`md:hidden ${
@@ -68,7 +71,9 @@ export default function Navbar({ isDark }) {
               <option value="az">AZ</option>
             </select>
           )}
-          <ApplyNow_btn>Apply Now</ApplyNow_btn>
+          <div className="w-[145px] h-[45px]">
+            <ApplyNow_btn>Apply Now</ApplyNow_btn>
+          </div>
         </div>
       </div>
     </nav>

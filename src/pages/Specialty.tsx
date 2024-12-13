@@ -7,7 +7,7 @@ import LearnMoreBtn from "../components/LearnMore_btn";
 export default function Specialty() {
   const [selected, setSelected] = useState("all");
 
-  const handleSelect = (button) => {
+  const handleSelect = (button: any) => {
     setSelected(button); // Seçilen butonu state'e kaydediyoruz
   };
   return (
@@ -15,7 +15,7 @@ export default function Specialty() {
       <Navbar isDark={true} />
 
       <div className="mx-auto w-11/12 h-auto mt-[100px] px-8 mb-20">
-        <h1 className="font-jakarta font-[500] text-5xl text-black_dark ">
+        <h1 className="font-jakarta font-[500] text-3xl sm:text-5xl text-black_dark ">
           Fiels of Study
         </h1>
         <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
@@ -72,13 +72,14 @@ export default function Specialty() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-4 gap-6">
+        <div className="mt-6 flex flex-col sm:grid sm:grid-cols-4 gap-6">
           <SpecialtyCard
             category="Design"
             title="UX/UI Design"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
+            route="design"
           />
           <SpecialtyCard
             category="Design"
@@ -86,6 +87,7 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
+            route="front"
           />
           <SpecialtyCard
             category="Design"
@@ -93,6 +95,15 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
+            route="back"
+          />
+          <SpecialtyCard
+            img={fakeImage}
+            category="Design"
+            title="UX/UI Design"
+            desc={"Design Intuitive Digital Experiences"}
+            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
+            route="CS"
           />
           <SpecialtyCard
             category="Design"
@@ -100,6 +111,7 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
+            route="design"
           />
           <SpecialtyCard
             category="Design"
@@ -107,6 +119,7 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
+            route="front"
           />
           <SpecialtyCard
             category="Design"
@@ -114,6 +127,7 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
+            route="back"
           />
           <SpecialtyCard
             category="Design"
@@ -121,13 +135,7 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
-          />
-          <SpecialtyCard
-            category="Design"
-            title="UX/UI Design"
-            desc={"Design Intuitive Digital Experiences"}
-            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
+            route="CS"
           />
         </div>
         <div className="w-full h-[110px] rounded-2xl border-white_medium mt-6 border flex justify-between items-center px-6">
