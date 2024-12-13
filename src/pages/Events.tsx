@@ -3,6 +3,8 @@ import SeeAll_btn from "../components/SeeAll_btn";
 import Events_card from "../components/Events_card";
 
 export default function Events() {
+  // TODO: Auto Slider elave et
+  // TODO: Footer elave et
   return (
     <div className="w-11/12 mx-auto h-[900px] py-20">
       <div className="flex justify-between items-center">
@@ -12,8 +14,10 @@ export default function Events() {
             Upcoming Events
           </h1>
         </div>
-        <div className="text-white bg-transparent">
-          <SeeAll_btn />
+        <div className="text-white bg-transparent w-[145px] h-[56px]">
+          <button className="border-1 border-black_light px-8 py-4 mt-8 bg-blue_dark w-full h-full text-white rounded-full">
+            See All
+          </button>
         </div>
       </div>
       <div className="grid grid-cols-3 gap-6 mt-16">

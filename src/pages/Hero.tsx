@@ -7,7 +7,7 @@ import WatchNow_btn from "../components/WatchNow_btn";
 export default function Hero() {
   return (
     <div className=" min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar isDark={false} />
 
       <div className="flex flex-col items-center justify-center px-4 py-8 h-[800px]">
         <h1 className="text-white_solid text-4xl md:text-5xl lg:text-6xl text-center mb-4 mt-[125px]">

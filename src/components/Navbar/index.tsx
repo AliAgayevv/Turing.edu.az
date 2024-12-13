@@ -1,18 +1,34 @@
-import { Link } from "react-router";
 import turingLogo from "../../assets/Turing-logo.png";
+import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ isDark }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  let bgColor;
+  if (isDark) {
+    bgColor = "white";
+  } else {
+    bgColor = "blue_ultraDark";
+  }
 
   return (
-    <nav className="bg-blue_ultraDark px-4 py-4 md:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
-        <img className="w-24 h-auto" src={turingLogo} alt="Turing Logo" />
+    <nav className="bg-transparent px-4 py-4 md:px-6 lg:px-8">
+      <div
+        className={
+          "max-w-7xl mx-auto flex flex-wrap items-center justify-between"
+        }
+      >
+        <img
+          className={`w-24 h-auto`}
+          src={!isDark ? turingLogo : turingLogoWhite}
+          alt="Turing Logo"
+        />
 
         <button
-          className="md:hidden text-white_solid"
+          className={`md:hidden ${
+            isDark ? "text-blue_ultraDark" : "text-white_solid"
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           Menu
@@ -23,7 +39,11 @@ export default function Navbar() {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <ul className="flex flex-col md:flex-row md:gap-6 lg:gap-10 text-white_solid mt-4 md:mt-0">
+          <ul
+            className={`${
+              isDark ? "text-blue_ultraDark" : "text-white_solid"
+            } flex flex-col md:flex-row md:gap-6 lg:gap-10 text-white_solid mt-4 md:mt-0`}
+          >
             {/* <Link to={}> */}
             <li className="py-2 md:py-0">Academy</li>
             {/* </Link> */}
@@ -38,14 +58,16 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center mt-4 md:mt-0">
-          <select
-            className="bg-transparent text-white_solid mr-4"
-            name="language"
-            id="language"
-          >
-            <option value="en">EN</option>
-            <option value="az">AZ</option>
-          </select>
+          {!isDark && (
+            <select
+              className="bg-transparent mr-4 text-white"
+              name="language"
+              id="language"
+            >
+              <option value="en">EN</option>
+              <option value="az">AZ</option>
+            </select>
+          )}
           <ApplyNow_btn>Apply Now</ApplyNow_btn>
         </div>
       </div>

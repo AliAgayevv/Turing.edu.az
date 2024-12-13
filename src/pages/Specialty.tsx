@@ -1,5 +1,9 @@
-import React from "react";
+import Navbar from "../components/Navbar";
 
 export default function Specialty() {
-  return <div>Specialty</div>;
+  return (
+    <div>
+      <Navbar isDark={true} />
+    </div>
+  );
 }

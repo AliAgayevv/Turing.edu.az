@@ -13,8 +13,8 @@ export default function OurGraduates() {
           <br />
           in <span className="text-blue_light">Turing Academy</span>
         </h1>
-        <div className="">
-          <SeeAll_btn />
+        <div className="h-[56px] w-[145px]">
+          <SeeAll_btn>See all</SeeAll_btn>
         </div>
       </div>
       <div className="grid grid-cols-4 py-16">
