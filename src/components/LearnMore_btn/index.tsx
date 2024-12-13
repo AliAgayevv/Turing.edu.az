@@ -6,7 +6,7 @@ interface LearnMoreBtnProps {
 
 export default function LearnMoreBtn({ children }: LearnMoreBtnProps) {
   return (
-    <button className="border p-4 rounded-2xl w-[129px] h-[46px] flex justify-center items-center">
+    <button className="border p-4 rounded-full w-full h-full flex justify-center items-center">
       {children}
     </button>
   );

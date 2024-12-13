@@ -12,7 +12,7 @@ const ApplyNow_btn: React.FC<ApplyNow_btnProps> = ({ children }) => {
     <motion.button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-[#2BA6EB] text-white py-2 px-6 rounded-full overflow-hidden relative"
+      className="bg-[#2BA6EB] text-white py-2 px-2 w-full h-full rounded-full overflow-hidden relative"
     >
       <motion.div
         initial={{ y: "100%" }}

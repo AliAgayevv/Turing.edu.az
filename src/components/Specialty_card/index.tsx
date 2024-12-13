@@ -12,19 +12,19 @@ interface IProps {
 
 const SpecialtyCard: React.FC<IProps> = ({
   category,
-  //   img,
+  img,
   desc,
   title,
   hiddenText,
 }) => {
   return (
-    <div className="group h-[411px] w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative">
-      <div className="bg-[#D9D9D9] h-[274px] w-[274px] p-4 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
-        {/* <img
+    <div className="border group h-[411px] w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative">
+      <div className="h-[274px] w-[274px] p-2 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
+        <img
           src={img}
           alt={title}
           className="h-full w-full object-cover transition-all duration-300 delay-200"
-        /> */}
+        />
       </div>
 
       <div>
@@ -48,8 +48,12 @@ const SpecialtyCard: React.FC<IProps> = ({
         </p>
 
         <div className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center items-center transition-all duration-300 delay-500 group-hover:-translate-y-[80px]">
-          <LearnMore_btn>Learn More</LearnMore_btn>
-          <ApplyNow_btn>Apply Now</ApplyNow_btn>
+          <div className="w-[129px] h-[46px]">
+            <LearnMore_btn>Learn More</LearnMore_btn>
+          </div>
+          <div className="w-[129px] h-[46px]">
+            <ApplyNow_btn>Apply Now</ApplyNow_btn>
+          </div>
         </div>
       </div>
     </div>
