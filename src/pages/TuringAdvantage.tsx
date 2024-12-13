@@ -80,6 +80,7 @@ export default function TuringAdvantage() {
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
             src={exampleVideo}
+            controls
           />
         </div>
         <div className="text-3xl absolute top-40 text-white_light_32 font-[900] font-montserrat uppercase text-[195px]">

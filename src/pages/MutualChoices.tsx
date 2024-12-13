@@ -15,7 +15,9 @@ export default function MutualChoices() {
               Skill up, stand out
             </p>
           </p>
-          <SeeAll_btn />
+          <div className="h-[56px] w-[145px]">
+            <SeeAll_btn>See all</SeeAll_btn>
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-2 space-x-3">

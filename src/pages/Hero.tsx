@@ -2,6 +2,7 @@ import ApplyNow_btn from "../components/ApplyNow_btn";
 import exampleVideo from "../assets/videos/exampleVideo.mp4";
 import Navbar from "../components/Navbar";
 import bgTuringVector from "../assets/vectors/turing-hero-left-top-vector.png";
+import WatchNow_btn from "../components/WatchNow_btn";
 
 export default function Hero() {
   return (
@@ -24,12 +25,15 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
           <ApplyNow_btn>Apply now</ApplyNow_btn>
-          <ApplyNow_btn>Watch Video</ApplyNow_btn>
+          <div className="h-[56px] w-[169px]">
+            <WatchNow_btn />
+          </div>
         </div>
 
-        <div className=" max-w-[3000px] px-4 mt-[25px] overflow-hidden h-[324px]">
+        <div className=" max-w-[3000px] px-4 mt-[10px] overflow-hidden h-[324px]">
           <div className="w-[1120px] relative h-[320px] mt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]">
             <video
+              controls
               className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
               src={exampleVideo}
             />

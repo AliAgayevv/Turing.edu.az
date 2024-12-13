@@ -2,6 +2,7 @@ import Events from "./Events";
 import Hero from "./Hero";
 import MutualChoices from "./MutualChoices";
 import OurGraduates from "./OurGraduates";
+import Partners from "./Partners";
 import TuringAdvantage from "./TuringAdvantage";
 
 export default function Home() {
@@ -16,6 +17,9 @@ export default function Home() {
         <OurGraduates />
         <div className="bg-blue_ultraDark">
           <Events />
+        </div>
+        <div className="w-11/12 mx-auto">
+          <Partners />
         </div>
       </div>
     </div>
