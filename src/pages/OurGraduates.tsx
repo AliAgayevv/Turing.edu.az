@@ -2,6 +2,7 @@ import React from "react";
 import Reels_card from "../components/Reels_card";
 import examplePhoto from "../assets/photos/studentExamplePhoto.jpeg";
 import SeeAll_btn from "../components/SeeAll_btn";
+import { Link } from "react-router";
 
 export default function OurGraduates() {
   return (
@@ -13,9 +14,11 @@ export default function OurGraduates() {
           <br />
           in <span className="text-blue_light">Turing Academy</span>
         </h1>
-        <div className="h-[56px] w-[145px]">
-          <SeeAll_btn>See all</SeeAll_btn>
-        </div>
+        <Link to={"/graduates"}>
+          <div className="h-[56px] w-[145px]">
+            <SeeAll_btn>See all</SeeAll_btn>
+          </div>
+        </Link>
       </div>
       <div className="grid grid-cols-4 py-16">
         <Reels_card

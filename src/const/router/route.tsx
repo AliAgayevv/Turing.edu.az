@@ -4,6 +4,7 @@ import Event from "../../pages/Event";
 import Home from "../../pages/Home";
 import Reels from "../../pages/Reels";
 import Schoolarship from "../../pages/Schoolarship";
+import SchoolarshipInner from "../../pages/SchoolarshipInner";
 import Specialty from "../../pages/Specialty";
 import SpecialtyInner from "../../pages/SpecialtyInner";
 
@@ -24,6 +25,10 @@ export const ROUTES = [
   {
     path: "/schoolarship",
     element: <Schoolarship />,
+  },
+  {
+    path: "/schoolarship/:id",
+    element: <SchoolarshipInner />,
   },
   {
     path: "/reels",

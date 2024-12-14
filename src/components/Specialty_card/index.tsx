@@ -43,7 +43,7 @@ const SpecialtyCard: React.FC<IProps> = ({
       <div>
         <button
           disabled
-          className="group-hover:-translate-y-[105px] flex h-[26px] w-[66px] justify-center items-center text-[#01030E] bg-[#F8F9FA] rounded-lg border mb-4 text-[14px] font-[400] opacity-70 transition-all duration-300 delay-300"
+          className="group-hover:-translate-y-[105px] flex px-2.5 justify-center items-center text-[#01030E] bg-[#F8F9FA] rounded-lg border mb-4 text-[14px] font-[400] opacity-70 transition-all duration-300 delay-300"
         >
           {category}
         </button>
@@ -60,7 +60,7 @@ const SpecialtyCard: React.FC<IProps> = ({
           {hiddenText}
         </p>
 
-        <div className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center items-center transition-all duration-300 delay-500 group-hover:-translate-y-[80px]">
+        <div className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center items-center transition-all duration-300 delay-500 group-hover:-translate-y-[70px]">
           <div className="w-[129px] h-[46px]">
             <LearnMore_btn>Learn More</LearnMore_btn>
           </div>
