@@ -1,3 +1,4 @@
+import AllGraduates from "../../pages/AllGraduates";
 import Community from "../../pages/Community";
 import Event from "../../pages/Event";
 import Home from "../../pages/Home";
@@ -27,6 +28,10 @@ export const ROUTES = [
   {
     path: "/reels",
     element: <Reels />,
+  },
+  {
+    path: "/graduates",
+    element: <AllGraduates />,
   },
   {
     path: "/events",
