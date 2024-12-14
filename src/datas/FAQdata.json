@@ -20,6 +20,41 @@
           "answer": "Start by building a strong portfolio showcasing your projects. Gain experience through internships or freelance work, and consider obtaining relevant certifications. Networking and staying updated with industry trends are also crucial."
         }
       ],
+      "syllabusLink" : "",
+      "modules" : [
+          {
+            "id": 1,
+            "title": "Module 1: UX Design (2 mos)",
+            "moduleDesc": "will learn the fundamentals of user-centered design, including user research, information architecture, and interaction design. They will develop strong problem-solving skills and create user-centric solutions."
+          },
+          {
+            "id": 2,
+            "title": "Module 2: UI Design (2 mos)",
+            "moduleDesc": "will learn the fundamentals of user-centered design, including user research, information architecture, and interaction design. They will develop strong problem-solving skills and create user-centric solutions."
+          },
+          {
+            "id": 3,
+            "title": "Module 3: Internship (2mos)",
+            "moduleDesc": "will learn the fundamentals of user-centered design, including user research, information architecture, and interaction design. They will develop strong problem-solving skills and create user-centric solutions."
+          }
+      ],
+      "graduates" : [
+        {
+          "name": "Emil Dost",
+          "photo" : "/src/assets/photos/emil.jpeg",
+          "github": "",
+          "connect": "https://www.linkedin.com/in/emildost/",
+          "desc": "Product Designer at DOST"
+        },
+        {
+          "name": "Elmira Nəcəfli",
+          "photo" : "/src/assets/photos/elvira.jpeg",
+          "github": "https://github.com/Fizza2004",
+          "connect": "https://www.linkedin.com/in/elmiranacafli/",
+          "desc": "Product Designer at DOST"
+        }
+        
+      ],
       "instructors": [
         {
           "name": "Lətif Kərim",
@@ -43,6 +78,24 @@
     },
     {
       "category": "Frontend",
+      "syllabusLink" : "",
+      "modules" : [
+          {
+            "id": 1,
+            "title": "Introduction to Frontend Development(3 mos)",
+            "moduleDesc": "Learn the basics of HTML, CSS, and JavaScript. Understand how to structure web pages, style them, and add interactivity."
+          },
+          {
+            "id": 2,
+            "title": "Advanced JavaScript and Frameworks(3 mos)",
+            "moduleDesc": "Dive deeper into JavaScript and explore popular frontend frameworks like React, Vue, or Angular. Build dynamic and scalable web applications."
+          },
+          {
+            "id": 3,
+            "title": "Intership (3mos)",
+            "moduleDesc": "Work on real-world frontend projects. Learn how to deploy applications, optimize performance, and ensure cross-browser compatibility."
+          }
+      ],
       "description": "Description about Frontend",
       "questions": [
         {
@@ -105,6 +158,34 @@
     {
       "category": "Backend",
       "description": "Description about Backend",
+      "syllabusLink" : "",
+      "modules" : [
+        {
+          "id": 1,
+          "title": "Introduction to Backend Development (3mos)",
+          "moduleDesc": "Learn the fundamentals of server-side development. Understand how to work with databases, APIs, and server architecture using languages like Python or Java."
+        },
+        {
+          "id": 2,
+          "title": "Databases and Data Management (3mos)",
+          "moduleDesc": "Explore relational and non-relational databases such as MySQL and MongoDB. Learn how to design, query, and manage data effectively."
+        },
+        {
+          "id": 3,
+          "title": "Building and Deploying APIs (3mos)",
+          "moduleDesc": "Create RESTful APIs and understand how to manage authentication, security, and scalability. Deploy your applications to the cloud using services like AWS or Heroku."
+        }
+      ],
+      "graduates" : [
+        {
+          "name": "Murad Fərəczadə",
+          "photo" : "/src/assets/photos/muradTelebe.jpeg",
+          "github": "",
+          "connect": "https://www.linkedin.com/in/murad-farajzada-02b88b245/",
+          "desc": "Junior at ABB"
+        }
+        
+      ],
       "questions": [
         {
           "question": "What is Backend Development?",
