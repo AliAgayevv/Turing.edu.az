@@ -5,6 +5,7 @@ import Form from "../components/Form";
 import ApplyNow_btn from "../components/ApplyNow_btn";
 import Teachers_section from "../components/Teachers_section";
 import data from "../datas/FAQdata.json";
+import Graduates_section from "../components/Graduates_section";
 
 const SpecialtyInner = () => {
   const { id } = useParams();
@@ -27,8 +28,11 @@ const SpecialtyInner = () => {
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>
-        <div className="my-40 w-11/12 mx-auto">
+        <div className="mt-40 w-11/12 mx-auto">
           <Teachers_section category={id} />
+        </div>
+        <div className="mt-24 w-11/12 mx-auto">
+          <Graduates_section category={id} />
         </div>
         <FAQ category={id} />
         <Form />

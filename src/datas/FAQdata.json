@@ -62,6 +62,29 @@
           "answer": "To make your website responsive, use flexible grid layouts, media queries, and responsive images. Ensure that your design adapts to different screen sizes and devices by testing across various platforms."
         }
       ],
+      "graduates" : [
+        {
+          "name": "Ağayev Əli",
+          "photo" : "/src/assets/photos/ali.jpeg",
+          "github": "https://github.com/AliAgayevv",
+          "connect": "https://www.linkedin.com/in/ali-aghayev-6804b9302/",
+          "desc": "Junior at Pasha Bank"
+        },
+        {
+          "name": "Fizzə Sultanova",
+          "photo" : "/src/assets/photos/fizza.jpeg",
+          "github": "https://github.com/Fizza2004",
+          "connect": "www.linkedin.com/in/fizza-sultanova-866677260",
+          "desc": "Junior at Azerconnect"
+        },
+        {
+          "name": "Daniz Huseynli",
+          "photo" : "/src/assets/photos/daniz.jpeg",
+          "github": "https://github.com/DenizHuseynli",
+          "connect": "https://www.linkedin.com/in/daniz-huseynli-71a488238/",
+          "desc": "Junior at ABB"
+        }
+      ],
       "instructors": [
         {
           "name": "Rail Cənnətov",
@@ -72,7 +95,7 @@
         {
           "name": "Murad Abdullazadə",
           "workPosition" : "Middle Frontend at Mega Concept LLC",
-          "photo": "",
+          "photo": "/src/assets/photos/muradMentor.jpeg",
           "connect": "https://www.linkedin.com/in/murad-abdullazada/"
         }
         
