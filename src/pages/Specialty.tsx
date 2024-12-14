@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import fakeImage from "../assets/photos/studentExamplePhoto.jpeg";
 import SpecialtyCard from "../components/Specialty_card";
 import LearnMoreBtn from "../components/LearnMore_btn";
+import aliImage from "../assets/photos/ali.jpeg";
+import muradImage from "../assets/photos/muradTelebe.jpeg";
 
 export default function Specialty() {
   const [selected, setSelected] = useState("all");
@@ -86,7 +88,7 @@ export default function Specialty() {
             title="Frontend"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
+            img={aliImage}
             route="Frontend"
           />
           <SpecialtyCard
@@ -94,7 +96,7 @@ export default function Specialty() {
             title="Backend"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
+            img={muradImage}
             route="Backend"
           />
           <SpecialtyCard
@@ -110,7 +112,7 @@ export default function Specialty() {
             title="Frontend"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
+            img={aliImage}
             route="Frontend"
           />
           <SpecialtyCard
@@ -118,8 +120,16 @@ export default function Specialty() {
             title="Backend"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
+            img={muradImage}
             route="Backend"
+          />
+          <SpecialtyCard
+            category="Design"
+            title="UX/UI Design"
+            desc={"Design Intuitive Digital Experiences"}
+            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
+            img={fakeImage}
+            route="UX-UI"
           />
         </div>
         <div className="w-full h-[110px] rounded-2xl border-white_medium mt-6 border flex justify-between items-center px-6">

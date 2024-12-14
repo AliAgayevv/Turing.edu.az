@@ -3,14 +3,9 @@ import FAQItem from "../FAQ_item";
 import faqData from "../../datas/FAQdata.json";
 
 export default function FAQ({ category }) {
-  // Find the category object that matches the selected category
   const categoryData = faqData.find((item) => item.category === category);
 
-  // Extract the questions array or default to an empty array if not found
   const faqs = categoryData?.questions || [];
-
-  console.log(`Category: ${category}`);
-  console.log("Fetched FAQs:", faqs);
 
   return (
     <div className="px-7 py-10 flex flex-col md:flex-row justify-between">

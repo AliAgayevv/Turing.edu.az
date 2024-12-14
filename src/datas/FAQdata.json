@@ -1,6 +1,7 @@
 [
     {
       "category": "UX-UI",
+      "description": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio",
       "questions": [
         {
           "question": "What is UX/UI Design?",
@@ -18,10 +19,31 @@
           "question": "How do I start a career in UX/UI Design?",
           "answer": "Start by building a strong portfolio showcasing your projects. Gain experience through internships or freelance work, and consider obtaining relevant certifications. Networking and staying updated with industry trends are also crucial."
         }
+      ],
+      "instructors": [
+        {
+          "name": "Lətif Kərim",
+          "workPosition" : "Designer at SAFAROFF",
+          "photo": "/src/assets/photos/letif.jpeg",
+          "connect": "https://www.linkedin.com/in/kerimletif/"
+        },
+        {
+          "name": "Zahra SHI İsmayılzadə",
+          "workPosition" : "Designer at SHI",
+          "photo": "/src/assets/photos/zahra.jpeg",
+          "connect": "https://www.linkedin.com/in/zahrashi/"
+        },
+        {
+          "name": "Məhəmməd Xasıyev",
+          "workPosition" : "Designer at SAFAROFF",
+          "photo": "/src/assets/photos/mehemmed.jpeg",
+          "connect": "https://www.linkedin.com/in/mahammadkhasiyev/"
+        }
       ]
     },
     {
       "category": "Frontend",
+      "description": "Description about Frontend",
       "questions": [
         {
           "question": "What is Frontend Development?",
@@ -39,10 +61,27 @@
           "question": "How can I make my website responsive?",
           "answer": "To make your website responsive, use flexible grid layouts, media queries, and responsive images. Ensure that your design adapts to different screen sizes and devices by testing across various platforms."
         }
+      ],
+      "instructors": [
+        {
+          "name": "Rail Cənnətov",
+          "workPosition" : "Senior Frontend at Azerconnect",
+          "photo": "/src/assets/photos/rail.jpeg",
+          "connect": "https://www.linkedin.com/in/rail-jannatov-28b749193/"
+        },
+        {
+          "name": "Murad Abdullazadə",
+          "workPosition" : "Middle Frontend at Mega Concept LLC",
+          "photo": "",
+          "connect": "https://www.linkedin.com/in/murad-abdullazada/"
+        }
+        
       ]
+      
     },
     {
       "category": "Backend",
+      "description": "Description about Backend",
       "questions": [
         {
           "question": "What is Backend Development?",
@@ -60,6 +99,17 @@
           "question": "How do you ensure the security of a backend application?",
           "answer": "To ensure backend security, implement authentication and authorization, use encryption for sensitive data, validate and sanitize inputs to prevent injections, and regularly update and patch systems to protect against vulnerabilities."
         }
+      ]
+      ,
+      "instructors": [
+        {
+          "name": "Vüsal Ataşov",
+          "workPosition" : "Senior Backend at Voiceloft",
+          "photo": "/src/assets/photos/vusal.jpeg",
+          "connect": "https://www.linkedin.com/in/vusalatashov/"
+        }
+        
+        
       ]
     }
   ]
