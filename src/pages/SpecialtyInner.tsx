@@ -1,12 +1,17 @@
 import { useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import FAQ from "../components/FAQ";
 
 const SpecialtyInner = () => {
-  const { id } = useParams(); // URL parametresini alıyoruz
+  const { id } = useParams(); // Correctly calling useParams()
+  console.log(id);
 
   return (
     <div>
-      <h1>Specialty: {id}</h1> {/* id parametresine göre içerik gösteriyoruz */}
-      {/* Burada içerik gösterilebilir */}
+      <Navbar isDark={true} />
+      <div className="w-11/12 mx-auto">
+        <FAQ category={id} />
+      </div>
     </div>
   );
 };

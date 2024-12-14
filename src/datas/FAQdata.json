@@ -1,0 +1,65 @@
+[
+    {
+      "category": "UX-UI",
+      "questions": [
+        {
+          "question": "What is UX/UI Design?",
+          "answer": "UX/UI Design involves creating user-friendly interfaces and experiences for digital products. UX focuses on the overall experience, while UI deals with the visual and interactive elements."
+        },
+        {
+          "question": "How can I improve my design skills?",
+          "answer": "Improving your design skills involves continuous learning and practice. Engage with design communities, take online courses, and work on personal projects to hone your abilities."
+        },
+        {
+          "question": "What tools are essential for a designer?",
+          "answer": "Essential tools for designers include software like Adobe XD, Sketch, Figma for UI/UX design, and Adobe Photoshop or Illustrator for graphic design. Additionally, prototyping and collaboration tools are beneficial."
+        },
+        {
+          "question": "How do I start a career in UX/UI Design?",
+          "answer": "Start by building a strong portfolio showcasing your projects. Gain experience through internships or freelance work, and consider obtaining relevant certifications. Networking and staying updated with industry trends are also crucial."
+        }
+      ]
+    },
+    {
+      "category": "Frontend",
+      "questions": [
+        {
+          "question": "What is Frontend Development?",
+          "answer": "Frontend Development involves building the part of a website or application that users interact with directly. It includes designing and coding the user interface using technologies like HTML, CSS, and JavaScript."
+        },
+        {
+          "question": "Which programming languages should I learn for Frontend Development?",
+          "answer": "Key programming languages for frontend development are HTML, CSS, and JavaScript. Additionally, learning frameworks and libraries such as React, Angular, or Vue.js can be highly beneficial."
+        },
+        {
+          "question": "What is the difference between a library and a framework in Frontend Development?",
+          "answer": "A library is a collection of pre-written code that developers can call upon to perform common tasks, while a framework provides a structured environment and dictates the architecture of your application."
+        },
+        {
+          "question": "How can I make my website responsive?",
+          "answer": "To make your website responsive, use flexible grid layouts, media queries, and responsive images. Ensure that your design adapts to different screen sizes and devices by testing across various platforms."
+        }
+      ]
+    },
+    {
+      "category": "Backend",
+      "questions": [
+        {
+          "question": "What is Backend Development?",
+          "answer": "Backend Development involves building the server-side of applications, managing databases, and ensuring that the frontend can effectively communicate with the server. It includes working with languages like Node.js, Python, Ruby, or Java."
+        },
+        {
+          "question": "Which databases are commonly used in Backend Development?",
+          "answer": "Common databases used in backend development include MySQL, PostgreSQL, MongoDB, and Redis. The choice depends on the specific requirements of the application."
+        },
+        {
+          "question": "What is an API and why is it important in Backend Development?",
+          "answer": "An API (Application Programming Interface) allows different software applications to communicate with each other. It is crucial in backend development for enabling frontend applications to interact with server-side logic and databases."
+        },
+        {
+          "question": "How do you ensure the security of a backend application?",
+          "answer": "To ensure backend security, implement authentication and authorization, use encryption for sensitive data, validate and sanitize inputs to prevent injections, and regularly update and patch systems to protect against vulnerabilities."
+        }
+      ]
+    }
+  ]

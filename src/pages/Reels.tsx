@@ -79,6 +79,8 @@ const fakeData = [
   },
 ];
 
+// TODO: LOAD MORE HISSESINDE KOMEK AL
+
 export default function Reels() {
   return (
     <div>

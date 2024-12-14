@@ -79,7 +79,23 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
-            route="design"
+            route="UX-UI"
+          />
+          <SpecialtyCard
+            category="Front"
+            title="Frontend"
+            desc={"Design Intuitive Digital Experiences"}
+            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
+            img={fakeImage}
+            route="Frontend"
+          />
+          <SpecialtyCard
+            category="Backend"
+            title="Backend"
+            desc={"Design Intuitive Digital Experiences"}
+            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
+            img={fakeImage}
+            route="Backend"
           />
           <SpecialtyCard
             category="Design"
@@ -87,55 +103,23 @@ export default function Specialty() {
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
-            route="front"
+            route="UX-UI"
           />
           <SpecialtyCard
-            category="Design"
-            title="UX/UI Design"
+            category="Front"
+            title="Frontend"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
-            route="back"
+            route="Frontend"
           />
           <SpecialtyCard
-            img={fakeImage}
-            category="Design"
-            title="UX/UI Design"
-            desc={"Design Intuitive Digital Experiences"}
-            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            route="CS"
-          />
-          <SpecialtyCard
-            category="Design"
-            title="UX/UI Design"
+            category="Backend"
+            title="Backend"
             desc={"Design Intuitive Digital Experiences"}
             hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
             img={fakeImage}
-            route="design"
-          />
-          <SpecialtyCard
-            category="Design"
-            title="UX/UI Design"
-            desc={"Design Intuitive Digital Experiences"}
-            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
-            route="front"
-          />
-          <SpecialtyCard
-            category="Design"
-            title="UX/UI Design"
-            desc={"Design Intuitive Digital Experiences"}
-            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
-            route="back"
-          />
-          <SpecialtyCard
-            category="Design"
-            title="UX/UI Design"
-            desc={"Design Intuitive Digital Experiences"}
-            hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high..."
-            img={fakeImage}
-            route="CS"
+            route="Backend"
           />
         </div>
         <div className="w-full h-[110px] rounded-2xl border-white_medium mt-6 border flex justify-between items-center px-6">

@@ -6,12 +6,6 @@ import { useState } from "react";
 
 export default function Navbar({ isDark }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  let bgColor;
-  if (isDark) {
-    bgColor = "white";
-  } else {
-    bgColor = "blue_ultraDark";
-  }
 
   return (
     <nav className="bg-transparent px-4 py-4 md:px-6 lg:px-8">
@@ -48,14 +42,38 @@ export default function Navbar({ isDark }) {
             } flex flex-col md:flex-row md:gap-6 lg:gap-10 text-white_solid mt-4 md:mt-0`}
           >
             {/* <Link to={}> */}
-            <li className="py-2 md:py-0">Academy</li>
+            <li
+              className={`py-2 md:py-0 ${
+                isDark ? "text-blue_ultraDark" : "text-white_solid"
+              } `}
+            >
+              Academy
+            </li>
             {/* </Link> */}
-            <li className="py-2 md:py-0">Fields Of Study</li>
+            <li
+              className={`py-2 md:py-0 ${
+                isDark ? "text-blue_ultraDark" : "text-white_solid"
+              } `}
+            >
+              Fields Of Study
+            </li>
             {/* <Link to={}> */}
-            <li className="py-2 md:py-0">Events</li>
+            <li
+              className={`py-2 md:py-0 ${
+                isDark ? "text-blue_ultraDark" : "text-white_solid"
+              } `}
+            >
+              Events
+            </li>
             {/* </Link> */}
             {/* <Link to={}> */}
-            <li className="py-2 md:py-0">Scholarship Programs</li>
+            <li
+              className={`py-2 md:py-0 ${
+                isDark ? "text-blue_ultraDark" : "text-white_solid"
+              } `}
+            >
+              Scholarship Programs
+            </li>
             {/* </Link> */}
           </ul>
         </div>
