@@ -1,12 +1,8 @@
-import React from "react";
 import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import ApplyNow_btn from "../components/ApplyNow_btn";
 import data from "../datas/schoolarShip.json";
 import Steps_box from "../components/Steps_box";
-import FAQ from "../components/FAQ";
-import FAQItem from "../components/FAQ_item";
-import LongFAQItem from "../components/LongFAQItem";
 import LongFAQ from "../components/LongFAQ";
 
 export default function SchoolarshipInner() {
@@ -67,7 +63,7 @@ export default function SchoolarshipInner() {
               />
             ))}
           </div>
-          <LongFAQ id={currentData.id} />
+          <LongFAQ id={currentData?.id} />
         </div>
       </div>
     </div>

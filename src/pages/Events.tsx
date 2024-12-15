@@ -1,5 +1,3 @@
-import React from "react";
-import SeeAll_btn from "../components/SeeAll_btn";
 import Events_card from "../components/Events_card";
 import { Link } from "react-router";
 

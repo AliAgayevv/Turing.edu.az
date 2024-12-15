@@ -1,5 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import playVector from "../../assets/vectors/play.png";
+
+interface IProps {
+  category: number | string;
+  studentName: string;
+  desc: string;
+  videoUrl: string;
+  coverPhoto: any;
+}
 
 export default function Reels_card({
   category,
@@ -7,7 +15,7 @@ export default function Reels_card({
   desc,
   videoUrl,
   coverPhoto,
-}) {
+}: IProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTogglePlay = () => {

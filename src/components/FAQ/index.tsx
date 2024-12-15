@@ -2,7 +2,11 @@
 import FAQItem from "../FAQ_item";
 import faqData from "../../datas/FAQdata.json";
 
-export default function FAQ({ category }) {
+interface IProps {
+  category: string;
+}
+
+export default function FAQ({ category }: IProps) {
   const categoryData = faqData.find((item) => item.category === category);
 
   const faqs = categoryData?.questions || [];

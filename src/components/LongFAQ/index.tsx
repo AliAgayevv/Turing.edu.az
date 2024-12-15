@@ -1,8 +1,11 @@
-import React from "react";
 import fakeData from "../../datas/schoolarShip.json";
 import LongFAQItem from "../LongFAQItem";
 
-export default function LongFAQ({ id }) {
+interface IProps {
+  id: number | string;
+}
+
+export default function LongFAQ({ id }: IProps) {
   const currentData = fakeData.find((item) => item.id === id);
   const faq = currentData?.questions;
   return (

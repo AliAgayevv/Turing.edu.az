@@ -1,9 +1,11 @@
-import React from "react";
-import Reels_card from "../Reels_card";
 import data from "../../datas/FAQdata.json";
 import Graduates_card from "../Graduates_card";
 
-export default function Graduates_section({ category }) {
+interface IProps {
+  category: string | number;
+}
+
+export default function Graduates_section({ category }: IProps) {
   const categoryData = data.find((item) => item.category === category);
 
   const graduates = categoryData?.graduates || [];

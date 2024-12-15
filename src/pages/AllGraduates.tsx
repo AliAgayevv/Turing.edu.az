@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Reels_card from "../components/Reels_card";
 import data from "../datas/graduates.json";
@@ -29,7 +29,7 @@ export default function AllGraduates() {
               category={item.category}
               studentName={item.name}
               desc={item.desc}
-              videoUrl={item.videoUrl || ""} // Boş string yerine item.videoUrl ekleyebilirsiniz
+              videoUrl={item?.videoUrl || ""} // Boş string yerine item.videoUrl ekleyebilirsiniz
               coverPhoto={item.coverPhoto}
             />
           ))}

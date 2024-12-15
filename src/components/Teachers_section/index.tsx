@@ -1,8 +1,11 @@
-import React from "react";
 import data from "../../datas/FAQdata.json";
 import Teacher_card from "../Teacher_card";
 
-export default function Teachers_section({ category }) {
+interface IProps {
+  category: string;
+}
+
+export default function Teachers_section({ category }: IProps) {
   const categoryData = data.find((item) => item.category === category);
 
   const teachers = categoryData?.instructors || [];

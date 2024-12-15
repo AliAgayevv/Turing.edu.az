@@ -48,6 +48,11 @@ export default {
         montserrat: ["Montserrat"],
         jakarta: ["Plus_Jakarta_Sans"],
       },
+      // fontSize: {
+      //   "responsive-lg": "clamp(2rem, 4rem, 6rem)",
+      //   "responsive-md": "",
+      //   "responsive-sm": "",
+      // },
     },
   },
   plugins: [],

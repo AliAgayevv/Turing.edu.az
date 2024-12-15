@@ -1,5 +1,15 @@
-import { button } from "framer-motion/client";
-import React, { useState } from "react";
+import { useState } from "react";
+
+interface IProps {
+  isDark: boolean;
+  eventCategory: string;
+  eventName: string;
+  eventDesc: string;
+  eventDate: string;
+  guests: string;
+  price: number;
+  linkForLearnMore: string;
+}
 
 export default function Events_card({
   isDark,
@@ -10,7 +20,7 @@ export default function Events_card({
   guests,
   price,
   linkForLearnMore,
-}) {
+}: IProps) {
   const [isHover, setIsHover] = useState(false);
   const black_text = !isDark ? "text-black_dark" : "text-white";
   const white_ultraDark = !isDark
@@ -24,16 +34,8 @@ export default function Events_card({
       className={`group w-[416px] h-[242px] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       }  hover:cursor-pointer ${!isDark ? "bg-white_ultraLight" : ""}`}
-      onMouseEnter={() =>
-        setTimeout(() => {
-          setIsHover(true);
-        }, 200)
-      }
-      onMouseLeave={() =>
-        setTimeout(() => {
-          setIsHover(false);
-        }, 4)
-      }
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
     >
       <button
         className={`border  rounded-lg  py-1 px-2.5 text-[14px] ${

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Events_card from "../components/Events_card";
 import LoadMore_btn from "../components/LoadMore_btn";
@@ -22,7 +22,7 @@ export default function AllEvents() {
   const [selected, setSelected] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const handleSelect = (button) => {
+  const handleSelect = (button: string) => {
     setSelected(button);
   };
 

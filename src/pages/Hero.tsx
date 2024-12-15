@@ -5,11 +5,14 @@ import bgTuringVector from "../assets/vectors/turing-hero-left-top-vector.png";
 import WatchNow_btn from "../components/WatchNow_btn";
 
 export default function Hero() {
+  const handleGoForm = () => {
+    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className=" min-h-screen flex flex-col">
       <Navbar isDark={false} />
 
-      <div className="flex flex-col items-center justify-center px-4 py-8 h-[800px]">
+      <div className="flex  flex-col items-center justify-center px-4 py-8 h-[800px]">
         <h1 className="text-white_solid text-4xl md:text-5xl lg:text-6xl text-center mb-4 mt-[125px]">
           #BirAddımÖndə
         </h1>
@@ -24,7 +27,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-          <div className="h-[56px] w-[169px]">
+          <div className="h-[56px] w-[169px]" onClick={handleGoForm}>
             <ApplyNow_btn>Apply now</ApplyNow_btn>
           </div>
           <div className="h-[56px] w-[169px]">

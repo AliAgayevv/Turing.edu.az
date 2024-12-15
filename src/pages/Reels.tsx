@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Reels_card from "../components/Reels_card";
 import fakePhoto from "../assets/photos/studentExamplePhoto.jpeg";

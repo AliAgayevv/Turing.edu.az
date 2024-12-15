@@ -4,7 +4,11 @@ import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import { useState } from "react";
 
-export default function Navbar({ isDark }) {
+interface IProps {
+  isDark: boolean;
+}
+
+export default function Navbar({ isDark }: IProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

@@ -2,7 +2,11 @@
 import { useState } from "react";
 import data from "../../datas/FAQdata.json";
 
-function LongFAQItem({ question, answer }) {
+interface IProps {
+  question: string;
+  answer: string;
+}
+function LongFAQItem({ question, answer }: IProps) {
   const [isVisible, setIsVisible] = useState(false);
   console.log(data);
 
