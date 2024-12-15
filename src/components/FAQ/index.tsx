@@ -20,11 +20,13 @@ export default function FAQ({ category }) {
       <div className="flex flex-col items-start w-full md:w-2/3">
         {faqs.length > 0 ? (
           faqs.map((item, index) => (
-            <FAQItem
-              key={index}
-              question={item.question}
-              answer={item.answer}
-            />
+            <div>
+              <FAQItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+              />
+            </div>
           ))
         ) : (
           <p className="text-gray-500">No FAQs available for this category.</p>

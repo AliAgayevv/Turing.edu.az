@@ -1,38 +1,104 @@
 [
     {
-        "id": 1,
+        "id": "ux-ui",
         "img": "",
         "desc": "Scholarship program for UX/UI Design",
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",
         "slotCount": "15 slots left",
-        "route" : "/schoolarship/front"
+        "route" : "/schoolarship/front",
+        "date" : "16.10.2024",
+        "faqDesc": "We're here to support your design journey.",
+        "steps" : [
+            {
+                "stepTitle": "Step 1",
+                "stepType" : "application",
+                "stepDetail": "Fill the form and complete application"
+            },
+            {
+                "stepTitle": "Step 2",
+                "stepType" : "test",
+                "stepDetail": "You will have a test about UX and UI"
+            },
+            {
+                "stepTitle": "Step 1",
+                "stepType" : "interview",
+                "stepDetail": "You will have an interview"
+            }
+        ],
+        "questions": [
+        {
+          "question": "What is Frontend Development?",
+          "answer": "Frontend Development involves building the part of a website or application that users interact with directly. It includes designing and coding the user interface using technologies like HTML, CSS, and JavaScript."
+        },
+        {
+          "question": "Which programming languages should I learn for Frontend Development?",
+          "answer": "Key programming languages for frontend development are HTML, CSS, and JavaScript. Additionally, learning frameworks and libraries such as React, Angular, or Vue.js can be highly beneficial."
+        },
+        {
+          "question": "What is the difference between a library and a framework in Frontend Development?",
+          "answer": "A library is a collection of pre-written code that developers can call upon to perform common tasks, while a framework provides a structured environment and dictates the architecture of your application."
+        },
+        {
+          "question": "How can I make my website responsive?",
+          "answer": "To make your website responsive, use flexible grid layouts, media queries, and responsive images. Ensure that your design adapts to different screen sizes and devices by testing across various platforms."
+        }
+      ]
     },
     {
-        "id": 2,
+        "id": "Frontend",
         "img": "",
         "desc": "Scholarship program for UX/UI Design",
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",
         "slotCount": "15 slots left",
-        "route" : "/schoolarship/ux-ui"
+        "route" : "/schoolarship/ux-ui",
+        "date": "10.11.2024",
+        "faqDesc": "We're here to support your development journey.",
+        "steps" : [
+            {
+                "stepTitle": "Step 1",
+                "stepType" : "application",
+                "stepDetail": "Fill the form and complete application"
+            },
+            {
+                "stepTitle": "Step 2",
+                "stepType" : "test",
+                "stepDetail": "You will have a test about frontend"
+            },
+            {
+                "stepTitle": "Step 1",
+                "stepType" : "interview",
+                "stepDetail": "You will have an interview"
+            }
+        ],
+        "questions": [
+        {
+          "question": "What is Frontend Development?",
+          "answer": "Frontend Development involves building the part of a website or application that users interact with directly. It includes designing and coding the user interface using technologies like HTML, CSS, and JavaScript."
+        },
+        {
+          "question": "Which programming languages should I learn for Frontend Development?",
+          "answer": "Key programming languages for frontend development are HTML, CSS, and JavaScript. Additionally, learning frameworks and libraries such as React, Angular, or Vue.js can be highly beneficial."
+        },
+        {
+          "question": "What is the difference between a library and a framework in Frontend Development?",
+          "answer": "A library is a collection of pre-written code that developers can call upon to perform common tasks, while a framework provides a structured environment and dictates the architecture of your application."
+        },
+        {
+          "question": "How can I make my website responsive?",
+          "answer": "To make your website responsive, use flexible grid layouts, media queries, and responsive images. Ensure that your design adapts to different screen sizes and devices by testing across various platforms."
+        }
+      ]
     },
     {
-        "id": 3,
+        "id": "Backend",
         "img": "",
         "desc": "Scholarship program for UX/UI Design",
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",
         "slotCount": "15 slots left",
         "route" : "/schoolarship/backend"
-    },
-    {
-        "id": 4 ,
-        "img": "",
-        "desc": "Scholarship program for UX/UI Design",
-        "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
-        "title": "UX/UI Design",
-        "slotCount": "15 slots left",
-        "route" : "/schoolarship/computer-science"
     }
+    
 ]
