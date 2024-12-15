@@ -17,7 +17,13 @@ export interface IEventsProps {
   eventName: string;
   eventDesc: string;
   eventDate: string;
-  guests: string;
+  guests: Array<{
+    id: number;
+    guestName: string;
+    guestWorkingPosition: string;
+    connect: string;
+    photo: any;
+  }>;
   price: number;
   linkForLearnMore: string;
 }

@@ -1,6 +1,7 @@
 import AllEvents from "../../pages/AllEvents";
 import AllGraduates from "../../pages/AllGraduates";
 import Community from "../../pages/Community";
+import EventsInner from "../../pages/EventsInner";
 import Home from "../../pages/Home";
 import Reels from "../../pages/Reels";
 import Schoolarship from "../../pages/Schoolarship";
@@ -23,7 +24,7 @@ export const ROUTES = [
   },
   {
     path: "/events/:id",
-    // element: <EventsInner />,
+    element: <EventsInner />,
   },
   {
     path: "/specialty/:id",

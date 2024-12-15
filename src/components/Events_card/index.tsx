@@ -48,7 +48,7 @@ export default function Events_card({
         <div className="flex justify-between mt-10 group-hover:">
           <div className="flex flex-col">
             <h5 className={`${black_text} opacity-90 font-[500]`}>Qonaqlar:</h5>
-            <p className={`${white_ultraDark} text-[14px] `}>{guests}</p>
+            <p className={`${white_ultraDark} text-[14px] w-72`}>{guests}</p>
           </div>
 
           <div className="flex flex-col ">

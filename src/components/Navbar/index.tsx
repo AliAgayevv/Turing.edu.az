@@ -61,13 +61,15 @@ export default function Navbar({ isDark }: INavbarProps) {
               </li>
             </Link>
             {/* <Link to={}> */}
-            <li
-              className={`py-2 md:py-0 ${
-                isDark ? "text-blue_ultraDark" : "text-white_solid"
-              } `}
-            >
-              Events
-            </li>
+            <Link to={"/events"}>
+              <li
+                className={`py-2 md:py-0 ${
+                  isDark ? "text-blue_ultraDark" : "text-white_solid"
+                } `}
+              >
+                Events
+              </li>
+            </Link>
             {/* </Link> */}
             {/* <Link to={}> */}
             <Link to={"/schoolarship"}>

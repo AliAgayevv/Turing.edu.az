@@ -2,23 +2,16 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Events_card from "../components/Events_card";
 import LoadMore_btn from "../components/LoadMore_btn";
+import { Link } from "react-router";
+import { eventsData } from "../datas/eventsData";
 
 const PAGE_SIZE = 12; // Başlangıçta gösterilecek etkinlik sayısı
 const LOAD_MORE_COUNT = 3; // Her defa yüklenecek ek etkinlik sayısı
 
 // Dummy event data (veri kaynağınızın burada olduğunu varsayalım)
-const eventsData = new Array(30).fill(null).map((_, index) => ({
-  id: index + 1,
-  eventCategory: "UX/UI Dizayn",
-  eventName: `Event ${index + 1}`,
-  eventDesc: "A lot happened this month. Take a look at what's coming.",
-  guests: "Togrul Samed, Zumrad Muradov",
-  eventDate: "Apr 17, 2024",
-  price: 0,
-  linkForLearnMore: "",
-}));
 
 export default function AllEvents() {
+  console.log(eventsData);
   const [selected, setSelected] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
@@ -84,17 +77,18 @@ export default function AllEvents() {
         {/* Etkinlik Kartları */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 gap-6">
           {eventsData.slice(0, visibleCount).map((event) => (
-            <Events_card
-              key={event.id}
-              isDark={false}
-              eventCategory={event.eventCategory}
-              eventName={event.eventName}
-              eventDesc={event.eventDesc}
-              guests={event.guests}
-              eventDate={event.eventDate}
-              price={event.price}
-              linkForLearnMore={event.linkForLearnMore}
-            />
+            <Link to={`/events/${event.id}`} key={event.id}>
+              <Events_card
+                isDark={false}
+                eventCategory={event.eventCategory}
+                eventName={event.eventName}
+                eventDesc={event.eventDesc}
+                guests={event.guests.map((guest) => guest.guestName).join(", ")} // Convert to a string
+                eventDate={event.eventDate}
+                price={event.price}
+                linkForLearnMore={event.linkForLearnMore}
+              />
+            </Link>
           ))}
         </div>
 
