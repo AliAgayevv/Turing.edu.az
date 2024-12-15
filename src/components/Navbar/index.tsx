@@ -3,12 +3,9 @@ import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import { useState } from "react";
+import { INavbarProps } from "../../const/types";
 
-interface IProps {
-  isDark: boolean;
-}
-
-export default function Navbar({ isDark }: IProps) {
+export default function Navbar({ isDark }: INavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

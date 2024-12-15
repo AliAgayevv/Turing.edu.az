@@ -1,12 +1,9 @@
 // FAQItem.jsx
 import { useState } from "react";
 import data from "../../datas/FAQdata.json";
+import { IQAProps } from "../../const/types";
 
-interface IProps {
-  question: string;
-  answer: string;
-}
-function LongFAQItem({ question, answer }: IProps) {
+function LongFAQItem({ question, answer }: IQAProps) {
   const [isVisible, setIsVisible] = useState(false);
   console.log(data);
 

@@ -1,18 +1,12 @@
 import { FaLinkedinIn } from "react-icons/fa";
-
-interface IProps {
-  name: string;
-  workPosition: string;
-  photo: any;
-  connect: string;
-}
+import { ITeacherProps } from "../../const/types";
 
 export default function Teacher_card({
   name,
   workPosition,
   photo,
   connect,
-}: IProps) {
+}: ITeacherProps) {
   return (
     <div className="border rounded-2xl w-[306px] h-[373px] justify-center flex flex-col">
       <div className=" w-[306px] h-[300px] flex items-center justify-center rounded-full">

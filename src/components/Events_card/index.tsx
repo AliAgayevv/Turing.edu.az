@@ -1,15 +1,5 @@
 import { useState } from "react";
-
-interface IProps {
-  isDark: boolean;
-  eventCategory: string;
-  eventName: string;
-  eventDesc: string;
-  eventDate: string;
-  guests: string;
-  price: number;
-  linkForLearnMore: string;
-}
+import { IEventsProps } from "../../const/types";
 
 export default function Events_card({
   isDark,
@@ -20,7 +10,7 @@ export default function Events_card({
   guests,
   price,
   linkForLearnMore,
-}: IProps) {
+}: IEventsProps) {
   const [isHover, setIsHover] = useState(false);
   const black_text = !isDark ? "text-black_dark" : "text-white";
   const white_ultraDark = !isDark

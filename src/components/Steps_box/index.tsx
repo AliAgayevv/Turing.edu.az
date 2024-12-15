@@ -1,10 +1,9 @@
-interface IProps {
-  stepTitle: string;
-  stepType: string;
-  stepDetail: string;
-}
-
-export default function Steps_box({ stepTitle, stepType, stepDetail }: IProps) {
+import { IStepProps } from "../../const/types";
+export default function Steps_box({
+  stepTitle,
+  stepType,
+  stepDetail,
+}: IStepProps) {
   return (
     <div className="w-[415px] h-[125px] rounded-2xl border p-4">
       <span className="border px-2 py-1 rounded-lg text-white_ultraDark text-[14px]">

@@ -1,15 +1,7 @@
 import { FaLinkedinIn } from "react-icons/fa";
 import { useState } from "react";
 import playVector from "../../assets/vectors/play.png";
-
-interface IProps {
-  studentName: string;
-  desc: string;
-  coverPhoto: any;
-  videoUrl: string;
-  github: string;
-  connect: string;
-}
+import { IStudentsInfoProps } from "../../const/types";
 
 export default function Graduates_card({
   studentName,
@@ -18,7 +10,7 @@ export default function Graduates_card({
   videoUrl,
   github,
   connect,
-}: IProps) {
+}: IStudentsInfoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTogglePlay = () => {

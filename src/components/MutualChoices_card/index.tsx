@@ -1,12 +1,11 @@
 import arrow from "../../assets/vectors/arrow-right-top.png";
+import { IMutualChoicesProps } from "../../const/types";
 
-interface IProps {
-  icon: string;
-  title: string;
-  desc: string;
-}
-
-export default function MutualChoices_card({ icon, title, desc }: IProps) {
+export default function MutualChoices_card({
+  icon,
+  title,
+  desc,
+}: IMutualChoicesProps) {
   return (
     <div className="flex gap-5 p-4 w-[416px] flex-col h-[252px] bg-white border rounded-2xl">
       <div className=" w-12 p-3 h-12 rounded-full bg-[#f8f9fa] border flex justify-center items-center">
