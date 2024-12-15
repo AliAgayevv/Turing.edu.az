@@ -50,13 +50,15 @@ export default function Navbar({ isDark }) {
               Academy
             </li>
             {/* </Link> */}
-            <li
-              className={`py-2 md:py-0 ${
-                isDark ? "text-blue_ultraDark" : "text-white_solid"
-              } `}
-            >
-              Fields Of Study
-            </li>
+            <Link to={"/specialty"}>
+              <li
+                className={`py-2 md:py-0 ${
+                  isDark ? "text-blue_ultraDark" : "text-white_solid"
+                } `}
+              >
+                Fields Of Study
+              </li>
+            </Link>
             {/* <Link to={}> */}
             <li
               className={`py-2 md:py-0 ${
