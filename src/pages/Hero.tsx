@@ -36,10 +36,10 @@ export default function Hero() {
         </div>
 
         <div className=" max-w-[3000px] px-4 mt-[10px] overflow-hidden h-[324px]">
-          <div className="w-[1120px] relative h-[320px] mt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]">
+          <div className="w-[500px] lg:w-[1120px] h-[300px] relative lg:h-[320px] mt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]">
             <video
               controls
-              className="absolute top-0  left-0 w-full h-full object-cover rounded-2xl"
+              className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
               src={exampleVideo}
             />
           </div>

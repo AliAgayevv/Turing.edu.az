@@ -23,7 +23,11 @@ export default function EventsInner() {
           <p className="text-white_ultraDark text-[18px] font-inter">
             {currentEvent?.eventDesc}
           </p>
-          <div className="w-[145px] h-[48px]">
+          <div
+            className={`w-[145px] h-[48px] ${
+              currentEvent?.isEnd ? "disabled" : ""
+            }`}
+          >
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>

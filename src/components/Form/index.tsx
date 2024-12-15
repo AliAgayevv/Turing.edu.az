@@ -1,8 +1,10 @@
 import { useState } from "react";
 import formIcon from "../../assets/vectors/formIcon.png";
 import SeeAll_btn from "../SeeAll_btn";
+
 import Form_input from "../Form_input";
 
+// TODO : Formik and yup or z validation add.
 // Seçim verileri için tür tanımı
 interface FakeDataItem {
   id: number;

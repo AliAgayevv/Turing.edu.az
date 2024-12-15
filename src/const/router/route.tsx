@@ -8,6 +8,7 @@ import Schoolarship from "../../pages/Schoolarship";
 import SchoolarshipInner from "../../pages/SchoolarshipInner";
 import Specialty from "../../pages/Specialty";
 import SpecialtyInner from "../../pages/SpecialtyInner";
+import NotFound from "../../pages/NotFound";
 
 export const ROUTES = [
   {
@@ -49,5 +50,10 @@ export const ROUTES = [
   {
     path: "/community",
     element: <Community />,
+  },
+
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ];
