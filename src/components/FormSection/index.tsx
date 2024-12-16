@@ -1,7 +1,7 @@
 import { useState } from "react";
 import formIcon from "../../assets/vectors/formIcon.png";
 import SeeAll_btn from "../SeeAll_btn";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const FormSchema = Yup.object().shape({
@@ -11,8 +11,6 @@ const FormSchema = Yup.object().shape({
   phone: Yup.number().typeError("Must be a number").required("Required"),
 });
 
-// TODO : Formik and yup or z validation add.
-// Seçim verileri için tür tanımı
 interface FakeDataItem {
   id: number;
   inner: string;
@@ -40,9 +38,12 @@ export default function FormSection() {
   };
 
   return (
-    <div className="flex justify-between mt-6" id="form">
+    <div
+      className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6"
+      id="form"
+    >
       {/* Sol taraf: Form Alanı */}
-      <div className="w-[856px] h-[455px] border p-6">
+      <div className="w-full md:w-[856px] h-[auto] border p-6">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
           Start Today!
@@ -53,7 +54,7 @@ export default function FormSection() {
         </p>
 
         {/* Uzmanlık Seçim Butonları */}
-        <div className="w-full h-20 flex justify-start gap-3 items-center">
+        <div className="w-full h-auto flex flex-wrap justify-start gap-3 items-center mt-5">
           {fakeData.map((data) => (
             <button
               key={data.id}
@@ -62,7 +63,7 @@ export default function FormSection() {
                 selected.includes(data.id)
                   ? "bg-blue_light text-white"
                   : "bg-white_ultraLight"
-              } rounded-lg px-3 border py-1 transition-all delay-100 cursor-pointer`}
+              } rounded-lg px-3 py-1 border transition-all delay-100 cursor-pointer`}
             >
               {data.inner}
             </button>
@@ -77,80 +78,72 @@ export default function FormSection() {
             const selectedSpecialties = fakeData
               .filter((data) => selected.includes(data.id))
               .map((data) => data.inner); // Get the inner text for the selected specialties
-            selectedSpecialties.length === 0
-              ? alert("Please select a specialty")
-              : console.log(values, selectedSpecialties);
+            if (selectedSpecialties.length === 0) {
+              alert("Please select a specialty");
+            } else {
+              console.log(values, selectedSpecialties);
+              values.name = "";
+              values.surname = "";
+              values.email = "";
+              values.phone = "";
+            }
           }}
         >
-          {({ errors, touched }) => (
-            <Form className="flex flex-col">
-              <div className="grid grid-cols-2 gap-4">
-                <Field
-                  placeholder="Name"
-                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                  name="name"
-                />
-                <Field
-                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                  placeholder="Surname"
-                  name="surname"
-                />
-                <Field
-                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                  placeholder="Email"
-                  name="email"
-                />
-                <Field
-                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                  placeholder="Phone Number"
-                  name="phone"
-                />
-              </div>
-              <div className="w-[145px] h-[48px]">
-                <button
-                  type="submit"
-                  className="border px-8 py-4 mt-8 bg-blue_ultraMedium text-white rounded-full"
-                >
-                  Apply Now
-                </button>
-              </div>
-            </Form>
-          )}
+          <Form className="flex flex-col mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Field
+                placeholder="Name"
+                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                name="name"
+              />
+              <Field
+                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                placeholder="Surname"
+                name="surname"
+              />
+              <Field
+                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                placeholder="Email"
+                name="email"
+              />
+              <Field
+                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                placeholder="Phone Number"
+                name="phone"
+              />
+            </div>
+            <div className="w-full md:w-[145px] h-[48px] mt-6">
+              <button
+                type="submit"
+                className="w-full md:w-[145px] py-4 bg-blue_ultraMedium text-white rounded-full"
+              >
+                Apply Now
+              </button>
+            </div>
+          </Form>
         </Formik>
-
-        {/* <form className="grid grid-cols-2 gap-y-6 mt-5">
-          <div className="w-[392px] h-[52px]">
-            <Form_input placeholder="Name" />
-          </div>
-          <div className="w-[392px] h-[52px]">
-            <Form_input placeholder="Surname" />
-          </div>
-          <div className="w-[392px] h-[52px]">
-            <Form_input placeholder="Email" />
-          </div>
-          <div className="w-[392px] h-[52px]">
-            <Form_input placeholder="Phone" />
-          </div>
-        </form> */}
       </div>
 
-      <div className="w-[416px] h-[455px] bg-white border rounded-2xl p-6">
-        <div className="h-[241px] w-full">
+      {/* Sağ taraf: Görsel ve Diğer Bilgiler */}
+      <div className="w-full md:w-[416px] h-auto bg-white border rounded-2xl p-6 mt-6 md:mt-0">
+        <div className="h-[241px] w-full hidden md:block">
           <img
             src={formIcon}
             className="w-full h-full object-contain"
             alt="Form Icon"
           />
         </div>
-        <h4 className="font-[500] text-xl text-black_ultraDark font-inter">
+        <h4 className="font-[500] text-xl text-black_ultraDark font-inter mt-6">
           Help to Choose
         </h4>
         <p className="opacity-70 text-[14px] text-black_dark">
           10 suallıq sorğumuza qatıl, potensialına uyğun ixtisası daha sürətli
           öyrən.
         </p>
-        <div className="h-[48px] w-[145px] mt-8">
-          <SeeAll_btn>Start Test</SeeAll_btn>
+        <div className="h-[48px] w-full mt-8 md:w-full">
+          <div className="w-auto md:w-full">
+            <SeeAll_btn>Start Test</SeeAll_btn>
+          </div>
         </div>
       </div>
     </div>
