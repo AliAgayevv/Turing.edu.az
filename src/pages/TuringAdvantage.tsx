@@ -121,7 +121,7 @@ export default function TuringAdvantage() {
             controls
           />
         </div>
-        <div className="text-3xl absolute top-40 text-white_light_32 font-[900] font-montserrat uppercase text-[195px]">
+        <div className="text-[65px] leading-4 top-36 right-5   md:leading-9 md:text-[195px] absolute md:top-40 text-white_light_32 font-[900] font-montserrat uppercase ">
           Community
         </div>
 

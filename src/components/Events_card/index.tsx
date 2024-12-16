@@ -21,7 +21,7 @@ export default function Events_card({
     : "text-white";
   return (
     <div
-      className={`group w-[416px] h-[242px] rounded-2xl p-4 border ${
+      className={`group w-full h-auto  md:w-[416px] md:h-[242px] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       }  hover:cursor-pointer ${!isDark ? "bg-white_ultraLight" : ""}`}
       onMouseEnter={() => setIsHover(true)}
@@ -46,12 +46,12 @@ export default function Events_card({
 
       {!isHover ? (
         <div className="flex justify-between mt-10 group-hover:">
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-1">
             <h5 className={`${black_text} opacity-90 font-[500]`}>Qonaqlar:</h5>
             <p className={`${white_ultraDark} text-[14px] w-72`}>{guests}</p>
           </div>
 
-          <div className="flex flex-col ">
+          <div className="flex flex-col gap-1 ">
             <p className={` opacity-90 font-[500] ${black_text}`}>
               {price === 0 ? "Ödənişsiz" : price}
             </p>
