@@ -115,7 +115,7 @@ export default function FormSection() {
             <div className="w-full md:w-[145px] h-[48px] mt-6">
               <button
                 type="submit"
-                className="w-full md:w-[145px] py-4 bg-blue_ultraMedium text-white rounded-full"
+                className="w-[145px] py-4 bg-blue_ultraMedium text-white rounded-full"
               >
                 Apply Now
               </button>
