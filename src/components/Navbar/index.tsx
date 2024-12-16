@@ -4,6 +4,44 @@ import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import { useState } from "react";
 import { INavbarProps } from "../../const/types";
+import whiteOpenNavbarIcon from "../../assets/vectors/openNavbar.png";
+import whiteCloseNavbarIcon from "../../assets/vectors/closeNavbar.png";
+import blackOpenNavbarIcon from "../../assets/vectors/blackOpenNavbarIcon.png";
+import blackCloseNavbarIcon from "../../assets/vectors/rotatedBlackOpenNavbarIcon.png";
+import NavbarElement from "../NavbarElement";
+
+const fakeData = [
+  {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/ux-ui",
+  },
+  {
+    id: 2,
+    title: "Frontend Development",
+    description: "Learn Art",
+    route: "/schoolarship/Frontend",
+  },
+  {
+    id: 3,
+    title: "Backend",
+    description: "Kill Art",
+    route: "/schoolarship/Backend",
+  },
+  {
+    id: 4,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/ux-ui",
+  },
+  {
+    id: 5,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/ux-ui",
+  },
+];
 
 export default function Navbar({ isDark }: INavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,20 +61,33 @@ export default function Navbar({ isDark }: INavbarProps) {
           />
         </Link>
 
-        <button
-          className={`md:hidden ${
-            isDark ? "text-blue_ultraDark" : "text-white_solid"
-          }`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          Menu
-        </button>
-
         <div
           className={`w-full md:flex md:w-auto md:items-center ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
+          {isMenuOpen && (
+            <div
+              className={`${
+                isDark ? "text-white" : "text-black_dark"
+              } absolute top-20 w-screen bg-transparent h-[268px] left-0  z-10 backdrop-blur-lg`}
+            >
+              <div className="mx-auto w-11/12  h-full p-5">
+                <div className="grid grid-cols-4 gap-6">
+                  {fakeData.map((item) => (
+                    <NavbarElement
+                      key={item.id}
+                      isDark={isDark}
+                      title={item.title}
+                      id={item.id}
+                      description={item.description}
+                      route={item.route}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
           <ul
             className={`${
               isDark ? "text-blue_ultraDark" : "text-white_solid"
@@ -50,17 +101,23 @@ export default function Navbar({ isDark }: INavbarProps) {
             >
               Academy
             </li>
-            {/* </Link> */}
-            <Link to={"/specialty"}>
-              <li
-                className={`py-2 md:py-0 ${
-                  isDark ? "text-blue_ultraDark" : "text-white_solid"
-                } `}
-              >
-                Fields Of Study
-              </li>
-            </Link>
-            {/* <Link to={}> */}
+            <li
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`py-2 md:py-0  flex items-center justify-center gap-2 cursor-pointer ${
+                isDark ? "text-blue_ultraDark" : "text-white_solid"
+              } `}
+            >
+              Fields Of Study
+              {!isMenuOpen ? (
+                <img
+                  src={!isDark ? whiteOpenNavbarIcon : blackOpenNavbarIcon}
+                />
+              ) : (
+                <img
+                  src={!isDark ? whiteCloseNavbarIcon : blackCloseNavbarIcon}
+                />
+              )}
+            </li>
             <Link to={"/events"}>
               <li
                 className={`py-2 md:py-0 ${
@@ -70,8 +127,6 @@ export default function Navbar({ isDark }: INavbarProps) {
                 Events
               </li>
             </Link>
-            {/* </Link> */}
-            {/* <Link to={}> */}
             <Link to={"/schoolarship"}>
               <li
                 className={`py-2 md:py-0 ${
@@ -81,7 +136,6 @@ export default function Navbar({ isDark }: INavbarProps) {
                 Scholarship Programs
               </li>
             </Link>
-            {/* </Link> */}
           </ul>
         </div>
 

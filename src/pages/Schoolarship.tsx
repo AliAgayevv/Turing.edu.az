@@ -11,7 +11,7 @@ export default function Schoolarship() {
   };
   return (
     <div className="w-11/12 mx-auto">
-      <Navbar isDark={true} />
+      <Navbar isDark={false} />
       <div className="mx-auto w-11/12 mt-24">
         <h1 className="font-jakarta font-[500] text-5xl">
           Active Scholarship Programs
