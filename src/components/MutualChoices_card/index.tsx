@@ -7,19 +7,26 @@ export default function MutualChoices_card({
   desc,
 }: IMutualChoicesProps) {
   return (
-    <div className="flex gap-5 p-4 w-[416px] flex-col h-[252px] bg-white border rounded-2xl">
-      <div className=" w-12 p-3 h-12 rounded-full bg-[#f8f9fa] border flex justify-center items-center">
-        <img src={icon} className="w-6 h-6" alt="title" />
+    <div className="flex flex-col gap-5 p-4 w-full sm:w-[416px] h-auto bg-white border rounded-2xl">
+      {/* Icon Section */}
+      <div className="w-12 h-12 p-3 rounded-full bg-[#f8f9fa] border flex justify-center items-center">
+        <img src={icon} className="w-6 h-6" alt={title} />
       </div>
+
+      {/* Title and Description Section */}
       <div>
-        <h3 className="text-xl text-[#01030e] font-[500] font-inter">
+        <h3 className="text-lg sm:text-xl text-[#01030e] font-[500] font-inter">
           {title}
         </h3>
-        <p className="text-black_ultraLight font-[400] text-[14px]">{desc}</p>
+        <p className="text-black_ultraLight font-[400] text-sm sm:text-[14px]">
+          {desc}
+        </p>
       </div>
-      <button className="border p-3 flex justify-center items-center h-[38px] w-[130px] rounded-3xl gap-2.5">
-        <p>Learn more</p>
-        <img src={arrow} alt="" />
+
+      {/* Button Section */}
+      <button className="border px-[10px] sm:px-[11px] flex justify-center items-center h-[38px]  w-[130px] rounded-3xl gap-2 hover:bg-gray-100 transition-all duration-200">
+        <p className="text-sm sm:text-base">Learn more</p>
+        <img src={arrow} alt="Arrow" className="" />
       </button>
     </div>
   );
