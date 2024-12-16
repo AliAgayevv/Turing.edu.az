@@ -1,12 +1,12 @@
 [
     {
-        "id": "ux-ui",
+        "id": "UX-UI",
         "img": "",
         "desc": "Scholarship program for UX/UI Design",
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",
         "slotCount": "15 slots left",
-        "route" : "/schoolarship/front",
+        "route" : "/schoolarship/UX-UI",
         "date" : "16.10.2024",
         "faqDesc": "We're here to support your design journey.",
         "steps" : [
@@ -52,7 +52,7 @@
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",
         "slotCount": "15 slots left",
-        "route" : "/schoolarship/ux-ui",
+        "route" : "/schoolarship/Frontend",
         "date": "10.11.2024",
         "faqDesc": "We're here to support your development journey.",
         "steps" : [

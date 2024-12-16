@@ -1,8 +1,15 @@
 import { useState } from "react";
 import formIcon from "../../assets/vectors/formIcon.png";
 import SeeAll_btn from "../SeeAll_btn";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
-import Form_input from "../Form_input";
+const FormSchema = Yup.object().shape({
+  name: Yup.string().max(50, "Too Long!").required("Required"),
+  surname: Yup.string().max(50, "Too Long!").required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  phone: Yup.number().typeError("Must be a number").required("Required"),
+});
 
 // TODO : Formik and yup or z validation add.
 // Seçim verileri için tür tanımı
@@ -19,7 +26,7 @@ const fakeData: FakeDataItem[] = [
   { id: 4, inner: "Computer Science" },
 ];
 
-export default function Form() {
+export default function FormSection() {
   const [selected, setSelected] = useState<number[]>([]);
 
   // Seçim işlemini gerçekleştiren fonksiyon
@@ -63,7 +70,55 @@ export default function Form() {
         </div>
 
         {/* Form Alanı */}
-        <form className="grid grid-cols-2 gap-y-6 mt-5">
+        <Formik
+          initialValues={{ name: "", surname: "", email: "", phone: "" }}
+          validationSchema={FormSchema}
+          onSubmit={(values) => {
+            const selectedSpecialties = fakeData
+              .filter((data) => selected.includes(data.id))
+              .map((data) => data.inner); // Get the inner text for the selected specialties
+            selectedSpecialties.length === 0
+              ? alert("Please select a specialty")
+              : console.log(values, selectedSpecialties);
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form className="flex flex-col">
+              <div className="grid grid-cols-2 gap-4">
+                <Field
+                  placeholder="Name"
+                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  name="name"
+                />
+                <Field
+                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  placeholder="Surname"
+                  name="surname"
+                />
+                <Field
+                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  placeholder="Email"
+                  name="email"
+                />
+                <Field
+                  className="w-[392px] h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  placeholder="Phone Number"
+                  name="phone"
+                />
+              </div>
+              <div className="w-[145px] h-[48px]">
+                <button
+                  type="submit"
+                  className="border px-8 py-4 mt-8 bg-blue_ultraMedium text-white rounded-full"
+                >
+                  Apply Now
+                </button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+
+        {/* <form className="grid grid-cols-2 gap-y-6 mt-5">
           <div className="w-[392px] h-[52px]">
             <Form_input placeholder="Name" />
           </div>
@@ -76,11 +131,7 @@ export default function Form() {
           <div className="w-[392px] h-[52px]">
             <Form_input placeholder="Phone" />
           </div>
-        </form>
-
-        <button className="border px-8 py-4 mt-8 bg-blue_ultraMedium text-white rounded-full">
-          Apply Now
-        </button>
+        </form> */}
       </div>
 
       <div className="w-[416px] h-[455px] bg-white border rounded-2xl p-6">

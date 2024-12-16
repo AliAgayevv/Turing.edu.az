@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Reels_card from "../components/Reels_card";
 import data from "../datas/graduates.json";
 import LoadMore_btn from "../components/LoadMore_btn";
-import Form from "../components/Form";
+import FormSection from "../components/FormSection";
 
 const PAGE_SIZE = 8; // Her seferinde gösterilecek öğe sayısı
 
@@ -42,7 +42,7 @@ export default function AllGraduates() {
           </div>
         )}
         <div className="mt-20">
-          <Form />
+          <FormSection />
         </div>
       </div>
     </div>

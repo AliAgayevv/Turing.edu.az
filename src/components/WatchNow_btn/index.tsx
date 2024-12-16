@@ -1,7 +1,7 @@
 import icon from "../../assets/vectors/watchVideoIcon.png";
 import { IChildrenProps } from "../../const/types";
 
-// TODO: Sorush gor buttonlar bucur olsa duzdu?
+// TODO: Sorush gor buttonlar animasiya olaraq duzdu?
 
 export default function WatchNow_btn({ children }: IChildrenProps) {
   return (

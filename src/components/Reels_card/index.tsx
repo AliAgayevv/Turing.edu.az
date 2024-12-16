@@ -33,7 +33,6 @@ export default function Reels_card({
           //     src={videoUrl}
           //     className="w-full h-full rounded-[10px] object-cover"
           //   />
-          // TODO: Railden sorus iframe temasin, dizaynla eyni olmur
           <iframe
             className="w-full h-full border-none"
             src={videoUrl}

@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Reels_card from "../components/Reels_card";
 import fakePhoto from "../assets/photos/studentExamplePhoto.jpeg";
-import Form from "../components/Form";
+import FormSection from "../components/FormSection";
 
 const fakeData = [
   {
@@ -78,8 +78,6 @@ const fakeData = [
   },
 ];
 
-// TODO: LOAD MORE HISSESINDE KOMEK AL
-
 export default function Reels() {
   return (
     <div>
@@ -107,7 +105,7 @@ export default function Reels() {
         </div>
 
         <div className="mt-5">
-          <Form />
+          <FormSection />
         </div>
       </div>
     </div>

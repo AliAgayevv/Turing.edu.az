@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FAQ from "../components/FAQ";
-import Form from "../components/Form";
 import ApplyNow_btn from "../components/ApplyNow_btn";
 import Teachers_section from "../components/Teachers_section";
 import data from "../datas/FAQdata.json";
 import Graduates_section from "../components/Graduates_section";
 import Syllabus_section from "../components/Syllabus_section";
+import FormSection from "../components/FormSection";
 
 const SpecialtyInner = () => {
   const { id } = useParams();
@@ -40,7 +40,7 @@ const SpecialtyInner = () => {
         </div>
         <div className="mt-24">
           <FAQ category={id} />
-          <Form />
+          <FormSection />
         </div>
       </div>
     </div>
