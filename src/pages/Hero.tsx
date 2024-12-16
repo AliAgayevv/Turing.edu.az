@@ -22,10 +22,9 @@ export default function Hero() {
         {/* Right bottom light effect */}
         <div className="absolute -bottom-0 -right-10 w-[200px] h-[300px] bg-gradient-to-br from-white/30 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div>
         <img
-          className="absolute left-0 top-0 w-full h-full object-cover"
+          className=" absolute -left-2 md:left-0 top-10 md:top-0"
           src={bgTuringVector}
-          alt="Turing Vector"
-        />
+        ></img>
 
         <p className="text-[12px] md:text-base text-white_lightMedium text-center max-w-2xl mb-8 px-4">
           Learn highly demanded skills through practical courses, created by
@@ -48,7 +47,7 @@ export default function Hero() {
         <div className=" max-w-[3000px] px-4 mt-[10px] overflow-hidden h-[324px]">
           <div className="w-[600px] lg:w-[1120px] h-[300px] relative lg:h-[320px] mt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]">
             <video
-              controls
+              // controls
               className="absolute top-0 left-0 w-full h-full object-center lg:object-cover rounded-2xl overflow-hidden"
               src={exampleVideo}
             />

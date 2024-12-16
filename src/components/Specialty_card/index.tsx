@@ -29,10 +29,10 @@ const SpecialtyCard: React.FC<IProps> = ({
 
   return (
     <div
-      className="border group h-[411px] w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
+      className="border group w-[343px] h-[411px]  md:w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
       onClick={handleCardClick} // Kart tıklanabilir hale geliyor
     >
-      <div className="h-[274px] w-[274px] p-2 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
+      <div className="h-[300px] w-[300px] md:h-[274px] md:w-[274px] p-2 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
         <img
           src={img}
           alt={title}
