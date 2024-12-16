@@ -19,10 +19,10 @@ export default function Graduates_card({
 
   return (
     <div
-      className="h-[529px] w-[306px] rounded-2xl p-4 border relative"
+      className="w-full h-auto  rounded-2xl p-4 border relative"
       onClick={handleTogglePlay}
     >
-      <div className="w-[274px] h-[392px] bg-blue-50 rounded-[10px] relative">
+      <div className="w-full min-h-[300px] aspect-square bg-blue-50 rounded-[10px] relative">
         {!isPlaying ? (
           <img
             src={coverPhoto}

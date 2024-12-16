@@ -14,20 +14,20 @@ export default function Syllabus_section({ category }: SyllabusSectionProps) {
   console.log(modules);
 
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col gap- md:flex-row md:justify-between">
       <div className="flex flex-col">
         <a
           href={syllabusLink}
           download
-          className="opacity-60 uppercase text-[14px] text-black_dark cursor-pointer"
+          className="opacity-60 uppercase text-[14px] text-black_dark cursor-pointer w-full"
         >
           <h4>Download Syllabus</h4>
         </a>
-        <h2 className="text-[48px] font-500 font-jakarta text-black_dark w-[500px] mb-12">
+        <h2 className="text-[48px] font-500 font-jakarta text-black_dark w-[500px] mb-4 md:mb-12">
           Learn by doing
         </h2>
         <a href={syllabusLink} download>
-          <button className="border w-[198px] h-[44px] rounded-full">
+          <button className="border w-full mb-10 md:w-[198px] h-[44px] rounded-full">
             Download Syllabus
           </button>
         </a>

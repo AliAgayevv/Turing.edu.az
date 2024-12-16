@@ -9,7 +9,7 @@ import Syllabus_section from "../components/Syllabus_section";
 import FormSection from "../components/FormSection";
 
 const SpecialtyInner = () => {
-  const { id } = useParams();
+  const { id = "" } = useParams();
   console.log(id);
 
   const categoryData = data.find((item) => item.category === id);
@@ -21,7 +21,7 @@ const SpecialtyInner = () => {
       <Navbar isDark={true} />
       <div className="w-11/12 mx-auto">
         {/*  */}
-        <div className="w-full h-[448px] px-20 py-[100px] mt-14 bg-blue_ultraDark rounded-[32px] relative text-white">
+        <div className=" w-full h-auto md:h-[448px] px-10 sm:px-10 md:px-20 py-10 md:py-[100px] mt-10 md:mt-14 bg-blue_ultraDark rounded-[20px] md:rounded-[32px] relative text-white">
           <div className="absolute -bottom-0 right-10 w-[300px] h-[300px] blur-[200px] rounded-full bg-gradient-to-br from-blue-500/50 via-purple-400/40 to-transparent pointer-events-none z-0"></div>
           <p className="ont-[600] text-[64px] ">{id}</p>
           <p className="mt-2">{desc}</p>
