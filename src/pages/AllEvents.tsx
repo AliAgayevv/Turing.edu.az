@@ -30,12 +30,11 @@ export default function AllEvents() {
         <h1 className="text-5xl font-[500] font-jakarta text-black_dark">
           Events
         </h1>
-        <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
-          {/* TODO: Responsivde partdiyir */}
+        <div className="flex md:inline-flex items-center gap-2 h-11 overflow-x-auto p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8  sm:flex-nowrap overflow-y-hidden">
           {/* Filtre Butonları */}
           <div
             onClick={() => handleSelect("all")}
-            className={`px-3 py-2 rounded-md ${
+            className={`px-3 py-1 rounded-md text-nowrap ${
               selected === "all"
                 ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
                 : "text-[#6C737F] border-transparent"
@@ -45,7 +44,7 @@ export default function AllEvents() {
           </div>
           <div
             onClick={() => handleSelect("fundamentals")}
-            className={`px-3 py-2 rounded-md ${
+            className={`px-3 py-1 rounded-md ${
               selected === "fundamentals"
                 ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
                 : "text-[#6C737F] border-transparent"
@@ -55,7 +54,7 @@ export default function AllEvents() {
           </div>
           <div
             onClick={() => handleSelect("specialization")}
-            className={`px-3 py-2 rounded-md ${
+            className={`px-3 py-1 rounded-md ${
               selected === "specialization"
                 ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
                 : "text-[#6C737F] border-transparent"
@@ -65,7 +64,7 @@ export default function AllEvents() {
           </div>
           <div
             onClick={() => handleSelect("seminar")}
-            className={`px-3 py-2 rounded-md ${
+            className={`px-3 py-1 rounded-md ${
               selected === "seminar"
                 ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
                 : "text-[#6C737F] border-transparent"

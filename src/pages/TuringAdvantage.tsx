@@ -119,6 +119,8 @@ export default function TuringAdvantage() {
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
             src={exampleVideo}
             controls
+            autoPlay
+            loop={true}
           />
         </div>
         <div className="text-[65px] leading-4 top-36 right-5   md:leading-9 md:text-[195px] absolute md:top-40 text-white_light_32 font-[900] font-montserrat uppercase ">

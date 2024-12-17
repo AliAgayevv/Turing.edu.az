@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Events from "./Events";
 import Hero from "./Hero";
 import MutualChoices from "./MutualChoices";
@@ -18,9 +19,10 @@ export default function Home() {
         <div className="bg-blue_ultraDark">
           <Events />
         </div>
-        <div className="w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto h-screen">
           <Partners />
         </div>
+        <Footer />
       </div>
     </div>
   );

@@ -18,14 +18,14 @@ export default function Reels_card({
 
   return (
     <div
-      className="h-[529px] w-[306px] rounded-2xl p-4 border relative"
+      className="w-full h-[529px] md:w-[306px] rounded-2xl p-4 border relative"
       onClick={handleTogglePlay}
     >
-      <div className="w-[274px] h-[392px] bg-blue-50 rounded-[10px] relative">
+      <div className="w-full md:w-[274px] h-[392px] bg-blue-50 rounded-[10px] relative">
         {!isPlaying ? (
           <img
             src={coverPhoto}
-            className="w-full h-full rounded-[10px] object-cover cursor-pointer"
+            className="w-full h-full rounded-[10px] object-cover  cursor-pointer"
             alt="Cover"
           />
         ) : (
@@ -50,7 +50,7 @@ export default function Reels_card({
         )}
       </div>
       <div className="h-[85px] w-full flex flex-col mt-4 gap-3">
-        <button className=" bg-white_ultraLight  border-white_medium text-blue_lightMedium border rounded-lg px-[10px] py-1.5 flex justify-center items-center">
+        <button className=" bg-white_ultraLight  border-white_medium text-blue_lightMedium border rounded-lg px-10 py-1.5 flex justify-center items-center w-[59px] h-[29px]">
           {category}
         </button>
         <div>

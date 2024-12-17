@@ -22,7 +22,7 @@ export default function AllGraduates() {
         <h2 className="font-[500] font-jakarta text-5xl text-black_dark">
           Our Graduates
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 px-6 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 px-6 gap-6">
           {/* send item with spread TODO */}
           {data.slice(0, visibleCount).map((item) => (
             <Reels_card
