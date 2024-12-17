@@ -67,6 +67,7 @@ const fakeData = [
 
 export default function Events() {
   const [isMobile, setIsMobile] = useState(false);
+  // useResizeScreen(size)
 
   useEffect(() => {
     // Check screen width to determine if it's mobile

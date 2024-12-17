@@ -81,13 +81,14 @@ export default function AllEvents() {
             <Link to={`/events/${event.id}`} key={event.id}>
               <Events_card
                 isDark={false}
-                eventCategory={event.eventCategory}
-                eventName={event.eventName}
-                eventDesc={event.eventDesc}
+                {...event}
+                // eventCategory={event.eventCategory}
+                // eventName={event.eventName}
+                // eventDesc={event.eventDesc}
                 guests={event.guests.map((guest) => guest.guestName).join(", ")} // Convert to a string
-                eventDate={event.eventDate}
-                price={event.price}
-                linkForLearnMore={event.linkForLearnMore}
+                // eventDate={event.eventDate}
+                // price={event.price}
+                // linkForLearnMore={event.linkForLearnMore}
               />
             </Link>
           ))}

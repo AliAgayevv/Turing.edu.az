@@ -1,12 +1,11 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 
 interface ApplyNow_btnProps {
-  children: ReactNode;
   isDisabled?: boolean; // Optional prop with a default value of false
 }
-
-const ApplyNow_btn: React.FC<ApplyNow_btnProps> = ({
+// suggest
+const ApplyNow_btn: React.FC<PropsWithChildren<ApplyNow_btnProps>> = ({
   children,
   isDisabled = false,
 }) => {
