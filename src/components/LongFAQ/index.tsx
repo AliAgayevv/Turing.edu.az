@@ -10,9 +10,12 @@ export default function LongFAQ({ id }: IProps) {
   const faq = currentData?.questions;
   return (
     <div className="mt-24">
-      <div className="text-center">
-        <h2 className="font-jakarta font-[500] text-[32px]">
+      <div className="text-left md:text-center">
+        <h2 className="hidden md:block font-jakarta font-[500] text-[32px]">
           Frequently asked questions (FAQ)
+        </h2>
+        <h2 className="block md:hidden font-jakarta font-[500] text-[32px]">
+          FAQ
         </h2>
         <h4 className="text-[14px] text-black_light">{currentData?.faqDesc}</h4>
         <div className="mt-12 flex flex-col items-center justify-center">

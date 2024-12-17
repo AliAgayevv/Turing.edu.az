@@ -21,7 +21,7 @@
                 "stepDetail": "You will have a test about UX and UI"
             },
             {
-                "stepTitle": "Step 1",
+                "stepTitle": "Step 3",
                 "stepType" : "interview",
                 "stepDetail": "You will have an interview"
             }
@@ -67,7 +67,7 @@
                 "stepDetail": "You will have a test about frontend"
             },
             {
-                "stepTitle": "Step 1",
+                "stepTitle": "Step 3",
                 "stepType" : "interview",
                 "stepDetail": "You will have an interview"
             }

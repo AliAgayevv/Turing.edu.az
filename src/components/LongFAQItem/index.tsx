@@ -1,31 +1,31 @@
-// FAQItem.jsx
 import { useState } from "react";
-import data from "../../datas/FAQdata.json";
 import { IQAProps } from "../../const/types";
 
 function LongFAQItem({ question, answer }: IQAProps) {
   const [isVisible, setIsVisible] = useState(false);
-  console.log(data);
 
   const toggleVisibility = () => {
     setIsVisible((prev) => !prev);
   };
 
   return (
-    <div className="w-[1076px] p-4 h-auto rounded-lg border border-white_medium mb-4">
+    <div className="w-full max-w-[1076px] p-4 sm:p-6 h-auto rounded-lg border border-white_medium mb-4 mx-auto">
+      {/* Header Section */}
       <div
-        className="flex gap-2 items-center cursor-pointer"
+        className="flex gap-2 sm:gap-4 items-center cursor-pointer"
         onClick={toggleVisibility}
       >
-        <button className="text-xl font-[500] font-jakarta text-black_dark focus:outline-none">
+        <button className="text-lg sm:text-xl font-[500] font-jakarta text-black_dark focus:outline-none">
           {isVisible ? "-" : "+"}
         </button>
-        <h4 className="text-xl font-[500] font-jakarta text-black_dark">
+        <h4 className="text-base sm:text-xl font-[500] font-jakarta text-black_dark leading-tight">
           {question}
         </h4>
       </div>
+
+      {/* Answer Section */}
       {isVisible && (
-        <p className="py-2 px-3 text-white_dark text-[14px] transition-all duration-300 w-5/6 text-left">
+        <p className="py-2 px-3 text-white_dark text-sm sm:text-[14px] transition-all duration-300 text-left leading-relaxed">
           {answer}
         </p>
       )}
