@@ -31,6 +31,7 @@ export default function AllEvents() {
           Events
         </h1>
         <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
+          {/* TODO: Responsivde partdiyir */}
           {/* Filtre Butonları */}
           <div
             onClick={() => handleSelect("all")}
