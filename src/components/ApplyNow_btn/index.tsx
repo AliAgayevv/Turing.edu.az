@@ -3,20 +3,27 @@ import { motion } from "framer-motion";
 
 interface ApplyNow_btnProps {
   children: ReactNode;
+  isDisabled?: boolean; // Optional prop with a default value of false
 }
 
-const ApplyNow_btn: React.FC<ApplyNow_btnProps> = ({ children }) => {
+const ApplyNow_btn: React.FC<ApplyNow_btnProps> = ({
+  children,
+  isDisabled = false,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-[#2BA6EB] text-white py-2 px-2 w-full h-full rounded-full overflow-hidden relative"
+      disabled={isDisabled} // Apply the disabled prop
+      className={`bg-[#2BA6EB] text-white py-2 px-2 w-full h-full rounded-full overflow-hidden relative ${
+        isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+      }`}
     >
       <motion.div
         initial={{ y: "100%" }}
-        animate={{ y: isHovered ? "0%" : "100%" }}
+        animate={{ y: isHovered && !isDisabled ? "0%" : "100%" }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="absolute inset-0 bg-gradient-to-t from-[#2BA6EB] to-[#107ED8] z-0"
       />

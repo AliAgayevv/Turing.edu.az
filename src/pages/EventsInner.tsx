@@ -24,13 +24,14 @@ export default function EventsInner() {
           <p className="text-white_ultraDark text-[18px] font-inter">
             {currentEvent?.eventDesc}
           </p>
-          {/* Sadece Desktop'ta Gösterilecek Buton */}
           <div
             className={`w-[145px] h-[48px] hidden lg:block ${
-              currentEvent?.isEnd ? "disabled" : ""
+              currentEvent?.isEnd ? "" : ""
             }`}
           >
-            <ApplyNow_btn>Apply Now</ApplyNow_btn>
+            <ApplyNow_btn isDisabled={currentEvent?.isEnd ? true : false}>
+              Apply Now
+            </ApplyNow_btn>
           </div>
         </div>
 
@@ -61,7 +62,9 @@ export default function EventsInner() {
                 currentEvent?.isEnd ? "disabled" : ""
               }`}
             >
-              <ApplyNow_btn>Apply Now</ApplyNow_btn>
+              <ApplyNow_btn isDisabled={currentEvent?.isEnd ? true : false}>
+                Apply Now
+              </ApplyNow_btn>
             </div>
           </div>
         </div>
