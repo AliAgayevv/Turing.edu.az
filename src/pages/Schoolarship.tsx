@@ -6,6 +6,8 @@ import fakeData from "../datas/schoolarShip.json";
 export default function Schoolarship() {
   const [selected, setSelected] = useState("all");
 
+  // Chakra UI or Antd design tab  (select) a bax TODO
+
   const handleSelect = (button: any) => {
     setSelected(button); // Seçilen butonu state'e kaydediyoruz
   };
