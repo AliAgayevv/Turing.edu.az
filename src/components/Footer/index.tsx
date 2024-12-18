@@ -6,6 +6,7 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
+import footerPhoto from "../../assets/vectors/footerPhoto.png";
 
 import turingLogo from "../../assets/turingFooterLogo.png";
 
@@ -37,7 +38,7 @@ const menuData = {
 
 export default function Footer() {
   return (
-    <div className="fixed bottom-0 -z-40 bg-blue_ultraDark w-full text-white_lightMedium p-10 lg:px-20 pt-16 flex justify-between">
+    <div className="fixed h-screen bottom-0 -z-40 bg-blue_ultraDark w-full text-white_lightMedium p-10 lg:px-20 pt-16 flex justify-between">
       {/* Sol Bölüm */}
       <div className="flex flex-col gap-6">
         <img src={turingLogo} alt="Turing Academy Logo" className="w-36" />
@@ -113,6 +114,24 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 -z-10">
+        <img src={footerPhoto} alt="Footer Background" />
+      </div>
+      <div className="absolute bottom-0 left-0 w-full">
+        <div className="flex justify-between items-center px-8 py-10 text-white z-50  ">
+          <p>©2024 All rights reserved.</p>
+          <p>
+            Created by{" "}
+            <a
+              href="https://www.youtube.com"
+              className="underline cursor-pointer"
+            >
+              SHI Studio.
+            </a>
+          </p>
         </div>
       </div>
     </div>
