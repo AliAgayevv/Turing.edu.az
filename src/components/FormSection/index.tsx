@@ -39,7 +39,7 @@ export default function FormSection() {
 
   return (
     <div
-      className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6"
+      className="flex flex-col md:flex-row sm:gap-4 justify-between "
       id="form"
     >
       {/* Sol taraf: Form Alanı */}

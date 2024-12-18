@@ -13,7 +13,7 @@ export default function Hero() {
     <div className="h-auto flex flex-col relative overflow-hidden">
       <Navbar isDark={false} />
 
-      <div className="flex flex-col items-center justify-center px-4 py-8 h-auto">
+      <div className="flex flex-col items-center justify-center h-auto">
         <div>
           <h1 className="text-white_solid text-[32px] sm:text-5xl md:text-6xl text-center mb-4 mt-[125px]">
             #BirAddımÖndə

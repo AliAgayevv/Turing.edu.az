@@ -18,7 +18,7 @@ export default function MutualChoices() {
                 alt="Text Vector"
               />
             </p>
-            <p className="font-[600] leading-[50px] sm:leading-[60px] font-jakarta text-[50px] sm:text-[48px] text-black_medium mt-4 w-[300px]">
+            <p className="font-[600] leading-[50px] sm:leading-[60px] font-jakarta text-[50px] sm:text-[48px] text-black_medium pt-4 w-[300px]">
               Skill up, stand out
             </p>
           </div>

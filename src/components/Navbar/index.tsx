@@ -1,7 +1,8 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
+import openNavbarResponsive from "../../assets/vectors/responsiveOpenMenu.png";
 import { useState } from "react";
 import { INavbarProps } from "../../const/types";
 import whiteOpenNavbarIcon from "../../assets/vectors/openNavbar.png";
@@ -47,12 +48,8 @@ export default function Navbar({ isDark }: INavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-transparent px-4 py-4 md:px-6 lg:px-8">
-      <div
-        className={
-          "max-w-7xl mx-auto flex flex-wrap items-center justify-between"
-        }
-      >
+    <nav className="bg-transparent px-10 py-5 md:py-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
         <Link to={"/"}>
           <img
             className={`w-24 h-auto`}
@@ -70,9 +67,9 @@ export default function Navbar({ isDark }: INavbarProps) {
             <div
               className={`${
                 isDark ? "text-white" : "text-black_dark"
-              } absolute top-20 w-screen bg-transparent h-[268px] left-0  z-10 backdrop-blur-lg`}
+              } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-lg`}
             >
-              <div className="mx-auto w-11/12  h-full p-5">
+              <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
                   {fakeData.map((item) => (
                     <NavbarElement
@@ -93,19 +90,18 @@ export default function Navbar({ isDark }: INavbarProps) {
               isDark ? "text-blue_ultraDark" : "text-white_solid"
             } flex flex-col md:flex-row md:gap-6 lg:gap-10 text-white_solid mt-4 md:mt-0`}
           >
-            {/* <Link to={}> */}
             <li
               className={`py-2 md:py-0 ${
                 isDark ? "text-blue_ultraDark" : "text-white_solid"
-              } `}
+              }`}
             >
               Academy
             </li>
             <li
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`py-2 md:py-0  flex items-center justify-center gap-2 cursor-pointer ${
+              className={`py-2 md:py-0 flex items-center justify-center gap-2 cursor-pointer ${
                 isDark ? "text-blue_ultraDark" : "text-white_solid"
-              } `}
+              }`}
             >
               Fields Of Study
               {!isMenuOpen ? (
@@ -122,7 +118,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               <li
                 className={`py-2 md:py-0 ${
                   isDark ? "text-blue_ultraDark" : "text-white_solid"
-                } `}
+                }`}
               >
                 Events
               </li>
@@ -131,7 +127,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               <li
                 className={`py-2 md:py-0 ${
                   isDark ? "text-blue_ultraDark" : "text-white_solid"
-                } `}
+                }`}
               >
                 Scholarship Programs
               </li>
@@ -139,7 +135,17 @@ export default function Navbar({ isDark }: INavbarProps) {
           </ul>
         </div>
 
-        <div className="flex items-center mt-4 md:mt-0">
+        {/* Mobile Menu Toggle Button */}
+        <div className="md:hidden flex items-center">
+          <img
+            src={openNavbarResponsive}
+            alt="Open Navbar"
+            className="w-8 h-8 cursor-pointer"
+            onClick={() => setIsMenuOpen(true)}
+          />
+        </div>
+
+        <div className=" items-center mt-4 md:mt-0 hidden md:flex">
           {!isDark && (
             <select
               className="bg-transparent mr-4 text-white"
@@ -150,7 +156,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               <option value="az">AZ</option>
             </select>
           )}
-          <div className="w-[145px] h-[45px]">
+          <div className="hidden md:block w-[145px] h-[45px]">
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>

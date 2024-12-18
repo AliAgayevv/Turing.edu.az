@@ -15,14 +15,20 @@ export default function Home() {
         <div className="bg-black_dark">
           <TuringAdvantage />
         </div>
-        <OurGraduates />
+        <div className="bg-white">
+          <OurGraduates />
+        </div>
         <div className="bg-blue_ultraDark">
           <Events />
         </div>
-        <div className="w-11/12 mx-auto h-screen">
-          <Partners />
+        <div className="bg-white">
+          <div className="w-11/12 mx-auto h-[600px]">
+            <Partners />
+          </div>
         </div>
-        <Footer />
+        <div className="h-screen">
+          <Footer />
+        </div>
       </div>
     </div>
   );
