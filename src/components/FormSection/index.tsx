@@ -39,11 +39,11 @@ export default function FormSection() {
 
   return (
     <div
-      className="flex flex-col md:flex-row sm:gap-4 justify-between "
+      className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6"
       id="form"
     >
       {/* Sol taraf: Form Alanı */}
-      <div className="w-full md:w-[856px] h-[auto] border p-6">
+      <div className="w-full md:w-[856px] h-auto border p-6">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
           Start Today!

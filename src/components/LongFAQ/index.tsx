@@ -9,7 +9,7 @@ export default function LongFAQ({ id }: IProps) {
   const currentData = fakeData.find((item) => item.id === id);
   const faq = currentData?.questions;
   return (
-    <div className="mt-24">
+    <div className="mt-24 bg-white h-[500px]">
       <div className="text-left md:text-center">
         <h2 className="hidden md:block font-jakarta font-[500] text-[32px]">
           Frequently asked questions (FAQ)

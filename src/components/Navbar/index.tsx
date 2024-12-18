@@ -46,6 +46,12 @@ const fakeData = [
 
 export default function Navbar({ isDark }: INavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
+  const [toggleResponsive2ndMenu, setToggleResponsive2ndMenu] = useState(false);
+
+  const toggleResponsiveMenu = () => {
+    setIsResponsiveMenuOpen(!isResponsiveMenuOpen);
+  };
 
   return (
     <nav className="bg-transparent px-10 py-5 md:py-4 md:px-6 lg:px-8">
@@ -141,9 +147,14 @@ export default function Navbar({ isDark }: INavbarProps) {
             src={openNavbarResponsive}
             alt="Open Navbar"
             className="w-8 h-8 cursor-pointer"
-            onClick={() => setIsMenuOpen(true)}
+            onClick={() => setIsResponsiveMenuOpen(!isResponsiveMenuOpen)}
           />
         </div>
+
+        {/* ADD FOR THERE */}
+        {isResponsiveMenuOpen && (
+          <div className="w-screen h-screen ">Responsive Menu</div>
+        )}
 
         <div className=" items-center mt-4 md:mt-0 hidden md:flex">
           {!isDark && (
@@ -161,6 +172,85 @@ export default function Navbar({ isDark }: INavbarProps) {
           </div>
         </div>
       </div>
+
+      {isResponsiveMenuOpen && (
+        <div className="fixed inset-0 bg-blue_ultraDark z-50 md:hidden w-screen">
+          <div className="flex flex-col h-full p-6 w-screen">
+            <div className="flex justify-between items-center mb-8">
+              <div className="flex justify-between w-screen">
+                <img src={turingLogo} />
+                <button
+                  onClick={toggleResponsiveMenu}
+                  className="text-white p-2"
+                >
+                  {/* <img
+                    src={openNavbarResponsive}
+                    alt="Close Navbar"
+                    className="w-8 h-8"
+                  /> */}
+                  x
+                </button>
+              </div>
+            </div>
+
+            <nav className="flex flex-col space-y-6">
+              <Link
+                to="/"
+                className="text-white text-xl"
+                onClick={toggleResponsiveMenu}
+              >
+                Academy
+              </Link>
+              <div className="flex items-center text-white text-xl">
+                <Link
+                  to="/fields"
+                  className="text-white text-xl"
+                  onClick={toggleResponsiveMenu}
+                ></Link>
+                Fields of Study
+                <img
+                  src={whiteOpenNavbarIcon}
+                  alt="Expand"
+                  className="w-auto h-auto rotate-[270deg] ml-3"
+                  onClick={() =>
+                    setToggleResponsive2ndMenu(!toggleResponsive2ndMenu)
+                  }
+                />
+              </div>
+              {toggleResponsive2ndMenu && (
+                <div className="px-10 flex flex-col gap-2">
+                  {fakeData.map((item) => (
+                    <Link
+                      to={item.route}
+                      className="text-white text-xl"
+                      onClick={toggleResponsiveMenu}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              <Link
+                to="/events"
+                className="text-white text-xl"
+                onClick={toggleResponsiveMenu}
+              >
+                Events
+              </Link>
+              <Link
+                to="/schoolarship"
+                className="text-white text-xl"
+                onClick={toggleResponsiveMenu}
+              >
+                Scholarship Programs
+              </Link>
+            </nav>
+            <div className="mt-auto">
+              <ApplyNow_btn>Apply Now</ApplyNow_btn>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

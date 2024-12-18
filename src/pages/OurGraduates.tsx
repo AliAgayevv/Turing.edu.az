@@ -19,7 +19,7 @@ export default function OurGraduates() {
           </div>
         </Link>
       </div>
-      <div className="flex overflow-x-auto gap-10 sm:gap-5  lg:gap-0  sm:grid-cols-2 sm:grid lg:grid-cols-4 py-16">
+      <div className="flex flex-col overflow-x-auto gap-10 sm:gap-5 md:grid-cols-3  lg:gap-0  sm:grid-cols-2 sm:grid lg:grid-cols-4 py-16">
         <Reels_card
           coverPhoto={examplePhoto}
           category={"UX/UI"}
