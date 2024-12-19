@@ -1,4 +1,5 @@
 // TODO: TABLET VERSIOYN IYRENCDI
+// TODO: FOOTER CLICK EDILE BILMIR
 
 import { IoLogoInstagram } from "react-icons/io5";
 import {
@@ -40,7 +41,12 @@ const menuData = {
 
 export default function Footer() {
   return (
-    <div className="fixed h-screen bottom-0 -z-40 bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col lg:flex-row justify-between">
+    //     <div className="fixed bottom-0 left-0 w-full bg-blue_ultraDark z-10 text-white_lightMedium">
+    //   <div className="container mx-auto p-6">
+    //     {/* Footer Content */}
+    //   </div>
+    // </div>
+    <div className="fixed h-screen bottom-0 -z-40 bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col lg:flex-row justify-between pointer-events-auto">
       {/* Left Section: Logo, Description, and Social Icons */}
       <div className="flex flex-col gap-6">
         <img

@@ -19,7 +19,7 @@ export default function AllGraduates() {
   return (
     <div className="">
       <Navbar isDark={true} />
-      <div className="w-screen bg-white">
+      <div className="w-screen bg-white ">
         <div className="w-11/12 mx-auto ">
           <div className="pt-24">
             <h2 className="font-[500] font-jakarta text-5xl text-black_dark">

@@ -1,6 +1,5 @@
 import data from "../../datas/FAQdata.json";
 import FAQItem from "../FAQ_item";
-// TODO : ADD SYLLABUS LINK
 interface SyllabusSectionProps {
   category: string;
 }

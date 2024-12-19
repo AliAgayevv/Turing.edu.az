@@ -4,8 +4,6 @@ import fakePhoto from "../assets/photos/studentExamplePhoto.jpeg";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 
-// TODO: Partdiyir responsive de footer falan, baxarsan bura
-
 const fakeData = [
   {
     id: 1,
@@ -86,11 +84,11 @@ export default function Reels() {
     <div className="">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
-        <div className="w-11/12 mx-auto h-[1900px]">
+        <div className="w-11/12 mx-auto h-auto">
           <h1 className="text-5xl font-jakarta font-[500] text-black_dark pt-[100px]">
             Our Graduates
           </h1>
-          <div className="flex flex-col  md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-y-6 bg-white">
+          <div className="flex flex-col  md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 md:gap-y-6 bg-white h-auto">
             {fakeData.map((data) => (
               <Reels_card
                 category={data.category}
@@ -102,13 +100,13 @@ export default function Reels() {
             ))}
           </div>
 
-          <div className="flex justify-center items-center mt-6">
+          <div className="flex justify-center items-center pt-6 bg-white">
             <button className="flex justify-center items-center border p-4 rounded-full">
               Load More
             </button>
           </div>
 
-          <div className="mt-5">
+          <div className="pt-5 bg-white">
             <FormSection />
           </div>
         </div>
