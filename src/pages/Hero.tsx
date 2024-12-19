@@ -3,11 +3,14 @@ import exampleVideo from "../assets/videos/exampleVideo.mp4";
 import Navbar from "../components/Navbar";
 import bgTuringVector from "../assets/vectors/turing-hero-left-top-vector.png";
 import WatchNow_btn from "../components/WatchNow_btn";
+import { useState } from "react";
 
 export default function Hero() {
   const handleGoForm = () => {
     document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [isApplyNowClicked, setIsApplyNowClicked] = useState(false);
 
   return (
     <div className="h-auto flex flex-col relative overflow-hidden">
@@ -40,7 +43,10 @@ export default function Hero() {
             >
               <ApplyNow_btn>Apply now</ApplyNow_btn>
             </div>
-            <div className="h-[56px] w-[150px] sm:w-[169px]">
+            <div
+              className="h-[56px] w-[150px] sm:w-[169px] cursor-pointer"
+              onClick={() => setIsApplyNowClicked(true)}
+            >
               <WatchNow_btn>Watch Now</WatchNow_btn>
             </div>
           </div>
@@ -55,6 +61,17 @@ export default function Hero() {
             />
           </div>
         </div>
+        {isApplyNowClicked && (
+          <div className="fixed inset-0 bg-blue_ultraDark z-50 w-screen flex items-center justify-center">
+            <div className="  rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] w-5/6">
+              <video
+                className="w-full h-full object-cover "
+                src={exampleVideo}
+                autoPlay
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

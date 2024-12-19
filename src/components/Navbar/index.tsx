@@ -10,6 +10,7 @@ import whiteCloseNavbarIcon from "../../assets/vectors/closeNavbar.png";
 import blackOpenNavbarIcon from "../../assets/vectors/blackOpenNavbarIcon.png";
 import blackCloseNavbarIcon from "../../assets/vectors/rotatedBlackOpenNavbarIcon.png";
 import NavbarElement from "../NavbarElement";
+import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
 
 const fakeData = [
   {
@@ -183,12 +184,11 @@ export default function Navbar({ isDark }: INavbarProps) {
                   onClick={toggleResponsiveMenu}
                   className="text-white p-2"
                 >
-                  {/* <img
-                    src={openNavbarResponsive}
+                  <img
+                    src={closeNavbarResponsive}
                     alt="Close Navbar"
                     className="w-8 h-8"
-                  /> */}
-                  x
+                  />
                 </button>
               </div>
             </div>
@@ -208,27 +208,38 @@ export default function Navbar({ isDark }: INavbarProps) {
                   onClick={toggleResponsiveMenu}
                 ></Link>
                 Fields of Study
-                <img
-                  src={whiteOpenNavbarIcon}
-                  alt="Expand"
-                  className="w-auto h-auto rotate-[270deg] ml-3"
-                  onClick={() =>
-                    setToggleResponsive2ndMenu(!toggleResponsive2ndMenu)
-                  }
-                />
+                {!toggleResponsive2ndMenu ? (
+                  <img
+                    src={whiteOpenNavbarIcon}
+                    alt="Expand"
+                    className="w-auto h-auto rotate-[270deg] ml-3"
+                    onClick={() =>
+                      setToggleResponsive2ndMenu(!toggleResponsive2ndMenu)
+                    }
+                  />
+                ) : (
+                  <img
+                    src={whiteCloseNavbarIcon}
+                    alt="Expand"
+                    className="w-auto h-auto rotate-180 ml-3"
+                    onClick={() =>
+                      setToggleResponsive2ndMenu(!toggleResponsive2ndMenu)
+                    }
+                  />
+                )}
               </div>
               {toggleResponsive2ndMenu && (
-                <div className="px-10 flex flex-col gap-2">
+                <ul className="px-10 flex flex-col gap-2">
                   {fakeData.map((item) => (
                     <Link
                       to={item.route}
                       className="text-white text-xl"
                       onClick={toggleResponsiveMenu}
                     >
-                      {item.title}
+                      <li className="py-3">{item.title}</li>
                     </Link>
                   ))}
-                </div>
+                </ul>
               )}
               <Link
                 to="/events"
