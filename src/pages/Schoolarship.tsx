@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import SpecialtyCard from "../components/Specialty_card";
 import fakeData from "../datas/schoolarShip.json";
+import Footer from "../components/Footer";
 
 export default function Schoolarship() {
   const [selected, setSelected] = useState("all");
@@ -12,79 +13,84 @@ export default function Schoolarship() {
     setSelected(button); // Seçilen butonu state'e kaydediyoruz
   };
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="">
       <Navbar isDark={true} />
-      <div className="mx-auto w-11/12 mt-24">
-        <h1 className="font-jakarta font-[500] text-5xl">
-          Active Scholarship Programs
-        </h1>
-        <div className="flex gap-3">
-          <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
-            {/* "All" Butonu */}
-            <div
-              onClick={() => handleSelect("all")}
-              className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                selected === "all"
-                  ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                  : "text-[#6C737F] border-transparent"
-              }`}
-            >
+      <div className="w-screen bg-white">
+        <div className="mx-auto w-11/12 pt-24 pb-20">
+          <h1 className="font-jakarta font-[500] text-5xl">
+            Active Scholarship Programs
+          </h1>
+          <div className="flex gap-3">
+            <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
+              {/* "All" Butonu */}
               <div
-                className={`font-normal font-['Inter'] ${
-                  selected === "all" ? "opacity-100" : "opacity-70"
-                } leading-none`}
-              >
-                All
-              </div>
-            </div>
-
-            <div
-              onClick={() => handleSelect("fundamentals")}
-              className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                selected === "fundamentals"
-                  ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                  : "text-[#6C737F] border-transparent"
-              }`}
-            >
-              <div
-                className={`text-sm font-normal font-['Inter'] leading-[14px] ${
-                  selected === "fundamentals" ? "opacity-100" : "opacity-70"
+                onClick={() => handleSelect("all")}
+                className={`px-3 py-2 rounded-md flex items-center justify-center ${
+                  selected === "all"
+                    ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
+                    : "text-[#6C737F] border-transparent"
                 }`}
               >
-                Fundamentals
+                <div
+                  className={`font-normal font-['Inter'] ${
+                    selected === "all" ? "opacity-100" : "opacity-70"
+                  } leading-none`}
+                >
+                  All
+                </div>
               </div>
-            </div>
 
-            <div
-              onClick={() => handleSelect("specialization")}
-              className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                selected === "specialization"
-                  ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                  : "text-[#6C737F] border-transparent"
-              }`}
-            >
               <div
-                className={`text-sm font-normal font-['Inter'] leading-[14px] ${
-                  selected === "specialization" ? "opacity-100" : "opacity-70"
+                onClick={() => handleSelect("fundamentals")}
+                className={`px-3 py-2 rounded-md flex items-center justify-center ${
+                  selected === "fundamentals"
+                    ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
+                    : "text-[#6C737F] border-transparent"
                 }`}
               >
-                Specialization
+                <div
+                  className={`text-sm font-normal font-['Inter'] leading-[14px] ${
+                    selected === "fundamentals" ? "opacity-100" : "opacity-70"
+                  }`}
+                >
+                  Fundamentals
+                </div>
+              </div>
+
+              <div
+                onClick={() => handleSelect("specialization")}
+                className={`px-3 py-2 rounded-md flex items-center justify-center ${
+                  selected === "specialization"
+                    ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
+                    : "text-[#6C737F] border-transparent"
+                }`}
+              >
+                <div
+                  className={`text-sm font-normal font-['Inter'] leading-[14px] ${
+                    selected === "specialization" ? "opacity-100" : "opacity-70"
+                  }`}
+                >
+                  Specialization
+                </div>
               </div>
             </div>
           </div>
+          <div className="flex flex-col gap-5 md:grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 md:gap-7">
+            {fakeData.map((item) => (
+              <SpecialtyCard
+                category={item.slotCount}
+                img={item.img}
+                desc={item.desc}
+                title={item.title}
+                hiddenText={item.hiddenText}
+                route={item.route}
+              />
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-4 mt-6 gap-7">
-          {fakeData.map((item) => (
-            <SpecialtyCard
-              category={item.slotCount}
-              img={item.img}
-              desc={item.desc}
-              title={item.title}
-              hiddenText={item.hiddenText}
-              route={item.route}
-            />
-          ))}
-        </div>
+      </div>
+      <div className="w-screen h-screen">
+        <Footer />
       </div>
     </div>
   );

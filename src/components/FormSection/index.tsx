@@ -1,3 +1,5 @@
+// TODO: FOOTER MOBILE VERSIYADA DUZ ISLEMIR
+
 import { useState } from "react";
 import formIcon from "../../assets/vectors/formIcon.png";
 import SeeAll_btn from "../SeeAll_btn";
@@ -39,11 +41,11 @@ export default function FormSection() {
 
   return (
     <div
-      className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6"
+      className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6 bg-white h-full"
       id="form"
     >
       {/* Sol taraf: Form Alanı */}
-      <div className="w-full md:w-[856px] h-auto border p-6">
+      <div className="w-full md:w-[856px] h-auto bg-white border p-6">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
           Start Today!
@@ -90,24 +92,24 @@ export default function FormSection() {
           }}
         >
           <Form className="flex flex-col mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white">
               <Field
                 placeholder="Name"
-                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                className="w-full h-full  border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
                 name="name"
               />
               <Field
-                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                className="w-full h-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
                 placeholder="Surname"
                 name="surname"
               />
               <Field
-                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                className="w-full h-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
                 placeholder="Email"
                 name="email"
               />
               <Field
-                className="w-full h-[52px] border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                className="w-full h-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
                 placeholder="Phone Number"
                 name="phone"
               />

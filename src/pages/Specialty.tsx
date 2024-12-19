@@ -17,7 +17,6 @@ export default function Specialty() {
   return (
     <div className="">
       <Navbar isDark={true} />
-
       <div className="w-screen bg-white">
         <div className="mx-auto w-11/12 h-auto py-[100px] px-4 sm:px-8 mb-20 bg-white">
           <h1 className="font-jakarta font-[500] text-3xl sm:text-5xl text-black_dark">
