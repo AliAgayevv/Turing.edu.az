@@ -1,3 +1,5 @@
+// TODO: Arxa fondaki isiq effektleri partdiyir overflow verib, onlari neylese duzelt
+
 import { useState, useEffect } from "react";
 import vector1 from "../assets/vectors/communityFirstVector.png";
 import vector2 from "../assets/vectors/positiveEnergyVector.png";
@@ -80,7 +82,7 @@ export default function TuringAdvantage() {
   return (
     <div className="w-11/12 mx-auto pt-16 relative">
       {/* Background Gradient */}
-      <div className="absolute -top-80 -right-80 w-[500px] h-[500px] bg-gradient-to-br from-blue-200 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div>
+      {/* <div className="absolute -top-80 -right-80 w-[500px] h-[500px] bg-gradient-to-br from-blue-200 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div> */}
 
       {/* Title */}
       <h3 className="uppercase text-white_dark">Turing Advantage</h3>
@@ -90,14 +92,16 @@ export default function TuringAdvantage() {
       </h1>
 
       {/* Data Grid */}
-      <div className="flex flex-col md:grid md:grid-cols-3 mt-[72px] gap-[72px] pr-0 md:pr-60">
+      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 mt-[72px] gap-[48px] md:gap-[72px] md:px-8 lg:px-16">
         {fakeData.slice(0, visibleCount).map((data) => (
-          <div key={data.id} className="w-full md:w-[306px] relative z-10">
+          <div key={data.id} className="w-full relative z-10">
             {data.icon && (
               <img src={data.icon} className="absolute -top-4 -left-3 -z-10" />
             )}
             <h4 className="font-[500] text-xl text-white">{data.title}</h4>
-            <p className="text-[14px] text-[#A2A1A4]">{data.desc}</p>
+            <p className="text-[14px] text-[#A2A1A4] break-words">
+              {data.desc}
+            </p>
           </div>
         ))}
       </div>
@@ -113,7 +117,7 @@ export default function TuringAdvantage() {
       )}
 
       {/* Video Section */}
-      <div className="mt-44 relative">
+      <div className="mt-44 relative overflow-hidden ">
         <div className="w-full md:w-[1000px] relative h-[320px] mt-8 rounded-lg overflow-hidden mx-auto">
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"

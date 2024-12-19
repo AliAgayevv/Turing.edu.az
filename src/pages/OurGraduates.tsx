@@ -7,7 +7,7 @@ export default function OurGraduates() {
   return (
     <div className="w-11/12 mx-auto py-20">
       <h3 className="uppercase text-white_dark">Our Graduates</h3>
-      <div className="flex justify-between items-center pr-10">
+      <div className="flex flex-col md:flex-row justify-between items-center pr-10">
         <h1 className="text-[48px] md:text-5xl font-jakarta font-[500] text-black_medium py-4">
           Accelerate your career
           <br />
@@ -19,7 +19,7 @@ export default function OurGraduates() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-col overflow-x-auto gap-10 sm:gap-5 md:grid-cols-3  lg:gap-0  sm:grid-cols-2 sm:grid lg:grid-cols-4 py-16">
+      <div className="flex flex-col overflow-x-auto gap-10 sm:gap-5 md:grid-cols-2 lg:gap-0  sm:grid-cols-2 sm:grid lg:grid-cols-4 py-16">
         <Reels_card
           coverPhoto={examplePhoto}
           category={"UX/UI"}

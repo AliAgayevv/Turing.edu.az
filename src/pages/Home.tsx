@@ -6,9 +6,10 @@ import OurGraduates from "./OurGraduates";
 import Partners from "./Partners";
 import TuringAdvantage from "./TuringAdvantage";
 
+// TODO: Home section da consoel acnada video partlayir
 export default function Home() {
   return (
-    <div className="bg-blue_ultraDark mx-auto">
+    <div className="bg-blue_ultraDark mx-auto   ">
       <div className="h-screen w-screen mx-auto">
         <Hero />
         <MutualChoices />

@@ -3,13 +3,15 @@ import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import openNavbarResponsive from "../../assets/vectors/responsiveOpenMenu.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { INavbarProps } from "../../const/types";
 import whiteOpenNavbarIcon from "../../assets/vectors/openNavbar.png";
 import whiteCloseNavbarIcon from "../../assets/vectors/closeNavbar.png";
 import blackOpenNavbarIcon from "../../assets/vectors/blackOpenNavbarIcon.png";
 import blackCloseNavbarIcon from "../../assets/vectors/rotatedBlackOpenNavbarIcon.png";
 import NavbarElement from "../NavbarElement";
+import bgTuringVector from "../../assets/vectors/turing-hero-left-top-vector.png";
+
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
 
 const fakeData = [
@@ -46,16 +48,38 @@ const fakeData = [
 ];
 
 export default function Navbar({ isDark }: INavbarProps) {
+  const handleGoForm = () => {
+    setIsResponsiveMenuOpen(false);
+    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+  };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
   const [toggleResponsive2ndMenu, setToggleResponsive2ndMenu] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsResponsiveMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleResponsiveMenu = () => {
     setIsResponsiveMenuOpen(!isResponsiveMenuOpen);
   };
 
   return (
-    <nav className="bg-transparent px-10 py-5 md:py-4 md:px-6 lg:px-8">
+    <nav
+      className={` ${
+        !isDark ? "bg-transparent" : "bg-white"
+      } px-10 py-5 md:py-4 md:px-6 lg:px-8 z-[90]`}
+    >
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
         <Link to={"/"}>
           <img
@@ -95,7 +119,7 @@ export default function Navbar({ isDark }: INavbarProps) {
           <ul
             className={`${
               isDark ? "text-blue_ultraDark" : "text-white_solid"
-            } flex flex-col md:flex-row md:gap-6 lg:gap-10 text-white_solid mt-4 md:mt-0`}
+            }  flex-col md:flex-row md:gap-6 lg:gap-10 hidden lg:flex text-white_solid mt-4 md:mt-0`}
           >
             <li
               className={`py-2 md:py-0 ${
@@ -143,9 +167,9 @@ export default function Navbar({ isDark }: INavbarProps) {
         </div>
 
         {/* Mobile Menu Toggle Button */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <img
-            src={openNavbarResponsive}
+            src={isDark ? openNavbarResponsive : openNavbarResponsive}
             alt="Open Navbar"
             className="w-8 h-8 cursor-pointer"
             onClick={() => setIsResponsiveMenuOpen(!isResponsiveMenuOpen)}
@@ -153,11 +177,8 @@ export default function Navbar({ isDark }: INavbarProps) {
         </div>
 
         {/* ADD FOR THERE */}
-        {isResponsiveMenuOpen && (
-          <div className="w-screen h-screen ">Responsive Menu</div>
-        )}
 
-        <div className=" items-center mt-4 md:mt-0 hidden md:flex">
+        <div className=" items-center mt-4 md:mt-0 hidden lg:flex">
           {!isDark && (
             <select
               className="bg-transparent mr-4 text-white"
@@ -168,21 +189,25 @@ export default function Navbar({ isDark }: INavbarProps) {
               <option value="az">AZ</option>
             </select>
           )}
-          <div className="hidden md:block w-[145px] h-[45px]">
+          <div className="hidden lg:block w-[145px] h-[45px]">
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>
       </div>
 
       {isResponsiveMenuOpen && (
-        <div className="fixed inset-0 bg-blue_ultraDark z-50 md:hidden w-screen">
+        <div className="fixed inset-0 bg-blue_ultraDark overflow-hidden z-50 lg:hidden w-screen">
+          <img src={bgTuringVector} className=" absolute top-10 -z-40" />
           <div className="flex flex-col h-full p-6 w-screen">
             <div className="flex justify-between items-center mb-8">
               <div className="flex justify-between w-screen">
-                <img src={turingLogo} />
+                <Link to="/" onClick={() => setIsResponsiveMenuOpen(false)}>
+                  <img src={turingLogo} />
+                </Link>
+
                 <button
                   onClick={toggleResponsiveMenu}
-                  className="text-white p-2"
+                  className="text-white p-2 z-10"
                 >
                   <img
                     src={closeNavbarResponsive}
@@ -194,14 +219,15 @@ export default function Navbar({ isDark }: INavbarProps) {
             </div>
 
             <nav className="flex flex-col space-y-6">
-              <Link
-                to="/"
-                className="text-white text-xl"
-                onClick={toggleResponsiveMenu}
-              >
+              <Link to="/" className="text-white text-xl">
                 Academy
               </Link>
-              <div className="flex items-center text-white text-xl">
+              <div
+                className="flex items-center text-white text-xl"
+                onClick={() =>
+                  setToggleResponsive2ndMenu(!toggleResponsive2ndMenu)
+                }
+              >
                 <Link
                   to="/fields"
                   className="text-white text-xl"
@@ -256,7 +282,7 @@ export default function Navbar({ isDark }: INavbarProps) {
                 Scholarship Programs
               </Link>
             </nav>
-            <div className="mt-auto">
+            <div className="mt-auto" onClick={handleGoForm}>
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>

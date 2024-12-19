@@ -82,7 +82,7 @@ export default function Events() {
   }, []);
 
   return (
-    <div className="w-11/12 mx-auto py-10">
+    <div className="w-11/12 mx-auto py-10 overflow-hidden">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
         <div>
@@ -122,7 +122,7 @@ export default function Events() {
       {isMobile && (
         <div className="flex justify-center mt-8">
           <Link to={"/events"}>
-            <button className="w-[470px] h-[48px] border border-black_light text-white bg-blue_dark rounded-full font-[500] ">
+            <button className="w-full px-10 h-[48px] border border-black_light text-white bg-blue_dark rounded-full font-[500] ">
               See All
             </button>
           </Link>

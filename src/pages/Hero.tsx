@@ -11,12 +11,15 @@ export default function Hero() {
   };
 
   const [isApplyNowClicked, setIsApplyNowClicked] = useState(false);
+  const handleCloseModal = () => {
+    setIsApplyNowClicked(false);
+  };
 
   return (
     <div className="h-auto flex flex-col relative overflow-hidden">
-      <Navbar isDark={false} />
+      {!isApplyNowClicked && <Navbar isDark={false} />}
 
-      <div className="flex flex-col items-center justify-center h-auto">
+      <div className="flex flex-col items-center justify-center h-auto z-50">
         <div>
           <h1 className="text-white_solid text-[32px] sm:text-5xl md:text-6xl text-center mb-4 mt-[125px]">
             #BirAddımÖndə
@@ -26,7 +29,7 @@ export default function Hero() {
           {/* Right bottom light effect */}
           <div className="absolute -bottom-0 -right-10 w-[200px] h-[300px] bg-gradient-to-br from-white/30 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div>
           <img
-            className=" absolute -left-2 md:left-0 top-10 md:top-0"
+            className=" absolute -left-2 md:left-0 top-10 md:top-0 -z-10"
             src={bgTuringVector}
           ></img>
 
@@ -62,8 +65,11 @@ export default function Hero() {
           </div>
         </div>
         {isApplyNowClicked && (
-          <div className="fixed inset-0 bg-blue_ultraDark z-50 w-screen flex items-center justify-center">
-            <div className="  rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] w-5/6">
+          <div
+            className="fixed inset-0 bg-blue_ultraDark z-50 w-screen h-screen flex items-center justify-center"
+            onClick={handleCloseModal}
+          >
+            <div className=" rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] w-5/6">
               <video
                 className="w-full h-full object-cover "
                 src={exampleVideo}

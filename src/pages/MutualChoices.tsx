@@ -5,7 +5,7 @@ import SeeAll_btn from "../components/SeeAll_btn";
 
 export default function MutualChoices() {
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-20">
+    <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-20 overflow-hidden">
       {/* Left Section */}
       <div className="w-full lg:w-[220px] flex justify-start">
         <div className="flex flex-col gap-8 lg:gap-14 px-4 lg:px-0">

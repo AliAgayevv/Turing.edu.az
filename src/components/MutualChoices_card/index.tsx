@@ -7,7 +7,7 @@ export default function MutualChoices_card({
   desc,
 }: IMutualChoicesProps) {
   return (
-    <div className="flex flex-col gap-5 p-4 w-full sm:w-[416px] h-auto bg-white border rounded-2xl">
+    <div className="flex flex-col gap-5 p-4 w-full sm:w-[416px] md:w-[350px] lg:w-[416px] h-auto bg-white border rounded-2xl">
       {/* Icon Section */}
       <div className="w-12 h-12 p-3 rounded-full bg-[#f8f9fa] border flex justify-center items-center">
         <img src={icon} className="w-6 h-6" alt={title} />
