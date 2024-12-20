@@ -88,7 +88,7 @@ export default function AllEvents() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div >
         <Footer />
       </div>
     </div>

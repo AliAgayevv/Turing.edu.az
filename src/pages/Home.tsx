@@ -27,7 +27,7 @@ export default function Home() {
             <Partners />
           </div>
         </div>
-        <div className="h-screen">
+        <div className="h-screen relative -z-[2]">
           <Footer />
         </div>
       </div>
