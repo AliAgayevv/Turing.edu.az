@@ -6,6 +6,7 @@ import vector2 from "../assets/vectors/positiveEnergyVector.png";
 import vector3 from "../assets/vectors/wavesBeforeVector.png";
 import vector4 from "../assets/vectors/teachLiveVector.png";
 import exampleVideo from "../assets/videos/community-video.mp4";
+import { Link } from "react-router";
 
 const fakeData = [
   {
@@ -137,9 +138,11 @@ export default function TuringAdvantage() {
             trusted industry professionals, that focus on real-world
             applications.
           </p>
-          <button className="bg-black_dark border border-black_light text-white_solid py-3 px-6 rounded-3xl mb-10">
-            Explore us
-          </button>
+          <Link to={"/community"}>
+            <button className="bg-black_dark border border-black_light text-white_solid py-3 px-6 rounded-3xl mb-10">
+              Explore us
+            </button>
+          </Link>
         </div>
       </div>
     </div>

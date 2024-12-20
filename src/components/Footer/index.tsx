@@ -46,7 +46,7 @@ export default function Footer() {
     //     {/* Footer Content */}
     //   </div>
     // </div>
-    <div className="fixed h-screen bottom-0 -z-40 bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col lg:flex-row justify-between pointer-events-auto">
+    <div className="fixed h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col lg:flex-row justify-between pointer-events-auto">
       {/* Left Section: Logo, Description, and Social Icons */}
       <div className="flex flex-col gap-6">
         <img
