@@ -11,39 +11,53 @@ import imageCentered from "../assets/photos/communityBGPHOTOS/photoCenter.jpeg";
 
 export default function Community() {
   return (
-    <div className=" bg-blue_ultraDark h-screenz-0">
+    <div className=" bg-blue_ultraDark z-0 relative">
       <Navbar isDark={false} />
-      <div className="w-11/12 mx-auto text-white text-4xl relative ">
-        <div className="flex z-10 absolute top-[110px] left-[200px] opacity-40">
+      <div className="w-11/12 mx-auto text-white text-4xl relative">
+        <div className="flex z-10 absolute w-full h-full top-[110px] left-[200px] opacity-40 ">
           <img src={image1} className="w-[207px] h-[216px] object-cover" />
         </div>
-        <div className="flex z-10 absolute top-[40px] left-[440px] opacity-40">
+        <div className="flex z-10 absolute top-[40px] left-[440px] opacity-40 w-full h-full">
           <img src={image2} className="w-[323px] h-[189px] object-cover" />
         </div>
-        <div className="flex z-10 absolute top-[125px] left-[850px] opacity-40">
+        <div className="flex z-10 absolute top-[125px] left-[850px] opacity-40 w-full h-full">
           <img src={image3} className="w-[323px] h-[150px] object-cover" />
         </div>
-        <div className="flex z-10 absolute top-[375px] left-[950px] opacity-40">
+        <div className="flex z-10 absolute top-[375px] left-[950px] opacity-40 w-full h-full">
           <img src={image4} className="w-[165px] h-[312px] object-cover" />
         </div>
-        <div className="flex z-10 absolute top-[585px] left-[350px] opacity-40">
+        <div className="flex z-10 absolute top-[585px] left-[350px] opacity-40 w-full h-full">
           <img src={image5} className="w-[554px] h-[149px] object-cover" />
         </div>
-        <div className="flex z-10 absolute top-[400px] left-[200px] opacity-40">
+        <div className="flex z-10 absolute top-[400px] left-[200px] opacity-40 w-full h-full">
           <img src={image6} className="w-[159px] h-[135px] object-cover" />
         </div>
-        <div className="flex z-10 absolute top-[320px] left-[444px] opacity-40 ">
+        <div className="flex z-10 absolute top-[320px] left-[444px] opacity-40 w-full h-full ">
           <img
             src={imageCentered}
             className="w-[438px] h-[233px] object-cover"
           />
         </div>
       </div>
-      <div className=" z-20 flex justify-center items-center h-screen">
-        <div className="font-montserrat font-bold text-[120px] leading-[120px] text-center">
+      <div className=" z-20 flex justify-center items-center h-screen overflow-hidden relative">
+        <div className="font-montserrat font-bold text-[64px] md:text-[120px] leading-[120px] text-center">
           <h1 className="text-white/50">Innovate</h1>
           <h1 className="text-white/80">Explore</h1>
           <h1 className="text-white">Excel</h1>
+        </div>
+      </div>
+      <div className="mx-auto w-screen bg-blue_ultraDark h-screen text-white">
+        <div className="mx-auto w-11/12">
+          <h1 className="text-center text-3xl">
+            <span className="text-blue_light">Turing Academy</span> olaraq
+            sizlərə bir addım <br></br> öndə olan mühitimizi təqdim edirik falan
+          </h1>
+        </div>
+        <div className="py-20">
+          <img
+            src={image1}
+            className="w-[207px] h-[216px] object-cover z-40 rotate-[5deg]"
+          />
         </div>
       </div>
     </div>
