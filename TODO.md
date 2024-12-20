@@ -1,1 +1,0 @@
-Speciality icindeki kartlarin responsivi qalib

@@ -20,8 +20,6 @@ export default function Schoolarship() {
       ? fakeData
       : fakeData.filter((data) => data.category === selectedCategory);
 
-  // Chakra UI or Antd design tab  (select) a bax TODO
-
   const handleSelect = (category) => {
     setSelectedCategory(category);
   };

@@ -1,5 +1,3 @@
-// TODO: FOOTER MOBILE VERSIYADA DUZ ISLEMIR
-
 import { useState } from "react";
 import formIcon from "../../assets/vectors/formIcon.png";
 import SeeAll_btn from "../SeeAll_btn";

@@ -122,7 +122,6 @@ export default function TuringAdvantage() {
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
             src={exampleVideo}
-            controls
             autoPlay
             loop={true}
           />

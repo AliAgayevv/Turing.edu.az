@@ -11,6 +11,7 @@ import blackOpenNavbarIcon from "../../assets/vectors/blackOpenNavbarIcon.png";
 import blackCloseNavbarIcon from "../../assets/vectors/rotatedBlackOpenNavbarIcon.png";
 import NavbarElement from "../NavbarElement";
 import bgTuringVector from "../../assets/vectors/turing-hero-left-top-vector.png";
+import { FaGripLines } from "react-icons/fa";
 
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
 
@@ -167,13 +168,22 @@ export default function Navbar({ isDark }: INavbarProps) {
         </div>
 
         {/* Mobile Menu Toggle Button */}
-        <div className="lg:hidden flex items-center">
-          <img
-            src={isDark ? openNavbarResponsive : openNavbarResponsive}
-            alt="Open Navbar"
-            className="w-8 h-8 cursor-pointer"
-            onClick={() => setIsResponsiveMenuOpen(!isResponsiveMenuOpen)}
-          />
+        <div className="lg:hidden flex items-center ">
+          {!isDark ? (
+            <img
+              src={openNavbarResponsive}
+              alt="Open Navbar"
+              className="w-8 h-8 cursor-pointer"
+              onClick={() => setIsResponsiveMenuOpen(!isResponsiveMenuOpen)}
+            />
+          ) : (
+            <div
+              className="w-20  h-20 cursor-pointer flex justify-center items-center text-2xl"
+              onClick={() => setIsResponsiveMenuOpen(!isResponsiveMenuOpen)}
+            >
+              <FaGripLines width={100} height={100} />
+            </div>
+          )}
         </div>
 
         {/* ADD FOR THERE */}
@@ -196,7 +206,11 @@ export default function Navbar({ isDark }: INavbarProps) {
       </div>
 
       {isResponsiveMenuOpen && (
-        <div className="fixed inset-0 bg-blue_ultraDark overflow-hidden z-50 lg:hidden w-screen">
+        <div
+          className={`fixed inset-0 ${
+            !isDark ? "bg-blue_ultraDark" : "bg-blue_ultraDark"
+          }  overflow-hidden z-50 lg:hidden w-screen `}
+        >
           <img src={bgTuringVector} className=" absolute top-10 -z-40" />
           <div className="flex flex-col h-full p-6 w-screen">
             <div className="flex justify-between items-center mb-8">
@@ -282,7 +296,7 @@ export default function Navbar({ isDark }: INavbarProps) {
                 Scholarship Programs
               </Link>
             </nav>
-            <div className="mt-auto" onClick={handleGoForm}>
+            <div className="mt-5" onClick={handleGoForm}>
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>
