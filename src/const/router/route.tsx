@@ -44,10 +44,6 @@ export const ROUTES = [
     element: <Reels />,
   },
   {
-    path: "/graduates",
-    element: <AllGraduates />,
-  },
-  {
     path: "/community",
     element: <Community />,
   },

@@ -2,8 +2,9 @@
     {
         "id": 1,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
+        "route": "/schoolarship/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
         "video": ""
     },
@@ -12,63 +13,72 @@
         "name": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "route": "/schoolarship/UX-UI",
+        "coverPhoto": "/src/assets/photos/elvira.jpeg",
         "video": ""
     },
     {
         "id": 3,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "route": "/schoolarship/Backend",
+        "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
         "video": ""
     },
     {
         "id": 4,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
+        "route": "/schoolarship/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
         "video": ""
     },
     {
         "id": 5,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "route": "/schoolarship/UX-UI",
+        "coverPhoto": "/src/assets/photos/elvira.jpeg",
         "video": ""
     },
     {
         "id": 6,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "route": "/schoolarship/Backend",
+        "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
         "video": ""
     },
     {
         "id": 7,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
+        "route": "/schoolarship/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
         "video": ""
     },
     {
         "id": 8,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "route": "/schoolarship/UX-UI",
+        "coverPhoto": "/src/assets/photos/elvira.jpeg",
         "video": ""
     },
     {
         "id": 9,
         "name": "Ağayev Əli",
-        "category": "Frontend",
+        "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "route": "/schoolarship/Backend",
+        "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
         "video": ""
     }
+    
 ]

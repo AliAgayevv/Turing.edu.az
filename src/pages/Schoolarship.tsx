@@ -4,13 +4,26 @@ import SpecialtyCard from "../components/Specialty_card";
 import fakeData from "../datas/schoolarShip.json";
 import Footer from "../components/Footer";
 
+let fixCategory = ["all"];
+
+fakeData.forEach((data) => {
+  if (!fixCategory.includes(data.category)) {
+    fixCategory.push(data.category);
+  }
+});
+console.log(fixCategory);
+
 export default function Schoolarship() {
-  const [selected, setSelected] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state
+  const filteredEvents =
+    selectedCategory === "all"
+      ? fakeData
+      : fakeData.filter((data) => data.category === selectedCategory);
 
   // Chakra UI or Antd design tab  (select) a bax TODO
 
-  const handleSelect = (button: any) => {
-    setSelected(button); // Seçilen butonu state'e kaydediyoruz
+  const handleSelect = (category) => {
+    setSelectedCategory(category);
   };
   return (
     <div className="">
@@ -23,60 +36,22 @@ export default function Schoolarship() {
           <div className="flex gap-3">
             <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
               {/* "All" Butonu */}
-              <div
-                onClick={() => handleSelect("all")}
-                className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                  selected === "all"
-                    ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                    : "text-[#6C737F] border-transparent"
-                }`}
-              >
+              {fixCategory.map((category) => (
                 <div
-                  className={`font-normal font-['Inter'] ${
-                    selected === "all" ? "opacity-100" : "opacity-70"
-                  } leading-none`}
-                >
-                  All
-                </div>
-              </div>
-
-              <div
-                onClick={() => handleSelect("fundamentals")}
-                className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                  selected === "fundamentals"
-                    ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                    : "text-[#6C737F] border-transparent"
-                }`}
-              >
-                <div
-                  className={`text-sm font-normal font-['Inter'] leading-[14px] ${
-                    selected === "fundamentals" ? "opacity-100" : "opacity-70"
+                  onClick={() => handleSelect(category)}
+                  className={`px-3 py-1 rounded-md text-nowrap ${
+                    selectedCategory === category
+                      ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
+                      : "text-[#6C737F] border-transparent"
                   }`}
                 >
-                  Fundamentals
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
                 </div>
-              </div>
-
-              <div
-                onClick={() => handleSelect("specialization")}
-                className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                  selected === "specialization"
-                    ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                    : "text-[#6C737F] border-transparent"
-                }`}
-              >
-                <div
-                  className={`text-sm font-normal font-['Inter'] leading-[14px] ${
-                    selected === "specialization" ? "opacity-100" : "opacity-70"
-                  }`}
-                >
-                  Specialization
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div className="flex flex-col gap-5 md:grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 md:gap-7">
-            {fakeData.map((item) => (
+            {filteredEvents.map((item) => (
               <SpecialtyCard
                 category={item.slotCount}
                 img={item.img}

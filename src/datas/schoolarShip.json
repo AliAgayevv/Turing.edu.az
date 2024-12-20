@@ -8,6 +8,7 @@
         "slotCount": "15 slots left",
         "route" : "/schoolarship/UX-UI",
         "date" : "16.10.2024",
+        "category": "fundamentals",
         "faqDesc": "We're here to support your design journey.",
         "steps" : [
             {
@@ -53,6 +54,7 @@
         "title": "UX/UI Design",
         "slotCount": "15 slots left",
         "route" : "/schoolarship/Frontend",
+        "category": "specialization",
         "date": "10.11.2024",
         "faqDesc": "We're here to support your development journey.",
         "steps" : [
@@ -92,26 +94,29 @@
       ]
     },
     {
-        "id": "Backend",
-        "img": "",
+        "id": "UX-UI",
+        "img": "src/assets/photos/muradTelebe.jpeg",
         "desc": "Scholarship program for UX/UI Design",
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",
+        "slotCount": "15 slots left",
+        "category": "fundamentals",
+        "route" : "/schoolarship/backend"
+    },
+    {
+        "id": "Backend",
+        "img": "src/assets/photos/muradTelebe.jpeg",
+        "desc": "Scholarship program for UX/UI Design",
+        "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
+        "title": "UX/UI Design",
+        "category": "specialization",
         "slotCount": "15 slots left",
         "route" : "/schoolarship/backend"
     },
     {
         "id": "Backend",
-        "img": "",
-        "desc": "Scholarship program for UX/UI Design",
-        "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
-        "title": "UX/UI Design",
-        "slotCount": "15 slots left",
-        "route" : "/schoolarship/backend"
-    },
-    {
-        "id": "Backend",
-        "img": "",
+        "img": "src/assets/photos/muradTelebe.jpeg",
+        "category": "specialization",
         "desc": "Scholarship program for UX/UI Design",
         "hiddenText": "You will learn how to transform houses and apartments, create drawings and 3D visualization. You can take high-paying orders or open a design studio. You can take high...",
         "title": "UX/UI Design",

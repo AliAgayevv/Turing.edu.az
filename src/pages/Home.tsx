@@ -23,7 +23,7 @@ export default function Home() {
           <Events />
         </div>
         <div className="bg-white">
-          <div className="w-11/12 mx-auto h-[1200px] sm:h-auto">
+          <div className="w-11/12 mx-auto h-[1400px] sm:h-auto">
             <Partners />
           </div>
         </div>

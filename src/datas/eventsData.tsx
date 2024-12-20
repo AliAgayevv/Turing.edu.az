@@ -31,6 +31,7 @@ export const eventsData = new Array(30).fill(null).map((_, index) => ({
   eventRegisterDate: "Apr 16, 2024",
   price: 0,
   linkForLearnMore: "",
+  category: (index + 1) % 2 === 0 ? "hackathons" : "competitions",
   isEnd: (index + 1) % 2 === 0,
   photos: [
     "https://picsum.photos/800/600",

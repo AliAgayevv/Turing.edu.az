@@ -1,18 +1,29 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import fakeImage from "../assets/photos/studentExamplePhoto.jpeg";
-import SpecialtyCard from "../components/Specialty_card";
 import LearnMoreBtn from "../components/LearnMore_btn";
-import aliImage from "../assets/photos/ali.jpeg";
-import muradImage from "../assets/photos/muradTelebe.jpeg";
 import Footer from "../components/Footer";
+import graduatesData from "../datas/graduates.json";
+import { Link } from "react-router-dom";
+import Reels_card from "../components/Reels_card";
+
+let fixCategory = ["all"];
+graduatesData.forEach((graduates) => {
+  if (!fixCategory.includes(graduates.category)) {
+    fixCategory.push(graduates.category);
+  }
+});
+console.log(fixCategory);
 
 export default function Specialty() {
-  const [selected, setSelected] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state
 
   const handleSelect = (button: string) => {
-    setSelected(button);
+    setSelectedCategory(button);
   };
+  const filteredEvents =
+    selectedCategory === "all"
+      ? graduatesData
+      : graduatesData.filter((event) => event.category === selectedCategory);
 
   return (
     <div className="">
@@ -24,68 +35,26 @@ export default function Specialty() {
           </h1>
 
           <div className="inline-flex flex-wrap items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
-            {["all", "fundamentals", "specialization"].map((category) => (
+            {fixCategory.map((category) => (
               <div
-                key={category}
                 onClick={() => handleSelect(category)}
-                className={`px-3 py-2 rounded-md flex items-center justify-center ${
-                  selected === category
+                className={`px-3 py-1 rounded-md text-nowrap ${
+                  selectedCategory === category
                     ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
                     : "text-[#6C737F] border-transparent"
                 }`}
               >
-                <div
-                  className={`font-normal font-['Inter'] ${
-                    selected === category ? "opacity-100" : "opacity-70"
-                  } leading-none`}
-                >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </div>
+                {category.charAt(0).toUpperCase() + category.slice(1)}
               </div>
             ))}
           </div>
 
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <SpecialtyCard
-              category="Design"
-              title="UX/UI Design"
-              desc="Design Intuitive Digital Experiences"
-              hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization."
-              img={fakeImage}
-              route="UX-UI"
-            />
-            <SpecialtyCard
-              category="Front"
-              title="Frontend"
-              desc="Develop Responsive Websites"
-              hiddenText="You will learn how to build interactive and dynamic web applications."
-              img={aliImage}
-              route="Frontend"
-            />
-            <SpecialtyCard
-              category="Backend"
-              title="Backend"
-              desc="Master Server-Side Logic"
-              hiddenText="You will learn to create robust backend systems and APIs."
-              img={muradImage}
-              route="Backend"
-            />
-            <SpecialtyCard
-              category="Design"
-              title="UX/UI Design"
-              desc="Design Intuitive Digital Experiences"
-              hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization."
-              img={fakeImage}
-              route="UX-UI"
-            />
-            <SpecialtyCard
-              category="Design"
-              title="UX/UI Design"
-              desc="Design Intuitive Digital Experiences"
-              hiddenText="You will learn how to transform houses and apartments, create drawings and 3D visualization."
-              img={fakeImage}
-              route="UX-UI"
-            />
+            {filteredEvents.map((event) => (
+              <Link to={event.route} key={event.id}>
+                <Reels_card {...event} />
+              </Link>
+            ))}
           </div>
 
           <div className="w-full h-auto rounded-2xl border border-white_medium mt-6 flex flex-col sm:flex-row justify-between items-center p-6">

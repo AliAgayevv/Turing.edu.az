@@ -104,7 +104,7 @@ export default function Events() {
 
       {/* Events Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {fakeData.slice(0, 3).map((event) => (
+        {fakeData.slice(0, 6).map((event) => (
           <Events_card
             key={event.id}
             isDark={true}
