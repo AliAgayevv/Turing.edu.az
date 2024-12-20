@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.slick-slider
+{
+    display: flex;
+    gap: 20px;
+}
+
+.slick-slide
+{
+    flex: 1;
+    /* background-color: red; */
+    margin-right: 20px;
+}
+
+.slick-list
+{
+    /* background-color: red; */
+}
+
 @font-face {
     font-family: "Inter";
     src: local("Inter"),
