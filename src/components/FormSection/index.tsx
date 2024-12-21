@@ -1,14 +1,16 @@
 import { useState } from "react";
 import formIcon from "../../assets/vectors/formIcon.png";
 import SeeAll_btn from "../SeeAll_btn";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const FormSchema = Yup.object().shape({
   name: Yup.string().max(50, "Too Long!").required("Required"),
   surname: Yup.string().max(50, "Too Long!").required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
-  phone: Yup.number().typeError("Must be a number").required("Required"),
+  phone: Yup.string()
+    .matches(/^[0-9]+$/, "Must be a valid phone number")
+    .required("Required"),
 });
 
 interface FakeDataItem {
@@ -16,7 +18,6 @@ interface FakeDataItem {
   inner: string;
 }
 
-// Örnek veri
 const fakeData: FakeDataItem[] = [
   { id: 1, inner: "UX/UI Design" },
   { id: 2, inner: "Back-end Development" },
@@ -27,7 +28,6 @@ const fakeData: FakeDataItem[] = [
 export default function FormSection() {
   const [selected, setSelected] = useState<number[]>([]);
 
-  // Seçim işlemini gerçekleştiren fonksiyon
   const handleSelect = (index: number) => {
     setSelected((prev) => {
       if (prev.includes(index)) {
@@ -43,7 +43,7 @@ export default function FormSection() {
       id="form"
     >
       {/* Sol taraf: Form Alanı */}
-      <div className="w-full md:w-[856px] h-auto bg-white  md:border p-6">
+      <div className="w-full md:w-[856px] h-auto bg-white md:border p-6">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
           Start Today!
@@ -74,43 +74,69 @@ export default function FormSection() {
         <Formik
           initialValues={{ name: "", surname: "", email: "", phone: "" }}
           validationSchema={FormSchema}
-          onSubmit={(values) => {
+          onSubmit={(values, { resetForm }) => {
             const selectedSpecialties = fakeData
               .filter((data) => selected.includes(data.id))
-              .map((data) => data.inner); // Get the inner text for the selected specialties
+              .map((data) => data.inner);
             if (selectedSpecialties.length === 0) {
               alert("Please select a specialty");
             } else {
               console.log(values, selectedSpecialties);
-              values.name = "";
-              values.surname = "";
-              values.email = "";
-              values.phone = "";
+              alert("Form submitted successfully!");
+              resetForm();
             }
           }}
         >
           <Form className="flex flex-col mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white">
-              <Field
-                placeholder="Name"
-                className="w-full h-full  border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                name="name"
-              />
-              <Field
-                className="w-full h-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                placeholder="Surname"
-                name="surname"
-              />
-              <Field
-                className="w-full h-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                placeholder="Email"
-                name="email"
-              />
-              <Field
-                className="w-full h-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
-                placeholder="Phone Number"
-                name="phone"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 bg-white">
+              <div className="relative">
+                <Field
+                  placeholder="Name"
+                  className="w-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  name="name"
+                />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+              <div className="relative">
+                <Field
+                  placeholder="Surname"
+                  className="w-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  name="surname"
+                />
+                <ErrorMessage
+                  name="surname"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+              <div className="relative">
+                <Field
+                  placeholder="Email"
+                  className="w-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  name="email"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+              <div className="relative">
+                <Field
+                  placeholder="Phone Number"
+                  className="w-full border-[1px] disabled:bg-white_medium rounded-lg p-4 outline-black_ultraLight hover:bg-white_ultraLight transition-all delay-100"
+                  name="phone"
+                />
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
             </div>
             <div className="w-full md:w-[145px] h-[48px] mt-6">
               <button

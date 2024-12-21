@@ -10,7 +10,7 @@ export default function SchoolarshipInner() {
   const { id } = useParams();
   const currentData = data.find((item) => item.id === id);
   return (
-    <div className="">
+    <div className="h-screen">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto w-11/12 pt-5">
@@ -82,7 +82,7 @@ export default function SchoolarshipInner() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
     </div>

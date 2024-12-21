@@ -20,7 +20,7 @@ const fakeData = [
     id: 1,
     title: "UX/UI Design",
     description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/ux-ui",
+    route: "/schoolarship/UX-UI",
   },
   {
     id: 2,
@@ -33,18 +33,6 @@ const fakeData = [
     title: "Backend",
     description: "Kill Art",
     route: "/schoolarship/Backend",
-  },
-  {
-    id: 4,
-    title: "UX/UI Design",
-    description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/ux-ui",
-  },
-  {
-    id: 5,
-    title: "UX/UI Design",
-    description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/ux-ui",
   },
 ];
 
@@ -199,7 +187,10 @@ export default function Navbar({ isDark }: INavbarProps) {
               <option value="az">AZ</option>
             </select>
           )}
-          <div className="hidden lg:block w-[145px] h-[45px]">
+          <div
+            className="hidden lg:block w-[145px] h-[45px]"
+            onClick={handleGoForm}
+          >
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>

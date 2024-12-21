@@ -38,7 +38,7 @@ export default function AllEvents() {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto h-auto w-11/12 bg-white">
@@ -66,13 +66,7 @@ export default function AllEvents() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 gap-6 pb-20">
               {filteredEvents.slice(0, visibleCount).map((event) => (
                 <Link to={`/events/${event.id}`} key={event.id}>
-                  <Events_card
-                    isDark={false}
-                    {...event}
-                    guests={event.guests
-                      .map((guest) => guest.guestName)
-                      .join(", ")} // Convert guests to a comma-separated string
-                  />
+                  <Events_card isDark={false} {...event} />
                 </Link>
               ))}
             </div>

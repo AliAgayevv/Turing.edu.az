@@ -43,18 +43,20 @@ export default function Events_card({
       {!isHover ? (
         <div className="flex justify-between items-start mt-10 flex-wrap gap-2">
           <div className="flex flex-col gap-1 max-w-[55%]">
-            <h5 className={`${black_text} opacity-90 font-[500]`}>Qonaqlar:</h5>
-            <p
-              className={`${white_ultraDark} text-[13px] truncate`}
-              style={{ overflow: "hidden", whiteSpace: "nowrap" }}
-            >
-              {guests}
-            </p>
+            <h5 className={`${black_text} opacity-90 font-[500]`}>Guests:</h5>
+            <div className={`${white_ultraDark} text-[13px]`}>
+              {guests.map((guest, index) => (
+                <span key={guest.id} className="font-medium">
+                  {guest.guestName}
+                  {index < guests.length - 1 && ", "}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="flex flex-col gap-1 max-w-[40%] text-right">
             <p className={`opacity-90 font-[500] ${black_text}`}>
-              {price === 0 ? "Ödənişsiz" : price}
+              {price === 0 ? "Free" : `$${price}`}
             </p>
             <p className={`${white_ultraDark} text-[14px]`}>{eventDate}</p>
           </div>

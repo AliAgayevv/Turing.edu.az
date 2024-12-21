@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="flex flex-col items-center justify-center h-auto z-50">
         <div>
-          <h1 className="text-white_solid text-[32px] sm:text-5xl md:text-6xl text-center mb-4 mt-[125px]">
+          <h1 className="text-white_solid text-[32px] sm:text-5xl md:text-6xl text-center mb-4 pt-[125px]">
             #BirAddımÖndə
           </h1>
           {/* Left top light effect */}
@@ -54,8 +54,8 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className=" max-w-[3000px] px-4 pt-[10px] overflow-hidden h-[324px] relative ">
-          <div className="w-[600px] lg:w-[1120px] h-[300px] relative lg:h-[320px] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] ">
+        <div className=" max-w-[3000px] px-4 pt-[30px] overflow-hidden h-[324px] relative ">
+          <div className="w-[520px]  lg:w-[1120px] h-[300px] relative lg:h-[320px] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] ">
             <video
               // controls
               className="absolute top-0 left-0 w-full h-full object-center lg:object-cover rounded-2xl overflow-hidden"

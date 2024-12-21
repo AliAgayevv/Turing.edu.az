@@ -32,6 +32,8 @@ export interface IEventsProps {
 export interface IQAProps {
   question: string;
   answer: string;
+  isVisible: boolean;
+  onClick: () => void;
 }
 
 export interface IStepProps {

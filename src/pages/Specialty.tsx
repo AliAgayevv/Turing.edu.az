@@ -26,7 +26,7 @@ export default function Specialty() {
       : graduatesData.filter((event) => event.category === selectedCategory);
 
   return (
-    <div className="">
+    <div className="h-screen">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto w-11/12 h-auto py-[100px] px-4 sm:px-8 mb-20 bg-white">
@@ -73,7 +73,7 @@ export default function Specialty() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div className="h-screen relative -z-[2]">
         <Footer />
       </div>
     </div>

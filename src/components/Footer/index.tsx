@@ -1,6 +1,3 @@
-// TODO: TABLET VERSIOYN IYRENCDI
-// TODO: FOOTER CLICK EDILE BILMIR
-
 import { IoLogoInstagram } from "react-icons/io5";
 import {
   FaFacebook,
@@ -14,12 +11,32 @@ import footerPhoto from "../../assets/vectors/footerPhoto.png";
 import turingLogo from "../../assets/turingFooterLogo.png";
 
 const logoData = [
-  { name: "Instagram", icon: <IoLogoInstagram />, link: "#" },
-  { name: "Facebook", icon: <FaFacebook />, link: "#" },
-  { name: "LinkedIn", icon: <FaLinkedinIn />, link: "#" },
-  { name: "TikTok", icon: <FaTiktok />, link: "#" },
-  { name: "WhatsApp", icon: <FaWhatsapp />, link: "#" },
-  { name: "YouTube", icon: <FaYoutube />, link: "#" },
+  {
+    name: "Instagram",
+    icon: <IoLogoInstagram />,
+    link: "https://www.instagram.com/turing.edu.az/",
+  },
+  {
+    name: "Facebook",
+    icon: <FaFacebook />,
+    link: "https://www.facebook.com/turingacademyaz/",
+  },
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedinIn />,
+    link: "https://www.linkedin.com/school/turingeduaz/",
+  },
+  {
+    name: "TikTok",
+    icon: <FaTiktok />,
+    link: "https://www.tiktok.com/@turing.edu.az",
+  },
+  { name: "WhatsApp", icon: <FaWhatsapp />, link: "https://wa.link/9opjm0" },
+  {
+    name: "YouTube",
+    icon: <FaYoutube />,
+    link: "https://www.youtube.com/@turingacademyaz",
+  },
 ];
 
 const menuData = {
@@ -46,7 +63,7 @@ export default function Footer() {
     //     {/* Footer Content */}
     //   </div>
     // </div>
-    <div className="fixed h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col lg:flex-row justify-between pointer-events-auto">
+    <div className="fixed h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row justify-between pointer-events-auto">
       {/* Left Section: Logo, Description, and Social Icons */}
       <div className="flex flex-col gap-6">
         <img
@@ -61,12 +78,7 @@ export default function Footer() {
         {/* Social Media Icons */}
         <div className="grid grid-cols-3 w-[164px] gap-3">
           {logoData.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a key={index} href={item.link} target="_blank">
               <div className="w-[44px] h-[44px] flex justify-center items-center rounded-full border border-[#30364A]">
                 {item.icon}
               </div>
@@ -76,7 +88,7 @@ export default function Footer() {
       </div>
 
       {/* Links Section */}
-      <div className="grid grid-cols-2 gap-6 md:gap-10 lg:flex lg:justify-between lg:gap-24 mt-10 lg:mt-0">
+      <div className="grid grid-cols-2 gap-6 md:gap-10 sm:flex lg:justify-between lg:gap-24 mt-10 lg:mt-0">
         {/* Upcoming Events */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">

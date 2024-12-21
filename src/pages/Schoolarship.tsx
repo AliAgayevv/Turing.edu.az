@@ -24,9 +24,9 @@ export default function Schoolarship() {
     setSelectedCategory(category);
   };
   return (
-    <div className="">
+    <div className="z-[50]  h-screen">
       <Navbar isDark={true} />
-      <div className="w-screen bg-white">
+      <div className="w-screen bg-white ">
         <div className="mx-auto w-11/12 pt-24 pb-20">
           <h1 className="font-jakarta font-[500] text-5xl">
             Active Scholarship Programs
@@ -62,7 +62,7 @@ export default function Schoolarship() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div className="h-screen relative -z-[2]">
         <Footer />
       </div>
     </div>

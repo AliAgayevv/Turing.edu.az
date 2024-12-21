@@ -9,6 +9,8 @@ import Syllabus_section from "../components/Syllabus_section";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 
+// TODO: FAQ PROBLEMI
+
 const SpecialtyInner = () => {
   const { id = "" } = useParams();
   console.log(id);
@@ -18,7 +20,7 @@ const SpecialtyInner = () => {
   const desc = categoryData?.description || [];
 
   return (
-    <div className="">
+    <div className="h-screen">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="w-11/12 mx-auto h-auto bg-white">
@@ -31,7 +33,7 @@ const SpecialtyInner = () => {
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>
-          <div className="mt-24">
+          <div className="mt-24 overflow-hidden">
             <Syllabus_section category={id} />
           </div>
           <div className="mt-40">
@@ -40,13 +42,13 @@ const SpecialtyInner = () => {
           <div className="mt-24">
             <Graduates_section category={id} />
           </div>
-          <div className="mt-24 w-full h-auto">
-            <FAQ category={id} />
+          <div className="mt-24 w-full h-auto overflow-hidden">
+            <FAQ id={id} />
             <FormSection />
           </div>
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
     </div>

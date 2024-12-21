@@ -40,8 +40,8 @@ export const ROUTES = [
     element: <SchoolarshipInner />,
   },
   {
-    path: "/reels",
-    element: <Reels />,
+    path: "/graduates",
+    element: <AllGraduates />,
   },
   {
     path: "/community",

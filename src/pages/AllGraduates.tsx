@@ -17,9 +17,9 @@ export default function AllGraduates() {
   };
 
   return (
-    <div className="">
+    <div className="h-screen">
       <Navbar isDark={true} />
-      <div className="w-screen bg-white ">
+      <div className="w-screen bg-white z-[50]">
         <div className="w-11/12 mx-auto ">
           <div className="pt-24">
             <h2 className="font-[500] font-jakarta text-5xl text-black_dark">
@@ -52,11 +52,9 @@ export default function AllGraduates() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
-
-      {/* White Background Section - Prevent Footer Overlap */}
     </div>
   );
 }

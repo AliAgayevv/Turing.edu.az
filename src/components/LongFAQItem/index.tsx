@@ -1,19 +1,22 @@
-import { useState } from "react";
 import { IQAProps } from "../../const/types";
 
-function LongFAQItem({ question, answer }: IQAProps) {
-  const [isVisible, setIsVisible] = useState(false);
+interface LongFAQItemProps extends IQAProps {
+  isVisible: boolean;
+  onClick: () => void;
+}
 
-  const toggleVisibility = () => {
-    setIsVisible((prev) => !prev);
-  };
-
+function LongFAQItem({
+  question,
+  answer,
+  isVisible,
+  onClick,
+}: LongFAQItemProps) {
   return (
     <div className="w-full max-w-[1076px] p-4 sm:p-6 h-auto rounded-lg border border-white_medium mb-4 mx-auto">
       {/* Header Section */}
       <div
-        className="flex gap-2 sm:gap-4 items-center cursor-pointer"
-        onClick={toggleVisibility}
+        className="flex gap-4 text-left items-center cursor-pointer"
+        onClick={onClick}
       >
         <button className="text-lg sm:text-xl font-[500] font-jakarta text-black_dark focus:outline-none">
           {isVisible ? "-" : "+"}
@@ -24,11 +27,15 @@ function LongFAQItem({ question, answer }: IQAProps) {
       </div>
 
       {/* Answer Section */}
-      {isVisible && (
-        <p className="py-2 px-3 text-white_dark text-sm sm:text-[14px] transition-all duration-300 text-left leading-relaxed">
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isVisible ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <p className="py-2 px-3 text-white_dark text-sm sm:text-[14px] text-left leading-relaxed">
           {answer}
         </p>
-      )}
+      </div>
     </div>
   );
 }

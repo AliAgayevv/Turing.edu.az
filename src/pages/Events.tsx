@@ -1,69 +1,7 @@
 import { useState, useEffect } from "react";
 import Events_card from "../components/Events_card";
 import { Link } from "react-router-dom";
-
-const fakeData = [
-  {
-    id: 1,
-    eventCategory: "UX/UI Dizayn",
-    eventName: "III Design Competition",
-    eventDesc: "A lot happened this month. Take a look at what's coming.",
-    guests: "Togrul Samed, Zumrad Muradov",
-    eventDate: "Apr 17, 2024",
-    price: "Ödənişsiz",
-    linkForLearnMore: "",
-  },
-  {
-    id: 2,
-    eventCategory: "Frontend Development",
-    eventName: "React Workshop",
-    eventDesc: "Learn modern frontend development techniques.",
-    guests: "Elchin Muradov",
-    eventDate: "Apr 20, 2024",
-    price: "Ödənişsiz",
-    linkForLearnMore: "",
-  },
-  {
-    id: 3,
-    eventCategory: "Backend Development",
-    eventName: "Node.js Hackathon",
-    eventDesc: "Join us to build backend APIs and win prizes.",
-    guests: "Ali Veliyev",
-    eventDate: "Apr 24, 2024",
-    price: "Ödənişsiz",
-    linkForLearnMore: "",
-  },
-  {
-    id: 4,
-    eventCategory: "UX/UI Dizayn",
-    eventName: "UI Trends in 2024",
-    eventDesc: "Explore the top UI design trends for this year.",
-    guests: "Zumrad Muradov",
-    eventDate: "Apr 25, 2024",
-    price: "Ödənişsiz",
-    linkForLearnMore: "",
-  },
-  {
-    id: 5,
-    eventCategory: "Full Stack Development",
-    eventName: "Build MERN Apps",
-    eventDesc: "Learn how to build full-stack applications with MERN.",
-    guests: "Murad Imanov",
-    eventDate: "Apr 28, 2024",
-    price: "Ödənişsiz",
-    linkForLearnMore: "",
-  },
-  {
-    id: 6,
-    eventCategory: "Mobile Development",
-    eventName: "Flutter Basics",
-    eventDesc: "Learn to build mobile apps using Flutter.",
-    guests: "Togrul Samed",
-    eventDate: "Apr 30, 2024",
-    price: "Ödənişsiz",
-    linkForLearnMore: "",
-  },
-];
+import { eventsData } from "../datas/eventsData";
 
 export default function Events() {
   const [isMobile, setIsMobile] = useState(false);
@@ -104,18 +42,10 @@ export default function Events() {
 
       {/* Events Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {fakeData.slice(0, 6).map((event) => (
-          <Events_card
-            key={event.id}
-            isDark={true}
-            eventCategory={event.eventCategory}
-            eventName={event.eventName}
-            eventDesc={event.eventDesc}
-            guests={event.guests}
-            eventDate={event.eventDate}
-            price={event.price}
-            linkForLearnMore={event.linkForLearnMore}
-          />
+        {eventsData.slice(0, 6).map((event) => (
+          <Link to={event.linkForLearnMore} key={event.id}>
+            <Events_card {...event} isDark={true} />
+          </Link>
         ))}
       </div>
 

@@ -1,83 +1,8 @@
 import Navbar from "../components/Navbar";
 import Reels_card from "../components/Reels_card";
-import fakePhoto from "../assets/photos/studentExamplePhoto.jpeg";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
-
-const fakeData = [
-  {
-    id: 1,
-    category: "UX/UI",
-    studentName: "Elmira Nəcəfli",
-    desc: "UX/UI designer at Spotify",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 2,
-    category: "Java",
-    studentName: "Vüsal Ataşov",
-    desc: "Back-End Developer at ABB",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 3,
-    category: "UX/UI",
-    studentName: "Elmira Nəcəfli",
-    desc: "UX/UI designer at Spotify",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 4,
-    category: "Java",
-    studentName: "Vüsal Ataşov",
-    desc: "Back-End Developer at ABB",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 5,
-    category: "UX/UI",
-    studentName: "Elmira Nəcəfli",
-    desc: "UX/UI designer at Spotify",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 6,
-    category: "Java",
-    studentName: "Vüsal Ataşov",
-    desc: "Back-End Developer at ABB",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 7,
-    category: "UX/UI",
-    studentName: "Elmira Nəcəfli",
-    desc: "UX/UI designer at Spotify",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-  {
-    id: 8,
-    category: "Java",
-    studentName: "Vüsal Ataşov",
-    desc: "Back-End Developer at ABB",
-    videoUrl:
-      "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0",
-    coverPhoto: fakePhoto,
-  },
-];
+import fakeData from "../datas/graduates.json";
 
 export default function Reels() {
   return (

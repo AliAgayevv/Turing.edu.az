@@ -2,6 +2,7 @@ import Reels_card from "../components/Reels_card";
 import examplePhoto from "../assets/photos/studentExamplePhoto.jpeg";
 import SeeAll_btn from "../components/SeeAll_btn";
 import { Link } from "react-router";
+import fakeData from "../datas/graduates.json";
 
 export default function OurGraduates() {
   return (
@@ -20,42 +21,9 @@ export default function OurGraduates() {
         </Link>
       </div>
       <div className="flex flex-col overflow-x-auto gap-10 sm:gap-5 md:grid-cols-2 lg:gap-0  sm:grid-cols-2 sm:grid lg:grid-cols-4 py-16">
-        <Reels_card
-          coverPhoto={examplePhoto}
-          category={"UX/UI"}
-          studentName={"Elmira Nəcəfli"}
-          videoUrl={
-            "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0"
-          }
-          desc={"UX/UI designer at Spotify"}
-        />
-        <Reels_card
-          coverPhoto={examplePhoto}
-          category={"UX/UI"}
-          studentName={"Elmira Nəcəfli"}
-          videoUrl={
-            "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0"
-          }
-          desc={"UX/UI designer at Spotify"}
-        />
-        <Reels_card
-          coverPhoto={examplePhoto}
-          category={"UX/UI"}
-          studentName={"Elmira Nəcəfli"}
-          videoUrl={
-            "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0"
-          }
-          desc={"UX/UI designer at Spotify"}
-        />
-        <Reels_card
-          coverPhoto={examplePhoto}
-          category={"UX/UI"}
-          studentName={"Elmira Nəcəfli"}
-          videoUrl={
-            "https://www.youtube.com/embed/rW65vAyYT0I?autoplay=1&mute=1&controls=0&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0"
-          }
-          desc={"UX/UI designer at Spotify"}
-        />
+        {fakeData.slice(0, 4).map((data) => (
+          <Reels_card {...data} />
+        ))}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
         "name": "Ağayev Əli",
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/Frontend",
+        "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
         "video": ""
     },
@@ -13,7 +13,7 @@
         "name": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/UX-UI",
+        "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
         "video": ""
     },
@@ -22,7 +22,7 @@
         "name": "Ağayev Əli",
         "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/Backend",
+        "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
         "video": ""
     },
@@ -31,7 +31,7 @@
         "name": "Ağayev Əli",
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/Frontend",
+        "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
         "video": ""
     },
@@ -40,7 +40,7 @@
         "name": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/UX-UI",
+        "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
         "video": ""
     },
@@ -49,7 +49,7 @@
         "name": "Ağayev Əli",
         "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/Backend",
+        "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
         "video": ""
     },
@@ -58,7 +58,7 @@
         "name": "Ağayev Əli",
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/Frontend",
+        "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
         "video": ""
     },
@@ -67,7 +67,7 @@
         "name": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/UX-UI",
+        "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
         "video": ""
     },
@@ -76,7 +76,7 @@
         "name": "Ağayev Əli",
         "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
-        "route": "/schoolarship/Backend",
+        "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
         "video": ""
     }

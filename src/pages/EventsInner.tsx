@@ -11,7 +11,7 @@ export default function EventsInner() {
 
   console.log(currentEvent);
   return (
-    <div className="">
+    <div className="h-screen">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto w-11/12">
@@ -121,7 +121,7 @@ export default function EventsInner() {
           )}
         </div>
       </div>
-      <div className="w-screen h-screen">
+      <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
     </div>
