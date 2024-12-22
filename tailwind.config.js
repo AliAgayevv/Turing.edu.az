@@ -3,6 +3,18 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        rainbow: "rainbow 10s linear infinite",
+      },
+      keyframes: {
+        rainbow: {
+          "0%": { backgroundPosition: "0% 0%" },
+          "100%": { backgroundPosition: "-125em 0%" },
+        },
+      },
+      perspective: {
+        1000: "1000px",
+      },
       colors: {
         black_solid: "rgba(0, 0, 0)",
         black_ulrtaDark: "rgba(1,3,14)",

@@ -87,7 +87,7 @@ export default function Navbar({ isDark }: INavbarProps) {
             <div
               className={`${
                 isDark ? "text-white" : "text-black_dark"
-              } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-lg`}
+              } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-lg `}
             >
               <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
