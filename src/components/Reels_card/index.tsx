@@ -4,7 +4,7 @@ import { IStudentsInfoProps } from "../../const/types";
 
 export default function Reels_card({
   category,
-  studentName,
+  name,
   desc,
   videoUrl,
   coverPhoto,
@@ -17,20 +17,20 @@ export default function Reels_card({
 
   return (
     <div
-      className=" h-[529px] w-[306px] rounded-2xl p-4 border relative group"
+      className=" h-auto w-full md:w-[306px] rounded-2xl p-4 border relative group "
       onClick={handleTogglePlay}
     >
       {/* Video/Photo Section */}
-      <div className="w-[274px] h-[392px] bg-blue-50 rounded-[10px] relative">
+      <div className="w-full md:w-[274px]  bg-blue-50 rounded-[10px] relative">
         {!isPlaying ? (
           <img
             src={coverPhoto}
-            className="w-full h-full rounded-[10px] object-cover cursor-pointer"
+            className=" rounded-[10px] object-cover cursor-pointer customAspect "
             alt="Cover"
           />
         ) : (
           <iframe
-            className="w-full h-full border-none rounded-[10px]"
+            className="w-full h-full border-none rounded-[10px] customAspect"
             src={videoUrl}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -50,12 +50,12 @@ export default function Reels_card({
 
       {/* Description Section */}
       <div className="h-[85px] w-full flex flex-col mt-4 gap-3">
-        <button className="bg-white_ultraLight border-white_medium text-blue_lightMedium border rounded-lg px-10 py-1.5 flex justify-center items-center w-[59px] h-[29px]">
+        <button className="bg-white_ultraLight border-white_medium text-blue_lightMedium border rounded-lg px-10 py-1.5 flex justify-center items-center w-1/4 h-[29px]">
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </button>
         <div>
-          <h4 className="font-[500] text-[18px] text-black_ultraDark">
-            {studentName}
+          <h4 className="font-[500]  text-[18px] text-black_ultraDark">
+            {name}
           </h4>
           <p className="text-[12px] text-black_ultraLight">{desc}</p>
         </div>

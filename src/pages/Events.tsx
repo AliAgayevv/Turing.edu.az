@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Events_card from "../components/Events_card";
 import { Link } from "react-router-dom";
+
 import { eventsData } from "../datas/eventsData";
 
 export default function Events() {

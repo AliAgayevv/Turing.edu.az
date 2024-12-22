@@ -187,10 +187,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               <option value="az">AZ</option>
             </select>
           )}
-          <div
-            className="hidden lg:block w-[145px] h-[45px]"
-            onClick={handleGoForm}
-          >
+          <div className="hidden lg:block w-[145px] h-[45px]">
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>
@@ -287,7 +284,7 @@ export default function Navbar({ isDark }: INavbarProps) {
                 Scholarship Programs
               </Link>
             </nav>
-            <div className="mt-5" onClick={handleGoForm}>
+            <div className="mt-5">
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>

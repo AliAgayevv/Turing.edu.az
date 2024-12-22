@@ -1,3 +1,4 @@
+import { useState } from "react";
 import data from "../../datas/FAQdata.json";
 import FAQItem from "../FAQ_item";
 interface SyllabusSectionProps {
@@ -7,10 +8,16 @@ interface SyllabusSectionProps {
 export default function Syllabus_section({ category }: SyllabusSectionProps) {
   const categoryData = data.find((item) => item.category === category);
 
+  const [activeId, setActiveId] = useState<string | null>(null);
+
   const syllabusLink = categoryData?.syllabusLink || "#";
   const modules = categoryData?.modules || [];
 
   console.log(modules);
+
+  const toggleVisibility = (clickedId: string) => {
+    setActiveId((prev) => (prev === clickedId ? null : clickedId));
+  };
 
   return (
     <div className="flex flex-col gap- md:flex-row md:justify-between">
@@ -37,6 +44,8 @@ export default function Syllabus_section({ category }: SyllabusSectionProps) {
             key={item.id}
             question={item.title}
             answer={item.moduleDesc}
+            onClick={() => toggleVisibility(item.id)}
+            isVisible={activeId === item.id}
           />
         ))}
       </div>

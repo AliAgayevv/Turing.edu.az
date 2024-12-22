@@ -9,7 +9,7 @@ export default function OurGraduates() {
     <div className="w-11/12 mx-auto py-20">
       <h3 className="uppercase text-white_dark">Our Graduates</h3>
       <div className="flex flex-col md:flex-row justify-between items-center pr-10">
-        <h1 className="text-[48px] md:text-5xl font-jakarta font-[500] text-black_medium py-4">
+        <h1 className="text-[48px] md:text-5xl font-jakarta font-[500] text-black_medium py-4 ">
           Accelerate your career
           <br />
           in <span className="text-blue_light">Turing Academy</span>

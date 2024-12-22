@@ -12,7 +12,6 @@ graduatesData.forEach((graduates) => {
     fixCategory.push(graduates.category);
   }
 });
-console.log(fixCategory);
 
 export default function Specialty() {
   const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state

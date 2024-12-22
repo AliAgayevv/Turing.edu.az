@@ -11,7 +11,6 @@ fakeData.forEach((data) => {
     fixCategory.push(data.category);
   }
 });
-console.log(fixCategory);
 
 export default function Schoolarship() {
   const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state

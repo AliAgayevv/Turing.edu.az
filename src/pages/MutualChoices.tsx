@@ -1,7 +1,12 @@
+// TODO: TITLE ITALIC FOMNT IMPORT duzelt
+
 import MutualChoices_card from "../components/MutualChoices_card";
 import icon from "../assets/vectors/Frame.png";
 import textVector from "../assets/vectors/textVector.png";
+
+// SEE AL BASILANDA FIELDS OF STUDy
 import SeeAll_btn from "../components/SeeAll_btn";
+import { Link } from "react-router";
 
 export default function MutualChoices() {
   return (
@@ -18,13 +23,15 @@ export default function MutualChoices() {
                 alt="Text Vector"
               />
             </p>
-            <p className="font-[600] leading-[50px] sm:leading-[60px] font-jakarta text-[50px] sm:text-[48px] text-black_medium pt-4 w-[300px]">
+            <p className="font-[600] leading-[50px] sm:leading-[60px] font-Plus_Jakarta_Sans text-[50px] sm:text-[48px] text-black_medium pt-4 w-[300px]">
               Skill up, stand out
             </p>
           </div>
           {/* See All Button for Desktop */}
           <div className="hidden lg:block h-[56px] w-[145px]">
-            <SeeAll_btn>See all</SeeAll_btn>
+            <Link to={"/specialty"}>
+              <SeeAll_btn>See all</SeeAll_btn>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,20 +1,19 @@
-import React from "react";
 import Slider from "react-slick";
 import FormSection from "../components/FormSection";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image from "../assets/photos/elvira.jpeg";
-import { style } from "framer-motion/client";
 
 export default function Partners() {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 10000,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
+    cssEase: " linear",
+    pauseOnHover: false,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -38,8 +37,6 @@ export default function Partners() {
     "./src/assets/sliderLogo.png",
     "./src/assets/sliderLogo.png",
     "./src/assets/sliderLogo.png",
-    "./src/assets/sliderLogo.png",
-    "./src/assets/sliderLogo.png",
   ];
 
   return (
@@ -54,7 +51,7 @@ export default function Partners() {
         {partners.map((logo, index) => (
           <div
             key={index}
-            className="border w-[14px] h-[92px] flex-shrink-0 mx-4 flex justify-center items-center" // Add margin-x to create gaps
+            className="border w-[114px] h-[92px] flex-shrink-0 mx-4 flex justify-center items-center" // Add margin-x to create gaps
           >
             <img
               src={logo}

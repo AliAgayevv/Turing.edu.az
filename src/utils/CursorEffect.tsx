@@ -20,7 +20,7 @@ const CursorEffect: React.FC = () => {
 
   return (
     <div
-      className="fixed pointer-events-none z-[100] w-[300px] h-[300px] rounded-full bg-gradient-to-r from-white/25 to-transparent mix-blend-lighten blur-2xl"
+      className="fixed pointer-events-none z-[100] w-[300px] h-[300px] rounded-full bg-blue_light opacity-30 mix-blend-lighten blur-[150px]"
       style={{
         transform: `translate(${cursorPosition.x - 75}px, ${
           cursorPosition.y - 75

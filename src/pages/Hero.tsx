@@ -3,6 +3,7 @@ import exampleVideo from "../assets/videos/exampleVideo.mp4";
 import Navbar from "../components/Navbar";
 import bgTuringVector from "../assets/vectors/turing-hero-left-top-vector.png";
 import WatchNow_btn from "../components/WatchNow_btn";
+
 import { useState } from "react";
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="h-auto flex flex-col relative overflow-hidden">
+    <div className="h-screen flex flex-col relative overflow-hidden">
       {!isApplyNowClicked && <Navbar isDark={false} />}
 
       <div className="flex flex-col items-center justify-center h-auto z-50">
@@ -54,7 +55,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className=" max-w-[3000px] px-4 pt-[30px] overflow-hidden h-[324px] relative ">
+        <div className=" max-w-[3000px] px-4 pt-[70px] overflow-hidden h-[704px] relative ">
           <div className="w-[520px]  lg:w-[1120px] h-[300px] relative lg:h-[320px] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] ">
             <video
               // controls

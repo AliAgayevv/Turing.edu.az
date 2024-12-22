@@ -9,7 +9,7 @@ import TuringAdvantage from "./TuringAdvantage";
 // : Home section da consoel acnada video partlayir
 export default function Home() {
   return (
-    <div className="bg-blue_ultraDark mx-auto   ">
+    <div className="bg-blue_ultraDark mx-auto  ">
       <div className="h-screen w-screen mx-auto">
         <Hero />
         <MutualChoices />

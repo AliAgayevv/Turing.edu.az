@@ -13,7 +13,6 @@ eventsData.forEach((event) => {
     fixCategory.push(event.category);
   }
 });
-console.log(fixCategory);
 
 const PAGE_SIZE = 12; // Initial events to display
 const LOAD_MORE_COUNT = 3; // Number of additional events to load

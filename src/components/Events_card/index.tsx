@@ -22,7 +22,7 @@ export default function Events_card({
 
   return (
     <div
-      className={`group w-full h-auto lg:w-[416px] rounded-2xl p-4 border ${
+      className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] lg:w-[416px] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       } hover:cursor-pointer ${!isDark ? "bg-white_ultraLight" : ""}`}
       onMouseEnter={() => setIsHover(true)}

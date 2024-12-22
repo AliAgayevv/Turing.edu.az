@@ -1,5 +1,3 @@
-// TODO: Arxa fondaki isiq effektleri partdiyir overflow verib, onlari neylese duzelt
-
 import { useState, useEffect } from "react";
 import vector1 from "../assets/vectors/communityFirstVector.png";
 import vector2 from "../assets/vectors/positiveEnergyVector.png";
@@ -86,11 +84,13 @@ export default function TuringAdvantage() {
       {/* <div className="absolute -top-80 -right-80 w-[500px] h-[500px] bg-gradient-to-br from-blue-200 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div> */}
 
       {/* Title */}
-      <h3 className="uppercase text-white_dark">Turing Advantage</h3>
-      <h1 className="text-4xl md:text-5xl font-semibold text-white py-4">
-        <span className="text-sky-500">Turing Academy</span> offers a fun
-        <br />& accessible learning experience.
-      </h1>
+      <div className="w-11/12 mx-auto">
+        <h3 className="uppercase text-white_dark">Turing Advantage</h3>
+        <h1 className="text-4xl md:text-5xl font-semibold text-white py-4">
+          <span className="text-sky-500">Turing Academy</span> offers a fun
+          <br />& accessible learning experience.
+        </h1>
+      </div>
 
       {/* Data Grid */}
       <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 mt-[72px] gap-[48px] md:gap-[72px] md:px-8 lg:px-16">
@@ -127,7 +127,7 @@ export default function TuringAdvantage() {
             loop={true}
           />
         </div>
-        <div className="text-[65px] leading-4 top-36 right-5   md:leading-9 md:text-[195px] absolute md:top-40 text-white_light_32 font-[900] font-montserrat uppercase ">
+        <div className="text-[65px] leading-4 top-36 right-5   md:leading-9 md:text-[195px] absolute md:top-40 text-white_light_32 font-jakarta font-[900]  uppercase ">
           Community
         </div>
 

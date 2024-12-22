@@ -3,13 +3,15 @@ import faqData from "../../datas/FAQdata.json";
 import { useState } from "react";
 
 interface IProps {
-  category: string;
+  id: string | number;
 }
 
 export default function FAQ({ id }: IProps) {
   const categoryData = faqData.find((item) => item.category === id);
   const [activeId, setActiveId] = useState<string | null>(null);
   const faq = categoryData?.questions || [];
+
+  console.log(faq);
 
   const toggleVisibility = (clickedId: string) => {
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
@@ -32,8 +34,8 @@ export default function FAQ({ id }: IProps) {
               key={item.id}
               question={item.question}
               answer={item.answer}
-              isVisible={activeId === item.id} // Sadece aktif ID'yi kontrol et
-              onClick={() => toggleVisibility(item.id)} // ID'yi toggleVisibility'ye gönder
+              onClick={() => toggleVisibility(item.id)}
+              isVisible={activeId === item.id}
             />
           ))
         ) : (

@@ -47,7 +47,7 @@ export interface INavbarProps {
 }
 
 export interface IStudentsInfoProps {
-  studentName: string;
+  name: string;
   desc: string;
   videoUrl: string;
   coverPhoto: any;

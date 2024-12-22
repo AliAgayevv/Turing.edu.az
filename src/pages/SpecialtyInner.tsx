@@ -13,7 +13,6 @@ import Footer from "../components/Footer";
 
 const SpecialtyInner = () => {
   const { id = "" } = useParams();
-  console.log(id);
 
   const categoryData = data.find((item) => item.category === id);
 

@@ -17,12 +17,13 @@ export default function Graduates_card({
     setIsPlaying(!isPlaying);
   };
 
+  console.log(studentName);
   return (
     <div
       className="w-full h-auto  rounded-2xl p-4 border relative"
       onClick={handleTogglePlay}
     >
-      <div className="w-full min-h-[300px] aspect-square bg-blue-50 rounded-[10px] relative">
+      <div className="w-full min-h-[300px aspect-[4/4]  bg-blue-50 rounded-[10px] relative">
         {!isPlaying ? (
           <img
             src={coverPhoto}

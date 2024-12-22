@@ -36,7 +36,7 @@ const SpecialtyCard: React.FC<IProps> = ({
         <img
           src={img}
           alt={title}
-          className="h-full w-full object-cover transition-all duration-300 delay-200"
+          className="h-full w-full object-cover transition-all rounded-xl duration-300 delay-200"
         />
       </div>
 

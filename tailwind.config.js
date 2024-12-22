@@ -3,15 +3,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      animation: {
-        rainbow: "rainbow 10s linear infinite",
-      },
-      keyframes: {
-        rainbow: {
-          "0%": { backgroundPosition: "0% 0%" },
-          "100%": { backgroundPosition: "-125em 0%" },
-        },
-      },
       perspective: {
         1000: "1000px",
       },
@@ -58,7 +49,7 @@ export default {
       fontFamily: {
         inter: ["Inter"],
         montserrat: ["Montserrat"],
-        jakarta: ["Plus_Jakarta_Sans"],
+        jakarta: ["Plus Jakarta Sans"],
       },
       // fontSize: {
       //   "responsive-lg": "clamp(2rem, 4rem, 6rem)",

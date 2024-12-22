@@ -16,6 +16,8 @@ export default function AllGraduates() {
     setVisibleCount((prev) => prev + PAGE_SIZE);
   };
 
+  console.log(data);
+
   return (
     <div className="h-screen">
       <Navbar isDark={true} />
@@ -28,14 +30,7 @@ export default function AllGraduates() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 px-6 gap-6 bg-white w-full">
               {/* Send items with spread */}
               {data.slice(0, visibleCount).map((item) => (
-                <Reels_card
-                  key={item.id}
-                  category={item.category}
-                  studentName={item.name}
-                  desc={item.desc}
-                  videoUrl={item?.videoUrl || ""}
-                  coverPhoto={item.coverPhoto}
-                />
+                <Reels_card key={item.id} {...item} />
               ))}
             </div>
             {visibleCount < data.length && (
