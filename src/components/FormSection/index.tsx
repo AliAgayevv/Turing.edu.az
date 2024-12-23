@@ -84,6 +84,7 @@ export default function FormSection() {
               console.log(values, selectedSpecialties);
               alert("Form submitted successfully!");
               resetForm();
+              setSelected([]);
             }
           }}
         >

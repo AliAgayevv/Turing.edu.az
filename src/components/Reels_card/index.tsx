@@ -6,7 +6,7 @@ export default function Reels_card({
   category,
   name,
   desc,
-  videoUrl,
+  video,
   coverPhoto,
 }: IStudentsInfoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -31,7 +31,7 @@ export default function Reels_card({
         ) : (
           <iframe
             className="w-full h-full border-none rounded-[10px] customAspect"
-            src={videoUrl}
+            src={video}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"

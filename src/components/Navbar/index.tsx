@@ -39,7 +39,17 @@ const fakeData = [
 export default function Navbar({ isDark }: INavbarProps) {
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
-    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+
+    const formElement = document.getElementById("form");
+
+    if (formElement) {
+      const formBottomPosition =
+        formElement.offsetTop + formElement.offsetHeight;
+      window.scrollTo({
+        top: formBottomPosition - window.innerHeight,
+        behavior: "smooth",
+      });
+    }
   };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
@@ -187,7 +197,10 @@ export default function Navbar({ isDark }: INavbarProps) {
               <option value="az">AZ</option>
             </select>
           )}
-          <div className="hidden lg:block w-[145px] h-[45px]">
+          <div
+            className="hidden lg:block w-[145px] h-[45px]"
+            onClick={handleGoForm}
+          >
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
         </div>
@@ -284,7 +297,7 @@ export default function Navbar({ isDark }: INavbarProps) {
                 Scholarship Programs
               </Link>
             </nav>
-            <div className="mt-5">
+            <div className="mt-5" onClick={handleGoForm}>
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>

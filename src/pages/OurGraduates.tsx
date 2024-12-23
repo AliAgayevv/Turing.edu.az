@@ -9,22 +9,32 @@ export default function OurGraduates() {
     <div className="w-11/12 mx-auto py-20">
       <h3 className="uppercase text-white_dark">Our Graduates</h3>
       <div className="flex flex-col md:flex-row justify-between items-center pr-10">
-        <h1 className="text-[48px] md:text-5xl font-jakarta font-[500] text-black_medium py-4 ">
+        <h1 className="md:text-[48px] text-[32px] md:text-5xl font-jakarta font-[500] text-black_medium py-4 line-clamp-3">
           Accelerate your career
-          <br />
+          <br className="hidden md:block" />
           in <span className="text-blue_light">Turing Academy</span>
         </h1>
         <Link to={"/graduates"}>
-          <div className="h-[56px] w-[145px]">
+          <div className="hidden md:block h-[56px] w-[145px]">
             <SeeAll_btn>See all</SeeAll_btn>
           </div>
         </Link>
       </div>
-      <div className="flex flex-col overflow-x-auto gap-10 sm:gap-5 md:grid-cols-2 lg:gap-0  sm:grid-cols-2 sm:grid lg:grid-cols-4 py-16">
+      <div className="flex gap-4 md:gap-0 overflow-x-auto snap-x snap-mandatory scroll-smooth md:overflow-clip pb-10 pt-4 scrollbar-hide">
         {fakeData.slice(0, 4).map((data) => (
-          <Reels_card {...data} />
+          <div
+            className="snap-center flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4"
+            key={data.id}
+          >
+            <Reels_card {...data} />
+          </div>
         ))}
       </div>
+      <Link to={"/graduates"}>
+        <div className="block md:hidden h-[56px] w-11/12 mx-auto">
+          <SeeAll_btn>See all</SeeAll_btn>
+        </div>
+      </Link>
     </div>
   );
 }

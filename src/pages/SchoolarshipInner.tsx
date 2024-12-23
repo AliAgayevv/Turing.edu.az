@@ -79,6 +79,15 @@ export default function SchoolarshipInner() {
             </div>
 
             <div className="pb-20">
+              <div className="text-[32px] pt-20 pb-5">
+                <h2 className="hidden md:block text-center">
+                  Frequently asked questions (FAQ)
+                </h2>
+                <h2 className="block md:hidden">FAQ</h2>
+                <p className="text-black_light text-[14px] text-left md:text-center">
+                  We're here to support your design journey.
+                </p>
+              </div>
               <LongFAQ id={currentData?.id} />
             </div>
           </div>

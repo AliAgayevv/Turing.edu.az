@@ -6,7 +6,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty" 
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
-        "video": ""
+        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     }
     
 ]

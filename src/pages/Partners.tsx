@@ -3,6 +3,8 @@ import FormSection from "../components/FormSection";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// TODO:  mobilde logolarin boyun azald margin veya padding azalt, mobilde
+
 export default function Partners() {
   const sliderSettings = {
     dots: false,
@@ -51,12 +53,12 @@ export default function Partners() {
         {partners.map((logo, index) => (
           <div
             key={index}
-            className="border w-[114px] h-[92px] flex-shrink-0 mx-4 flex justify-center items-center" // Add margin-x to create gaps
+            className="border w-[114px] sm:w-[90px] md:w-[100px] lg:w-[114px] h-auto min-h-32 flex-shrink-0 mx-4 flex justify-center items-center"
           >
             <img
               src={logo}
               alt={`Partner ${index + 1}`}
-              className="w-full object-cover h-full p-5"
+              className="w-full object-cover h-full p-2 sm:p-1"
             />
           </div>
         ))}

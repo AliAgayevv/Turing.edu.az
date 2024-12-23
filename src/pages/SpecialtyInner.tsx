@@ -9,11 +9,21 @@ import Syllabus_section from "../components/Syllabus_section";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 
-// TODO: FAQ PROBLEMI
-
 const SpecialtyInner = () => {
   const { id = "" } = useParams();
 
+  const handleGoForm = () => {
+    const formElement = document.getElementById("form");
+
+    if (formElement) {
+      const formBottomPosition =
+        formElement.offsetTop + formElement.offsetHeight;
+      window.scrollTo({
+        top: formBottomPosition - window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
   const categoryData = data.find((item) => item.category === id);
 
   const desc = categoryData?.description || [];
@@ -28,7 +38,7 @@ const SpecialtyInner = () => {
             <div className="absolute -bottom-0 right-10 w-[300px] h-[300px] blur-[200px] rounded-full bg-gradient-to-br from-blue-500/50 via-purple-400/40 to-transparent pointer-events-none z-0"></div>
             <p className="ont-[600] text-[64px] ">{id}</p>
             <p className="mt-2">{desc}</p>
-            <div className="w-[145px] h-[48px] mt-12">
+            <div className="w-[145px] h-[48px] mt-12" onClick={handleGoForm}>
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>

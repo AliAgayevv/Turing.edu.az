@@ -33,7 +33,7 @@ export default function Events() {
         {!isMobile && (
           <div className="text-white bg-transparent w-full sm:w-[145px] h-[56px]">
             <Link to={"/events"}>
-              <button className="border-1 border-black_light px-8 py-4 bg-blue_dark w-full h-full text-white rounded-full">
+              <button className="border border-black_light px-8 py-4 bg-blue_dark w-full h-full text-white rounded-full">
                 See All
               </button>
             </Link>
@@ -53,7 +53,7 @@ export default function Events() {
       {isMobile && (
         <div className="flex justify-center mt-8">
           <Link to={"/events"}>
-            <button className="w-full px-10 h-[48px] border border-black_light text-white bg-blue_dark rounded-full font-[500] ">
+            <button className="w-[28rem]  px-10 h-[48px]  text-white bg-blue_dark  font-[500] border   rounded-full border-black_light">
               See All
             </button>
           </Link>

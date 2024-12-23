@@ -8,7 +8,16 @@ import { useState } from "react";
 
 export default function Hero() {
   const handleGoForm = () => {
-    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+    const formElement = document.getElementById("form");
+
+    if (formElement) {
+      const formBottomPosition =
+        formElement.offsetTop + formElement.offsetHeight;
+      window.scrollTo({
+        top: formBottomPosition - window.innerHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   const [isApplyNowClicked, setIsApplyNowClicked] = useState(false);
@@ -74,6 +83,7 @@ export default function Hero() {
                 className="w-full h-full object-cover "
                 src={exampleVideo}
                 autoPlay
+                controls
               />
             </div>
           </div>

@@ -1,5 +1,3 @@
-// TODO: TITLE ITALIC FOMNT IMPORT duzelt
-
 import MutualChoices_card from "../components/MutualChoices_card";
 import icon from "../assets/vectors/Frame.png";
 import textVector from "../assets/vectors/textVector.png";
@@ -56,7 +54,9 @@ export default function MutualChoices() {
 
       {/* See All Button for Mobile */}
       <div className="block lg:hidden w-full mt-6 px-4">
-        <SeeAll_btn>See all</SeeAll_btn>
+        <Link to={"/specialty"}>
+          <SeeAll_btn>See all</SeeAll_btn>
+        </Link>
       </div>
     </div>
   );

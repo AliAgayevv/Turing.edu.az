@@ -8,6 +8,8 @@ import {
 } from "react-icons/fa";
 import footerPhoto from "../../assets/vectors/footerPhoto.png";
 
+// TODO ADD HOVER (DIZAYN GOZLENILIR)
+
 import turingLogo from "../../assets/turingFooterLogo.png";
 
 const logoData = [
