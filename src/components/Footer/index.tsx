@@ -7,10 +7,13 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import footerPhoto from "../../assets/vectors/footerPhoto.png";
+import { eventsData } from "../../datas/eventsData";
+import schoolarshipData from "../../datas/schoolarShip.json";
 
 // TODO ADD HOVER (DIZAYN GOZLENILIR)
 
 import turingLogo from "../../assets/turingFooterLogo.png";
+import { Link } from "react-router";
 
 const logoData = [
   {
@@ -41,21 +44,32 @@ const logoData = [
   },
 ];
 
+let eventsForShow = [];
+eventsData.map((event) =>
+  !event.isEnd && eventsForShow.length < 4 ? eventsForShow.push(event) : null
+);
+
+let schoolarshipForShow = [];
+let schoolarshipForShowLinks = [];
+
+schoolarshipData.map(
+  (data) =>
+    schoolarshipForShow.push(data.id) &&
+    schoolarshipForShowLinks.push(data.route)
+);
+
 const menuData = {
-  upcomingEvents: [
-    { title: "III Design Competition", link: "#" },
-    { title: "II Hackaton", link: "#" },
-    { title: "IV Design Competition", link: "#" },
+  upcomingEvents: eventsForShow,
+  // academy: ["About us", "Community", "Instructors", "Graduates", "Partners"],
+  academy: [
+    { title: "About us", link: "#" },
+    { title: "Community", link: "/community" },
+    { title: "Instructors", link: "#" },
+    { title: "Graduates", link: "/graduates" },
+    { title: "Partners", link: "#" },
   ],
-  academy: ["About us", "Community", "Instructors", "Graduates", "Partners"],
   events: ["Seminar", "Workshop", "Hackaton", "Gallery"],
-  fieldsOfStudy: [
-    "UX/UI Design",
-    "Back-end Development",
-    "Front-end Development",
-    "Computer Science",
-    "Scholarship",
-  ],
+  fieldsOfStudy: schoolarshipForShow,
 };
 
 export default function Footer() {
@@ -98,11 +112,14 @@ export default function Footer() {
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
             {menuData.upcomingEvents.map((event, index) => (
-              <li className="text-white_ultraMedium" key={index}>
-                <a href={event.link} className="hover:underline">
-                  {event.title}
-                </a>
-              </li>
+              <Link to={event.linkForLearnMore}>
+                <li
+                  className="text-white_ultraMedium hover:underline underline-offset-4"
+                  key={index}
+                >
+                  {event.eventName}
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -114,9 +131,14 @@ export default function Footer() {
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
             {menuData.academy.map((item, index) => (
-              <li className="text-white_ultraMedium" key={index}>
-                {item}
-              </li>
+              <Link to={item.link}>
+                <li
+                  className="text-white_ultraMedium hover:underline underline-offset-4"
+                  key={index}
+                >
+                  {item.title}
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -142,10 +164,20 @@ export default function Footer() {
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
             {menuData.fieldsOfStudy.map((field, index) => (
-              <li className="text-white_ultraMedium" key={index}>
-                {field}
-              </li>
+              <Link to={schoolarshipForShowLinks[index]}>
+                <li
+                  className="text-white_ultraMedium hover:underline underline-offset-4"
+                  key={index}
+                >
+                  {field}
+                </li>
+              </Link>
             ))}
+            <Link to="/schoolarship">
+              <li className="text-white_ultraMedium hover:underline underline-offset-4">
+                Scholarships
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
