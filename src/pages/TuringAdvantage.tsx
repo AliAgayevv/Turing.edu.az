@@ -58,9 +58,9 @@ export default function TuringAdvantage() {
 
   const updateVisibleCount = () => {
     if (window.innerWidth >= 768) {
-      setVisibleCount(fakeData.length); // Show all data on desktop
+      setVisibleCount(fakeData.length);
     } else {
-      setVisibleCount(4); // Show 4 items on mobile
+      setVisibleCount(4);
     }
   };
 
@@ -69,11 +69,9 @@ export default function TuringAdvantage() {
 
     window.addEventListener("resize", updateVisibleCount);
 
-    // Cleanup the event listener on unmount
     return () => window.removeEventListener("resize", updateVisibleCount);
   }, []);
 
-  // Function to load 4 more items
   const loadMore = () => {
     setVisibleCount((prevCount) => prevCount + 4);
   };
@@ -83,7 +81,6 @@ export default function TuringAdvantage() {
       {/* Background Gradient */}
       {/* <div className="absolute -top-80 -right-80 w-[500px] h-[500px] bg-gradient-to-br from-blue-200 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div> */}
 
-      {/* Title */}
       <div className="w-11/12 mx-auto">
         <h3 className="uppercase text-white_dark">Turing Advantage</h3>
         <h1 className="text-4xl md:text-5xl font-semibold text-white py-4">
@@ -92,7 +89,6 @@ export default function TuringAdvantage() {
         </h1>
       </div>
 
-      {/* Data Grid */}
       <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 mt-[72px] gap-[48px] md:gap-[72px] md:px-8 lg:px-16">
         {fakeData.slice(0, visibleCount).map((data) => (
           <div key={data.id} className="w-full relative z-10">
@@ -107,7 +103,6 @@ export default function TuringAdvantage() {
         ))}
       </div>
 
-      {/* Load More Button (Visible only on mobile) */}
       {visibleCount < fakeData.length && (
         <button
           onClick={loadMore}
@@ -117,7 +112,6 @@ export default function TuringAdvantage() {
         </button>
       )}
 
-      {/* Video Section */}
       <div className="mt-44 relative overflow-hidden ">
         <div className="w-full md:w-[1000px] relative h-[320px] mt-8 rounded-lg overflow-hidden mx-auto">
           <video
@@ -131,7 +125,6 @@ export default function TuringAdvantage() {
           Community
         </div>
 
-        {/* Description and Explore Button */}
         <div className="w-full md:w-[736px] mx-auto pt-16 flex flex-col justify-center items-center gap-8">
           <p className="text-white_lightMedium text-[18px] text-center">
             Learn highly demanded skills through practical courses, created by

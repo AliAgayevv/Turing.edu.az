@@ -2,14 +2,12 @@ import MutualChoices_card from "../components/MutualChoices_card";
 import icon from "../assets/vectors/Frame.png";
 import textVector from "../assets/vectors/textVector.png";
 
-// SEE AL BASILANDA FIELDS OF STUDy
 import SeeAll_btn from "../components/SeeAll_btn";
 import { Link } from "react-router";
 
 export default function MutualChoices() {
   return (
     <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-20 overflow-hidden">
-      {/* Left Section */}
       <div className="w-full lg:w-[220px] flex justify-start">
         <div className="flex flex-col gap-8 lg:gap-14 px-4 lg:px-0">
           <div className="relative">
@@ -25,7 +23,6 @@ export default function MutualChoices() {
               Skill up, stand out
             </p>
           </div>
-          {/* See All Button for Desktop */}
           <div className="hidden lg:block h-[56px] w-[145px]">
             <Link to={"/specialty"}>
               <SeeAll_btn>See all</SeeAll_btn>
@@ -34,7 +31,6 @@ export default function MutualChoices() {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 lg:px-0">
         <MutualChoices_card
           title={"Design"}
@@ -52,7 +48,6 @@ export default function MutualChoices() {
         />
       </div>
 
-      {/* See All Button for Mobile */}
       <div className="block lg:hidden w-full mt-6 px-4">
         <Link to={"/specialty"}>
           <SeeAll_btn>See all</SeeAll_btn>

@@ -4,19 +4,51 @@ import { eventsData } from "../datas/eventsData";
 import ApplyNow_btn from "../components/ApplyNow_btn";
 import Teacher_card from "../components/Teacher_card";
 import Footer from "../components/Footer";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+const item = {
+  hidden: { opacity: 0, translateY: 20 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
 
 export default function EventsInner() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
+
+  const isEndItem = {
+    hidden: {
+      opacity: 0,
+      x: 20,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const { id } = useParams<{ id: string }>();
   const currentEvent = eventsData.find((event) => event.id === Number(id));
 
-  console.log(currentEvent);
   return (
     <div className="h-screen">
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto w-11/12">
           <div className="mx-auto w-11/12 pt-5 md:pt-24 flex flex-col md:flex-row md:justify-between md:items-center">
-            {/* Sol Kısım */}
             <div className="flex flex-col gap-6">
               <h4 className="opacity-60 uppercase text-[14px] text-black_dark">
                 ABOUT EVENT
@@ -38,7 +70,6 @@ export default function EventsInner() {
               </div>
             </div>
 
-            {/* Sağ Kısım */}
             <div className="mr-20">
               <div className="mt-20 flex flex-col gap-6">
                 <div>
@@ -61,7 +92,6 @@ export default function EventsInner() {
                     {currentEvent?.eventDate}
                   </h5>
                 </div>
-                {/* Sadece Mobil Ekranlarda Gösterilecek Buton */}
                 <div
                   className={`w-[145px] h-[48px] block lg:hidden mt-4 ${
                     currentEvent?.isEnd ? "disabled" : ""
@@ -75,7 +105,6 @@ export default function EventsInner() {
             </div>
           </div>
 
-          {/* Guests Bölümü */}
           <div className="mt-32 w-11/12 mx-auto pb-20">
             <h4 className="opacity-60 uppercase text-[14px] text-black_dark">
               Guests
@@ -96,7 +125,13 @@ export default function EventsInner() {
             </div>
           </div>
           {currentEvent?.isEnd && (
-            <div className="pt-24 w-11/12 mx-auto pb-20">
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={isEndItem}
+              className="pt-24 w-11/12 mx-auto pb-20"
+            >
               <h4 className="opacity-60 uppercase text-[14px] text-black_dark">
                 Gallery
               </h4>
@@ -105,7 +140,10 @@ export default function EventsInner() {
               </h1>
               <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-5">
                 {currentEvent.photos.map((photo, index) => (
-                  <div
+                  <motion.div
+                    variants={item}
+                    initial="hidden"
+                    animate="visible"
                     key={index}
                     className="w-full h-[250px] sm:h-[306px] rounded-2xl overflow-hidden"
                   >
@@ -114,10 +152,10 @@ export default function EventsInner() {
                       src={photo}
                       alt={`Event Photo ${index + 1}`}
                     />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

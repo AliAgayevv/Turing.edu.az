@@ -1,5 +1,15 @@
 import { useState } from "react";
 import { IEventsProps } from "../../const/types";
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: { opacity: 0, translateY: 20 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
 
 export default function Events_card({
   isDark,
@@ -21,7 +31,10 @@ export default function Events_card({
     : "text-white";
 
   return (
-    <div
+    <motion.div
+      variants={item}
+      initial="hidden"
+      animate="visible"
       className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] lg:w-[416px] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       } hover:cursor-pointer ${!isDark ? "bg-white_ultraLight" : ""}`}
@@ -73,6 +86,6 @@ export default function Events_card({
           </button>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

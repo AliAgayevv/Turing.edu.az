@@ -1,7 +1,8 @@
 import { FaLinkedinIn } from "react-icons/fa";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import playVector from "../../assets/vectors/play.png";
 import { IStudentsInfoProps } from "../../const/types";
+import { useInView, motion } from "framer-motion";
 
 export default function Graduates_card({
   studentName,
@@ -11,15 +12,31 @@ export default function Graduates_card({
   github,
   connect,
 }: IStudentsInfoProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
+  const graduatesItem = {
+    hidden: { opacity: 0, translateX: -100 },
+    visible: {
+      opacity: 1,
+      translateX: 0,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTogglePlay = () => {
     setIsPlaying(!isPlaying);
   };
 
-  console.log(studentName);
   return (
-    <div
+    <motion.div
+      ref={ref}
+      variants={graduatesItem}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
       className="w-full h-auto  rounded-2xl p-4 border relative"
       onClick={handleTogglePlay}
     >
@@ -31,10 +48,6 @@ export default function Graduates_card({
             alt="Cover"
           />
         ) : (
-          //   <iframe
-          //     src={videoUrl}
-          //     className="w-full h-full rounded-[10px] object-cover"
-          //   />
           <iframe
             className="w-full h-full border-none"
             src={videoUrl}
@@ -66,6 +79,6 @@ export default function Graduates_card({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

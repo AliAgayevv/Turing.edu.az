@@ -165,7 +165,6 @@ export default function Navbar({ isDark }: INavbarProps) {
           </ul>
         </div>
 
-        {/* Mobile Menu Toggle Button */}
         <div className="lg:hidden flex items-center ">
           {!isDark ? (
             <img
@@ -183,8 +182,6 @@ export default function Navbar({ isDark }: INavbarProps) {
             </div>
           )}
         </div>
-
-        {/* ADD FOR THERE */}
 
         <div className=" items-center mt-4 md:mt-0 hidden lg:flex">
           {!isDark && (

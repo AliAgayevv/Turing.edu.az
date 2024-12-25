@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import SpecialtyCard from "../components/Specialty_card";
 import fakeData from "../datas/schoolarShip.json";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 let fixCategory = ["all"];
 
@@ -13,7 +14,8 @@ fakeData.forEach((data) => {
 });
 
 export default function Schoolarship() {
-  const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const filteredEvents =
     selectedCategory === "all"
       ? fakeData
@@ -23,7 +25,16 @@ export default function Schoolarship() {
     setSelectedCategory(category);
   };
   return (
-    <div className="z-[50]  h-screen">
+    <motion.div
+      transition={{
+        duration: 0.5,
+        delay: 0.2,
+        ease: "easeInOut",
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="z-[50]  h-screen"
+    >
       <Navbar isDark={true} />
       <div className="w-screen bg-white ">
         <div className="mx-auto w-11/12 pt-24 pb-20">
@@ -32,7 +43,6 @@ export default function Schoolarship() {
           </h1>
           <div className="flex gap-3">
             <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
-              {/* "All" Butonu */}
               {fixCategory.map((category) => (
                 <div
                   onClick={() => handleSelect(category)}
@@ -64,6 +74,6 @@ export default function Schoolarship() {
       <div className="h-screen relative -z-[2]">
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 }

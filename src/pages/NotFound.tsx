@@ -2,7 +2,7 @@ import fourPNG from "../assets/vectors/4.png";
 import zeroPNG from "../assets/vectors/0.png";
 import fourRotated from "../assets/vectors/4Rotated.png";
 import arrowLeft from "../assets/vectors/arrow-left.png";
-import { Link } from "react-router-dom"; // Correct import for react-router-dom v6+
+import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
@@ -11,7 +11,6 @@ export default function NotFound() {
       <div className="absolute -top-10 -left-10 w-[150px] h-[200px] md:w-[200px] md:h-[300px] bg-gradient-to-br from-white/30 to-transparent blur-[100px] md:blur-[120px] rounded-full pointer-events-none z-0"></div>
       <div className="absolute -bottom-10 -right-10 w-[150px] h-[200px] md:w-[200px] md:h-[300px] bg-gradient-to-br from-white/30 to-transparent blur-[100px] md:blur-[120px] rounded-full pointer-events-none z-0"></div>
 
-      {/* Text Section */}
       <div className="flex flex-col gap-6 md:gap-8 mb-12 z-10 px-4 items-center justify-center">
         <h1 className="font-jakarta font-[600] text-5xl md:text-6xl">Oops!</h1>
         <h2 className="font-jakarta font-[600] text-2xl md:text-4xl">
@@ -29,7 +28,6 @@ export default function NotFound() {
         </Link>
       </div>
 
-      {/* 404 Images */}
       <div className="flex absolute bottom-5 md:-bottom-4 lg:-bottom-12 gap-4 md:gap-10 z-0">
         <img src={fourPNG} alt="4" className="w-40 md:w-60 lg:w-full" />
         <img src={zeroPNG} alt="0" className="w-40 md:w-60 lg:w-full" />

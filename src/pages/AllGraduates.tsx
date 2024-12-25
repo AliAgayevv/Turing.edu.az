@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Reels_card from "../components/Reels_card";
 import data from "../datas/graduates.json";
@@ -6,18 +6,17 @@ import LoadMore_btn from "../components/LoadMore_btn";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 
-const PAGE_SIZE = 8; // Her seferinde gösterilecek öğe sayısı
+const PAGE_SIZE = 8;
 
 export default function AllGraduates() {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   // Load More button handler
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + PAGE_SIZE);
   };
-
-  console.log(data);
-
   return (
     <div className="h-screen">
       <Navbar isDark={true} />
@@ -28,7 +27,6 @@ export default function AllGraduates() {
               Our Graduates
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 px-6 gap-6 bg-white w-full">
-              {/* Send items with spread */}
               {data.slice(0, visibleCount).map((item) => (
                 <Reels_card key={item.id} {...item} />
               ))}
@@ -40,7 +38,6 @@ export default function AllGraduates() {
                 </div>
               </div>
             )}
-            {/* Add the white background to the next section */}
             <div className="pt-20 bg-white pb-20">
               <FormSection />
             </div>

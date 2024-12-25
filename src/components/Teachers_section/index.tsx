@@ -11,7 +11,6 @@ export default function Teachers_section({ category }: IProps) {
 
   return (
     <div className="w-full">
-      {/* Section Title */}
       <h4 className="opacity-60 uppercase text-[12px] sm:text-[14px] text-black_dark">
         Instructors
       </h4>
@@ -19,11 +18,10 @@ export default function Teachers_section({ category }: IProps) {
         Guiding Future Lights: Our Instructors
       </h2>
 
-      {/* Responsive Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {teachers.map((item) => (
           <Teacher_card
-            key={item.name} // Always include a key when mapping
+            key={item.name}
             name={item.name}
             workPosition={item.workPosition}
             photo={item.photo}

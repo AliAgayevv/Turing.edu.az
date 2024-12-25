@@ -42,7 +42,6 @@ export default function FormSection() {
       className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6 bg-white h-full"
       id="form"
     >
-      {/* Sol taraf: Form Alanı */}
       <div className="w-full md:w-[856px] h-auto bg-white md:border p-6">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
@@ -53,7 +52,6 @@ export default function FormSection() {
           selection is possible)
         </p>
 
-        {/* Uzmanlık Seçim Butonları */}
         <div className="w-full h-auto flex flex-wrap justify-start gap-3 items-center mt-5">
           {fakeData.map((data) => (
             <button
@@ -69,8 +67,6 @@ export default function FormSection() {
             </button>
           ))}
         </div>
-
-        {/* Form Alanı */}
         <Formik
           initialValues={{ name: "", surname: "", email: "", phone: "" }}
           validationSchema={FormSchema}
@@ -150,8 +146,6 @@ export default function FormSection() {
           </Form>
         </Formik>
       </div>
-
-      {/* Sağ taraf: Görsel ve Diğer Bilgiler */}
       <div className="w-full md:w-[416px] h-auto bg-white border rounded-2xl p-6 mt-6 md:mt-0">
         <div className="h-[241px] w-full hidden md:block">
           <img

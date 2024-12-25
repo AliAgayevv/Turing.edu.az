@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView, delay } from "framer-motion";
 import LongFAQItem from "../LongFAQItem";
 import fakeData from "../../datas/schoolarShip.json";
 
@@ -9,25 +10,48 @@ interface LongFAQProps {
 function LongFAQ({ id }: LongFAQProps) {
   const currentData = fakeData.find((item) => item.id === id);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
   const faq = currentData?.questions;
+  const FAQitemVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
 
   const toggleVisibility = (clickedId: string) => {
-    // Eğer aynı id'ye tıklanırsa kapat, değilse aç
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
   };
 
   return (
-    <div className="mt-12 flex flex-col items-center justify-center">
-      {faq?.map((item) => (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={FAQitemVariant}
+      className="mt-12 flex flex-col items-center justify-center"
+    >
+      {faq?.map((item, index) => (
         <LongFAQItem
-          key={item.id}
           question={item.question}
           answer={item.answer}
-          isVisible={activeId === item.id} // Sadece aktif ID'yi kontrol et
-          onClick={() => toggleVisibility(item.id)} // ID'yi toggleVisibility'ye gönder
+          isVisible={activeId === item.id}
+          onClick={() => toggleVisibility(item.id)}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
 

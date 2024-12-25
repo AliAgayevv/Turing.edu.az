@@ -13,8 +13,6 @@ export default function Syllabus_section({ category }: SyllabusSectionProps) {
   const syllabusLink = categoryData?.syllabusLink || "#";
   const modules = categoryData?.modules || [];
 
-  console.log(modules);
-
   const toggleVisibility = (clickedId: string) => {
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
   };

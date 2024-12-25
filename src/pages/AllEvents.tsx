@@ -5,6 +5,7 @@ import LoadMore_btn from "../components/LoadMore_btn";
 import { Link } from "react-router";
 import { eventsData } from "../datas/eventsData";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 let fixCategory = ["all"];
 
@@ -14,14 +15,14 @@ eventsData.forEach((event) => {
   }
 });
 
-const PAGE_SIZE = 12; // Initial events to display
-const LOAD_MORE_COUNT = 3; // Number of additional events to load
+const PAGE_SIZE = 12;
+const LOAD_MORE_COUNT = 3;
 
 export default function AllEvents() {
-  const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  // Filter events based on selected category
   const filteredEvents =
     selectedCategory === "all"
       ? eventsData
@@ -29,7 +30,7 @@ export default function AllEvents() {
 
   const handleSelect = (category) => {
     setSelectedCategory(category);
-    setVisibleCount(PAGE_SIZE); // Reset visible count when category changes
+    setVisibleCount(PAGE_SIZE);
   };
 
   const handleLoadMore = () => {
@@ -37,7 +38,11 @@ export default function AllEvents() {
   };
 
   return (
-    <div className="h-screen">
+    <motion.div
+      className="h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto h-auto w-11/12 bg-white">
@@ -46,7 +51,6 @@ export default function AllEvents() {
               Events
             </h1>
             <div className="flex md:inline-flex items-center gap-2 h-11 overflow-x-auto p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8 sm:flex-nowrap overflow-y-hidden">
-              {/* Filter Buttons */}
               {fixCategory.map((category) => (
                 <div
                   onClick={() => handleSelect(category)}
@@ -61,7 +65,6 @@ export default function AllEvents() {
               ))}
             </div>
 
-            {/* Event Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 gap-6 pb-20">
               {filteredEvents.slice(0, visibleCount).map((event) => (
                 <Link to={`/events/${event.id}`} key={event.id}>
@@ -70,7 +73,6 @@ export default function AllEvents() {
               ))}
             </div>
 
-            {/* Load More Button */}
             {visibleCount < filteredEvents.length && (
               <div className="text-center mt-8 flex justify-center items-center pb-10">
                 <div className="w-[146px] h-[48px]" onClick={handleLoadMore}>
@@ -84,6 +86,6 @@ export default function AllEvents() {
       <div className="h-screen relative -z-[2]">
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 }

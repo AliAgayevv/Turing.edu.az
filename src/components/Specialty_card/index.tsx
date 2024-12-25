@@ -1,7 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // useNavigate'ı import ediyoruz
+import { useNavigate } from "react-router-dom";
 import ApplyNow_btn from "../ApplyNow_btn";
 import LearnMore_btn from "../LearnMore_btn";
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: { opacity: 0, translateY: 20 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
 
 interface IProps {
   category: string;
@@ -9,7 +19,7 @@ interface IProps {
   desc: string;
   title: string;
   hiddenText: string;
-  route: string; // Yönlendirme yapılacak URL parametresi
+  route: string;
 }
 
 const SpecialtyCard: React.FC<IProps> = ({
@@ -18,19 +28,21 @@ const SpecialtyCard: React.FC<IProps> = ({
   desc,
   title,
   hiddenText,
-  route, // URL'yi alıyoruz
+  route,
 }) => {
-  const navigate = useNavigate(); // useNavigate hook'unu kullanıyoruz
+  const navigate = useNavigate();
 
-  // Kart tıklandığında yönlendirme yapacak fonksiyon
   const handleCardClick = () => {
-    navigate(route); // Yönlendirme yapılacak URL'ye yönlendiriyoruz
+    navigate(route);
   };
 
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={item}
       className="border group w-[343px] h-[411px]  md:w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
-      onClick={handleCardClick} // Kart tıklanabilir hale geliyor
+      onClick={handleCardClick}
     >
       <div className="h-[300px] w-[300px] md:h-[274px] md:w-[274px] p-2 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
         <img
@@ -69,7 +81,7 @@ const SpecialtyCard: React.FC<IProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

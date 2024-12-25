@@ -9,7 +9,13 @@ import Syllabus_section from "../components/Syllabus_section";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 
+import { useEffect, useRef } from "react";
+
 const SpecialtyInner = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const { id = "" } = useParams();
 
   const handleGoForm = () => {
@@ -24,6 +30,7 @@ const SpecialtyInner = () => {
       });
     }
   };
+
   const categoryData = data.find((item) => item.category === id);
 
   const desc = categoryData?.description || [];
@@ -33,7 +40,6 @@ const SpecialtyInner = () => {
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="w-11/12 mx-auto h-auto bg-white">
-          {/*  */}
           <div className=" w-full h-auto md:h-[448px] px-10 sm:px-10 md:px-20 py-10 md:py-[100px] pt-10 md:pt-14 bg-blue_ultraDark rounded-[20px] md:rounded-[32px] relative text-white">
             <div className="absolute -bottom-0 right-10 w-[300px] h-[300px] blur-[200px] rounded-full bg-gradient-to-br from-blue-500/50 via-purple-400/40 to-transparent pointer-events-none z-0"></div>
             <p className="ont-[600] text-[64px] ">{id}</p>

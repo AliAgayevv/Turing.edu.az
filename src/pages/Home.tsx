@@ -6,7 +6,7 @@ import OurGraduates from "./OurGraduates";
 import Partners from "./Partners";
 import TuringAdvantage from "./TuringAdvantage";
 
-// : Home section da consoel acnada video partlayir
+// TODO Home section da consoel acnada video partlayir
 export default function Home() {
   return (
     <div className="bg-blue_ultraDark mx-auto  ">

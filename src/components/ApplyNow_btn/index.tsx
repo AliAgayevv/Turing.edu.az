@@ -1,8 +1,8 @@
-import React, { useState, ReactNode, PropsWithChildren } from "react";
+import React, { useState, PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 
 interface ApplyNow_btnProps {
-  isDisabled?: boolean; // Optional prop with a default value of false
+  isDisabled?: boolean;
 }
 // suggest
 const ApplyNow_btn: React.FC<PropsWithChildren<ApplyNow_btnProps>> = ({
@@ -15,7 +15,7 @@ const ApplyNow_btn: React.FC<PropsWithChildren<ApplyNow_btnProps>> = ({
     <motion.button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      disabled={isDisabled} // Apply the disabled prop
+      disabled={isDisabled}
       className={`bg-[#2BA6EB] text-white py-2 px-2 w-full h-full rounded-full overflow-hidden relative ${
         isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
       }`}

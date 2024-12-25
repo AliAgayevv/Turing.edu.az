@@ -44,13 +44,13 @@ const logoData = [
   },
 ];
 
-let eventsForShow = [];
+let eventsForShow: any = [];
 eventsData.map((event) =>
   !event.isEnd && eventsForShow.length < 4 ? eventsForShow.push(event) : null
 );
 
-let schoolarshipForShow = [];
-let schoolarshipForShowLinks = [];
+let schoolarshipForShow: any = [];
+let schoolarshipForShowLinks: any = [];
 
 schoolarshipData.map(
   (data) =>
@@ -60,7 +60,6 @@ schoolarshipData.map(
 
 const menuData = {
   upcomingEvents: eventsForShow,
-  // academy: ["About us", "Community", "Instructors", "Graduates", "Partners"],
   academy: [
     { title: "About us", link: "#" },
     { title: "Community", link: "/community" },
@@ -74,13 +73,7 @@ const menuData = {
 
 export default function Footer() {
   return (
-    //     <div className="fixed bottom-0 left-0 w-full bg-blue_ultraDark z-10 text-white_lightMedium">
-    //   <div className="container mx-auto p-6">
-    //     {/* Footer Content */}
-    //   </div>
-    // </div>
     <div className="fixed h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row justify-between pointer-events-auto">
-      {/* Left Section: Logo, Description, and Social Icons */}
       <div className="flex flex-col gap-6">
         <img
           src={turingLogo}
@@ -91,7 +84,6 @@ export default function Footer() {
           Learn highly demanded skills through practical courses, created by
           trusted industry professionals.
         </p>
-        {/* Social Media Icons */}
         <div className="grid grid-cols-3 w-[164px] gap-3">
           {logoData.map((item, index) => (
             <a key={index} href={item.link} target="_blank">
@@ -103,9 +95,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Links Section */}
       <div className="grid grid-cols-2 gap-6 md:gap-10 sm:flex lg:justify-between lg:gap-24 mt-10 lg:mt-0">
-        {/* Upcoming Events */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
             Upcoming Events
@@ -124,7 +114,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Academy */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
             Academy
@@ -142,8 +131,6 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-
-        {/* Events */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
             Events
@@ -157,7 +144,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Fields of Study */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
             Fields of Study
@@ -182,12 +168,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Background Image */}
       <div className="absolute bottom-0 left-0 -z-10">
         <img src={footerPhoto} alt="Footer Background" />
       </div>
 
-      {/* Bottom Section */}
       <div className="absolute bottom-0 left-0 w-full px-6 md:px-8 py-1 lg:py-10">
         <div className="flex lg:flex-row justify-between items-center text-white text-xs lg:text-sm font-[600]">
           <p>©2024 All rights reserved.</p>

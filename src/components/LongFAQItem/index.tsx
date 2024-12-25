@@ -13,7 +13,6 @@ function LongFAQItem({
 }: LongFAQItemProps) {
   return (
     <div className="w-full max-w-[1076px] p-4 sm:p-6 h-auto rounded-lg border border-white_medium mb-4 mx-auto">
-      {/* Header Section */}
       <div
         className="flex gap-4 text-left items-center cursor-pointer"
         onClick={onClick}
@@ -26,7 +25,6 @@ function LongFAQItem({
         </h4>
       </div>
 
-      {/* Answer Section */}
       <div
         className={`overflow-hidden transition-all duration-300 ${
           isVisible ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"

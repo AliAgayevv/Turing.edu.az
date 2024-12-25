@@ -11,8 +11,6 @@ export default function FAQ({ id }: IProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const faq = categoryData?.questions || [];
 
-  console.log(faq);
-
   const toggleVisibility = (clickedId: string) => {
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
   };

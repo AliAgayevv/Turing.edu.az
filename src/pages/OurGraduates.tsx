@@ -1,5 +1,4 @@
 import Reels_card from "../components/Reels_card";
-import examplePhoto from "../assets/photos/studentExamplePhoto.jpeg";
 import SeeAll_btn from "../components/SeeAll_btn";
 import { Link } from "react-router";
 import fakeData from "../datas/graduates.json";

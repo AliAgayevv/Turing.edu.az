@@ -14,7 +14,8 @@ graduatesData.forEach((graduates) => {
 });
 
 export default function Specialty() {
-  const [selectedCategory, setSelectedCategory] = useState("all"); // Manage active category and button state
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const handleSelect = (button: string) => {
     setSelectedCategory(button);

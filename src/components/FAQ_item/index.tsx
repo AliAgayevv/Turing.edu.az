@@ -1,8 +1,31 @@
+import { useRef } from "react";
 import { IQAProps } from "../../const/types";
+import { motion, useInView } from "framer-motion";
+
+const FAQAnimationItem = {
+  hidden: { opacity: 0, translateY: -100 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
 
 function FAQItem({ question, answer, isVisible, onClick }: IQAProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
+
   return (
-    <div className="w-[430px] md:w-[856px] p-4 h-auto rounded-lg border border-white_medium mb-4">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={FAQAnimationItem}
+      className="w-[430px] md:w-[856px] p-4 h-auto rounded-lg border border-white_medium mb-4"
+    >
       <div
         className="flex gap-5 md:gap-2 items-center cursor-pointer"
         onClick={onClick}
@@ -23,7 +46,7 @@ function FAQItem({ question, answer, isVisible, onClick }: IQAProps) {
           {answer}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

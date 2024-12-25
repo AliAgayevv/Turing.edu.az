@@ -5,12 +5,25 @@ import data from "../datas/schoolarShip.json";
 import Steps_box from "../components/Steps_box";
 import LongFAQ from "../components/LongFAQ";
 import Footer from "../components/Footer";
-
+import { motion } from "framer-motion";
+const item = {
+  hidden: { opacity: 0, translateX: 20 },
+  visible: {
+    opacity: 1,
+    translateX: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
 export default function SchoolarshipInner() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
   const { id } = useParams();
   const currentData = data.find((item) => item.id === id);
   return (
-    <div className="h-screen">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="h-screen"
+    >
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
         <div className="mx-auto w-11/12 pt-5">
@@ -23,7 +36,6 @@ export default function SchoolarshipInner() {
             </div>
           </div>
           <div className="mt-24 flex flex-col md:flex-row gap-10 md:justify-between md:items-center">
-            {/* Left Section */}
             <div className="flex flex-col">
               <h3 className="uppercase text-white_dark">About Program</h3>
               <div className="pr-10">
@@ -36,15 +48,11 @@ export default function SchoolarshipInner() {
                   should be enrolled or planning to enroll and show academic
                   excellence and leadership.
                 </p>
-                {/* Apply Now for Desktop */}
                 <div className="w-[145px] h-[48px] mt-6 hidden md:block">
                   <ApplyNow_btn>Apply Now</ApplyNow_btn>
                 </div>
               </div>
-              {/* Apply Now for Mobile */}
             </div>
-
-            {/* Right Section */}
             <div className="flex flex-col gap-6 mr-24 bg-white">
               <div>
                 <h3 className="font-[500] text-xl text-black_dark">Slots:</h3>
@@ -68,7 +76,12 @@ export default function SchoolarshipInner() {
             <h1 className="text-[36px] md:text-5xl font-jakarta font-[500] text-black_medium py-4">
               You will go through these Steps
             </h1>
-            <div className="flex flex-col md:flex-row gap-6 mt-6">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={item}
+              className="flex flex-col md:flex-row gap-6 mt-6"
+            >
               {currentData?.steps?.map((item) => (
                 <Steps_box
                   stepDetail={item.stepDetail}
@@ -76,7 +89,7 @@ export default function SchoolarshipInner() {
                   stepType={item.stepType}
                 />
               ))}
-            </div>
+            </motion.div>
 
             <div className="pb-20">
               <div className="text-[32px] pt-20 pb-5">
@@ -96,6 +109,6 @@ export default function SchoolarshipInner() {
       <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 }

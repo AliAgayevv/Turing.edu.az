@@ -11,7 +11,6 @@ import vector1 from "../assets/vectors/communityFirstVector.png";
 import vector2 from "../assets/vectors/positiveEnergyVector.png";
 import vector3 from "../assets/vectors/wavesBeforeVector.png";
 import vector4 from "../assets/vectors/teachLiveVector.png";
-import SeeAll_btn from "../components/SeeAll_btn";
 
 const fakeData = [
   {
@@ -61,6 +60,7 @@ const fakeData = [
 ];
 
 export default function Community() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
   const [visibleCount, setVisibleCount] = useState(4);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -89,9 +89,9 @@ export default function Community() {
 
   const updateVisibleCount = () => {
     if (window.innerWidth >= 768) {
-      setVisibleCount(fakeData.length); // Show all data on desktop
+      setVisibleCount(fakeData.length);
     } else {
-      setVisibleCount(4); // Show 4 items on mobile
+      setVisibleCount(4);
     }
   };
 
@@ -112,13 +112,11 @@ export default function Community() {
     <div className="bg-blue_ultraDark z-0 relative">
       <Navbar isDark={false} />
 
-      {/* Hero Section */}
       <div
         className="relative h-screen flex items-center justify-center overflow-hidden perspective-[1000px]"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        {/* Background Images */}
         <div className="absolute top-[110px] left-[200px] rotate-on-cursor opacity-40">
           <img src={image1} className="w-[207px] h-[216px] object-cover" />
         </div>
@@ -156,8 +154,6 @@ export default function Community() {
           </h1>
         </div>
       </div>
-
-      {/* More Sections */}
     </div>
   );
 }
