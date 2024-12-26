@@ -2,9 +2,10 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import LearnMoreBtn from "../components/LearnMore_btn";
 import Footer from "../components/Footer";
-import graduatesData from "../datas/graduates.json";
+import graduatesData from "../datas/schoolarShip.json";
 import { Link } from "react-router-dom";
 import Reels_card from "../components/Reels_card";
+import SpecialtyCard from "../components/Specialty_card";
 
 let fixCategory = ["all"];
 graduatesData.forEach((graduates) => {
@@ -52,7 +53,7 @@ export default function Specialty() {
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredEvents.map((event) => (
               <Link to={event.route} key={event.id}>
-                <Reels_card {...event} />
+                <SpecialtyCard {...event} />
               </Link>
             ))}
           </div>
@@ -73,7 +74,7 @@ export default function Specialty() {
           </div>
         </div>
       </div>
-      <div className="h-screen relative -z-[2]">
+      <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
     </div>

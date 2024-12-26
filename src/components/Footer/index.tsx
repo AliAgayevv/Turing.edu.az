@@ -10,8 +10,6 @@ import footerPhoto from "../../assets/vectors/footerPhoto.png";
 import { eventsData } from "../../datas/eventsData";
 import schoolarshipData from "../../datas/schoolarShip.json";
 
-// TODO ADD HOVER (DIZAYN GOZLENILIR)
-
 import turingLogo from "../../assets/turingFooterLogo.png";
 import { Link } from "react-router";
 
@@ -73,7 +71,7 @@ const menuData = {
 
 export default function Footer() {
   return (
-    <div className="fixed h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row justify-between pointer-events-auto">
+    <div className=" md:fixed h-full md:h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row justify-between pointer-events-auto">
       <div className="flex flex-col gap-6">
         <img
           src={turingLogo}
@@ -87,7 +85,7 @@ export default function Footer() {
         <div className="grid grid-cols-3 w-[164px] gap-3">
           {logoData.map((item, index) => (
             <a key={index} href={item.link} target="_blank">
-              <div className="w-[44px] h-[44px] flex justify-center items-center rounded-full border border-[#30364A]">
+              <div className="w-[44px] h-[44px] hover:bg-blue_medium flex justify-center items-center rounded-full border border-[#30364A]">
                 {item.icon}
               </div>
             </a>
@@ -95,7 +93,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 md:gap-10 sm:flex lg:justify-between lg:gap-24 mt-10 lg:mt-0">
+      <div className="grid grid-cols-2  md:grid-cols-4 gap-6 md:gap-10 lg:justify-between lg:gap-24 mt-10 lg:mt-0">
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
             Upcoming Events

@@ -17,8 +17,11 @@ export default function AllGraduates() {
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + PAGE_SIZE);
   };
+
+  // MOBILDE LOAD MORE ALTINDAKI PADDING AZALT
+
   return (
-    <div className="h-screen">
+    <div className="">
       <Navbar isDark={true} />
       <div className="w-screen bg-white z-[50]">
         <div className="w-11/12 mx-auto ">

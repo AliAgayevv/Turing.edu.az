@@ -14,6 +14,7 @@ const item = {
     transition: { duration: 0.5, ease: "easeInOut" },
   },
 };
+
 export default function SchoolarshipInner() {
   window.scrollTo({ top: 0, behavior: "smooth" });
   const { id } = useParams();
@@ -29,13 +30,13 @@ export default function SchoolarshipInner() {
         <div className="mx-auto w-11/12 pt-5">
           <div className=" w-full px-10 sm:px-10 md:px-20 py-10 md:py-[100px] pt-10 md:pt-14 bg-blue_ultraDark rounded-[20px] md:rounded-[32px] relative text-white">
             <div className="absolute -bottom-0 right-10 w-[300px] blur-[200px] rounded-full bg-gradient-to-br from-blue-500/50 via-purple-400/40 to-transparent pointer-events-none z-0"></div>
-            <p className="ont-[600] text-[64px] ">{id}</p>
+            <p className="font-[600] text-[64px] ">{id}</p>
             <p className="mt-2">{currentData?.desc}</p>
             <div className="w-[145px] h-[48px] mt-12">
               <ApplyNow_btn>Apply Now</ApplyNow_btn>
             </div>
           </div>
-          <div className="mt-24 flex flex-col md:flex-row gap-10 md:justify-between md:items-center">
+          <div className="mt-16 md:mt-24 flex flex-col md:flex-row gap-10 md:justify-between md:items-center">
             <div className="flex flex-col">
               <h3 className="uppercase text-white_dark">About Program</h3>
               <div className="pr-10">
@@ -80,7 +81,7 @@ export default function SchoolarshipInner() {
               initial="hidden"
               animate="visible"
               variants={item}
-              className="flex flex-col md:flex-row gap-6 mt-6"
+              className="flex flex-col md:flex-row gap-6 mt-6 w-11/12 mx-auto"
             >
               {currentData?.steps?.map((item) => (
                 <Steps_box

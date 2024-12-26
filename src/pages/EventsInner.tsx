@@ -5,7 +5,7 @@ import ApplyNow_btn from "../components/ApplyNow_btn";
 import Teacher_card from "../components/Teacher_card";
 import Footer from "../components/Footer";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const item = {
   hidden: { opacity: 0, translateY: 20 },
@@ -43,6 +43,15 @@ export default function EventsInner() {
   const { id } = useParams<{ id: string }>();
   const currentEvent = eventsData.find((event) => event.id === Number(id));
 
+  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
+
+  const handleOpenFullScreen = (imageSrc: string) => {
+    setFullScreenImage(imageSrc);
+  };
+
+  const handleCloseFullScreen = () => {
+    setFullScreenImage(null);
+  };
   return (
     <div className="h-screen">
       <Navbar isDark={true} />
@@ -146,6 +155,7 @@ export default function EventsInner() {
                     animate="visible"
                     key={index}
                     className="w-full h-[250px] sm:h-[306px] rounded-2xl overflow-hidden"
+                    onClick={() => handleOpenFullScreen(photo)}
                   >
                     <img
                       className="w-full h-full object-cover rounded-2xl"
@@ -162,6 +172,28 @@ export default function EventsInner() {
       <div className=" h-screen relative -z-[2]">
         <Footer />
       </div>
+      {fullScreenImage && (
+        <motion.div
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center"
+          onClick={handleCloseFullScreen}
+        >
+          <motion.div
+            className="relative h-[80vh] aspect-video rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, translateY: -200 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="w-full h-full">
+              <img
+                src={fullScreenImage}
+                alt="Full Screen Event Photo"
+                className="w-11/12 mx-auto object-contain rounded-2xl"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }

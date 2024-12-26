@@ -1,17 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApplyNow_btn from "../ApplyNow_btn";
 import LearnMore_btn from "../LearnMore_btn";
 import { motion } from "framer-motion";
-
-const item = {
-  hidden: { opacity: 0, translateY: 20 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 interface IProps {
   category: string;
@@ -36,50 +28,102 @@ const SpecialtyCard: React.FC<IProps> = ({
     navigate(route);
   };
 
+  const isMobile = useBreakpoint();
   return (
     <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={item}
-      className="border group w-[343px] h-[411px]  md:w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
+      className="border group w-[343px] h-[411px] md:w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
       onClick={handleCardClick}
+      whileHover={isMobile ? {} : "hover"}
     >
-      <div className="h-[300px] w-[300px] md:h-[274px] md:w-[274px] p-2 rounded-lg flex items-center justify-center transition-all duration-300 delay-200 group-hover:scale-[0.56] group-hover:-translate-y-[55px] group-hover:-translate-x-[60px]">
-        <img
+      <motion.div
+        className="h-[300px] w-[300px] md:h-[274px] md:w-[274px] p-2 rounded-lg flex items-center justify-center"
+        variants={
+          isMobile
+            ? {}
+            : {
+                hover: {
+                  scale: 0.56,
+                  y: -55,
+                  x: -60,
+                  transition: { duration: 0.3, delay: 0.2 },
+                },
+              }
+        }
+      >
+        <motion.img
           src={img}
           alt={title}
-          className="h-full w-full object-cover transition-all rounded-xl duration-300 delay-200"
+          className="h-full w-full object-cover rounded-xl"
         />
-      </div>
+      </motion.div>
 
       <div>
-        <button
+        <motion.button
           disabled
-          className="group-hover:-translate-y-[105px] flex px-2.5 justify-center items-center text-[#01030E] bg-[#F8F9FA] rounded-lg border mb-4 text-[14px] font-[400] opacity-70 transition-all duration-300 delay-300"
+          className="flex px-2.5 justify-center items-center text-[#01030E] bg-[#F8F9FA] rounded-lg border mb-4 text-[14px] font-[400] opacity-70"
+          variants={{
+            hover: {
+              y: -105,
+              transition: { duration: 0.3, delay: 0.3 },
+            },
+          }}
         >
-          {category}
-        </button>
+          {category.slice(0, 1).toUpperCase() + category.slice(1)}
+        </motion.button>
 
-        <h3 className="group-hover:-translate-y-[110px] mb-[6px] font-[500] transition-all duration-300 delay-300">
+        <motion.h3
+          className="mb-[6px] font-[500]"
+          variants={{
+            hover: {
+              y: -110,
+              transition: { duration: 0.3, delay: 0.3 },
+            },
+          }}
+        >
           {title}
-        </h3>
+        </motion.h3>
 
-        <p className="p-1 text-[12px] group-hover:translate-y-20 text-[#01030E] opacity-80 font-[400] transition-all duration-500 delay-300">
+        <motion.p
+          className="p-1 text-[12px] text-[#01030E] opacity-80 font-[400]"
+          variants={{
+            hover: {
+              y: 40,
+              transition: { duration: 0.5, delay: 0.3 },
+            },
+          }}
+        >
           {desc}
-        </p>
+        </motion.p>
 
-        <p className="absolute -bottom-20 group-hover:-translate-y-36 group-hover:-translate-x-1 p-1 text-[12px] text-[#01030E] opacity-80 font-[400] transition-all duration-300 delay-300">
+        <motion.p
+          className="absolute -bottom-20 p-1 text-[12px] text-[#01030E] opacity-80 font-[400]"
+          variants={{
+            hover: {
+              y: -144,
+              x: -1,
+              transition: { duration: 0.3, delay: 0.3 },
+            },
+          }}
+        >
           {hiddenText}
-        </p>
+        </motion.p>
 
-        <div className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center items-center transition-all duration-300 delay-500 group-hover:-translate-y-[70px]">
+        <motion.div
+          className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center items-center"
+          variants={{
+            hover: {
+              y: -70,
+              transition: { duration: 0.3, delay: 0.5 },
+            },
+          }}
+        >
           <div className="w-[129px] h-[46px]">
             <LearnMore_btn>Learn More</LearnMore_btn>
           </div>
           <div className="w-[129px] h-[46px]">
             <ApplyNow_btn>Apply Now</ApplyNow_btn>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

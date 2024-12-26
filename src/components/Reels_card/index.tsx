@@ -11,6 +11,7 @@ const item = {
     transition: { duration: 0.5, ease: "easeInOut" },
   },
 };
+
 export default function Reels_card({
   category,
   name,
@@ -70,20 +71,19 @@ export default function Reels_card({
 
       {isPlaying && (
         <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center p-4 sm:p-6 md:p-8"
           onClick={handleCloseModal}
         >
           <div
-            className="relative h-[80vh] aspect-video bg-black rounded-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()} // Prevent modal close when clicking inside
+            className="relative w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[80vw] lg:max-w-[80vw] h-auto aspect-video bg-black rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
           >
             <iframe
-              className=" mx-auto aspect-video h-full border-none rounded-2xl"
+              className="w-full h-full border-none rounded-lg sm:rounded-xl md:rounded-2xl"
               src={video}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"
-              style={{ border: "none" }}
               title="YouTube Video"
             ></iframe>
           </div>

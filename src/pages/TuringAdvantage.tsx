@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import vector1 from "../assets/vectors/communityFirstVector.png";
 import vector2 from "../assets/vectors/positiveEnergyVector.png";
 import vector3 from "../assets/vectors/wavesBeforeVector.png";
 import vector4 from "../assets/vectors/teachLiveVector.png";
 import exampleVideo from "../assets/videos/community-video.mp4";
 import { Link } from "react-router";
+import { motion, useInView } from "framer-motion";
 
 const fakeData = [
   {
@@ -53,7 +54,22 @@ const fakeData = [
   },
 ];
 
+const liAnimation = {
+  hidden: { opacity: 0, translateY: 20 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
+
 export default function TuringAdvantage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
+
   const [visibleCount, setVisibleCount] = useState(4);
 
   const updateVisibleCount = () => {
@@ -91,7 +107,14 @@ export default function TuringAdvantage() {
 
       <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 mt-[72px] gap-[48px] md:gap-[72px] md:px-8 lg:px-16">
         {fakeData.slice(0, visibleCount).map((data) => (
-          <div key={data.id} className="w-full relative z-10">
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={liAnimation}
+            key={data.id}
+            className="w-11/12 mx-auto relative z-10"
+          >
             {data.icon && (
               <img src={data.icon} className="absolute -top-4 -left-3 -z-10" />
             )}
@@ -99,7 +122,7 @@ export default function TuringAdvantage() {
             <p className="text-[14px] text-[#A2A1A4] break-words">
               {data.desc}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -112,17 +135,20 @@ export default function TuringAdvantage() {
         </button>
       )}
 
-      <div className="mt-44 relative overflow-hidden ">
-        <div className="w-full md:w-[1000px] relative h-[320px] mt-8 rounded-lg overflow-hidden mx-auto">
+      <div className="mt-4 md:mt-44 relative overflow-hidden">
+        <div className="w-full md:w-[1000px] relative h-[320px] mt-8 rounded-lg  mx-auto">
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
             src={exampleVideo}
             autoPlay
             loop={true}
           />
-        </div>
-        <div className="text-[65px] leading-4 top-36 right-5   md:leading-9 md:text-[195px] absolute md:top-40 text-white_light_32 font-jakarta font-[900]  uppercase ">
-          Community
+          {/* Centered text container with a semi-transparent background for better visibility */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-[58px] md:text-[90px] lg:text-[195px] font-jakarta font-[900] uppercase text-white_light_32 leading-none text-center">
+              Community
+            </div>
+          </div>
         </div>
 
         <div className="w-full md:w-[736px] mx-auto pt-16 flex flex-col justify-center items-center gap-8">

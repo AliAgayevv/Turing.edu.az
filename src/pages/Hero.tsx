@@ -3,6 +3,7 @@ import exampleVideo from "../assets/videos/exampleVideo.mp4";
 import Navbar from "../components/Navbar";
 import bgTuringVector from "../assets/vectors/turing-hero-left-top-vector.png";
 import WatchNow_btn from "../components/WatchNow_btn";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 
@@ -65,16 +66,24 @@ export default function Hero() {
           </div>
         </div>
         <div className=" max-w-[3000px] px-4 pt-[70px] overflow-hidden h-[704px] relative ">
-          <div className="w-[520px]  lg:w-[1120px] h-[300px] relative lg:h-[320px] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] ">
+          <motion.div
+            initial={{ translateY: 400, opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-[520px]  lg:w-[1120px] h-[300px] relative lg:h-[320px] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] "
+          >
             <video
               // controls
               className="absolute top-0 left-0 w-full h-full object-center lg:object-cover rounded-2xl overflow-hidden"
               src={exampleVideo}
             />
-          </div>
+          </motion.div>
         </div>
         {isApplyNowClicked && (
-          <div
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "100%" }}
+            exit={{ opacity: 0, height: 0 }}
             className="fixed inset-0 bg-blue_ultraDark z-50 w-screen h-screen flex items-center justify-center"
             onClick={handleCloseModal}
           >
@@ -86,7 +95,7 @@ export default function Hero() {
                 controls
               />
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </div>

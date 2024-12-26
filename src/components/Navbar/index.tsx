@@ -96,7 +96,9 @@ export default function Navbar({ isDark }: INavbarProps) {
           {isMenuOpen && (
             <div
               className={`${
-                isDark ? "text-white" : "text-black_dark"
+                isDark
+                  ? "text-white  bg-white"
+                  : "text-black_dark bg-blue_ultraDark"
               } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-lg `}
             >
               <div className="mx-auto w-11/12 h-full p-5">

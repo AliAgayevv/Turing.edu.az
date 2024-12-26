@@ -5,7 +5,7 @@
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "coverPhoto": "/src/assets/photos/ali.jpg",
         "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty" 
     },
     {
@@ -32,7 +32,7 @@
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "coverPhoto": "/src/assets/photos/ali.jpg",
         "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
@@ -59,7 +59,7 @@
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
-        "coverPhoto": "/src/assets/photos/ali.jpeg",
+        "coverPhoto": "/src/assets/photos/ali.jpg",
         "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
