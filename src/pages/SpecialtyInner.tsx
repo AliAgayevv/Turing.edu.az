@@ -9,7 +9,7 @@ import Syllabus_section from "../components/Syllabus_section";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const SpecialtyInner = () => {
   useEffect(() => {

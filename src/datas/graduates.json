@@ -1,84 +1,84 @@
 [
     {
         "id": 1,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty" 
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty" 
     },
     {
         "id": 2,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 3,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 4,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 5,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 6,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 7,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "frontend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Frontend",
         "coverPhoto": "/src/assets/photos/ali.jpg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 8,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "UX/UI",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/UX-UI",
         "coverPhoto": "/src/assets/photos/elvira.jpeg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     },
     {
         "id": 9,
-        "name": "Ağayev Əli",
+        "studentName": "Ağayev Əli",
         "category": "Backend",
         "desc" : "Junior Frontend at Pasha",
         "route": "/specialty/Backend",
         "coverPhoto": "/src/assets/photos/muradTelebe.jpeg",
-        "video": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
+        "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty"
     }
     
 ]

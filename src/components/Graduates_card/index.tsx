@@ -3,28 +3,24 @@ import { useRef, useState } from "react";
 import playVector from "../../assets/vectors/play.png";
 import { IStudentsInfoProps } from "../../const/types";
 import { useInView, motion } from "framer-motion";
+import { xToCenter } from "../../utils/motionAnimations";
 
 export default function Graduates_card({
   studentName,
   desc,
   coverPhoto,
   videoUrl,
-  github,
-  connect,
-}: IStudentsInfoProps) {
+}: // github,
+// connect,
+IStudentsInfoProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
     amount: 0.3,
   });
-  const graduatesItem = {
-    hidden: { opacity: 0, translateX: -100 },
-    visible: {
-      opacity: 1,
-      translateX: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
-    },
-  };
+
+  var animation = xToCenter(100);
+
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTogglePlay = () => {
@@ -34,7 +30,7 @@ export default function Graduates_card({
   return (
     <motion.div
       ref={ref}
-      variants={graduatesItem}
+      variants={animation}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className="w-full h-auto  rounded-2xl p-4 border relative"

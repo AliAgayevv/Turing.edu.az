@@ -1,6 +1,7 @@
 import React from "react";
 import { IStepProps } from "../../const/types";
 import { motion, useInView } from "framer-motion";
+import { xToCenter } from "../../utils/motionAnimations";
 
 export default function Steps_box({
   stepTitle,
@@ -12,20 +13,7 @@ export default function Steps_box({
     once: true,
     amount: 0.3,
   });
-  const stepBoxVariants = {
-    hidden: {
-      opacity: 0,
-      x: 20,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
+  const stepBoxVariants = xToCenter(20);
   return (
     <motion.div
       ref={ref}

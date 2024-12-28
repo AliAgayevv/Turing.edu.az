@@ -19,7 +19,7 @@ export const eventsData = new Array(30).fill(null).map((_, index) => ({
       photo: "/src/assets/photos/zahra.jpeg",
     },
     {
-      id: 1,
+      id: 3,
       guestName: "Məhəmməd Xasıyev",
       guestWorkingPosition: "Designer at SAFAROFF",
       connect: "",

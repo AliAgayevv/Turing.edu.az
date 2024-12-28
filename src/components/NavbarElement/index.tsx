@@ -1,13 +1,19 @@
-import React from "react";
 import { Link } from "react-router";
 
+interface INavbarElementProps {
+  id: number;
+  title: string;
+  description: string;
+  route: string;
+  isDark: boolean;
+}
+
 export default function NavbarElement({
-  id,
   title,
   description,
   route,
   isDark,
-}) {
+}: INavbarElementProps) {
   return (
     <Link to={route}>
       <div

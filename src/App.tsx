@@ -4,7 +4,8 @@ import CursorEffect from "./utils/CursorEffect";
 
 function App() {
   return (
-    <div className="">
+    // TODO: REMOVE DEBUG SCREENS WHEN DEPLOYING
+    <div className="debug-screens">
       <CursorEffect />
       <RouterProvider router={router} />
     </div>

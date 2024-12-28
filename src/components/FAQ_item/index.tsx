@@ -1,15 +1,9 @@
 import { useRef } from "react";
 import { IQAProps } from "../../const/types";
 import { motion, useInView } from "framer-motion";
+import { yToCenter } from "../../utils/motionAnimations";
 
-const FAQAnimationItem = {
-  hidden: { opacity: 0, translateY: -100 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+const FAQAnimationItem = yToCenter(-100);
 
 function FAQItem({ question, answer, isVisible, onClick }: IQAProps) {
   const ref = useRef(null);

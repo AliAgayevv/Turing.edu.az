@@ -6,15 +6,9 @@ import Teacher_card from "../components/Teacher_card";
 import Footer from "../components/Footer";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { xToCenter, yToCenter } from "../utils/motionAnimations";
 
-const item = {
-  hidden: { opacity: 0, translateY: 20 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+const item = yToCenter(20);
 
 export default function EventsInner() {
   const ref = useRef(null);
@@ -23,20 +17,7 @@ export default function EventsInner() {
     amount: 0.3,
   });
 
-  const isEndItem = {
-    hidden: {
-      opacity: 0,
-      x: 20,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
+  const isEndItem = xToCenter(20);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);

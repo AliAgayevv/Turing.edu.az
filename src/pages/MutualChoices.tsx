@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import SeeAll_btn from "../components/SeeAll_btn";
 import { Link } from "react-router";
 import React from "react";
+import { xToCenter } from "../utils/motionAnimations";
 
 export default function MutualChoices() {
   const ref = React.useRef(null);
@@ -13,20 +14,7 @@ export default function MutualChoices() {
     once: true,
     amount: 0.3,
   });
-  const item = {
-    hidden: {
-      opacity: 0,
-      x: -20,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
+  const item = xToCenter(-20);
   return (
     <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-20 overflow-hidden">
       <div className="w-full lg:w-[220px] flex justify-start">

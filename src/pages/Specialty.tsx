@@ -4,7 +4,6 @@ import LearnMoreBtn from "../components/LearnMore_btn";
 import Footer from "../components/Footer";
 import graduatesData from "../datas/schoolarShip.json";
 import { Link } from "react-router-dom";
-import Reels_card from "../components/Reels_card";
 import SpecialtyCard from "../components/Specialty_card";
 
 let fixCategory = ["all"];
@@ -38,6 +37,7 @@ export default function Specialty() {
           <div className="inline-flex flex-wrap items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
             {fixCategory.map((category) => (
               <div
+                key={category}
                 onClick={() => handleSelect(category)}
                 className={`px-3 py-1 rounded-md text-nowrap ${
                   selectedCategory === category
@@ -52,7 +52,7 @@ export default function Specialty() {
 
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredEvents.map((event) => (
-              <Link to={event.route} key={event.id}>
+              <Link to={`/specialty/${event.id}`} key={event.id}>
                 <SpecialtyCard {...event} />
               </Link>
             ))}

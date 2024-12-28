@@ -28,7 +28,7 @@ export default function AllEvents() {
       ? eventsData
       : eventsData.filter((event) => event.category === selectedCategory);
 
-  const handleSelect = (category) => {
+  const handleSelect = (category: string) => {
     setSelectedCategory(category);
     setVisibleCount(PAGE_SIZE);
   };
@@ -53,6 +53,7 @@ export default function AllEvents() {
             <div className="flex md:inline-flex items-center gap-2 h-11 overflow-x-auto p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8 sm:flex-nowrap overflow-y-hidden">
               {fixCategory.map((category) => (
                 <div
+                  key={category}
                   onClick={() => handleSelect(category)}
                   className={`px-3 py-1 rounded-md text-nowrap ${
                     selectedCategory === category

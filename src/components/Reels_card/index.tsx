@@ -2,21 +2,15 @@ import { useState } from "react";
 import playVector from "../../assets/vectors/play.png";
 import { IStudentsInfoProps } from "../../const/types";
 import { motion } from "framer-motion";
+import { yToCenter } from "../../utils/motionAnimations";
 
-const item = {
-  hidden: { opacity: 0, translateY: 20 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+const item = yToCenter(20);
 
 export default function Reels_card({
   category,
-  name,
+  studentName,
   desc,
-  video,
+  videoUrl,
   coverPhoto,
 }: IStudentsInfoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -58,11 +52,11 @@ export default function Reels_card({
 
         <div className="h-[85px] w-full flex flex-col mt-4 gap-3">
           <button className="bg-white_ultraLight border-white_medium text-blue_lightMedium border rounded-lg px-10 py-1.5 flex justify-center items-center w-1/4 h-[29px]">
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+            {category?.charAt(0).toUpperCase() + category?.slice(1)}
           </button>
           <div>
             <h4 className="font-[500] text-[18px] text-black_ultraDark">
-              {name}
+              {studentName}
             </h4>
             <p className="text-[12px] text-black_ultraLight">{desc}</p>
           </div>
@@ -80,7 +74,7 @@ export default function Reels_card({
           >
             <iframe
               className="w-full h-full border-none rounded-lg sm:rounded-xl md:rounded-2xl"
-              src={video}
+              src={videoUrl}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"

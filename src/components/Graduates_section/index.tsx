@@ -22,6 +22,7 @@ export default function Graduates_section({ category }: IProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {graduates.map((item) => (
           <Graduates_card
+            key={item.name}
             studentName={item.name}
             coverPhoto={item.photo}
             github={item.github}

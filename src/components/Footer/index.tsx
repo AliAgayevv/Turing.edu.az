@@ -12,6 +12,7 @@ import schoolarshipData from "../../datas/schoolarShip.json";
 
 import turingLogo from "../../assets/turingFooterLogo.png";
 import { Link } from "react-router";
+import { IEvent, IScholarship } from "../../const/types";
 
 const logoData = [
   {
@@ -99,8 +100,8 @@ export default function Footer() {
             Upcoming Events
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
-            {menuData.upcomingEvents.map((event, index) => (
-              <Link to={event.linkForLearnMore}>
+            {menuData.upcomingEvents.map((event: IEvent, index: number) => (
+              <Link key={event.id} to={event.linkForLearnMore}>
                 <li
                   className="text-white_ultraMedium hover:underline underline-offset-4"
                   key={index}
@@ -118,7 +119,7 @@ export default function Footer() {
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
             {menuData.academy.map((item, index) => (
-              <Link to={item.link}>
+              <Link key={item.title} to={item.link}>
                 <li
                   className="text-white_ultraMedium hover:underline underline-offset-4"
                   key={index}
@@ -147,16 +148,18 @@ export default function Footer() {
             Fields of Study
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
-            {menuData.fieldsOfStudy.map((field, index) => (
-              <Link to={schoolarshipForShowLinks[index]}>
-                <li
-                  className="text-white_ultraMedium hover:underline underline-offset-4"
-                  key={index}
-                >
-                  {field}
-                </li>
-              </Link>
-            ))}
+            {menuData.fieldsOfStudy.map(
+              (field: IScholarship, index: number) => (
+                <Link key={index} to={schoolarshipForShowLinks[index]}>
+                  <li
+                    className="text-white_ultraMedium hover:underline underline-offset-4"
+                    key={index}
+                  >
+                    {field}
+                  </li>
+                </Link>
+              )
+            )}
             <Link to="/schoolarship">
               <li className="text-white_ultraMedium hover:underline underline-offset-4">
                 Scholarships

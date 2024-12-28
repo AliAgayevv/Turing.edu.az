@@ -2,15 +2,7 @@ import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { IEventsProps } from "../../const/types";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-
-const item = {
-  hidden: { opacity: 0, translateY: 20 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+import { yToCenter } from "../../utils/motionAnimations";
 
 const contentVariants = {
   hidden: { opacity: 0, height: 0, translateY: 20 },
@@ -22,6 +14,8 @@ const contentVariants = {
   },
 };
 
+const animation = yToCenter(20);
+
 export default function Events_card({
   isDark,
   eventCategory,
@@ -30,8 +24,8 @@ export default function Events_card({
   eventDate,
   guests,
   price,
-  linkForLearnMore,
-}: IEventsProps) {
+}: // linkForLearnMore,
+IEventsProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -64,7 +58,7 @@ export default function Events_card({
   return (
     <motion.div
       ref={ref}
-      variants={item}
+      variants={animation}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] lg:w-[416px] rounded-2xl p-4 border ${

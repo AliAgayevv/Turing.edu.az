@@ -2,6 +2,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { ITeacherProps } from "../../const/types";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { xToCenter } from "../../utils/motionAnimations";
 
 export default function Teacher_card({
   name,
@@ -14,14 +15,9 @@ export default function Teacher_card({
     once: true,
     amount: 0.3,
   });
-  const teacherItem = {
-    hidden: { opacity: 0, translateX: 100 },
-    visible: {
-      opacity: 1,
-      translateX: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
-    },
-  };
+
+  const teacherItem = xToCenter(-100);
+
   return (
     <motion.div
       ref={ref}

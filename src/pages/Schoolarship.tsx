@@ -4,6 +4,7 @@ import SpecialtyCard from "../components/Specialty_card";
 import fakeData from "../datas/schoolarShip.json";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 let fixCategory = ["all"];
 
@@ -21,7 +22,7 @@ export default function Schoolarship() {
       ? fakeData
       : fakeData.filter((data) => data.category === selectedCategory);
 
-  const handleSelect = (category) => {
+  const handleSelect = (category: string) => {
     setSelectedCategory(category);
   };
   return (
@@ -45,6 +46,7 @@ export default function Schoolarship() {
             <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
               {fixCategory.map((category) => (
                 <div
+                  key={category}
                   onClick={() => handleSelect(category)}
                   className={`px-3 py-1 rounded-md text-nowrap ${
                     selectedCategory === category
@@ -59,14 +61,18 @@ export default function Schoolarship() {
           </div>
           <div className="flex flex-col gap-5 md:grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 md:gap-7">
             {filteredEvents.map((item) => (
-              <SpecialtyCard
-                category={item.slotCount}
-                img={item.img}
-                desc={item.desc}
-                title={item.title}
-                hiddenText={item.hiddenText}
-                route={item.route}
-              />
+              <Link to={`/schoolarship/${item.id}`}>
+                <SpecialtyCard
+                  id={item.id}
+                  key={item.id}
+                  category={item.slotCount}
+                  img={item.img}
+                  desc={item.desc}
+                  title={item.title}
+                  hiddenText={item.hiddenText}
+                  route={item.route}
+                />
+              </Link>
             ))}
           </div>
         </div>

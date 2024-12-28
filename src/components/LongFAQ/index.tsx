@@ -1,37 +1,25 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useInView, delay } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import LongFAQItem from "../LongFAQItem";
 import fakeData from "../../datas/schoolarShip.json";
+import { yToCenter } from "../../utils/motionAnimations";
 
 interface LongFAQProps {
-  id: number | string;
+  id: any;
 }
 
 function LongFAQ({ id }: LongFAQProps) {
   const currentData = fakeData.find((item) => item.id === id);
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
     amount: 0.3,
   });
   const faq = currentData?.questions;
-  const FAQitemVariant = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
+  const FAQitemVariant = yToCenter(20);
 
-  const toggleVisibility = (clickedId: string) => {
+  const toggleVisibility = (clickedId: number) => {
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
   };
 
@@ -43,8 +31,9 @@ function LongFAQ({ id }: LongFAQProps) {
       variants={FAQitemVariant}
       className="mt-12 flex flex-col items-center justify-center"
     >
-      {faq?.map((item, index) => (
+      {faq?.map((item) => (
         <LongFAQItem
+          key={item.id}
           question={item.question}
           answer={item.answer}
           isVisible={activeId === item.id}

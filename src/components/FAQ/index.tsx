@@ -8,10 +8,10 @@ interface IProps {
 
 export default function FAQ({ id }: IProps) {
   const categoryData = faqData.find((item) => item.category === id);
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
   const faq = categoryData?.questions || [];
 
-  const toggleVisibility = (clickedId: string) => {
+  const toggleVisibility = (clickedId: number) => {
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
   };
 

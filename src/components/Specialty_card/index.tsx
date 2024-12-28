@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ApplyNow_btn from "../ApplyNow_btn";
 import LearnMore_btn from "../LearnMore_btn";
 import { motion } from "framer-motion";
@@ -9,12 +9,14 @@ interface IProps {
   category: string;
   img: string;
   desc: string;
+  id: number | string;
   title: string;
   hiddenText: string;
   route: string;
 }
 
 const SpecialtyCard: React.FC<IProps> = ({
+  id,
   category,
   img,
   desc,
@@ -22,17 +24,10 @@ const SpecialtyCard: React.FC<IProps> = ({
   hiddenText,
   route,
 }) => {
-  const navigate = useNavigate();
-
-  const handleCardClick = () => {
-    navigate(route);
-  };
-
   const isMobile = useBreakpoint();
   return (
     <motion.div
       className="border group w-[343px] h-[411px] md:w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
-      onClick={handleCardClick}
       whileHover={isMobile ? {} : "hover"}
     >
       <motion.div

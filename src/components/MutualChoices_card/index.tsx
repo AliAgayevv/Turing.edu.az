@@ -2,21 +2,9 @@ import React from "react";
 import arrow from "../../assets/vectors/arrow-right-top.png";
 import { IMutualChoicesProps } from "../../const/types";
 import { motion, useInView } from "framer-motion";
+import { xToCenter } from "../../utils/motionAnimations";
 
-const item = {
-  hidden: {
-    opacity: 0,
-    x: 20,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
+const item = xToCenter(20);
 
 export default function MutualChoices_card({
   icon,

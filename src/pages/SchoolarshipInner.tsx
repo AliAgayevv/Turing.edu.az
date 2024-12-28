@@ -6,14 +6,8 @@ import Steps_box from "../components/Steps_box";
 import LongFAQ from "../components/LongFAQ";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-const item = {
-  hidden: { opacity: 0, translateX: 20 },
-  visible: {
-    opacity: 1,
-    translateX: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+import { xToCenter } from "../utils/motionAnimations";
+const item = xToCenter(20);
 
 export default function SchoolarshipInner() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -83,8 +77,9 @@ export default function SchoolarshipInner() {
               variants={item}
               className="flex flex-col md:flex-row gap-6 mt-6 w-11/12 mx-auto"
             >
-              {currentData?.steps?.map((item) => (
+              {currentData?.steps?.map((item, index) => (
                 <Steps_box
+                  key={index}
                   stepDetail={item.stepDetail}
                   stepTitle={item.stepTitle}
                   stepType={item.stepType}

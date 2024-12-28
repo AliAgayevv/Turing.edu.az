@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 interface ApplyNow_btnProps {
   isDisabled?: boolean;
 }
-// suggest
 const ApplyNow_btn: React.FC<PropsWithChildren<ApplyNow_btnProps>> = ({
   children,
   isDisabled = false,

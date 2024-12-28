@@ -6,6 +6,7 @@ import vector4 from "../assets/vectors/teachLiveVector.png";
 import exampleVideo from "../assets/videos/community-video.mp4";
 import { Link } from "react-router";
 import { motion, useInView } from "framer-motion";
+import { yToCenter } from "../utils/motionAnimations";
 
 const fakeData = [
   {
@@ -54,14 +55,7 @@ const fakeData = [
   },
 ];
 
-const liAnimation = {
-  hidden: { opacity: 0, translateY: 20 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+const liAnimation = yToCenter(20);
 
 export default function TuringAdvantage() {
   const ref = useRef(null);

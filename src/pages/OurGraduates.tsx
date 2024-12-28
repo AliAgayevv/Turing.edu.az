@@ -4,15 +4,10 @@ import { Link } from "react-router";
 import fakeData from "../datas/graduates.json";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { xToCenter } from "../utils/motionAnimations";
 
-const cardAnimation = {
-  hidden: { opacity: 0, translateX: -100 },
-  visible: {
-    opacity: 1,
-    translateX: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
+const cardAnimation = xToCenter(-100);
+
 export default function OurGraduates() {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -35,26 +30,22 @@ export default function OurGraduates() {
         </Link>
       </div>
       <div className="flex gap-4 md:gap-0 overflow-x-auto snap-x snap-mandatory scroll-smooth md:overflow-clip pb-10 pt-4 scrollbar-hide">
-        {fakeData.slice(0, 4).map((data) => (
-          <>
+        {fakeData.slice(0, 4).map((data, index) => (
+          <div key={index}>
             <motion.div
               ref={ref}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={cardAnimation}
               className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 px-4 hidden md:block"
-              key={data.id}
             >
               <Reels_card {...data} />
             </motion.div>
 
-            <motion.div
-              className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 px-4 block md:hidden"
-              key={data.id}
-            >
+            <motion.div className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 px-4 block md:hidden">
               <Reels_card {...data} />
             </motion.div>
-          </>
+          </div>
         ))}
       </div>
       <Link to={"/graduates"}>
