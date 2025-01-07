@@ -1,0 +1,35 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Install sshpass
+      run: sudo apt-get install sshpass
+
+    - name: Deploy to Server
+      run: |
+        sshpass -p ${{ secrets.SERVER_PASSWORD }} ssh -o StrictHostKeyChecking=no root@143.244.171.220 << 'EOF'
+          cd /home/dev/Turing.edu.az || exit
+          git pull origin main || exit
+          npm install || exit
+          npm run dev || exit
+        EOF
