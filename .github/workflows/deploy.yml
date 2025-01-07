@@ -30,9 +30,9 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         mkdir -p ~ /.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        chmod 755 ~/.ssh/id_rsa
+        echo "$SSH_PRIVATE_KEY" > ~ /root/.ssh/id_rsa
+        chmod 600 ~ /root/.ssh/id_rsa
+        chmod 755 ~ /root/.ssh/id_rsa
         
         ssh -i /root/.ssh/my_new_key root@143.244.171.220
           cd /home/dev/Turing.edu.az || exit
