@@ -7,11 +7,11 @@ import { yToCenter } from "../../utils/motionAnimations";
 const item = yToCenter(20);
 
 export default function Reels_card({
-  category,
   studentName,
-  desc,
-  videoUrl,
   coverPhoto,
+  videoUrl,
+  category,
+  desc,
 }: IStudentsInfoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -29,7 +29,7 @@ export default function Reels_card({
         variants={item}
         initial="hidden"
         animate="visible"
-        className="h-auto w-full md:w-[306px] rounded-2xl p-4 border relative group"
+        className="h-auto w-[250px] md:w-[306px] rounded-2xl p-4 border relative group"
       >
         <div
           className="w-full md:w-[274px] bg-blue-50 rounded-[10px] relative overflow-hidden"

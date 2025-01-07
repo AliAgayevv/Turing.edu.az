@@ -29,7 +29,7 @@ export default function OurGraduates() {
           </div>
         </Link>
       </div>
-      <div className="flex gap-4 md:gap-0 overflow-x-auto snap-x snap-mandatory scroll-smooth md:overflow-clip pb-10 pt-4 scrollbar-hide">
+      <div className="flex gap-4 md:gap-0 overflow-x-auto xl:justify-evenly snap-x snap-mandatory scroll-smooth md:overflow-clip pb-10 pt-4 scrollbar-hide">
         {fakeData.slice(0, 4).map((data, index) => (
           <div key={index}>
             <motion.div
@@ -39,11 +39,11 @@ export default function OurGraduates() {
               variants={cardAnimation}
               className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 px-4 hidden md:block"
             >
-              <Reels_card {...data} />
+              <Reels_card key={index} {...data} />
             </motion.div>
 
             <motion.div className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 px-4 block md:hidden">
-              <Reels_card {...data} />
+              <Reels_card key={index} {...data} />
             </motion.div>
           </div>
         ))}

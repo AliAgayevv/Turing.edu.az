@@ -8,11 +8,12 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Partners() {
   const sliderSettings = {
     dots: false,
+    centerMode: true,
     infinite: true,
     speed: 10000,
     slidesToShow: 5,
     slidesToScroll: 3,
-    cssEase: " linear",
+    cssEase: "linear",
     pauseOnHover: false,
     autoplay: true,
     autoplaySpeed: 1,
@@ -34,7 +35,7 @@ export default function Partners() {
 
   const partners = [
     "./src/assets/sliderLogo.png",
-    "./src/assets/sliderLogo.png",
+    "./src/assets/sliderPhoto2.png",
     "./src/assets/sliderLogo.png",
     "./src/assets/sliderLogo.png",
     "./src/assets/sliderLogo.png",
@@ -53,12 +54,12 @@ export default function Partners() {
         {partners.map((logo, index) => (
           <div
             key={index}
-            className="border w-[114px] sm:w-[90px] md:w-[100px] lg:w-[114px] h-auto min-h-32 flex-shrink-0 mx-4 flex justify-center items-center"
+            className="max-h-[100px] border w-[114px] sm:w-[90px] md:w-[100px] lg:w-[114px] h-auto min-h-32 flex-shrink-0 mx-4 flex justify-center items-center"
           >
             <img
               src={logo}
               alt={`Partner ${index + 1}`}
-              className="w-full object-cover h-full p-2 sm:p-1"
+              className="w-full object-cover flex justify-center items-center max-h-[100px] h-full p-2 sm:p-1"
             />
           </div>
         ))}

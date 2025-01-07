@@ -45,18 +45,24 @@
     ],
     "graduates" : [
     {
-      "name": "Emil Dost",
-      "photo" : "/src/assets/photos/emil.jpeg",
+      "id": 1,
+      "studentName": "Emil Dost",
+      "coverPhoto" : "/src/assets/photos/emil.jpeg",
       "github": "",
       "connect": "https://www.linkedin.com/in/emildost/",
-      "desc": "Product Designer at DOST"
+      "desc": "Product Designer at DOST",
+      "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty",
+      "category": "UX-UI"
     },
     {
-      "name": "Elmira Nəcəfli",
-      "photo" : "/src/assets/photos/elvira.jpeg",
+      "id": 2,
+      "studentName": "Elmira Nəcəfli",
+      "coverPhoto" : "/src/assets/photos/elvira.jpeg",
       "github": "https://github.com/Fizza2004",
       "connect": "https://www.linkedin.com/in/elmiranacafli/",
-      "desc": "Product Designer at DOST"
+      "desc": "Product Designer at DOST",
+      "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty",
+      "category": "UX-UI" 
     }
     
     ],
@@ -127,25 +133,31 @@
     ],
     "graduates" : [
     {
-      "name": "Ağayev Əli",
-      "photo" : "/src/assets/photos/ali.jpg",
+      "studentName": "Ağayev Əli",
+      "coverPhoto" : "/src/assets/photos/ali.jpg",
       "github": "https://github.com/AliAgayevv",
       "connect": "https://www.linkedin.com/in/ali-aghayev-6804b9302/",
-      "desc": "Junior at Pasha Bank"
+      "desc": "Junior at Pasha Bank",
+      "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty",
+      "category": "Frontend"
     },
     {
-      "name": "Fizzə Sultanova",
-      "photo" : "/src/assets/photos/fizza.jpeg",
+      "studentName": "Fizzə Sultanova",
+      "coverPhoto" : "/src/assets/photos/fizza.jpeg",
       "github": "https://github.com/Fizza2004",
       "connect": "www.linkedin.com/in/fizza-sultanova-866677260",
-      "desc": "Junior at Azerconnect"
+      "desc": "Junior at Azerconnect",
+      "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty",
+      "category": "Frontend"
     },
     {
-      "name": "Daniz Huseynli",
-      "photo" : "/src/assets/photos/daniz.jpeg",
+      "studentName": "Daniz Huseynli",
+      "coverPhoto" : "/src/assets/photos/daniz.jpeg",
       "github": "https://github.com/DenizHuseynli",
       "connect": "https://www.linkedin.com/in/daniz-huseynli-71a488238/",
-      "desc": "Junior at ABB"
+      "desc": "Junior at ABB",
+      "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty" ,
+      "category": "Frontend"
     }
     ],
     "instructors": [
@@ -189,11 +201,13 @@
     ],
     "graduates" : [
     {
-      "name": "Murad Fərəczadə",
-      "photo" : "/src/assets/photos/muradTelebe.jpeg",
+      "studentName": "Murad Fərəczadə",
+      "coverPhoto" : "/src/assets/photos/muradTelebe.jpeg",
       "github": "",
       "connect": "https://www.linkedin.com/in/murad-farajzada-02b88b245/",
-      "desc": "Junior at ABB"
+      "desc": "Junior at ABB",
+      "videoUrl": "https://www.youtube.com/embed/Wi6BCJsR39E?si=QfYRMA6zK650gIty" ,
+      "category": "Backend"
     }
     
     ],
