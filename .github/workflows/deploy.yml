@@ -26,10 +26,12 @@ jobs:
       run: sudo apt-get install sshpass
 
     - name: Deploy to Server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        sshpass -p ${{ secrets.SERVER_PASSWORD }} ssh -o StrictHostKeyChecking=no root@143.244.171.220 << 'EOF'
+        ssh -o StrictHostKeyChecking=no root@143.244.171.220 << 'EOF'
           cd /home/dev/Turing.edu.az || exit
           git pull origin main || exit
           npm install || exit
-          npm run dev || exit
+          pm2 restart your-app-name || exit
         EOF
