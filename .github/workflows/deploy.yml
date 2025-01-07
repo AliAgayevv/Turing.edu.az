@@ -29,7 +29,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        ssh -o StrictHostKeyChecking=no root@143.244.171.220 << 'EOF'
+        ssh -i /root/.ssh/my_new_key root@143.244.171.220 << 'EOF'
           cd /home/dev/Turing.edu.az || exit
           git pull origin main || exit
           npm install || exit
