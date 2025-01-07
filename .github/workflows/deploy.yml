@@ -29,7 +29,6 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        mkdir -p ~ /.ssh
         echo "$SSH_PRIVATE_KEY" > ~ /root/.ssh/id_rsa
         chmod 600 ~ /root/.ssh/id_rsa
         chmod 755 ~ /root/.ssh/id_rsa
