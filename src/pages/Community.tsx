@@ -11,6 +11,7 @@ import vector1 from "../assets/vectors/communityFirstVector.png";
 import vector2 from "../assets/vectors/positiveEnergyVector.png";
 import vector3 from "../assets/vectors/wavesBeforeVector.png";
 import vector4 from "../assets/vectors/teachLiveVector.png";
+import CursorEffect from "../utils/CursorEffect";
 
 const fakeData = [
   {
@@ -110,6 +111,7 @@ export default function Community() {
 
   return (
     <div className="bg-blue_ultraDark z-0 relative">
+      <CursorEffect />
       <Navbar isDark={false} />
 
       <div

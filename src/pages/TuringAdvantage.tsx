@@ -129,7 +129,7 @@ export default function TuringAdvantage() {
         </button>
       )}
 
-      <div className="mt-4 md:mt-44 relative overflow-hidden">
+      <div className="mt-4 md:mt-[72px] relative overflow-hidden">
         <div className="w-full md:w-[1000px] relative h-[320px] mt-8 rounded-lg  mx-auto">
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"

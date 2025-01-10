@@ -16,8 +16,8 @@ export default function MutualChoices() {
   });
   const item = xToCenter(-20);
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-20 overflow-hidden">
-      <div className="w-full lg:w-[220px] flex justify-start">
+    <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-[72px] overflow-hidden">
+      <div className="w-full lg:w-[12%] 2xl:w-[18%] flex justify-start">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -46,7 +46,7 @@ export default function MutualChoices() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 lg:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 lg:px-0">
         <MutualChoices_card
           title={"Design"}
           desc={
