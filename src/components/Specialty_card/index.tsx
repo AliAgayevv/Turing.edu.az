@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 import ApplyNow_btn from "../ApplyNow_btn";
 import LearnMore_btn from "../LearnMore_btn";
 import { motion } from "framer-motion";
@@ -27,11 +26,11 @@ const SpecialtyCard: React.FC<IProps> = ({
   const isMobile = useBreakpoint();
   return (
     <motion.div
-      className="border group w-[343px] h-[411px] md:w-[306px] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
+      className="border group w-[22vw] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
       whileHover={isMobile ? {} : "hover"}
     >
       <motion.div
-        className="h-[300px] w-[300px] md:h-[274px] md:w-[274px] p-2 rounded-lg flex items-center justify-center"
+        className="w-[20vw] h-[20vw] p-2 rounded-lg flex items-center justify-center"
         variants={
           isMobile
             ? {}

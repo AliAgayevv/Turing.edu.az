@@ -24,6 +24,24 @@ const fakeData = [
     route: "/schoolarship/UX-UI",
   },
   {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/UX-UI",
+  },
+  {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/UX-UI",
+  },
+  {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/UX-UI",
+  },
+  {
     id: 2,
     title: "Frontend Development",
     description: "Learn Art",
@@ -110,7 +128,7 @@ export default function Navbar({ isDark }: INavbarProps) {
             >
               <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
-                  {fakeData.map((item) => (
+                  {fakeData.slice(0, 4).map((item) => (
                     <NavbarElement
                       key={item.id}
                       isDark={isDark}
