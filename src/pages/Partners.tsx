@@ -64,6 +64,7 @@ export default function Partners() {
           </div>
         ))}
       </Slider>
+
       <FormSection />
     </div>
   );

@@ -14,6 +14,8 @@ fakeData.forEach((data) => {
   }
 });
 
+// TODO: ELEMENT SG OLDU
+
 export default function Schoolarship() {
   window.scrollTo({ top: 0, behavior: "smooth" });
   const [selectedCategory, setSelectedCategory] = useState("all");

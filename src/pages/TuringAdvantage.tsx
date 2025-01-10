@@ -129,7 +129,7 @@ export default function TuringAdvantage() {
         </button>
       )}
 
-      <div className="mt-4 md:mt-44 relative overflow-hidden">
+      <div className="mt-4 md:mt-[72px] relative overflow-hidden">
         <div className="w-full md:w-[1000px] relative h-[320px] mt-8 rounded-lg  mx-auto">
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
@@ -139,7 +139,7 @@ export default function TuringAdvantage() {
           />
           {/* Centered text container with a semi-transparent background for better visibility */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-[58px] md:text-[90px] lg:text-[195px] font-jakarta font-[900] uppercase text-white_light_32 leading-none text-center">
+            <div className="text-[50px] lg:text-[200px] 2xl:text-[225px] font-montserrat font-[900] uppercase text-white_light_32 leading-none text-center">
               Community
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function TuringAdvantage() {
             applications.
           </p>
           <Link to={"/community"}>
-            <button className="bg-black_dark border border-black_light text-white_solid py-3 px-6 rounded-3xl mb-10">
+            <button className="bg-black_dark border border-black_light text-white_solid py-3 px-6 rounded-3xl mb-10 w-full h-full xl:w-[10vw] xl:h-[6vh]">
               Explore us
             </button>
           </Link>

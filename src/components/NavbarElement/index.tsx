@@ -17,7 +17,7 @@ export default function NavbarElement({
   return (
     <Link to={route}>
       <div
-        className={`w-[312px] h-[102px] ${
+        className={`w-[20wv] h-[15vh] ${
           !isDark ? "border-blue_lightMedium" : "border-white_lightMedium"
         }  border rounded-2xl p-4 text-white flex justify-between flex-col`}
       >

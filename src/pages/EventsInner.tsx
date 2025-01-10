@@ -120,7 +120,7 @@ export default function EventsInner() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={isEndItem}
-              className="pt-24 w-11/12 mx-auto pb-20"
+              className="pt-10 w-11/12 mx-auto pb-20"
             >
               <h4 className="opacity-60 uppercase text-[14px] text-black_dark">
                 Gallery
