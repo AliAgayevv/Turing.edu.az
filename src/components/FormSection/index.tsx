@@ -39,10 +39,10 @@ export default function FormSection() {
 
   return (
     <div
-      className="flex flex-col md:flex-row sm:gap-4 justify-between mt-6 bg-white h-full"
+      className="flex flex-col md:flex-row sm:gap-4 mt-6 bg-white h-full justify-between"
       id="form"
     >
-      <div className="w-full md:w-[856px] h-auto bg-white md:border p-6">
+      <div className="w-full md:w-11/12 h-auto bg-white md:border p-6">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
           Start Today!

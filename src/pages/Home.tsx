@@ -22,7 +22,7 @@ export default function Home() {
         <div className="bg-blue_ultraDark">
           <Events />
         </div>
-        <div className="bg-white">
+        <div className="bg-white overflow-hidden">
           <div className="w-11/12 mx-auto h-[1700px] sm:h-auto">
             <Partners />
           </div>

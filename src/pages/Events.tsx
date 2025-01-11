@@ -28,7 +28,7 @@ export default function Events() {
         )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mt-12">
         {eventsData.slice(0, 6).map((event) => (
           <Link to={event.linkForLearnMore} key={event.id}>
             <Events_card {...event} isDark={true} />

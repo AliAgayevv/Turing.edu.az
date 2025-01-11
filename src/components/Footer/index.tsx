@@ -170,7 +170,7 @@ export default function Footer() {
       </div>
 
       <div className="absolute bottom-0 left-0 -z-10">
-        <img src={footerPhoto} alt="Footer Background" />
+        <img className="w-screen" src={footerPhoto} alt="Footer Background" />
       </div>
 
       <div className="absolute bottom-0 left-0 w-full px-6 md:px-8 py-1 lg:py-10">

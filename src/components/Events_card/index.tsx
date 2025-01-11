@@ -61,7 +61,7 @@ IEventsProps) {
       variants={animation}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] lg:w-[416px] rounded-2xl p-4 border ${
+      className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] xl:h-[270px] lg:w-[416px] 2xl:w-[350px] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       } ${!isMobile ? "hover:cursor-pointer" : ""} ${
         !isDark ? "bg-white_ultraLight" : ""

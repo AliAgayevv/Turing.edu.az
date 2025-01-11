@@ -3,7 +3,7 @@ import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
 import ApplyNow_btn from "../ApplyNow_btn";
 import openNavbarResponsive from "../../assets/vectors/responsiveOpenMenu.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { INavbarProps } from "../../const/types";
 import whiteOpenNavbarIcon from "../../assets/vectors/openNavbar.png";
 import whiteCloseNavbarIcon from "../../assets/vectors/closeNavbar.png";
@@ -14,8 +14,27 @@ import bgTuringVector from "../../assets/vectors/turing-hero-left-top-vector.png
 import { FaGripLines } from "react-icons/fa";
 
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
+import useOutsideClick from "../../hooks/outsideClick";
 
 const fakeData = [
+  {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/UX-UI",
+  },
+  {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/UX-UI",
+  },
+  {
+    id: 1,
+    title: "UX/UI Design",
+    description: "Design Intuitive Digital Experiences",
+    route: "/schoolarship/UX-UI",
+  },
   {
     id: 1,
     title: "UX/UI Design",
@@ -37,6 +56,11 @@ const fakeData = [
 ];
 
 export default function Navbar({ isDark }: INavbarProps) {
+  const menuRef = useRef(null);
+
+  useOutsideClick(menuRef, () => {
+    setIsMenuOpen(false);
+  });
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
 
@@ -95,6 +119,7 @@ export default function Navbar({ isDark }: INavbarProps) {
         >
           {isMenuOpen && (
             <div
+              ref={menuRef}
               className={`${
                 isDark
                   ? "text-white  bg-white"
@@ -103,7 +128,7 @@ export default function Navbar({ isDark }: INavbarProps) {
             >
               <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
-                  {fakeData.map((item) => (
+                  {fakeData.slice(0, 4).map((item) => (
                     <NavbarElement
                       key={item.id}
                       isDark={isDark}
@@ -122,13 +147,15 @@ export default function Navbar({ isDark }: INavbarProps) {
               isDark ? "text-blue_ultraDark" : "text-white_solid"
             }  flex-col md:flex-row md:gap-6 lg:gap-10 hidden lg:flex text-white_solid mt-4 md:mt-0`}
           >
-            <li
-              className={`py-2 md:py-0 ${
-                isDark ? "text-blue_ultraDark" : "text-white_solid"
-              }`}
-            >
-              Academy
-            </li>
+            <Link to={"/community"}>
+              <li
+                className={`py-2 md:py-0 ${
+                  isDark ? "text-blue_ultraDark" : "text-white_solid"
+                }`}
+              >
+                Academy
+              </li>
+            </Link>
             <li
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`py-2 md:py-0 flex items-center justify-center gap-2 cursor-pointer ${
@@ -233,7 +260,7 @@ export default function Navbar({ isDark }: INavbarProps) {
             </div>
 
             <nav className="flex flex-col space-y-6">
-              <Link to="/" className="text-white text-xl">
+              <Link to="/community" className="text-white text-xl">
                 Academy
               </Link>
               <div
