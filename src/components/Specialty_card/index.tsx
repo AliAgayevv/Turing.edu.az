@@ -26,11 +26,11 @@ const SpecialtyCard: React.FC<IProps> = ({
   const isMobile = useBreakpoint();
   return (
     <motion.div
-      className="border group w-[22vw] bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
+      className="border group w-auto h-auto xl:w-[22vw]  bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
       whileHover={isMobile ? {} : "hover"}
     >
       <motion.div
-        className="w-[20vw] h-[20vw] p-2 rounded-lg flex items-center justify-center"
+        className="w-auto md:h-auto xl:w-[20vw] xl:h-[20vw] p-2 rounded-lg flex items-center justify-center"
         variants={
           isMobile
             ? {}

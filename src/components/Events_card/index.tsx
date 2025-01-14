@@ -61,7 +61,8 @@ IEventsProps) {
       variants={animation}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] xl:h-[270px] lg:w-[416px] 2xl:w-[350px] rounded-2xl p-4 border ${
+      // ! TODO: Emilden sorus ki mobilde event card olcusu nece olsun? url -> http://localhost:5173/events
+      className={`group w-[75vw] h-[290px] sm:h-[250px] md:h-[290px] lg:h-[250px] xl:h-[270px] lg:w-[416px] 2xl:w-[470px] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       } ${!isMobile ? "hover:cursor-pointer" : ""} ${
         !isDark ? "bg-white_ultraLight" : ""
@@ -123,14 +124,14 @@ IEventsProps) {
             <motion.button
               whileHover={!isMobile ? { scale: 1.02 } : undefined}
               whileTap={!isMobile ? { scale: 0.98 } : undefined}
-              className={`w-[184px] h-[40px] rounded-full bg-transparent border border-[#4A5567] flex justify-center items-center ${buttons_color}`}
+              className={`w-[50%] h-[40px] rounded-full bg-transparent border border-[#4A5567] flex justify-center items-center ${buttons_color}`}
             >
               Learn More
             </motion.button>
             <motion.button
               whileHover={!isMobile ? { scale: 1.02 } : undefined}
               whileTap={!isMobile ? { scale: 0.98 } : undefined}
-              className="w-[184px] h-[40px] rounded-full bg-blue_light flex justify-center items-center text-white"
+              className="w-[50%] h-[40px] rounded-full bg-blue_light flex justify-center items-center text-white"
             >
               Register
             </motion.button>

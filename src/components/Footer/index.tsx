@@ -72,7 +72,7 @@ const menuData = {
 
 export default function Footer() {
   return (
-    <div className=" md:fixed h-full md:h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row justify-between pointer-events-auto">
+    <div className=" md:fixed h-[1200px] md:h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row md:justify-between  pointer-events-auto">
       <div className="flex flex-col gap-6">
         <img
           src={turingLogo}
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2  md:grid-cols-4 gap-6 md:gap-10 lg:justify-between lg:gap-24 mt-10 lg:mt-0">
+      <div className="flex flex-col md:grid  md:grid-cols-4 gap-6 md:gap-10 lg:justify-between lg:gap-24 mt-10 lg:mt-0">
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
             Upcoming Events
@@ -173,10 +173,24 @@ export default function Footer() {
         <img className="w-screen" src={footerPhoto} alt="Footer Background" />
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full px-6 md:px-8 py-1 lg:py-10">
-        <div className="flex lg:flex-row justify-between items-center text-white text-xs lg:text-sm font-[600]">
+      <div className="absolute bottom-0 hidden md:flex md:justify-between left-0 px-6 md:px-8 py-1 lg:py-10">
+        <div className="flex justify-between items-center text-white text-xs lg:text-sm font-[600]">
           <p>©2024 All rights reserved.</p>
-          <p>
+          <p className=" absolute bottom-10 2xl:-right-[1350px] xl:-right-[1200px]">
+            Created by{" "}
+            <a
+              href="https://www.youtube.com"
+              className="underline cursor-pointer"
+            >
+              SHI Studio.
+            </a>
+          </p>
+        </div>
+      </div>
+      <div className=" absolute flex md:hidden -bottom-[440px] left-[30vw]">
+        <div className="flex justify-between items-center text-white text-xs lg:text-sm font-[600] text-center">
+          <p>©2024 All rights reserved.</p>
+          <p className=" absolute bottom-6 right-4">
             Created by{" "}
             <a
               href="https://www.youtube.com"

@@ -36,7 +36,7 @@ export default function Syllabus_section({ category }: SyllabusSectionProps) {
           </button>
         </a>
       </div>
-      <div>
+      <div className="">
         {modules.map((item) => (
           <FAQItem
             key={item.id}

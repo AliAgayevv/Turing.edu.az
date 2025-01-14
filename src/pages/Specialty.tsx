@@ -50,7 +50,7 @@ export default function Specialty() {
             ))}
           </div>
 
-          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-32">
             {filteredEvents.map((event) => (
               <Link to={`/specialty/${event.id}`} key={event.id}>
                 <SpecialtyCard {...event} />

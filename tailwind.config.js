@@ -52,12 +52,6 @@ export default {
         montserrat: ["Montserrat"],
         jakarta: ["Plus Jakarta Sans"],
       },
-
-      // fontSize: {
-      //   "responsive-lg": "clamp(2rem, 4rem, 6rem)",
-      //   "responsive-md": "",
-      //   "responsive-sm": "",
-      // },
     },
   },
   plugins: [
