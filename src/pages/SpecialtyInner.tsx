@@ -54,7 +54,7 @@ const SpecialtyInner = () => {
           <div className="mt-40">
             <Teachers_section category={id} />
           </div>
-          <div className="mt-24">
+          <div className="mt-24 overflow-hidden">
             <Graduates_section category={id} />
           </div>
           <div className="mt-24 w-full h-auto overflow-hidden">

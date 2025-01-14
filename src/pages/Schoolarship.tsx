@@ -39,7 +39,7 @@ export default function Schoolarship() {
       className="z-[50]  h-screen"
     >
       <Navbar isDark={true} />
-      <div className="w-screen bg-white ">
+      <div className="w-screen lg:h-screen bg-white ">
         <div className="mx-auto w-11/12 pt-24 pb-20">
           <h1 className="font-jakarta font-[500] text-5xl">
             Active Scholarship Programs
