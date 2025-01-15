@@ -62,8 +62,48 @@ const fakeData = [
   },
 ];
 
+const MuhitComponent = () => {
+  return (
+    <div className="relative h-screen flex justify-center items-center overflow-x-hidden">
+      <div className="text-center z-10">
+        <h1 className="text-white text-[5rem] md:text-[10rem] font-bold">
+          Mühit
+        </h1>
+        <p className="text-gray-300 text-sm md:text-lg md:-mt-[40px]">
+          Learn highly demanded skills through practical courses, <br />
+          created by trusted industry professionals, that focus on real-world
+          applications.
+        </p>
+      </div>
+
+      {/* Floating Images */}
+      <div className="absolute inset-0 flex justify-center items-center overflow-x-hidden">
+        <img
+          src={image1}
+          alt="Community 1"
+          className="absolute w-[120px] h-[211px] md:w-[237px] md:h-[323px] object-cover rounded-[24px] left-0 top-20 xl:top-20 xl:left-48 2xl:top-16 2xl:left-60 rotate-[-15deg] "
+        />
+        <img
+          src={imageCentered}
+          alt="Community 2"
+          className="absolute w-[114px] md:w-[260px] md:h-[354px] h-[156px] object-cover rounded-[24px] top-40 -right-5 xl:top-20 xl:right-44 2xl:top-20 2xl:right-52 rotate-[10deg] "
+        />
+        <img
+          src={imageCentered}
+          alt="Community 3"
+          className="absolute w-[132px] h-[180px] object-cover md:w-[214px] md:h-[292px] rounded-[24px] bottom-20 left-0 xl:-bottom-6 xl:left-[26rem] 2xl:bottom-5 2xl:left-[30rem] -rotate-[15deg] "
+        />
+        <img
+          src={image4}
+          alt="Community 4"
+          className="absolute w-[184px] h-[250px] md:w-[146px] md:h-[200px] rounded-[24px] -bottom-5 right-4 xl:bottom-16 xl:right-[32rem] 2xl:bottom-28 2xl:right-[36rem] rotate-[10deg] "
+        />
+      </div>
+    </div>
+  );
+};
+
 export default function Community() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
   const [visibleCount, setVisibleCount] = useState(4);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -196,8 +236,9 @@ export default function Community() {
       <div className="mt-36 md:h-[350px] xl:h-[400px] h-[1750px]">
         <CommunitySlider />
       </div>
-      <div className="mt-40 h-[1400px]">
-        <CommunityAdvantages />
+      <div className="md:mt-20 h-[1800px]">
+        <MuhitComponent />
+        {/* <CommunityAdvantages /> */}
       </div>
     </div>
   );
