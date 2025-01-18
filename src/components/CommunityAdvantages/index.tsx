@@ -102,40 +102,6 @@ export default function CommunityAdvantages() {
           </motion.div>
         ))}
       </div>
-
-      <div className="absolute h-[700px] w-[1000px] translate-x-[-50%] translate-y-[-50%] left-[50%] top-[1100px]">
-        <div>
-          <img
-            src={animatedCardPhoto1}
-            className="max-w-[237px] max-h-[323px] w-[237px] h-[323px] object-cover absolute lg:-top-[50px] lg:left-[40px] 2xl:-top-[80px] 2xl:-left-[20px] top-[500px] left-[300px] rotate-on-cursor  -rotate-[15deg]"
-          />
-        </div>
-        <div>
-          <img
-            src={animatedCardPhoto2}
-            className="max-w-[260px] max-h-[354px] w-[260px] h-[354px] object-cover absolute lg:-top-[40px] top-[500px] left-[560px] lg:left-[850px] rotate-on-cursor  rotate-[15deg]"
-          />
-        </div>
-        <div>
-          <img
-            src={animatedCardPhoto3}
-            className="max-w-[146px] max-h-[200px] w-[146px] h-[200px] object-cover absolute lg:top-[450px] lg:left-[650px] rotate-on-cursor  rotate-[10deg]"
-          />
-        </div>
-        <div>
-          <img
-            src={animatedCardPhoto4}
-            className="max-w-[214px] max-h-[292px] h-[292px] w-[214px] object-cover absolute lg:top-[450px] lg:left-[250px] rotate-on-cursor  -rotate-[10deg]"
-          />
-        </div>
-      </div>
-      <h1 className="font-montserrat font-[600] text-[120px] text-white absolute top-[900px] left-[600px] 2xl:left-[670px]">
-        Mühit
-      </h1>
-      <p className="text-[18px] text-white_lightMedium absolute top-[1070px] left-[400px] w-2/4 text-center">
-        Learn highly demanded skills through practical courses, created
-        bytrusted industry professionals, that focus on real-world applications.
-      </p>
     </div>
   );
 }

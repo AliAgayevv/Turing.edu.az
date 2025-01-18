@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
-import ApplyNow_btn from "../ApplyNow_btn";
+
 import openNavbarResponsive from "../../assets/vectors/responsiveOpenMenu.png";
 import { useEffect, useRef, useState } from "react";
 import { INavbarProps } from "../../const/types";
@@ -15,6 +15,7 @@ import { FaGripLines } from "react-icons/fa";
 
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
 import useOutsideClick from "../../hooks/outsideClick";
+import ApplyNowBtn from "../ApplyNow_btn";
 
 const fakeData = [
   {
@@ -227,7 +228,7 @@ export default function Navbar({ isDark }: INavbarProps) {
             className="hidden lg:block w-[145px] h-[45px]"
             onClick={handleGoForm}
           >
-            <ApplyNow_btn>Apply Now</ApplyNow_btn>
+            <ApplyNowBtn />
           </div>
         </div>
       </div>
@@ -324,7 +325,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               </Link>
             </nav>
             <div className="mt-5" onClick={handleGoForm}>
-              <ApplyNow_btn>Apply Now</ApplyNow_btn>
+              <ApplyNowBtns />
             </div>
           </div>
         </div>

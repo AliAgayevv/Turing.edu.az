@@ -156,12 +156,12 @@ export default function Community() {
       <CursorEffect />
       <Navbar isDark={false} />
       <div className=" z-0 relative overflow-hidden h-[calc(100vh-15vh)] xl:mt-0 mt-10">
-        <div
-          className=" perspective-[1000px]"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="absolute h-[700px] w-[1000px] translate-x-[-50%] translate-y-[-50%] left-[50%] top-[50%]">
+        <div className=" perspective-[1000px]">
+          <div
+            className="absolute h-[700px] w-[1000px] translate-x-[-50%] translate-y-[-50%] left-[50%] top-[50%] "
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
             <div>
               <img
                 src={image1}
@@ -236,9 +236,9 @@ export default function Community() {
       <div className="mt-36 md:h-[350px] xl:h-[400px] h-[1750px]">
         <CommunitySlider />
       </div>
-      <div className="md:mt-20 h-[1800px]">
+      <div className="md:mt-20 h-[2400px]">
+        <CommunityAdvantages />
         <MuhitComponent />
-        {/* <CommunityAdvantages /> */}
       </div>
     </div>
   );
