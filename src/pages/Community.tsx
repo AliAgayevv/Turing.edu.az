@@ -14,6 +14,8 @@ import vector4 from "../assets/vectors/teachLiveVector.png";
 import CursorEffect from "../utils/CursorEffect";
 import CommunitySlider from "../components/CommunitySlider";
 import CommunityAdvantages from "../components/CommunityAdvantages";
+import gsap from "gsap";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 const fakeData = [
   {
@@ -63,8 +65,45 @@ const fakeData = [
 ];
 
 const MuhitComponent = () => {
+  const isMobile = useBreakpoint(1024);
+  const containerRef = useRef(null);
+  const imagesRef = useRef([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (isMobile) return;
+      if (!containerRef.current) return;
+
+      const { clientX, clientY } = e;
+      const { width, height, left, top } =
+        containerRef.current.getBoundingClientRect();
+
+      const x = (clientX - left - width / 2) / width;
+      const y = (clientY - top - height / 2) / height;
+
+      imagesRef.current.forEach((image, index) => {
+        if (image) {
+          const moveX = x * (10 + index * 5); // Hareketin şiddetini belirliyoruz
+          const moveY = y * (10 + index * 5);
+
+          image.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${
+            index % 2 === 0 ? "-15deg" : "10deg"
+          })`;
+        }
+      });
+    };
+
+    const container = containerRef.current;
+    container.addEventListener("mousemove", handleMouseMove);
+
+    return () => container.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <div className="relative h-screen flex justify-center items-center overflow-x-hidden">
+    <div
+      className="relative h-screen flex justify-center items-center overflow-x-hidden"
+      ref={containerRef}
+    >
       <div className="text-center z-10">
         <h1 className="text-white text-[5rem] md:text-[10rem] font-bold">
           Mühit
@@ -76,25 +115,28 @@ const MuhitComponent = () => {
         </p>
       </div>
 
-      {/* Floating Images */}
       <div className="absolute inset-0 flex justify-center items-center overflow-x-hidden">
         <img
           src={image1}
+          ref={(el) => (imagesRef.current[0] = el)}
           alt="Community 1"
           className="absolute w-[120px] h-[211px] md:w-[237px] md:h-[323px] object-cover rounded-[24px] left-0 top-20 xl:top-20 xl:left-48 2xl:top-16 2xl:left-60 rotate-[-15deg] "
         />
         <img
           src={imageCentered}
+          ref={(el) => (imagesRef.current[1] = el)}
           alt="Community 2"
           className="absolute w-[114px] md:w-[260px] md:h-[354px] h-[156px] object-cover rounded-[24px] top-40 -right-5 xl:top-20 xl:right-44 2xl:top-20 2xl:right-52 rotate-[10deg] "
         />
         <img
           src={imageCentered}
+          ref={(el) => (imagesRef.current[2] = el)}
           alt="Community 3"
           className="absolute w-[132px] h-[180px] object-cover md:w-[214px] md:h-[292px] rounded-[24px] bottom-20 left-0 xl:-bottom-6 xl:left-[26rem] 2xl:bottom-5 2xl:left-[30rem] -rotate-[15deg] "
         />
         <img
           src={image4}
+          ref={(el) => (imagesRef.current[3] = el)}
           alt="Community 4"
           className="absolute w-[184px] h-[250px] md:w-[146px] md:h-[200px] rounded-[24px] -bottom-5 right-4 xl:bottom-16 xl:right-[32rem] 2xl:bottom-28 2xl:right-[36rem] rotate-[10deg] "
         />
@@ -104,29 +146,35 @@ const MuhitComponent = () => {
 };
 
 export default function Community() {
+  const containerRef = useRef(null);
   const [visibleCount, setVisibleCount] = useState(4);
+  const isMobile = useBreakpoint(1024);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const container = e.currentTarget;
-    const items =
-      container.querySelectorAll<HTMLDivElement>(".rotate-on-cursor");
-    const rect = container.getBoundingClientRect();
+  const handleMouseMove = (event) => {
+    if (isMobile) return;
+    const { clientX, clientY } = event;
+    const container = containerRef.current.getBoundingClientRect();
+    const centerX = container.left + container.width / 2;
+    const centerY = container.top + container.height / 2;
 
-    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
-    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+    const distanceX = (clientX - centerX) / container.width;
+    const distanceY = (clientY - centerY) / container.height;
 
-    items.forEach((item) => {
-      const rotateX = y * 20; // Adjust rotation intensity
-      const rotateY = -x * 15;
-      item.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    gsap.to(containerRef.current, {
+      rotateX: 30 * distanceY,
+      rotateY: 50 * distanceX,
+      duration: 0.5,
+      ease: "power1.out",
     });
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    const items =
-      e.currentTarget.querySelectorAll<HTMLDivElement>(".rotate-on-cursor");
-    items.forEach((item) => {
-      item.style.transform = "rotateX(0) rotateY(0)";
+  const handleMouseLeave = () => {
+    if (isMobile) return;
+    gsap.to(containerRef.current, {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.5,
+      ease: "power1.out",
     });
   };
 
@@ -161,6 +209,7 @@ export default function Community() {
             className="absolute h-[700px] w-[1000px] translate-x-[-50%] translate-y-[-50%] left-[50%] top-[50%] "
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            ref={containerRef}
           >
             <div>
               <img

@@ -325,7 +325,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               </Link>
             </nav>
             <div className="mt-5" onClick={handleGoForm}>
-              <ApplyNowBtns />
+              <ApplyNowBtn />
             </div>
           </div>
         </div>

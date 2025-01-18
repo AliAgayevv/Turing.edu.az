@@ -29,7 +29,7 @@ const CursorEffect: React.FC = () => {
             transform: `translate(${cursorPosition.x - 75}px, ${
               cursorPosition.y - 75
             }px)`,
-            transition: "transform 0.1s ease-out",
+            transition: "transform 1s ease-out",
           }}
         ></div>
       )}
