@@ -10,6 +10,7 @@ import image9 from "../../assets/photos/gridPhotos/image9.png";
 import image10 from "../../assets/photos/gridPhotos/image10.jpeg";
 import image11 from "../../assets/photos/gridPhotos/image11.jpeg";
 import image12 from "../../assets/photos/gridPhotos/image12.jpeg";
+import theySelectUs1 from "../../assets/photos/ali.jpg";
 
 const ResponsiveImageGrid = () => {
   const fakeData = [
@@ -30,7 +31,7 @@ const ResponsiveImageGrid = () => {
   return (
     <div className="w-[95%] mx-auto">
       <div className="relative min-h-screen">
-        <div className="absolute inset-0 w-full h-[1000px] ">
+        <div className="absolute inset-0 w-full h-[800px] ">
           <div className="flex h-[25%]" id="first-row">
             <div className="relative w-[27%] h-full">
               <img src={fakeData[0]} className="object-cover w-full h-full" />
@@ -47,13 +48,13 @@ const ResponsiveImageGrid = () => {
             <div className="relative w-[27%] h-full">
               <img src={fakeData[3]} className="object-cover w-full h-full" />
             </div>
-            <div className="flex flex-col w-[36.32%] h-[150%]">
+            <div className=" w-[36.32%] h-[150%]">
               <div className="relative w-[100%] h-[33.33%]">
                 <img src={fakeData[4]} className="object-cover w-full h-full" />
               </div>
 
               <div className="relative flex w-[200%] h-[100%]">
-                <div className="relative w-[25%] h-[79%]">
+                <div className="relative w-[25%] h-[66.5%]">
                   <img
                     src={fakeData[8]}
                     className="object-cover w-full h-full"
@@ -100,18 +101,14 @@ const ResponsiveImageGrid = () => {
             Onlar
             <span className="inline-flex items-center mx-2">
               <img
-                src={fakeData[0]}
+                src={theySelectUs1}
                 alt="Profile 1"
-                className="rounded-full border-2 border-white mr-[-8px]"
-                width={60}
-                height={60}
+                className="rounded-full border-2 w-14 h-14  object-cover border-white mr-[-8px]"
               />
               <img
-                src={fakeData[1]}
+                src={fakeData[3]}
                 alt="Profile 2"
-                className="rounded-full border-2 border-white"
-                width={60}
-                height={60}
+                className="rounded-full border-2 w-14 h-14 max-h-20 object-cover ml-5 mt-10 border-white"
               />
             </span>
             bizi seçərək

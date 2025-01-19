@@ -18,7 +18,7 @@ function FAQItem({ question, answer, isVisible, onClick }: IQAProps) {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={FAQAnimationItem}
-      className="w-full md:w-[856px] p-4 h-auto rounded-lg border border-white_medium mb-4"
+      className="w-full  p-4 h-auto rounded-lg border border-white_medium mb-4"
     >
       <div
         className="flex gap-5 md:gap-2 items-center cursor-pointer"

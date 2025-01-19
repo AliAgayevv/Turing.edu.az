@@ -17,6 +17,9 @@ import CommunityAdvantages from "../components/CommunityAdvantages";
 import gsap from "gsap";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import ResponsiveImageGrid from "../components/CommunityGridImages";
+import exampleVideo from "../assets/videos/community-video.mp4";
+import Footer from "../components/Footer";
+import ResizingDiv from "../components/ResizeAnimation";
 
 const fakeData = [
   {
@@ -292,6 +295,33 @@ export default function Community() {
       </div>
       <div className="h-[1000px]">
         <ResponsiveImageGrid />
+      </div>
+
+      <div>
+        <div className="w-11/12 mx-auto mb-10">
+          <ResizingDiv />
+        </div>
+        <div className="flex justify-end">
+          <h2 className="text-right text-[20px] w-screen pr-10 text-white font-inter">
+            Modern design are the key to success. <br /> Everything that is most
+            beautiful is in nature.
+          </h2>
+        </div>
+        <h1 className="text-white font-montserrat text-[80px] w-11/12 mx-auto font-[600] uppercase">
+          lorem ipsum dolor sit amet sita
+        </h1>
+        <div className="relative h-[428px] mt-8">
+          <video
+            className="w-screen h-full object-cover rounded-2xl"
+            src={exampleVideo}
+            autoPlay
+            loop={true}
+          />
+          <div className="bg-black/60 absolute inset-0"></div>
+          <div className="h-screen relative -z-[2]">
+            <Footer />
+          </div>
+        </div>
       </div>
     </div>
   );
