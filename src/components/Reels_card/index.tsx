@@ -7,6 +7,7 @@ import { yToCenter } from "../../utils/motionAnimations";
 const item = yToCenter(20);
 
 export default function Reels_card({
+  graduatesPage,
   studentName,
   coverPhoto,
   videoUrl,
@@ -29,7 +30,9 @@ export default function Reels_card({
         variants={item}
         initial="hidden"
         animate="visible"
-        className="h-auto w-[250px] md:w-[306px] rounded-2xl p-4 border relative group"
+        className={`h-auto md:w-[306px] rounded-2xl p-4 border relative group ${
+          graduatesPage ? "w-full" : "w-[250px]"
+        }  `}
       >
         <div
           className="w-full md:w-[274px] bg-blue-50 rounded-[10px] relative overflow-hidden"

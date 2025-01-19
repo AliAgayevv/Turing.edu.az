@@ -16,6 +16,7 @@ import CommunitySlider from "../components/CommunitySlider";
 import CommunityAdvantages from "../components/CommunityAdvantages";
 import gsap from "gsap";
 import { useBreakpoint } from "../hooks/useBreakpoint";
+import ResponsiveImageGrid from "../components/CommunityGridImages";
 
 const fakeData = [
   {
@@ -285,9 +286,12 @@ export default function Community() {
       <div className="mt-36 md:h-[350px] xl:h-[400px] h-[1750px]">
         <CommunitySlider />
       </div>
-      <div className="md:mt-20 h-[2400px]">
+      <div className="md:mt-20 h-[2200px] md:h-[1650px]">
         <CommunityAdvantages />
         <MuhitComponent />
+      </div>
+      <div className="h-[1000px]">
+        <ResponsiveImageGrid />
       </div>
     </div>
   );

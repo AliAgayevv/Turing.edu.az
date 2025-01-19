@@ -46,7 +46,7 @@ export default function MutualChoices() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 lg:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 lg:px-0">
         <MutualChoices_card
           title={"Design"}
           desc={

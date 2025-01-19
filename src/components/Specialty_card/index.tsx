@@ -114,8 +114,8 @@ const SpecialtyCard: React.FC<IProps> = ({
           <div className="w-[129px] h-[46px]">
             <LearnMore_btn>Learn More</LearnMore_btn>
           </div>
-          <div className="w-[129px] h-[46px]">
-            <ApplyNow_btn>Apply Now</ApplyNow_btn>
+          <div className="w-[129px] h-full">
+            <ApplyNow_btn />
           </div>
         </motion.div>
       </div>

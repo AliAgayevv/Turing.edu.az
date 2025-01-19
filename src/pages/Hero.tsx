@@ -75,7 +75,7 @@ export default function Hero() {
             initial={{ translateY: 400, opacity: 0 }}
             animate={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-[520px]  lg:w-[1120px] h-[300px] relative lg:h-[55vh] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] "
+            className="w-[520px]  lg:w-[1120px] h-[300px] relative  md:h-[65vh] md:w-[1250px]  lg:h-[55vh] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] "
           >
             <video
               className="absolute top-0 left-0 w-full h-full object-center lg:object-cover rounded-2xl overflow-hidden"

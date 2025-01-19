@@ -47,6 +47,7 @@ export interface INavbarProps {
 }
 
 export interface IStudentsInfoProps {
+  graduatesPage: boolean;
   studentName: string;
   desc: string;
   videoUrl: string;
