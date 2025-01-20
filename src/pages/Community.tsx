@@ -87,8 +87,8 @@ const MuhitComponent = () => {
 
       imagesRef.current.forEach((image, index) => {
         if (image) {
-          const moveX = x * (10 + index * 5); // Hareketin şiddetini belirliyoruz
-          const moveY = y * (10 + index * 5);
+          const moveX = x * (10 + index * 10); // Hareketin şiddetini belirliyoruz
+          const moveY = y * (10 + index * 10);
 
           image.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${
             index % 2 === 0 ? "-15deg" : "10deg"
@@ -105,7 +105,7 @@ const MuhitComponent = () => {
 
   return (
     <div
-      className="relative h-screen flex justify-center items-center overflow-x-hidden"
+      className="relative h-screen flex justify-center items-center overflow-x-hidden lg:mt-20 xl:mt-0"
       ref={containerRef}
     >
       <div className="text-center z-10">
@@ -119,30 +119,30 @@ const MuhitComponent = () => {
         </p>
       </div>
 
-      <div className="absolute inset-0 flex justify-center items-center overflow-x-hidden">
+      <div className="absolute inset-0 flex justify-center items-center overflow-x-hidden overflow-hidden">
         <img
           src={image1}
           ref={(el) => (imagesRef.current[0] = el)}
           alt="Community 1"
-          className="absolute w-[120px] h-[211px] md:w-[237px] md:h-[323px] object-cover rounded-[24px] left-0 top-20 xl:top-20 xl:left-48 2xl:top-16 2xl:left-60 rotate-[-15deg] "
+          className="absolute w-[120px] h-[211px] md:w-[237px] md:h-[323px] object-cover rounded-[24px] left-0 top-20 lg:top-10 lg:left-40 xl:top-20 xl:left-48 2xl:top-16 2xl:left-60 rotate-[-15deg] "
         />
         <img
           src={imageCentered}
           ref={(el) => (imagesRef.current[1] = el)}
           alt="Community 2"
-          className="absolute w-[114px] md:w-[260px] md:h-[354px] h-[156px] object-cover rounded-[24px] top-40 -right-5 xl:top-20 xl:right-44 2xl:top-20 2xl:right-52 rotate-[10deg] "
+          className="absolute w-[114px] md:w-[260px] md:h-[354px] h-[156px] object-cover rounded-[24px] top-40 -right-5 lg:top-10 lg:right-40 xl:top-20 xl:right-44 2xl:top-20 2xl:right-52 rotate-[10deg] "
         />
         <img
           src={imageCentered}
           ref={(el) => (imagesRef.current[2] = el)}
           alt="Community 3"
-          className="absolute w-[132px] h-[180px] object-cover md:w-[214px] md:h-[292px] rounded-[24px] bottom-20 left-0 xl:-bottom-6 xl:left-[26rem] 2xl:bottom-5 2xl:left-[30rem] -rotate-[15deg] "
+          className="absolute w-[132px] h-[180px] object-cover md:w-[214px] md:h-[292px] rounded-[24px] bottom-20 left-0 lg:-bottom-20 lg:left-60  xl:-bottom-6 xl:left-[26rem] 2xl:bottom-5 2xl:left-[30rem] -rotate-[15deg] "
         />
         <img
           src={image4}
           ref={(el) => (imagesRef.current[3] = el)}
           alt="Community 4"
-          className="absolute w-[184px] h-[250px] md:w-[146px] md:h-[200px] rounded-[24px] -bottom-5 right-4 xl:bottom-16 xl:right-[32rem] 2xl:bottom-28 2xl:right-[36rem] rotate-[10deg] "
+          className="absolute w-[184px] h-[250px] md:w-[146px] md:h-[200px] rounded-[24px] -bottom-5 right-4 lg:bottom-0 lg:right-60 xl:bottom-16 xl:right-[32rem] 2xl:bottom-28 2xl:right-[36rem] rotate-[10deg] "
         />
       </div>
     </div>
@@ -289,7 +289,7 @@ export default function Community() {
       <div className="mt-36 md:h-[350px] xl:h-[400px] h-[1750px]">
         <CommunitySlider />
       </div>
-      <div className="md:mt-20 h-[2200px] md:h-[1650px]">
+      <div className="md:mt-20 h-[2200px] md:h-[1650px] md:mb-[500px] lg:mb-0">
         <CommunityAdvantages />
         <MuhitComponent />
       </div>
@@ -319,7 +319,7 @@ export default function Community() {
           />
           <div className="bg-black/60 absolute inset-0"></div>
           <div className="h-screen relative -z-[2]">
-            <Footer />
+            <Footer forCommunity={true} />
           </div>
         </div>
       </div>

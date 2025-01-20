@@ -1,92 +1,75 @@
 "use client";
 import resizeSVG from "../../assets/vectors/resize.svg";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 export default function ResizableText() {
-  const [dimensions, setDimensions] = useState({ width: 300, height: 120 });
-  const [isResizing, setIsResizing] = useState(false);
+  const isMobile = useBreakpoint();
+  // Track scroll progress
+  const { scrollYProgress } = useScroll();
 
-  // Motion values for smooth transitions
-  const width = useMotionValue(dimensions.width);
-  const height = useMotionValue(dimensions.height);
+  console.log(isMobile);
 
-  // Transform the corner opacity based on hover/resize state
-  const cornerOpacity = useTransform(
-    width,
-    [dimensions.width - 5, dimensions.width + 5],
-    [0.5, 1]
+  // Smooth animations driven by scroll progress
+  const width = useSpring(
+    useTransform(scrollYProgress, [0.4, 0.9], [10, window.innerWidth / 2]), // Start very small and grow
+    { stiffness: 200, damping: 30 }
+  );
+  const mobileWidth = useSpring(
+    useTransform(scrollYProgress, [0.3, 1], [10, window.innerWidth]), // Start very small and grow
+    { stiffness: 1000, damping: 150 }
   );
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsResizing(true);
+  const height = useSpring(
+    useTransform(scrollYProgress, [0, 1], [50, 250]), // Initial height starts small
+    { stiffness: 200, damping: 30 }
+  );
 
-    const startX = e.pageX;
-    const startY = e.pageY;
-    const startWidth = dimensions.width;
-    const startHeight = dimensions.height;
+  const textScale = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0.5, 1]), // Start smaller and grow
+    { stiffness: 200, damping: 30 }
+  );
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const newWidth = startWidth + (e.pageX - startX);
-      const newHeight = startHeight + (e.pageY - startY);
+  const fontSize = useSpring(
+    useTransform(scrollYProgress, [0, 1], [10, 100]), // Dynamically adjust font size
+    { stiffness: 300, damping: 30 }
+  );
 
-      // Animate to new dimensions smoothly
-      animate(width, Math.max(200, newWidth), {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      });
-      animate(height, Math.max(80, newHeight), {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      });
+  const frameBorderOpacity = useSpring(
+    useTransform(scrollYProgress, [0, 1], [1, 0.5]), // Fade border
+    { stiffness: 300, damping: 30 }
+  );
 
-      setDimensions({
-        width: Math.max(200, newWidth),
-        height: Math.max(80, newHeight),
-      });
-    };
-
-    const handleMouseUp = () => {
-      setIsResizing(false);
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
+  const cornerMarkerOpacity = useSpring(
+    useTransform(scrollYProgress, [0, 1], [1, 0]), // Fade out corner markers
+    { stiffness: 300, damping: 30 }
+  );
 
   return (
-    <div className="w-full  flex ">
-      <motion.div
-        className="relative"
-        style={{
-          width,
-          height,
-        }}
-      >
-        {/* Text container with frame */}
+    <div className="w-full flex">
+      {/* Animated container */}
+      <motion.div id="resizable-div" className="relative flex items-start">
+        {/* Frame containing text */}
         <motion.div
-          className="w-full h-full border border-white flex items-center justify-center p-4"
-          animate={{
-            scale: isResizing ? 1.02 : 1,
-          }}
-          transition={{
-            scale: {
-              type: "spring",
-              stiffness: 300,
-              damping: 30,
-            },
+          className="border flex items-center justify-center p-4"
+          style={{
+            width: !isMobile ? width : mobileWidth, // Dynamic width based on scroll
+            height: height, // Dynamic height based on scroll
+            borderColor: `rgba(255, 255, 255, ${frameBorderOpacity.get()})`, // Border fade
+            borderWidth: "2px",
           }}
         >
-          <div className="text-white text-2xl font-medium whitespace-nowrap">
+          {/* Animated text */}
+          <motion.div
+            className="text-white font-medium whitespace-nowrap leading-none text-wrap"
+            style={{
+              scale: textScale, // Text scale animation
+              fontSize: fontSize.get(), // Dynamically set font size
+            }}
+          >
             Birlikdə inkişaf edək!
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Corner markers */}
@@ -103,7 +86,9 @@ export default function ResizableText() {
                   ? "-bottom-2 -left-2"
                   : "-bottom-2 -right-2"
               }`}
-              style={{ opacity: cornerOpacity }}
+              style={{
+                opacity: cornerMarkerOpacity.get(), // Corner marker fade
+              }}
             />
           )
         )}
@@ -111,11 +96,10 @@ export default function ResizableText() {
         {/* Resize handle */}
         <motion.div
           className="absolute -bottom-16 -right-[90px] w-20 h-20 cursor-se-resize"
-          onMouseDown={handleMouseDown}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.1 }} // Hover interaction
+          whileTap={{ scale: 0.95 }} // Tap interaction
         >
-          <img src={resizeSVG} alt="" />
+          <img src={resizeSVG} alt="Resize" />
         </motion.div>
       </motion.div>
     </div>

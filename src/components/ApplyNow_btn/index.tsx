@@ -4,7 +4,7 @@ const ApplyNowBtn = () => {
   return (
     <div className="container">
       <div className="wrapper">
-        <button className="btn">
+        <button className={`btn`}>
           <div className="btn__bg">
             <span className="btn__bg__layer btn__bg__layer-first"></span>
             <span className="btn__bg__layer btn__bg__layer-second"></span>

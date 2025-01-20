@@ -26,7 +26,7 @@ const SpecialtyCard: React.FC<IProps> = ({
   const isMobile = useBreakpoint();
   return (
     <motion.div
-      className="border group w-auto h-auto xl:w-[22vw]  bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
+      className="border group w-auto h-[500px] xl:w-[22vw]  bg-white rounded-2xl p-4 flex flex-col gap-5 font-inter overflow-hidden relative"
       whileHover={isMobile ? {} : "hover"}
     >
       <motion.div
@@ -57,7 +57,7 @@ const SpecialtyCard: React.FC<IProps> = ({
           className="flex px-2.5 justify-center items-center text-[#01030E] bg-[#F8F9FA] rounded-lg border mb-4 text-[14px] font-[400] opacity-70"
           variants={{
             hover: {
-              y: -105,
+              y: -95,
               transition: { duration: 0.3, delay: 0.3 },
             },
           }}
@@ -69,7 +69,7 @@ const SpecialtyCard: React.FC<IProps> = ({
           className="mb-[6px] font-[500]"
           variants={{
             hover: {
-              y: -110,
+              y: -100,
               transition: { duration: 0.3, delay: 0.3 },
             },
           }}
@@ -81,7 +81,7 @@ const SpecialtyCard: React.FC<IProps> = ({
           className="p-1 text-[12px] text-[#01030E] opacity-80 font-[400]"
           variants={{
             hover: {
-              y: 40,
+              y: 100,
               transition: { duration: 0.5, delay: 0.3 },
             },
           }}
@@ -93,7 +93,7 @@ const SpecialtyCard: React.FC<IProps> = ({
           className="absolute -bottom-20 p-1 text-[12px] text-[#01030E] opacity-80 font-[400]"
           variants={{
             hover: {
-              y: -144,
+              y: -170,
               x: -1,
               transition: { duration: 0.3, delay: 0.3 },
             },
@@ -103,18 +103,18 @@ const SpecialtyCard: React.FC<IProps> = ({
         </motion.p>
 
         <motion.div
-          className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center items-center"
+          className="absolute -bottom-16 left-0 right-0 flex gap-4 justify-center"
           variants={{
             hover: {
-              y: -70,
+              y: -82,
               transition: { duration: 0.3, delay: 0.5 },
             },
           }}
         >
-          <div className="w-[129px] h-[46px]">
+          <div className="w-[129px] h-[60px]">
             <LearnMore_btn>Learn More</LearnMore_btn>
           </div>
-          <div className="w-[129px] h-full">
+          <div className="w-[129px] h-[46px]">
             <ApplyNow_btn />
           </div>
         </motion.div>

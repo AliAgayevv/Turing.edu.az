@@ -70,9 +70,15 @@ const menuData = {
   fieldsOfStudy: schoolarshipForShow,
 };
 
-export default function Footer() {
+export default function Footer({ forCommunity = false }) {
   return (
-    <div className=" md:fixed h-[1200px] md:h-screen bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row md:justify-between  pointer-events-auto">
+    <div
+      className={`${
+        forCommunity
+          ? "block md:block md:h-[800px] md:justify-between"
+          : "md:fixed md:h-screen"
+      } "  h-[1200px]  bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row md:justify-between  pointer-events-auto`}
+    >
       <div className="flex flex-col gap-6">
         <img
           src={turingLogo}

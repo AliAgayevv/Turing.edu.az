@@ -26,9 +26,6 @@ export default function SchoolarshipInner() {
             <div className="absolute -bottom-0 right-10 w-[300px] blur-[200px] rounded-full bg-gradient-to-br from-blue-500/50 via-purple-400/40 to-transparent pointer-events-none z-0"></div>
             <p className="font-[600] text-[64px] ">{id}</p>
             <p className="mt-2">{currentData?.desc}</p>
-            <div className="w-[145px] h-[48px] mt-12">
-              <ApplyNow_btn>Apply Now</ApplyNow_btn>
-            </div>
           </div>
           <div className="mt-16 md:mt-24 flex flex-col md:flex-row gap-10 md:justify-between md:items-center">
             <div className="flex flex-col">
@@ -44,7 +41,7 @@ export default function SchoolarshipInner() {
                   excellence and leadership.
                 </p>
                 <div className="w-[145px] h-[48px] mt-6 hidden md:block">
-                  <ApplyNow_btn>Apply Now</ApplyNow_btn>
+                  <ApplyNow_btn />
                 </div>
               </div>
             </div>
@@ -63,7 +60,7 @@ export default function SchoolarshipInner() {
               </div>
             </div>
             <div className="w-[145px] h-[48px] mt-0 block md:hidden">
-              <ApplyNow_btn>Apply Now</ApplyNow_btn>
+              <ApplyNow_btn />
             </div>
           </div>
           <div className="mt-24">
