@@ -27,12 +27,16 @@ export default function ResizableText() {
   );
 
   const textScale = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0.5, 1]), // Start smaller and grow
+    useTransform(scrollYProgress, [9.5, 10], [0.5, 1]), // Start smaller and grow
     { stiffness: 200, damping: 30 }
   );
 
   const fontSize = useSpring(
-    useTransform(scrollYProgress, [0, 1], [10, 100]), // Dynamically adjust font size
+    useTransform(scrollYProgress, [100, 0], [50, 100]), // Dynamically adjust font size
+    { stiffness: 300, damping: 30 }
+  );
+  const mfontSize = useSpring(
+    useTransform(scrollYProgress, [90, 1], [5, 100]), // Dynamically adjust font size
     { stiffness: 300, damping: 30 }
   );
 
@@ -65,7 +69,7 @@ export default function ResizableText() {
             className="text-white font-medium whitespace-nowrap leading-none text-wrap"
             style={{
               scale: textScale, // Text scale animation
-              fontSize: fontSize.get(), // Dynamically set font size
+              fontSize: !isMobile ? fontSize.get() : mfontSize.get(), // Dynamically set font size
             }}
           >
             Birlikdə inkişaf edək!

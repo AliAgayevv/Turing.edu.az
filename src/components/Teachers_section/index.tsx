@@ -18,7 +18,7 @@ export default function Teachers_section({ category }: IProps) {
         Guiding Future Lights: Our Instructors
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-[16%]">
         {teachers.map((item) => (
           <Teacher_card
             key={item.name}

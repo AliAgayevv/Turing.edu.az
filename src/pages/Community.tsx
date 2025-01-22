@@ -204,7 +204,7 @@ export default function Community() {
   };
 
   return (
-    <div className="bg-blue_ultraDark min-h-screen">
+    <div className="bg-blue_ultraDark min-h-screen overflow-x-hidden">
       <CursorEffect />
       <Navbar isDark={false} />
       <div className=" z-0 relative overflow-hidden h-[calc(100vh-15vh)] xl:mt-0 mt-10">
@@ -307,7 +307,10 @@ export default function Community() {
             beautiful is in nature.
           </h2>
         </div>
-        <h1 className="text-white font-montserrat text-[80px] w-11/12 mx-auto font-[600] uppercase">
+        <h1
+          className="text-white font-montserrat mt-10 w-11/12 mx-auto font-[600] uppercase"
+          id="community-footer-above-text"
+        >
           lorem ipsum dolor sit amet sita
         </h1>
         <div className="relative h-[428px] mt-8">
@@ -318,7 +321,7 @@ export default function Community() {
             loop={true}
           />
           <div className="bg-black/60 absolute inset-0"></div>
-          <div className="h-screen relative -z-[2]">
+          <div className="h-screen relative">
             <Footer forCommunity={true} />
           </div>
         </div>

@@ -34,7 +34,7 @@ export default function OurGraduates() {
           <div key={index}>
             <motion.div
               ref={ref}
-              className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4  px-4 hidden md:block"
+              className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 2xl:w-1/4 px-4 hidden md:block"
             >
               <Reels_card key={index} {...data} />
             </motion.div>

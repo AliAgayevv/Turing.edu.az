@@ -49,3 +49,7 @@
 
 
 
+#community-footer-above-text
+{
+    font-size: clamp(4.8vw, 10vw, 1.1rem);
+}

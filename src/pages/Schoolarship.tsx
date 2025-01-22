@@ -1,3 +1,5 @@
+// ! TODO: Specialty Card tezeden animasiya olunsun gsap veya frammer ile daha responsive formada ve daha duzgun.
+
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import SpecialtyCard from "../components/Specialty_card";

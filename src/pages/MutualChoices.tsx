@@ -16,7 +16,7 @@ export default function MutualChoices() {
   });
   const item = xToCenter(-20);
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-[220px] justify-center items-center bg-white py-10 lg:py-[72px] overflow-hidden">
+    <div className="flex flex-col lg:flex-row gap-10 w-full lg:justify-around justify-center items-center bg-white py-10 lg:py-[72px] overflow-hidden">
       <div className="w-full lg:w-[12%] 2xl:w-[18%] flex justify-start">
         <motion.div
           ref={ref}

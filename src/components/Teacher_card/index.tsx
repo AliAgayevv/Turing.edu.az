@@ -24,9 +24,9 @@ export default function Teacher_card({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={teacherItem}
-      className="border rounded-2xl w-full h-auto flex flex-col items-center p-4 sm:p-6 bg-white transition-shadow duration-300"
+      className="border rounded-2xl lg:w-[25vw] h-auto flex flex-col items-center p-4 bg-white transition-shadow duration-300"
     >
-      <div className="w-full md:w-[260px]  min-h-[300px] aspect-square flex items-center justify-center">
+      <div className="w-full sm:w-[30vw] sm:h-[30vh] md:w-[35vw] lg:w-[20vw] lg:h-[40vh] xl:h-[25vw] xl:max-h-[50vh] xl:w-[23vw] xl:aspect-auto  sm:max-h-[30vh] aspect-square flex items-center justify-center">
         <img
           src={photo}
           className="w-full h-full object-cover rounded-[15px]"

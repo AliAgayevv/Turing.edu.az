@@ -20,7 +20,7 @@ export default function Steps_box({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={stepBoxVariants}
-      className="w-full max-w-[415px] h-auto rounded-2xl border p-4 sm:p-6"
+      className="w-full h-auto rounded-2xl border p-4 sm:p-6"
     >
       <span className="border px-2 py-1 rounded-lg text-white_ultraDark text-[14px]">
         {stepTitle}

@@ -30,12 +30,12 @@ export default function Reels_card({
         variants={item}
         initial="hidden"
         animate="visible"
-        className={`h-auto md:w-[306px] rounded-2xl p-4 border relative group ${
+        className={`h-auto md:w-[306px] 2xl:w-[20vw] rounded-2xl p-4 border relative group ${
           graduatesPage ? "w-full" : "w-[250px]"
         }  `}
       >
         <div
-          className="w-full md:w-[274px] bg-blue-50 rounded-[10px] relative overflow-hidden"
+          className="w-full md:w-[274px] 2xl:w-[18vw] bg-blue-50 rounded-[10px] relative overflow-hidden"
           onClick={handleTogglePlay}
         >
           <img

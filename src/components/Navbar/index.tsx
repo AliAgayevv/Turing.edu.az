@@ -17,6 +17,8 @@ import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.pn
 import useOutsideClick from "../../hooks/outsideClick";
 import ApplyNowBtn from "../ApplyNow_btn";
 
+// ! TODO: FIELDS OF STUDY TOGGLE PROBLEM
+
 const fakeData = [
   {
     id: 1,
@@ -76,7 +78,7 @@ export default function Navbar({ isDark }: INavbarProps) {
       });
     }
   };
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
   const [toggleResponsive2ndMenu, setToggleResponsive2ndMenu] = useState(false);
 
@@ -118,14 +120,14 @@ export default function Navbar({ isDark }: INavbarProps) {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          {isMenuOpen && (
+          {!isMenuOpen && (
             <div
               ref={menuRef}
               className={`${
                 isDark
                   ? "text-white  bg-white"
                   : "text-black_dark bg-blue_ultraDark"
-              } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-lg `}
+              } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-2xl `}
             >
               <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
@@ -164,7 +166,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               }`}
             >
               Fields Of Study
-              {!isMenuOpen ? (
+              {isMenuOpen ? (
                 <img
                   src={!isDark ? whiteOpenNavbarIcon : blackOpenNavbarIcon}
                 />

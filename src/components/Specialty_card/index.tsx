@@ -30,7 +30,7 @@ const SpecialtyCard: React.FC<IProps> = ({
       whileHover={isMobile ? {} : "hover"}
     >
       <motion.div
-        className="w-auto md:h-auto xl:w-[20vw] xl:h-[20vw] p-2 rounded-lg flex items-center justify-center"
+        className="w-auto h-auto xl:w-[20vw] xl:h-[20vw] md:max-h-[40vh] md:h-[40vh] lg:max-h-[36vh] lg:h-[36vh] p-2 rounded-lg flex items-center justify-center"
         variants={
           isMobile
             ? {}
