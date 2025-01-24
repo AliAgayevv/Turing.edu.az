@@ -60,7 +60,7 @@ export default function Navbar({ isDark }: INavbarProps) {
   const menuRef = useRef(null);
 
   useOutsideClick(menuRef, () => {
-    setIsMenuOpen(true);
+    setIsMenuOpen(false);
   });
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
@@ -76,7 +76,7 @@ export default function Navbar({ isDark }: INavbarProps) {
       });
     }
   };
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
   const [toggleResponsive2ndMenu, setToggleResponsive2ndMenu] = useState(false);
 
@@ -118,7 +118,7 @@ export default function Navbar({ isDark }: INavbarProps) {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          {!isMenuOpen && (
+          {isMenuOpen && (
             <div
               className={`${
                 isDark
