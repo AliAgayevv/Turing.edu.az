@@ -15,8 +15,6 @@ import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.pn
 import useOutsideClick from "../../hooks/outsideClick";
 import ApplyNowBtn from "../ApplyNow_btn";
 
-// ! TODO: FIELDS OF STUDY TOGGLE PROBLEM
-
 const fakeData = [
   {
     id: 1,
@@ -59,9 +57,10 @@ const fakeData = [
 export default function Navbar({ isDark }: INavbarProps) {
   const menuRef = useRef(null);
 
-  useOutsideClick(menuRef, () => {
-    setIsMenuOpen(false);
-  });
+  // ! TODO: OUTSIDE CLICKE GORE PARTLIYIR TOGGLE
+  // useOutsideClick(menuRef, () => {
+  //   setIsMenuOpen(() => !isMenuOpen);
+  // });
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
 

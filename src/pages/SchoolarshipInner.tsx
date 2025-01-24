@@ -17,7 +17,7 @@ export default function SchoolarshipInner() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="h-screen"
+      className="h-screen overflow-x-hidden"
     >
       <Navbar isDark={true} />
       <div className="w-screen bg-white">
