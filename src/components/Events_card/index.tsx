@@ -62,7 +62,7 @@ IEventsProps) {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       // ! TODO: Emilden sorus ki mobilde event card olcusu nece olsun? url -> http://localhost:5173/events
-      className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[38vh] xl:h-[270px] lg:w-[29vw] 2xl:w-[28.7vw] rounded-2xl p-4 border ${
+      className={`group w-full h-[290px] sm:h-[250px] md:h-[290px] lg:h-[38vh] xl:h-[270px] lg:w-[29vw] 2xl:w-[28.9vw] rounded-2xl p-4 border ${
         !isDark ? "border-white_medium" : "border-[#4A5567]"
       } ${!isMobile ? "hover:cursor-pointer" : ""} ${
         !isDark ? "bg-white_ultraLight" : ""

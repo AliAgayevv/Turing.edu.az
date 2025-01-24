@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import turingLogo from "../../assets/Turing-logo.png";
 import turingLogoWhite from "../../assets/turing-logo-white.png";
-
 import openNavbarResponsive from "../../assets/vectors/responsiveOpenMenu.png";
 import { useEffect, useRef, useState } from "react";
 import { INavbarProps } from "../../const/types";
@@ -12,7 +11,6 @@ import blackCloseNavbarIcon from "../../assets/vectors/rotatedBlackOpenNavbarIco
 import NavbarElement from "../NavbarElement";
 import bgTuringVector from "../../assets/vectors/turing-hero-left-top-vector.png";
 import { FaGripLines } from "react-icons/fa";
-
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
 import useOutsideClick from "../../hooks/outsideClick";
 import ApplyNowBtn from "../ApplyNow_btn";
@@ -28,21 +26,21 @@ const fakeData = [
   },
   {
     id: 1,
-    title: "UX/UI Design",
+    title: "Front-end Developer",
     description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/UX-UI",
+    route: "/schoolarship/Frontend",
   },
   {
     id: 1,
-    title: "UX/UI Design",
+    title: "Backend",
     description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/UX-UI",
+    route: "/schoolarship/Backend",
   },
   {
     id: 1,
-    title: "UX/UI Design",
+    title: "Data Science",
     description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/UX-UI",
+    route: "/schoolarship/Data",
   },
   {
     id: 2,
@@ -62,7 +60,7 @@ export default function Navbar({ isDark }: INavbarProps) {
   const menuRef = useRef(null);
 
   useOutsideClick(menuRef, () => {
-    setIsMenuOpen(false);
+    setIsMenuOpen(true);
   });
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
@@ -122,14 +120,13 @@ export default function Navbar({ isDark }: INavbarProps) {
         >
           {!isMenuOpen && (
             <div
-              ref={menuRef}
               className={`${
                 isDark
                   ? "text-white  bg-white"
                   : "text-black_dark bg-blue_ultraDark"
               } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-2xl `}
             >
-              <div className="mx-auto w-11/12 h-full p-5">
+              <div className="mx-auto w-11/12 h-full p-5" ref={menuRef}>
                 <div className="grid grid-cols-4 gap-6">
                   {fakeData.slice(0, 4).map((item) => (
                     <NavbarElement

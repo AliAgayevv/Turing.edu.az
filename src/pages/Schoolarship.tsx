@@ -55,7 +55,7 @@ export default function Schoolarship() {
                   className={`px-3 py-1 rounded-md text-nowrap ${
                     selectedCategory === category
                       ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
-                      : "text-[#6C737F] border-transparent"
+                      : "text-[#6C737F] border-transparent text-[14px]"
                   }`}
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}

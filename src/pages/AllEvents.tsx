@@ -49,12 +49,12 @@ export default function AllEvents() {
             <h1 className="text-5xl font-[500] font-jakarta text-black_dark">
               Events
             </h1>
-            <div className="flex md:inline-flex items-center gap-2 h-11 overflow-x-auto p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8 sm:flex-nowrap overflow-y-hidden">
+            <div className="flex md:inline-flex  items-center gap-2 h-11 overflow-hidden p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8 sm:flex-nowrap ">
               {fixCategory.map((category) => (
                 <div
                   key={category}
                   onClick={() => handleSelect(category)}
-                  className={`px-3 py-1 rounded-md text-nowrap ${
+                  className={`px-3 py-1 rounded-md text-[14px] text-nowrap ${
                     selectedCategory === category
                       ? "bg-white border-[#d9d9db] border-[1.5px] text-black_dark opacity-70"
                       : "text-[#6C737F] border-transparent"
@@ -65,7 +65,7 @@ export default function AllEvents() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 mt-6 gap-6 pb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 mt-6 gap-y-6 gap-x-5 lg:gap-x-10 pb-20">
               {filteredEvents.slice(0, visibleCount).map((event) => (
                 <Link to={`/events/${event.id}`} key={event.id}>
                   <Events_card isDark={false} {...event} />
