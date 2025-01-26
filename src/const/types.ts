@@ -57,6 +57,13 @@ export interface IStudentsInfoProps {
   connect?: string;
 }
 
+export interface IGraduatesProps {
+  studentName: string;
+  coverPhoto: any;
+  videoUrl: string;
+  desc: string;
+}
+
 export interface IMutualChoicesProps {
   icon: string;
   title: string;
@@ -100,6 +107,7 @@ interface Step {
 }
 
 export interface IScholarship {
+  name: ReactNode;
   id: string;
   img: string;
   desc: string;

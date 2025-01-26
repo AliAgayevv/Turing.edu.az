@@ -45,7 +45,7 @@ const SpecialtyInner = () => {
             <p className="ont-[600] text-[64px] ">{id}</p>
             <p className="mt-2">{desc}</p>
             <div className="w-[145px] h-[48px] mt-12" onClick={handleGoForm}>
-              <ApplyNow_btn>Apply Now</ApplyNow_btn>
+              <ApplyNow_btn />
             </div>
           </div>
           <div className="mt-24 overflow-hidden">

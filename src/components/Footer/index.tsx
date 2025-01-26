@@ -12,7 +12,7 @@ import schoolarshipData from "../../datas/schoolarShip.json";
 
 import turingLogo from "../../assets/turingFooterLogo.png";
 import { Link } from "react-router";
-import { IEvent, IScholarship } from "../../const/types";
+import { IEvent } from "../../const/types";
 
 const logoData = [
   {
@@ -154,18 +154,16 @@ export default function Footer({ forCommunity = false }) {
             Fields of Study
           </h3>
           <ul className="flex flex-col gap-3 lg:gap-4">
-            {menuData.fieldsOfStudy.map(
-              (field: IScholarship, index: number) => (
-                <Link key={index} to={schoolarshipForShowLinks[index]}>
-                  <li
-                    className="text-white_ultraMedium hover:underline underline-offset-4"
-                    key={index}
-                  >
-                    {field}
-                  </li>
-                </Link>
-              )
-            )}
+            {schoolarshipData.map((data, index) => (
+              <Link key={index} to={schoolarshipForShowLinks[index]}>
+                <li
+                  className="text-white_ultraMedium hover:underline underline-offset-4"
+                  key={index}
+                >
+                  {data.id}
+                </li>
+              </Link>
+            ))}
             <Link to="/schoolarship">
               <li className="text-white_ultraMedium hover:underline underline-offset-4">
                 Scholarships

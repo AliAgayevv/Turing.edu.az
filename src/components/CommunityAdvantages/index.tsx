@@ -2,11 +2,11 @@ import vector1 from "../../assets/vectors/communityFirstVector.png";
 import vector2 from "../../assets/vectors/positiveEnergyVector.png";
 import vector3 from "../../assets/vectors/wavesBeforeVector.png";
 import vector4 from "../../assets/vectors/teachLiveVector.png";
-import { motion, useInView } from "framer-motion";
-import animatedCardPhoto1 from "../../assets/photos/communityAnimatedPhotos/1.jpeg";
-import animatedCardPhoto2 from "../../assets/photos/communityAnimatedPhotos/2.jpeg";
-import animatedCardPhoto3 from "../../assets/photos/communityAnimatedPhotos/3.jpeg";
-import animatedCardPhoto4 from "../../assets/photos/communityAnimatedPhotos/4.jpeg";
+import { motion } from "framer-motion";
+// import animatedCardPhoto1 from "../../assets/photos/communityAnimatedPhotos/1.jpeg";
+// import animatedCardPhoto2 from "../../assets/photos/communityAnimatedPhotos/2.jpeg";
+// import animatedCardPhoto3 from "../../assets/photos/communityAnimatedPhotos/3.jpeg";
+// import animatedCardPhoto4 from "../../assets/photos/communityAnimatedPhotos/4.jpeg";
 
 const fakeData = [
   {
@@ -55,24 +55,24 @@ const fakeData = [
   },
 ];
 
-const cardPhotos = [
-  {
-    photo: animatedCardPhoto1,
-    id: 1,
-  },
-  {
-    photo: animatedCardPhoto2,
-    id: 2,
-  },
-  {
-    photo: animatedCardPhoto3,
-    id: 3,
-  },
-  {
-    photo: animatedCardPhoto4,
-    id: 4,
-  },
-];
+// const cardPhotos = [
+//   {
+//     photo: animatedCardPhoto1,
+//     id: 1,
+//   },
+//   {
+//     photo: animatedCardPhoto2,
+//     id: 2,
+//   },
+//   {
+//     photo: animatedCardPhoto3,
+//     id: 3,
+//   },
+//   {
+//     photo: animatedCardPhoto4,
+//     id: 4,
+//   },
+// ];
 
 export default function CommunityAdvantages() {
   return (

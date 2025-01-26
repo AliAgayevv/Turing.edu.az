@@ -12,7 +12,7 @@ import NavbarElement from "../NavbarElement";
 import bgTuringVector from "../../assets/vectors/turing-hero-left-top-vector.png";
 import { FaGripLines } from "react-icons/fa";
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
-import useOutsideClick from "../../hooks/outsideClick";
+// import useOutsideClick from "../../hooks/outsideClick";
 import ApplyNowBtn from "../ApplyNow_btn";
 
 const fakeData = [

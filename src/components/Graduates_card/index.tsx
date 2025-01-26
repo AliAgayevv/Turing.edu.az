@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import playVector from "../../assets/vectors/play.png";
-import { IStudentsInfoProps } from "../../const/types";
+import { IGraduatesProps } from "../../const/types";
 import { motion, useInView } from "framer-motion";
 import { xToCenter } from "../../utils/motionAnimations";
 
@@ -11,7 +11,7 @@ export default function Graduates_card({
   coverPhoto,
   videoUrl,
   desc,
-}: IStudentsInfoProps) {
+}: IGraduatesProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleTogglePlay = () => {

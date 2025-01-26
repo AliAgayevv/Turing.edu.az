@@ -39,7 +39,21 @@ const fakeData = [
   },
 ];
 
-function CommunitySliderElement({ image, desc, name, subText, subTextColor }) {
+interface IProps {
+  image: string;
+  desc: string;
+  name: string;
+  subText: string;
+  subTextColor: string;
+}
+
+function CommunitySliderElement({
+  image,
+  desc,
+  name,
+  subText,
+  subTextColor,
+}: IProps) {
   const isMobile = useBreakpoint(768);
   return (
     <div

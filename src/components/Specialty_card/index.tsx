@@ -15,13 +15,11 @@ interface IProps {
 }
 
 const SpecialtyCard: React.FC<IProps> = ({
-  id,
   category,
   img,
   desc,
   title,
   hiddenText,
-  route,
 }) => {
   const isMobile = useBreakpoint();
   return (

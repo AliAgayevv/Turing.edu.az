@@ -8,12 +8,12 @@ interface SyllabusSectionProps {
 export default function Syllabus_section({ category }: SyllabusSectionProps) {
   const categoryData = data.find((item) => item.category === category);
 
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | number | null>(null);
 
   const syllabusLink = categoryData?.syllabusLink || "#";
   const modules = categoryData?.modules || [];
 
-  const toggleVisibility = (clickedId: string) => {
+  const toggleVisibility = (clickedId: number) => {
     setActiveId((prev) => (prev === clickedId ? null : clickedId));
   };
 

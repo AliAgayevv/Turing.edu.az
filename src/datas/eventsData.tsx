@@ -12,6 +12,13 @@ export const eventsData = new Array(30).fill(null).map((_, index) => ({
       photo: "/src/assets/photos/letif.jpeg",
     },
     {
+      id: 1,
+      guestName: "Lətif Kərim",
+      guestWorkingPosition: "Designer at SAFAROFF",
+      connect: "https://www.linkedin.com/in/kerimletif/",
+      photo: "/src/assets/photos/letif.jpeg",
+    },
+    {
       id: 2,
       guestName: "Zahra SHI İsmayılzadə",
       guestWorkingPosition: "Designer at SHI",

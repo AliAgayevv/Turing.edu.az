@@ -3,17 +3,11 @@ import SeeAll_btn from "../components/SeeAll_btn";
 import { Link } from "react-router";
 import fakeData from "../datas/graduates.json";
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { xToCenter } from "../utils/motionAnimations";
-
-const cardAnimation = xToCenter(-100);
+import { motion } from "framer-motion";
 
 export default function OurGraduates() {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    amount: 0.3,
-  });
+
   return (
     <div className="w-11/12 mx-auto py-20">
       <h3 className="uppercase text-white_dark">Our Graduates</h3>
@@ -36,11 +30,11 @@ export default function OurGraduates() {
               ref={ref}
               className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4 2xl:w-1/4 px-4 hidden md:block"
             >
-              <Reels_card key={index} {...data} />
+              <Reels_card graduatesPage={false} key={index} {...data} />
             </motion.div>
 
             <motion.div className="snap-center flex-shrink-0 w-[85%] sm:w-1/2 md:w-1/3 xl:w-1/4  px-4 block md:hidden">
-              <Reels_card key={index} {...data} />
+              <Reels_card graduatesPage={false} key={index} {...data} />
             </motion.div>
           </div>
         ))}

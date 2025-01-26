@@ -20,8 +20,8 @@ export default function Graduates_section({ category }: IProps) {
         in <span className="text-blue_light">Turing Academy</span>
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {graduates.slice(0, 4).map((item) => (
-          <Graduates_card key={item.id} {...item} />
+        {graduates.slice(0, 4).map((item, index) => (
+          <Graduates_card key={index} {...item} />
         ))}
       </div>
     </div>

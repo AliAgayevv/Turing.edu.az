@@ -21,6 +21,7 @@ export default function Reels() {
                 desc={data.desc}
                 videoUrl={data.videoUrl}
                 coverPhoto={data.coverPhoto}
+                graduatesPage={false}
               />
             ))}
           </div>

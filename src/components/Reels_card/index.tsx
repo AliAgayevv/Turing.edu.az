@@ -55,7 +55,9 @@ export default function Reels_card({
 
         <div className="h-[85px] w-full flex flex-col mt-4 gap-3">
           <button className="bg-white_ultraLight border-white_medium text-blue_lightMedium border rounded-lg px-10 py-1.5 flex justify-center items-center w-1/4 h-[29px]">
-            {category?.charAt(0).toUpperCase() + category?.slice(1)}
+            {typeof category === "string"
+              ? category.charAt(0).toUpperCase() + category.slice(1)
+              : category}
           </button>
           <div>
             <h4 className="font-[500] text-[18px] text-black_ultraDark">

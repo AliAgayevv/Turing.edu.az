@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import image1 from "../assets/photos/communityBGPHOTOS/photo1.jpeg";
 import image2 from "../assets/photos/communityBGPHOTOS/photo2.jpeg";
@@ -7,10 +7,10 @@ import image4 from "../assets/photos/communityBGPHOTOS/photo4.png";
 import image5 from "../assets/photos/communityBGPHOTOS/photo5.png";
 import image6 from "../assets/photos/communityBGPHOTOS/photo6.jpeg";
 import imageCentered from "../assets/photos/communityBGPHOTOS/photoCenter.jpeg";
-import vector1 from "../assets/vectors/communityFirstVector.png";
-import vector2 from "../assets/vectors/positiveEnergyVector.png";
-import vector3 from "../assets/vectors/wavesBeforeVector.png";
-import vector4 from "../assets/vectors/teachLiveVector.png";
+// import vector1 from "../assets/vectors/communityFirstVector.png";
+// import vector2 from "../assets/vectors/positiveEnergyVector.png";
+// import vector3 from "../assets/vectors/wavesBeforeVector.png";
+// import vector4 from "../assets/vectors/teachLiveVector.png";
 import CursorEffect from "../utils/CursorEffect";
 import CommunitySlider from "../components/CommunitySlider";
 import CommunityAdvantages from "../components/CommunityAdvantages";
@@ -21,60 +21,13 @@ import exampleVideo from "../assets/videos/community-video.mp4";
 import Footer from "../components/Footer";
 import ResizingDiv from "../components/ResizeAnimation";
 
-const fakeData = [
-  {
-    id: 1,
-    title: "Community first",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-    icon: vector1,
-  },
-  {
-    id: 2,
-    title: "Always authentic",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-  },
-  {
-    id: 3,
-    title: "Celebrate diversity",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-  },
-  {
-    id: 4,
-    title: "Stay sustainable",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-  },
-  {
-    id: 5,
-    title: "Positive Energy",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-    icon: vector2,
-  },
-  {
-    id: 6,
-    title: "Waves before web",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-    icon: vector3,
-  },
-  {
-    id: 7,
-    title: "Teach live",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-    icon: vector4,
-  },
-  {
-    id: 8,
-    title: "Learn-by-doing",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.",
-  },
-];
-
 const MuhitComponent = () => {
   const isMobile = useBreakpoint(1024);
-  const containerRef = useRef(null);
-  const imagesRef = useRef([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (isMobile) return;
       if (!containerRef.current) return;
 
@@ -98,9 +51,11 @@ const MuhitComponent = () => {
     };
 
     const container = containerRef.current;
-    container.addEventListener("mousemove", handleMouseMove);
+    container?.addEventListener("mousemove", (e) =>
+      handleMouseMove(e as MouseEvent)
+    );
 
-    return () => container.removeEventListener("mousemove", handleMouseMove);
+    return () => container?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
@@ -150,13 +105,13 @@ const MuhitComponent = () => {
 };
 
 export default function Community() {
-  const containerRef = useRef(null);
-  const [visibleCount, setVisibleCount] = useState(4);
+  const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useBreakpoint(1024);
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: { clientX: any; clientY: any }) => {
     if (isMobile) return;
     const { clientX, clientY } = event;
+    if (!containerRef.current) return;
     const container = containerRef.current.getBoundingClientRect();
     const centerX = container.left + container.width / 2;
     const centerY = container.top + container.height / 2;
@@ -180,27 +135,6 @@ export default function Community() {
       duration: 0.5,
       ease: "power1.out",
     });
-  };
-
-  const updateVisibleCount = () => {
-    if (window.innerWidth >= 768) {
-      setVisibleCount(fakeData.length);
-    } else {
-      setVisibleCount(4);
-    }
-  };
-
-  useEffect(() => {
-    updateVisibleCount();
-
-    window.addEventListener("resize", updateVisibleCount);
-
-    // Cleanup the event listener on unmount
-    return () => window.removeEventListener("resize", updateVisibleCount);
-  }, []);
-
-  const loadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4);
   };
 
   return (

@@ -54,9 +54,7 @@ export default function EventsInner() {
                   currentEvent?.isEnd ? "" : ""
                 }`}
               >
-                <ApplyNow_btn isDisabled={currentEvent?.isEnd ? true : false}>
-                  Apply Now
-                </ApplyNow_btn>
+                <ApplyNow_btn />
               </div>
             </div>
 
@@ -87,9 +85,8 @@ export default function EventsInner() {
                     currentEvent?.isEnd ? "disabled" : ""
                   }`}
                 >
-                  <ApplyNow_btn isDisabled={currentEvent?.isEnd ? true : false}>
-                    Apply Now
-                  </ApplyNow_btn>
+                  {/* TODO: EVENSINNER DE APPLY NOW DISABLED OLACAQ EVENTS BITIBSE */}
+                  <ApplyNow_btn />
                 </div>
               </div>
             </div>
@@ -102,7 +99,7 @@ export default function EventsInner() {
             <h1 className="text-4xl md:text-5xl font-jakarta font-[500] text-black_dark py-4">
               Meet Our Guests
             </h1>
-            <div className="xl:mr-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-[30%]">
+            <div className="xl:mr-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-[10%]">
               {currentEvent?.guests.map((guest) => (
                 <Teacher_card
                   name={guest.guestName}

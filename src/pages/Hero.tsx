@@ -60,7 +60,7 @@ export default function Hero() {
               className="h-[56px] w-[150px] sm:w-[169px]"
               onClick={handleGoForm}
             >
-              <ApplyNow_btn>Apply now</ApplyNow_btn>
+              <ApplyNow_btn />
             </div>
             <div
               className="h-[56px] w-[150px] sm:w-[169px] cursor-pointer"
