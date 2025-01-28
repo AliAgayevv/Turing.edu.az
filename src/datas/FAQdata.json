@@ -74,6 +74,12 @@
       "connect": "https://www.linkedin.com/in/kerimletif/"
     },
     {
+      "name": "Lətif Kərim",
+      "workPosition" : "Designer at SAFAROFF",
+      "photo": "/src/assets/photos/letif.jpeg",
+      "connect": "https://www.linkedin.com/in/kerimletif/"
+    },
+    {
       "name": "Zahra SHI İsmayılzadə",
       "workPosition" : "Designer at SHI",
       "photo": "/src/assets/photos/zahra.jpeg",
