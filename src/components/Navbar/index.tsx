@@ -165,11 +165,11 @@ export default function Navbar({ isDark }: INavbarProps) {
               Fields Of Study
               {isMenuOpen ? (
                 <img
-                  src={!isDark ? whiteOpenNavbarIcon : blackCloseNavbarIcon}
+                  src={!isDark ? whiteCloseNavbarIcon : blackCloseNavbarIcon}
                 />
               ) : (
                 <img
-                  src={!isDark ? whiteCloseNavbarIcon : blackOpenNavbarIcon}
+                  src={!isDark ? whiteOpenNavbarIcon : blackOpenNavbarIcon}
                 />
               )}
             </li>
