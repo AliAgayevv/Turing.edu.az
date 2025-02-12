@@ -72,7 +72,7 @@ export default function SchoolarshipInner() {
               initial="hidden"
               animate="visible"
               variants={item}
-              className="flex flex-col md:flex-row gap-6 mt-6 w-11/12 mx-auto"
+              className="flex flex-col md:flex-row gap-6 mt-6 "
             >
               {currentData?.steps?.map((item, index) => (
                 <Steps_box

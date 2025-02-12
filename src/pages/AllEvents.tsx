@@ -65,7 +65,7 @@ export default function AllEvents() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 mt-6 gap-y-6 gap-x-5 lg:gap-x-10 pb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 mt-6 gap-y-3 gap-x-5 lg:gap-x-10 pb-20">
               {filteredEvents.slice(0, visibleCount).map((event) => (
                 <Link to={`/events/${event.id}`} key={event.id}>
                   <Events_card isDark={false} {...event} />

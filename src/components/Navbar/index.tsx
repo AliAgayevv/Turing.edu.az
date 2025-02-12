@@ -12,7 +12,7 @@ import NavbarElement from "../NavbarElement";
 import bgTuringVector from "../../assets/vectors/turing-hero-left-top-vector.png";
 import { FaGripLines } from "react-icons/fa";
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
-// import useOutsideClick from "../../hooks/outsideClick";
+import useOutsideClick from "../../hooks/outsideClick";
 import ApplyNowBtn from "../ApplyNow_btn";
 
 const fakeData = [
@@ -58,9 +58,9 @@ export default function Navbar({ isDark }: INavbarProps) {
   const menuRef = useRef(null);
 
   // ! TODO: OUTSIDE CLICKE GORE PARTLIYIR TOGGLE
-  // useOutsideClick(menuRef, () => {
-  //   setIsMenuOpen(() => !isMenuOpen);
-  // });
+  useOutsideClick(menuRef, () => {
+    setIsMenuOpen(() => !isMenuOpen);
+  });
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
 
@@ -99,6 +99,7 @@ export default function Navbar({ isDark }: INavbarProps) {
 
   return (
     <nav
+      ref={menuRef}
       className={` ${
         !isDark ? "bg-transparent" : "bg-white"
       } px-10 py-5 md:py-4 md:px-6 lg:px-8 z-[90]`}
@@ -125,7 +126,7 @@ export default function Navbar({ isDark }: INavbarProps) {
                   : "text-black_dark bg-blue_ultraDark"
               } absolute top-20 w-screen bg-transparent h-[268px] left-0 z-10 backdrop-blur-2xl `}
             >
-              <div className="mx-auto w-11/12 h-full p-5" ref={menuRef}>
+              <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
                   {fakeData.slice(0, 4).map((item) => (
                     <NavbarElement
@@ -164,11 +165,11 @@ export default function Navbar({ isDark }: INavbarProps) {
               Fields Of Study
               {isMenuOpen ? (
                 <img
-                  src={!isDark ? whiteOpenNavbarIcon : blackOpenNavbarIcon}
+                  src={!isDark ? whiteOpenNavbarIcon : blackCloseNavbarIcon}
                 />
               ) : (
                 <img
-                  src={!isDark ? whiteCloseNavbarIcon : blackCloseNavbarIcon}
+                  src={!isDark ? whiteCloseNavbarIcon : blackOpenNavbarIcon}
                 />
               )}
             </li>

@@ -79,25 +79,25 @@ const MuhitComponent = () => {
           src={image1}
           ref={(el) => (imagesRef.current[0] = el)}
           alt="Community 1"
-          className="absolute w-[120px] h-[211px] md:w-[237px] md:h-[323px] object-cover rounded-[24px] left-0 top-20 lg:top-10 lg:left-40 xl:top-20 xl:left-48 2xl:top-16 2xl:left-60 rotate-[-15deg] "
+          className=" absolute w-[120px] h-[211px] md:w-[237px] md:h-[323px] object-cover rounded-[24px] left-0 top-20 lg:top-10 lg:left-40 xl:top-20 xl:left-48 2xl:top-16 2xl:left-60 rotate-[-15deg] "
         />
         <img
           src={imageCentered}
           ref={(el) => (imagesRef.current[1] = el)}
           alt="Community 2"
-          className="absolute w-[114px] md:w-[260px] md:h-[354px] h-[156px] object-cover rounded-[24px] top-40 -right-5 lg:top-10 lg:right-40 xl:top-20 xl:right-44 2xl:top-20 2xl:right-52 rotate-[10deg] "
+          className=" absolute w-[114px] md:w-[260px] md:h-[354px] h-[156px] object-cover rounded-[24px] top-40 -right-5 lg:top-10 lg:right-40 xl:top-20 xl:right-44 2xl:top-20 2xl:right-52 rotate-[10deg] "
         />
         <img
           src={imageCentered}
           ref={(el) => (imagesRef.current[2] = el)}
           alt="Community 3"
-          className="absolute w-[132px] h-[180px] object-cover md:w-[214px] md:h-[292px] rounded-[24px] bottom-20 left-0 lg:-bottom-20 lg:left-60  xl:-bottom-6 xl:left-[26rem] 2xl:bottom-5 2xl:left-[30rem] -rotate-[15deg] "
+          className=" absolute w-[132px] h-[180px] object-cover md:w-[214px] md:h-[292px] rounded-[24px] bottom-20 left-0 lg:-bottom-20 lg:left-60  xl:-bottom-6 xl:left-[26rem] 2xl:bottom-5 2xl:left-[30rem] -rotate-[15deg] "
         />
         <img
           src={image4}
           ref={(el) => (imagesRef.current[3] = el)}
           alt="Community 4"
-          className="absolute w-[184px] h-[250px] md:w-[146px] md:h-[200px] rounded-[24px] -bottom-5 right-4 lg:bottom-0 lg:right-60 xl:bottom-16 xl:right-[32rem] 2xl:bottom-28 2xl:right-[36rem] rotate-[10deg] "
+          className=" absolute w-[184px] h-[250px] md:w-[146px] md:h-[200px] rounded-[24px] -bottom-5 right-4 lg:bottom-0 lg:right-60 xl:bottom-16 xl:right-[32rem] 2xl:bottom-28 2xl:right-[36rem] rotate-[10deg] "
         />
       </div>
     </div>
@@ -153,49 +153,49 @@ export default function Community() {
               <img
                 src={image1}
                 alt="community image"
-                className="max-w-[207px] max-h-[216px] object-cover absolute top-[70px] left-[50px] rotate-on-cursor opacity-40"
+                className="max-w-[207px] max-h-[216px] object-cover absolute top-[70px] left-[50px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
             <div>
               <img
                 src={image2}
                 alt="community image"
-                className="max-w-[323px] max-h-[189px] object-cover absolute top-[20px] left-[300px] rotate-on-cursor opacity-40"
+                className="max-w-[323px] max-h-[189px] object-cover absolute top-[20px] left-[300px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
             <div>
               <img
                 src={image3}
                 alt="community image"
-                className="max-w-[323px] max-h-[150px] object-cover absolute top-[60px] right-[50px] rotate-on-cursor opacity-40"
+                className="max-w-[323px] max-h-[150px] object-cover absolute top-[60px] right-[50px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
             <div>
               <img
                 src={image4}
                 alt="community image"
-                className="max-w-[165px] max-h-[312px] object-cover absolute bottom-[150px] right-[40px] rotate-on-cursor opacity-40"
+                className="max-w-[165px] max-h-[312px] object-cover absolute bottom-[150px] right-[40px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
             <div>
               <img
                 src={image5}
                 alt="community image"
-                className="w-[554px] h-[149px] object-cover absolute bottom-[40px] left-[200px] rotate-on-cursor opacity-40"
+                className="w-[554px] h-[149px] object-cover absolute bottom-[40px] left-[200px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
             <div>
               <img
                 src={image6}
                 alt="community image"
-                className="max-w-[190px] max-h-[175px] absolute top-[320px] left-[70px] rotate-on-cursor opacity-40"
+                className="max-w-[190px] max-h-[175px] absolute top-[320px] left-[70px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
             <div>
               <img
                 src={imageCentered}
                 alt="community image"
-                className="max-w-[438px] max-h-[233px] object-cover absolute top-[240px] left-[340px] rotate-on-cursor opacity-40"
+                className="max-w-[438px] max-h-[233px] object-cover absolute top-[240px] left-[340px] rotate-on-cursor opacity-40 rounded-xl"
               />
             </div>
           </div>
