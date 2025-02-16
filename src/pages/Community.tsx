@@ -252,6 +252,7 @@ export default function Community() {
             className="w-screen h-full object-cover rounded-2xl"
             src={exampleVideo}
             autoPlay
+            playsInline
             loop={true}
           />
           <div className="bg-black/60 absolute inset-0"></div>

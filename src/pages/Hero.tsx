@@ -78,6 +78,7 @@ export default function Hero() {
             className="w-[520px]  lg:w-[1120px] h-[300px] relative  md:h-[65vh] md:w-[1250px]  lg:h-[55vh] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] "
           >
             <video
+              playsInline
               className="absolute top-0 left-0 w-full h-full object-center lg:object-cover rounded-2xl overflow-hidden"
               src={exampleVideo}
             />
@@ -98,6 +99,7 @@ export default function Hero() {
                   src={exampleVideo}
                   autoPlay
                   controls
+                  playsInline
                 />
               </div>
             </motion.div>

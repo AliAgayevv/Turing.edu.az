@@ -2,24 +2,25 @@ import React, { useEffect } from "react";
 
 function useOutsideClick(
   ref: React.RefObject<HTMLElement>,
-  callback: () => void
+  callback: () => void,
+  toggleButtonRef?: React.RefObject<HTMLElement> // Add a ref for the toggle button
 ): void {
   useEffect(() => {
-    /**
-     * Call callback if clicked outside of the element
-     */
     function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+      if (
+        ref.current &&
+        !ref.current.contains(event.target as Node) &&
+        (!toggleButtonRef?.current ||
+          !toggleButtonRef.current.contains(event.target as Node)) // Prevent closing when clicking the button
+      ) {
         callback();
       }
     }
-    // Add the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Cleanup the event listener on unmount
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, callback]);
+  }, [ref, toggleButtonRef, callback]);
 }
 
 export default useOutsideClick;

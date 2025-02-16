@@ -56,11 +56,20 @@ const fakeData = [
 
 export default function Navbar({ isDark }: INavbarProps) {
   const menuRef = useRef(null);
+  const toggleButtonRef = useRef(null);
 
-  // ! TODO: OUTSIDE CLICKE GORE PARTLIYIR TOGGLE
-  useOutsideClick(menuRef, () => {
-    setIsMenuOpen(() => !isMenuOpen);
-  });
+  const handleToggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  useOutsideClick(
+    menuRef,
+    () => {
+      setIsMenuOpen(false);
+    },
+    toggleButtonRef
+  );
+
   const handleGoForm = () => {
     setIsResponsiveMenuOpen(false);
 
@@ -99,7 +108,6 @@ export default function Navbar({ isDark }: INavbarProps) {
 
   return (
     <nav
-      ref={menuRef}
       className={` ${
         !isDark ? "bg-transparent" : "bg-white"
       } px-10 py-5 md:py-4 md:px-6 lg:px-8 z-[90]`}
@@ -120,6 +128,7 @@ export default function Navbar({ isDark }: INavbarProps) {
         >
           {isMenuOpen && (
             <div
+              ref={menuRef}
               className={`${
                 isDark
                   ? "text-white  bg-white"
@@ -157,7 +166,8 @@ export default function Navbar({ isDark }: INavbarProps) {
               </li>
             </Link>
             <li
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              ref={toggleButtonRef}
+              onClick={handleToggleMenu}
               className={`py-2 md:py-0 flex items-center justify-center gap-2 cursor-pointer ${
                 isDark ? "text-blue_ultraDark" : "text-white_solid"
               }`}

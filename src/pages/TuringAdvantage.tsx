@@ -135,6 +135,7 @@ export default function TuringAdvantage() {
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
             src={exampleVideo}
             autoPlay
+            playsInline
             loop={true}
           />
           {/* Centered text container with a semi-transparent background for better visibility */}
