@@ -49,7 +49,7 @@ export default {
       },
       fontFamily: {
         inter: ["Inter"],
-        montserrat: ["`Montserrat`"],
+        montserrat: ["Montserrat"],
         jakarta: ["Plus Jakarta Sans"],
       },
     },

@@ -37,7 +37,7 @@ export default function Hero() {
 
       <div className="flex flex-col items-center justify-center h-auto z-50">
         <div>
-          <h1 className="text-white_solid text-[32px] sm:text-5xl md:text-6xl text-center mb-4 pt-[125px]">
+          <h1 className="text-white_solid text-4xl sm:text-5xl md:text-6xl text-center mb-4 pt-[125px] font-semibold font-jakarta">
             #BirAddımÖndə
           </h1>
           {/* Left top light effect */}
@@ -49,9 +49,9 @@ export default function Hero() {
             src={bgTuringVector}
           ></img>
 
-          <p className="text-[12px] md:text-base text-white_lightMedium text-center max-w-2xl mb-8 px-4">
-            Learn highly demanded skills through practical courses, created by
-            trusted industry professionals, that focus on real-world
+          <p className="text-[12px] md:text-base text-white_lightMedium text-center max-w-2xl mb-8 px-4 font-inter">
+            Learn highly demanded skills through practical courses, <br />
+            created by trusted industry professionals, that focus on real-world
             applications.
           </p>
 

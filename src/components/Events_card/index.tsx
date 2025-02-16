@@ -90,9 +90,9 @@ IEventsProps) {
             animate="visible"
             exit="hidden"
             variants={contentVariants}
-            className="flex justify-between items-start lg:mt-24 xl:mt-16 flex-wrap gap-2"
+            className="flex justify-between items-start lg:mt-[72px] xl:mt-10 mt-10 flex-wrap gap-2 2xl:mt-16"
           >
-            <div className="flex flex-col gap-1  max-w-[55%]">
+            <div className="flex flex-col gap-1  max-w-[55%] mt-16 md:mt-0">
               <h5 className={`${black_text} opacity-90 font-[500]`}>Guests:</h5>
               <div className={`${white_ultraDark} text-[13px]`}>
                 {guests.slice(0, 2).map((guest, index) => (

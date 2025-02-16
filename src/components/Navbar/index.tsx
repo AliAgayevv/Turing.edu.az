@@ -112,7 +112,7 @@ export default function Navbar({ isDark }: INavbarProps) {
         !isDark ? "bg-transparent" : "bg-white"
       } px-10 py-5 md:py-4 md:px-6 lg:px-8 z-[90]`}
     >
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
+      <div className="w-11/12 mx-auto flex flex-wrap items-center justify-between px-6">
         <Link to={"/"}>
           <img
             className={`w-24 h-auto`}

@@ -52,7 +52,7 @@ export default function Partners() {
   ];
 
   return (
-    <div className="w-full pt-10 mb-20">
+    <div className="w-full pt-24 mb-20">
       <h4 className="opacity-60 uppercase text-[14px] text-black_dark">
         Partners
       </h4>

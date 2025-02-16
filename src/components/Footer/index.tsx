@@ -73,125 +73,118 @@ const menuData = {
 export default function Footer({ forCommunity = false }) {
   return (
     <div
-      className={`${
+      className={`flex flex-col h-[1200px] p-6 md:p-10 lg:px-20 lg:pt-16 justify-between bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium ${
         forCommunity
           ? "block md:block md:h-[800px] md:justify-between"
           : "md:fixed md:h-screen"
-      } "  h-[1200px]  bottom-0 -z-[1] bg-blue_ultraDark w-full text-white_lightMedium p-6 md:p-10 lg:px-20 lg:pt-16 flex flex-col sm:flex-row md:justify-between  pointer-events-auto`}
+      } "`}
     >
-      <div className="flex flex-col gap-6">
-        <img
-          src={turingLogo}
-          alt="Turing Academy Logo"
-          className="w-28 lg:w-36"
-        />
-        <p className="text-sm leading-relaxed lg:w-[306px]">
-          Learn highly demanded skills through practical courses, created by
-          trusted industry professionals.
-        </p>
-        <div className="grid grid-cols-3 w-[164px] gap-3">
-          {logoData.map((item, index) => (
-            <a key={index} href={item.link} target="_blank">
-              <div className="w-[44px] h-[44px] hover:bg-blue_medium flex justify-center items-center rounded-full border border-[#30364A]">
-                {item.icon}
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col md:grid  md:grid-cols-4 gap-6 md:gap-10 lg:justify-between lg:gap-24 mt-10 lg:mt-0">
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
-            Upcoming Events
-          </h3>
-          <ul className="flex flex-col gap-3 lg:gap-4">
-            {menuData.upcomingEvents.map((event: IEvent, index: number) => (
-              <Link key={event.id} to={event.linkForLearnMore}>
-                <li
-                  className="text-white_ultraMedium hover:underline underline-offset-4"
-                  key={index}
-                >
-                  {event.eventName}
-                </li>
-              </Link>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
-            Academy
-          </h3>
-          <ul className="flex flex-col gap-3 lg:gap-4">
-            {menuData.academy.map((item, index) => (
-              <Link key={item.title} to={item.link}>
-                <li
-                  className="text-white_ultraMedium hover:underline underline-offset-4"
-                  key={index}
-                >
-                  {item.title}
-                </li>
-              </Link>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
-            Events
-          </h3>
-          <ul className="flex flex-col gap-3 lg:gap-4">
-            {menuData.events.map((event, index) => (
-              <li className="text-white_ultraMedium" key={index}>
-                {event}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
-            Fields of Study
-          </h3>
-          <ul className="flex flex-col gap-3 lg:gap-4">
-            {schoolarshipData.map((data, index) => (
-              <Link key={index} to={schoolarshipForShowLinks[index]}>
-                <li
-                  className="text-white_ultraMedium hover:underline underline-offset-4"
-                  key={index}
-                >
-                  {data.id}
-                </li>
-              </Link>
-            ))}
-            <Link to="/schoolarship">
-              <li className="text-white_ultraMedium hover:underline underline-offset-4">
-                Scholarships
-              </li>
-            </Link>
-          </ul>
-        </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 -z-10">
-        <img className="w-screen" src={footerPhoto} alt="Footer Background" />
-      </div>
-
-      <div className="absolute bottom-0 hidden md:flex md:justify-between left-0 px-6 md:px-8 py-1 lg:py-10">
-        <div className="flex justify-between items-center text-white text-xs lg:text-sm font-[600]">
-          <p>©2024 All rights reserved.</p>
-          <p className=" absolute bottom-10 2xl:-right-[1350px] xl:-right-[1200px]">
-            Created by{" "}
-            <a
-              href="https://www.youtube.com"
-              className="underline cursor-pointer"
-            >
-              SHI Studio.
-            </a>
+      <div
+        className={`       flex flex-col sm:flex-row md:justify-between  pointer-events-auto`}
+      >
+        <div className="flex flex-col gap-6">
+          <img
+            src={turingLogo}
+            alt="Turing Academy Logo"
+            className="w-28 lg:w-36"
+          />
+          <p className="text-sm leading-relaxed lg:w-[306px]">
+            Learn highly demanded skills through practical courses, created by
+            trusted industry professionals.
           </p>
+          <div className="grid grid-cols-3 w-[164px] gap-3">
+            {logoData.map((item, index) => (
+              <a key={index} href={item.link} target="_blank">
+                <div className="w-[44px] h-[44px] hover:bg-blue_medium flex justify-center items-center rounded-full border border-[#30364A]">
+                  {item.icon}
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className=" absolute flex md:hidden -bottom-[440px] left-[30vw]">
+
+        <div className="flex flex-col md:grid  md:grid-cols-4 gap-6 md:gap-10 lg:justify-between lg:gap-24 mt-10 lg:mt-0">
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
+              Upcoming Events
+            </h3>
+            <ul className="flex flex-col gap-3 lg:gap-4">
+              {menuData.upcomingEvents.map((event: IEvent, index: number) => (
+                <Link key={event.id} to={event.linkForLearnMore}>
+                  <li
+                    className="text-white_ultraMedium hover:underline underline-offset-4"
+                    key={index}
+                  >
+                    {event.eventName}
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
+              Academy
+            </h3>
+            <ul className="flex flex-col gap-3 lg:gap-4">
+              {menuData.academy.map((item, index) => (
+                <Link key={item.title} to={item.link}>
+                  <li
+                    className="text-white_ultraMedium hover:underline underline-offset-4"
+                    key={index}
+                  >
+                    {item.title}
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
+              Events
+            </h3>
+            <ul className="flex flex-col gap-3 lg:gap-4">
+              {menuData.events.map((event, index) => (
+                <li className="text-white_ultraMedium" key={index}>
+                  {event}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4 lg:mb-6">
+              Fields of Study
+            </h3>
+            <ul className="flex flex-col gap-3 lg:gap-4">
+              {schoolarshipData.map((data, index) => (
+                <Link key={index} to={schoolarshipForShowLinks[index]}>
+                  <li
+                    className="text-white_ultraMedium hover:underline underline-offset-4"
+                    key={index}
+                  >
+                    {data.id}
+                  </li>
+                </Link>
+              ))}
+              <Link to="/schoolarship">
+                <li className="text-white_ultraMedium hover:underline underline-offset-4">
+                  Scholarships
+                </li>
+              </Link>
+            </ul>
+          </div>
+
+          {/* <p className=" absolute bottom-10 2xl:-right-[1350px] xl:-right-[1200px]">
+              
+            </p> */}
+        </div>
+
+        <div className="absolute bottom-0 left-0 -z-10">
+          <img className="w-screen" src={footerPhoto} alt="Footer Background" />
+        </div>
+
+        {/* <div className=" absolute flex md:hidden -bottom-[440px] left-[30vw]">
         <div className="flex justify-between items-center text-white text-xs lg:text-sm font-[600] text-center">
           <p>©2024 All rights reserved.</p>
           <p className=" absolute bottom-6 right-4">
@@ -204,6 +197,20 @@ export default function Footer({ forCommunity = false }) {
             </a>
           </p>
         </div>
+      </div> */}
+      </div>
+      <div className="flex flex-col md:flex-row md:gap-0 gap-2 justify-between items-center">
+        <p>©2024 All rights reserved.</p>
+        <p>
+          Created by{" "}
+          <a
+            href="http://shi.studio//"
+            className="underline cursor-pointer"
+            target="_blank"
+          >
+            SHI Studio.
+          </a>
+        </p>
       </div>
     </div>
   );

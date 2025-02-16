@@ -139,8 +139,12 @@ export default function TuringAdvantage() {
             loop={true}
           />
           {/* Centered text container with a semi-transparent background for better visibility */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-[50px] lg:text-[200px] 2xl:text-[225px] font-montserrat font-[900] uppercase text-white_light_32 leading-none text-center">
+          <div className="absolute h-full flex items-center justify-center  lg:inset-0">
+            <div
+              className="
+              text-[60px] sm:text-[88px] md:text-[130px] lg:text-[150px] xl:text-[170px] 2xl:text-[210px] uppercase text-white_light_32 text-center font-bold tracking-wide "
+              style={{ fontFamily: "montserrat" }}
+            >
               Community
             </div>
           </div>

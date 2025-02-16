@@ -39,10 +39,10 @@ export default function FormSection() {
 
   return (
     <div
-      className="flex flex-col md:flex-row sm:gap-4 mt-6 bg-white h-full justify-between"
+      className="flex flex-col md:flex-row sm:gap-4 mt-6 bg-white h-full justify-between "
       id="form"
     >
-      <div className="w-full md:w-11/12 h-auto bg-white md:border p-6">
+      <div className="w-full md:w-11/12 h-auto bg-white md:border p-6 rounded-2xl">
         <h3 className="uppercase text-white_dark">Send Us A Message</h3>
         <h1 className="font-jakarta font-[500] text-5xl text-black_medium">
           Start Today!
@@ -161,10 +161,8 @@ export default function FormSection() {
           10 suallıq sorğumuza qatıl, potensialına uyğun ixtisası daha sürətli
           öyrən.
         </p>
-        <div className="h-[48px] w-full mt-8 md:w-full">
-          <div className="w-auto md:w-full">
-            <SeeAll_btn>Start Test</SeeAll_btn>
-          </div>
+        <div className="h-[48px] w-full mt-8  lg:w-1/2">
+          <SeeAll_btn>Start Test</SeeAll_btn>
         </div>
       </div>
     </div>
