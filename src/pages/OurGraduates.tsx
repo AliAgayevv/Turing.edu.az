@@ -10,7 +10,7 @@ export default function OurGraduates() {
 
   return (
     <div className="w-11/12 mx-auto py-20">
-      <h3 className="uppercase text-white_dark">Our Graduates</h3>
+      <h3 className="uppercase text-white_dark -mb-3">Our Graduates</h3>
       <div className="flex flex-col md:flex-row justify-between items-center pr-10">
         <h1 className="md:text-[48px] text-[32px] md:text-5xl font-jakarta font-[500] text-black_medium py-4 line-clamp-3">
           Accelerate your career
@@ -23,7 +23,7 @@ export default function OurGraduates() {
           </div>
         </Link>
       </div>
-      <div className="flex gap-4 md:gap-0 overflow-x-auto xl:justify-between snap-x snap-mandatory scroll-smooth md:overflow-clip pb-10 pt-4 scrollbar-hide">
+      <div className="flex gap-6 md:gap-0 overflow-x-auto xl:justify-between snap-x snap-mandatory scroll-smooth md:overflow-clip pb-10 pt-16 scrollbar-hide">
         {fakeData.slice(0, 4).map((data, index) => (
           <div key={index}>
             <motion.div
