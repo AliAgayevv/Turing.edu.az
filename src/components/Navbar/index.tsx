@@ -110,9 +110,9 @@ export default function Navbar({ isDark }: INavbarProps) {
     <nav
       className={` ${
         !isDark ? "bg-transparent" : "bg-white"
-      } px-10 py-5 md:py-4 md:px-6 lg:px-8 z-[90]`}
+      } px-0 py-10 md:py-4 md:px-6 lg:px-8 z-[90]`}
     >
-      <div className="w-11/12 mx-auto flex flex-wrap items-center justify-between px-6">
+      <div className="w-full mx-auto flex flex-wrap items-center justify-between px-6">
         <Link to={"/"}>
           <img
             className={`w-24 h-auto`}
@@ -244,12 +244,12 @@ export default function Navbar({ isDark }: INavbarProps) {
 
       {isResponsiveMenuOpen && (
         <div
-          className={`fixed inset-0 ${
+          className={`fixed  inset-0 flex ${
             !isDark ? "bg-blue_ultraDark" : "bg-blue_ultraDark"
           }  overflow-hidden z-50 lg:hidden w-screen `}
         >
           <img src={bgTuringVector} className=" absolute top-10 -z-40" />
-          <div className="flex flex-col h-full p-6 w-screen">
+          <div className="flex flex-col h-full px-6 py-10 w-screen">
             <div className="flex justify-between items-center mb-8">
               <div className="flex justify-between w-screen">
                 <Link to="/" onClick={() => setIsResponsiveMenuOpen(false)}>
@@ -263,7 +263,7 @@ export default function Navbar({ isDark }: INavbarProps) {
                   <img
                     src={closeNavbarResponsive}
                     alt="Close Navbar"
-                    className="w-8 h-8"
+                    className="w-10 h-10"
                   />
                 </button>
               </div>
