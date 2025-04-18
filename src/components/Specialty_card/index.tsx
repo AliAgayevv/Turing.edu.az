@@ -60,7 +60,7 @@ const SpecialtyCard: React.FC<IProps> = ({
             },
           }}
         >
-          {category.slice(0, 1).toUpperCase() + category.slice(1)}
+          {category}
         </motion.button>
 
         <motion.h3

@@ -6,13 +6,13 @@ import ReduxProvider from "./store/ReduxProvider.tsx";
 function App() {
   return (
     // TODO: REMOVE DEBUG SCREENS WHEN DEPLOYING
-    <div className="debug-screens">
-      <ReduxProvider>
-        <SmoothScroll>
-          <RouterProvider router={router} />
-        </SmoothScroll>
-      </ReduxProvider>
-    </div>
+    // <div className="debug-screens">
+    <ReduxProvider>
+      <SmoothScroll>
+        <RouterProvider router={router} />
+      </SmoothScroll>
+    </ReduxProvider>
+    // </div>
   );
 }
 

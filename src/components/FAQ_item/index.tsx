@@ -1,23 +1,13 @@
 import { useRef } from "react";
 import { IQAProps } from "../../const/types";
-import { motion, useInView } from "framer-motion";
-import { yToCenter } from "../../utils/motionAnimations";
-
-const FAQAnimationItem = yToCenter(-100);
+import { motion } from "framer-motion";
 
 function FAQItem({ question, answer, isVisible, onClick }: IQAProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    amount: 0.3,
-  });
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={FAQAnimationItem}
       className="w-full  p-4 h-auto rounded-lg border border-white_medium mb-4"
     >
       <div

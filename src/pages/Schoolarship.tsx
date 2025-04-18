@@ -1,34 +1,26 @@
 // ! TODO: Specialty Card tezeden animasiya olunsun gsap veya frammer ile daha responsive formada ve daha duzgun.
 
-import { useState } from "react";
 import Navbar from "../components/Navbar";
 import SpecialtyCard from "../components/Specialty_card";
-import fakeData from "../datas/schoolarShip.json";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-
-let fixCategory = ["all"];
-
-fakeData.forEach((data) => {
-  if (!fixCategory.includes(data.category)) {
-    fixCategory.push(data.category);
-  }
-});
+import { useGetScholarshipQuery } from "../store/services/scholarshipApi";
 
 // TODO: ELEMENT SG OLDU
 
 export default function Schoolarship() {
   window.scrollTo({ top: 0, behavior: "smooth" });
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const filteredEvents =
-    selectedCategory === "all"
-      ? fakeData
-      : fakeData.filter((data) => data.category === selectedCategory);
 
-  const handleSelect = (category: string) => {
-    setSelectedCategory(category);
-  };
+  const { data } = useGetScholarshipQuery({});
+
+  console.log("Scholarship data", data);
+
+  // const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // const handleSelect = (category: string) => {
+  //   setSelectedCategory(category);
+  // };
   return (
     <motion.div
       transition={{
@@ -46,9 +38,9 @@ export default function Schoolarship() {
           <h1 className="font-jakarta font-[500] text-5xl">
             Active Scholarship Programs
           </h1>
-          <div className="flex gap-3">
-            <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8">
-              {fixCategory.map((category) => (
+          <div className="flex gap-3 mt-10">
+            {/* <div className="inline-flex items-center gap-2 h-11 p-1 bg-[#f9f9f9]/50 rounded-lg border border-[#d9d9db] cursor-pointer mt-8"> */}
+            {/* {fixCategory.map((category) => (
                 <div
                   key={category}
                   onClick={() => handleSelect(category)}
@@ -60,24 +52,25 @@ export default function Schoolarship() {
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </div>
-              ))}
-            </div>
+              ))} */}
+            {/* </div> */}
           </div>
           <div className="flex flex-col gap-5 md:grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 md:gap-7">
-            {filteredEvents.map((item) => (
-              <Link to={`/schoolarship/${item.id}`}>
-                <SpecialtyCard
-                  id={item.id}
-                  key={item.id}
-                  category={item.slotCount}
-                  img={item.img}
-                  desc={item.desc}
-                  title={item.title}
-                  hiddenText={item.hiddenText}
-                  route={item.route}
-                />
-              </Link>
-            ))}
+            {data &&
+              data.map((item: any) => (
+                <Link to={`/schoolarship/${item.id}`}>
+                  <SpecialtyCard
+                    id={item.id}
+                    key={item.id}
+                    category={item.slotsLeft}
+                    img={item.coverPhotoUrl}
+                    desc={item.subtitle}
+                    title={item.title}
+                    hiddenText={item.description}
+                    route={item.route}
+                  />
+                </Link>
+              ))}
           </div>
         </div>
       </div>

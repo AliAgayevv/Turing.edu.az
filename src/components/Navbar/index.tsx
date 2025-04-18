@@ -14,49 +14,13 @@ import { FaGripLines } from "react-icons/fa";
 import closeNavbarResponsive from "../../assets/vectors/closeNavbarResponsive.png";
 import useOutsideClick from "../../hooks/outsideClick";
 import ApplyNowBtn from "../ApplyNow_btn";
-
-const fakeData = [
-  {
-    id: 1,
-    title: "UX/UI Design",
-    description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/UX-UI",
-  },
-  {
-    id: 1,
-    title: "Front-end Developer",
-    description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/Frontend",
-  },
-  {
-    id: 1,
-    title: "Backend",
-    description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/Backend",
-  },
-  {
-    id: 1,
-    title: "Data Science",
-    description: "Design Intuitive Digital Experiences",
-    route: "/schoolarship/Data",
-  },
-  {
-    id: 2,
-    title: "Frontend Development",
-    description: "Learn Art",
-    route: "/schoolarship/Frontend",
-  },
-  {
-    id: 3,
-    title: "Backend",
-    description: "Kill Art",
-    route: "/schoolarship/Backend",
-  },
-];
+import { useGetSpecialityQuery } from "../../store/services/specialityApi";
 
 export default function Navbar({ isDark }: INavbarProps) {
   const menuRef = useRef(null);
   const toggleButtonRef = useRef(null);
+
+  const { data } = useGetSpecialityQuery({});
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -137,14 +101,14 @@ export default function Navbar({ isDark }: INavbarProps) {
             >
               <div className="mx-auto w-11/12 h-full p-5">
                 <div className="grid grid-cols-4 gap-6">
-                  {fakeData.slice(0, 4).map((item) => (
+                  {data.map((item: any) => (
                     <NavbarElement
                       key={item.id}
                       isDark={isDark}
                       title={item.title}
                       id={item.id}
-                      description={item.description}
-                      route={item.route}
+                      description={item.subtitle}
+                      route={item.id}
                     />
                   ))}
                 </div>
@@ -307,7 +271,7 @@ export default function Navbar({ isDark }: INavbarProps) {
               </div>
               {toggleResponsive2ndMenu && (
                 <ul className="px-10 flex flex-col gap-2">
-                  {fakeData.map((item) => (
+                  {data.map((item: any) => (
                     <Link
                       to={item.route}
                       className="text-white text-xl"

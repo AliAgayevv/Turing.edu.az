@@ -6,19 +6,30 @@ import Navbar from "../components/Navbar";
 import bgTuringVector from "../assets/vectors/turing-hero-left-top-vector.png";
 import WatchNow_btn from "../components/WatchNow_btn";
 import useOutsideClick from "../hooks/outsideClick";
+import { useGetHomeContentQuery } from "../store/services/homeSlice";
 
-export default function Hero() {
-  const [isApplyNowClicked, setIsApplyNowClicked] = useState(false);
+// Define interface for home content response
+interface HomeContent {
+  motto: string;
+  mottoDescription: string;
+  headerVideoUrl: string;
+}
 
-  const handleCloseModal = () => {
+export default function Hero(): JSX.Element {
+  const [isApplyNowClicked, setIsApplyNowClicked] = useState<boolean>(false);
+
+  // Type the API response
+  const { data, isLoading, error } = useGetHomeContentQuery({});
+
+  const handleCloseModal = (): void => {
     setIsApplyNowClicked(false);
   };
 
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   useOutsideClick(modalRef, handleCloseModal);
 
-  const handleGoForm = () => {
+  const handleGoForm = (): void => {
     const formElement = document.getElementById("form");
 
     if (formElement) {
@@ -31,6 +42,21 @@ export default function Hero() {
     }
   };
 
+  // Default content to use while loading or if there's an error
+  const defaultContent: HomeContent = {
+    motto: "Loading...",
+    mottoDescription: "Please wait while we load the content.",
+    headerVideoUrl: exampleVideo,
+  };
+
+  // Content to display - use data if available, otherwise use default content
+  const content: HomeContent = data ? (data as HomeContent) : defaultContent;
+
+  // Show error message if there was an error loading the content
+  if (error) {
+    console.error("Error loading home content:", error);
+  }
+
   return (
     <div className="h-screen flex flex-col relative overflow-hidden">
       {!isApplyNowClicked && <Navbar isDark={false} />}
@@ -38,21 +64,20 @@ export default function Hero() {
       <div className="flex flex-col items-center justify-center h-auto z-50">
         <div>
           <h1 className="text-white_solid text-4xl sm:text-5xl md:text-6xl text-center mb-4 pt-[125px] font-semibold font-jakarta">
-            #BirAddımÖndə
+            {content.motto}
           </h1>
           {/* Left top light effect */}
           <div className="absolute -top-10 -left-20 w-[200px] h-[300px] bg-gradient-to-br from-white/30 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div>
           {/* Right bottom light effect */}
           <div className="absolute -bottom-0 -right-10 w-[200px] h-[300px] bg-gradient-to-br from-white/30 to-transparent blur-[120px] rounded-full pointer-events-none z-0"></div>
           <img
-            className=" absolute -left-2 md:left-0 top-10 md:top-0 -z-10"
+            className="absolute -left-2 md:left-0 top-10 md:top-0 -z-10"
             src={bgTuringVector}
-          ></img>
+            alt="Background vector"
+          />
 
           <p className="text-[12px] md:text-base text-white_lightMedium text-center max-w-2xl mb-8 px-4 font-inter">
-            Learn highly demanded skills through practical courses, <br />
-            created by trusted industry professionals, that focus on real-world
-            applications.
+            {content.mottoDescription}
           </p>
 
           <div className="flex flex-row gap-4 pb-12 items-center justify-center">
@@ -70,33 +95,33 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className=" max-w-[3000px] px-4 pt-[70px] overflow-hidden h-[55vh] relative ">
+        <div className="max-w-[3000px] px-4 pt-[70px] overflow-hidden h-[55vh] relative">
           <motion.div
             initial={{ translateY: 400, opacity: 0 }}
             animate={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-[520px]  lg:w-[1120px] h-[300px] relative  md:h-[65vh] md:w-[1250px]  lg:h-[55vh] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45] "
+            className="w-[520px] lg:w-[1120px] h-[300px] relative md:h-[65vh] md:w-[1250px] lg:h-[55vh] pt-8 rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]"
           >
             <video
               playsInline
               className="absolute top-0 left-0 w-full h-full object-center lg:object-cover rounded-2xl overflow-hidden"
-              src={exampleVideo}
+              src={content.headerVideoUrl}
             />
           </motion.div>
         </div>
         {isApplyNowClicked && (
-          <div className="w-screen bg-blue_ultraDark h-screen z-[70] fixed inset-0 ">
+          <div className="w-screen bg-blue_ultraDark h-screen z-[70] fixed inset-0">
             <motion.div
               ref={modalRef}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "100%" }}
               exit={{ opacity: 0, height: 0 }}
-              className=" z-50 w-11/12 mx-auto h-10 flex items-center justify-center"
+              className="z-50 w-11/12 mx-auto h-10 flex items-center justify-center"
             >
-              <div className=" rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]">
+              <div className="rounded-[50px] overflow-hidden border-8 md:border-[20px] border-[#212B45]">
                 <video
-                  className="w-full h-2/6 object-cover "
-                  src={exampleVideo}
+                  className="w-full h-2/6 object-cover"
+                  src={content.headerVideoUrl}
                   autoPlay
                   controls
                   playsInline

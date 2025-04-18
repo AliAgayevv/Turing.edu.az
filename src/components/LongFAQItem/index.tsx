@@ -1,6 +1,11 @@
-import { IQAProps } from "../../const/types";
+// Create a standalone interface if IQAProps isn't available
+interface QAProps {
+  question: string;
+  answer: string;
+}
 
-interface LongFAQItemProps extends IQAProps {
+// Define the component props
+interface LongFAQItemProps extends QAProps {
   isVisible: boolean;
   onClick: () => void;
 }
@@ -24,7 +29,6 @@ function LongFAQItem({
           {question}
         </h4>
       </div>
-
       <div
         className={`overflow-hidden transition-all duration-300 ${
           isVisible ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"

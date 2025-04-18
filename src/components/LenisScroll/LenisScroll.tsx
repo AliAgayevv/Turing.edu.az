@@ -1,37 +1,37 @@
-import { useEffect, useState } from "react";
-import Lenis from "lenis";
+// import { useEffect, useState } from "react";
+// import Lenis from "lenis";
 
 interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
-  const [lenisRef, setLenisRef] = useState<Lenis | null>(null);
+  // const [lenisRef, setLenisRef] = useState<Lenis | null>(null);
 
-  useEffect(() => {
-    const scroller = new Lenis();
-    let rf: number;
+  // console.log(lenisRef);
 
-    function raf(time: number) {
-      scroller.raf(time);
-      requestAnimationFrame(raf);
-    }
+  // useEffect(() => {
+  //   const scroller = new Lenis();
+  //   let rf: number;
 
-    rf = requestAnimationFrame(raf);
-    setLenisRef(scroller);
+  //   function raf(time: number) {
+  //     scroller.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    console.log(lenisRef);
+  //   rf = requestAnimationFrame(raf);
+  //   setLenisRef(scroller);
 
-    return () => {
-      setLenisRef((prevLenis) => {
-        if (prevLenis) {
-          cancelAnimationFrame(rf);
-          prevLenis.destroy();
-        }
-        return null;
-      });
-    };
-  }, []);
+  //   return () => {
+  //     setLenisRef((prevLenis) => {
+  //       if (prevLenis) {
+  //         cancelAnimationFrame(rf);
+  //         prevLenis.destroy();
+  //       }
+  //       return null;
+  //     });
+  //   };
+  // }, []);
 
   return <div>{children}</div>;
 }

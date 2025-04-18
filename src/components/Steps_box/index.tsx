@@ -20,16 +20,14 @@ export default function Steps_box({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={stepBoxVariants}
-      className="w-full h-auto rounded-2xl border p-4 sm:p-6"
+      className="w-full h-auto rounded-2xl border p-4 sm:p-6 max-w-[33%]"
     >
       <span className="border px-2 py-1 rounded-lg text-white_ultraDark text-[14px]">
         {stepTitle}
       </span>
 
       <div className="mt-4 sm:mt-6">
-        <p className="text-white_ultraDark text-[12px]">
-          {stepType.toUpperCase()}
-        </p>
+        <p className="text-white_ultraDark text-[12px]">{stepType}</p>
         <p className="text-black_darktext-[18px] font-[500] leading-snug">
           {stepDetail}
         </p>

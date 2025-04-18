@@ -25,7 +25,11 @@ const fakeData: FakeDataItem[] = [
   { id: 4, inner: "Computer Science" },
 ];
 
-export default function FormSection() {
+interface FormSectionProps {
+  applyLink?: string;
+}
+
+export default function FormSection({ applyLink }: FormSectionProps) {
   const [selected, setSelected] = useState<number[]>([]);
 
   const handleSelect = (index: number) => {
@@ -35,6 +39,31 @@ export default function FormSection() {
       }
       return [...prev, index];
     });
+  };
+
+  const handleSubmit = (
+    values: any,
+    { resetForm }: { resetForm: () => void }
+  ) => {
+    const selectedSpecialties = fakeData
+      .filter((data) => selected.includes(data.id))
+      .map((data) => data.inner);
+
+    if (selectedSpecialties.length === 0) {
+      alert("Please select a specialty");
+    } else {
+      console.log(values, selectedSpecialties);
+
+      // Use applyLink if provided
+      if (applyLink) {
+        window.open(applyLink, "_blank");
+      } else {
+        alert("Form submitted successfully!");
+      }
+
+      resetForm();
+      setSelected([]);
+    }
   };
 
   return (
@@ -70,19 +99,7 @@ export default function FormSection() {
         <Formik
           initialValues={{ name: "", surname: "", email: "", phone: "" }}
           validationSchema={FormSchema}
-          onSubmit={(values, { resetForm }) => {
-            const selectedSpecialties = fakeData
-              .filter((data) => selected.includes(data.id))
-              .map((data) => data.inner);
-            if (selectedSpecialties.length === 0) {
-              alert("Please select a specialty");
-            } else {
-              console.log(values, selectedSpecialties);
-              alert("Form submitted successfully!");
-              resetForm();
-              setSelected([]);
-            }
-          }}
+          onSubmit={handleSubmit}
         >
           <Form className="flex flex-col mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 bg-white">

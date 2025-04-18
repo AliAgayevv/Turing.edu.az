@@ -15,7 +15,7 @@ export default function NavbarElement({
   isDark,
 }: INavbarElementProps) {
   return (
-    <Link to={route}>
+    <Link to={`/specialty/${route}`}>
       <div
         className={`w-[20wv] h-[15vh] ${
           !isDark ? "border-blue_lightMedium" : "border-white_lightMedium"
