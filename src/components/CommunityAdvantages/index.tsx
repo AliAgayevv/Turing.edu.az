@@ -3,6 +3,7 @@ import vector2 from "../../assets/vectors/positiveEnergyVector.png";
 import vector3 from "../../assets/vectors/wavesBeforeVector.png";
 import vector4 from "../../assets/vectors/teachLiveVector.png";
 import { motion } from "framer-motion";
+import { useGetCommunityContentQuery } from "../../store/services/communityApi";
 // import animatedCardPhoto1 from "../../assets/photos/communityAnimatedPhotos/1.jpeg";
 // import animatedCardPhoto2 from "../../assets/photos/communityAnimatedPhotos/2.jpeg";
 // import animatedCardPhoto3 from "../../assets/photos/communityAnimatedPhotos/3.jpeg";
@@ -75,6 +76,8 @@ const fakeData = [
 // ];
 
 export default function CommunityAdvantages() {
+  const { data, isLoading, isError } = useGetCommunityContentQuery({});
+
   return (
     <div className="relative">
       <div className="w-11/12 mx-auto">
@@ -86,10 +89,10 @@ export default function CommunityAdvantages() {
       </div>
 
       <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 mt-[72px] gap-[48px] md:gap-[72px] md:px-8 lg:px-16">
-        {fakeData.map((data) => (
+        {data?.advantages.map((data, index) => (
           <motion.div
             initial="hidden"
-            key={data.id}
+            key={index}
             className="w-11/12 mx-auto relative z-10"
           >
             {data.icon && (
