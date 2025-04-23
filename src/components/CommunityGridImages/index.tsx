@@ -15,6 +15,8 @@ import { useGetCommunityContentQuery } from "../../store/services/communityApi";
 
 const ResponsiveImageGrid = () => {
   const { data, isLoading, isError } = useGetCommunityContentQuery({});
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error loading data</div>;
   const fakeData = [
     image1,
     image2,

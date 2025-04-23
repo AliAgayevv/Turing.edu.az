@@ -12,8 +12,6 @@ export default function Events() {
   if (isLoading) return <div>Loading...</div>;
   if (isError || !events) return <div>Error loading events.</div>;
 
-  console.log(events);
-
   return (
     <div className="w-11/12 mx-auto py-10 overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">

@@ -1,43 +1,5 @@
-import photo1 from "../../assets/photos/communityBGPHOTOS/photo1.jpeg";
-import photo2 from "../../assets/photos/communityBGPHOTOS/photo2.jpeg";
-import photo3 from "../../assets/photos/communityBGPHOTOS/photo3.jpeg";
-import photo4 from "../../assets/photos/communityBGPHOTOS/photo4.png";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
-
-const fakeData = [
-  {
-    id: 1,
-    image: photo1,
-    desc: "Biz çox maraqlı bir şey edərək, tələbələrlə astaraya gəzməyə getdik.",
-    name: "Astara-Sım",
-    subText: "Birlikdə Əylənək",
-    subTextColor: "text-blue_light opacity-60",
-  },
-  {
-    id: 2,
-    image: photo2,
-    desc: "Biz çox maraqlı bir şey edərək, tələbələrlə astaraya gəzməyə getdik.",
-    name: "Astara-Sım",
-    subText: "Birlikdə Əylənək",
-    subTextColor: "text-[#FFBD13CC] opacity-80",
-  },
-  {
-    id: 3,
-    image: photo3,
-    desc: "Biz çox maraqlı bir şey edərək, tələbələrlə astaraya gəzməyə getdik.",
-    name: "Astara-Sım",
-    subText: "Birlikdə Əylənək",
-    subTextColor: "text-white opacity-60",
-  },
-  {
-    id: 4,
-    image: photo4,
-    desc: "Biz çox maraqlı bir şey edərək, tələbələrlə astaraya gəzməyə getdik.",
-    name: "Astara-Sım",
-    subText: "Birlikdə Əylənək",
-    subTextColor: "text-white opacity-60",
-  },
-];
+import { useGetCommunityContentQuery } from "../../store/services/communityApi";
 
 interface IProps {
   image: string;
@@ -91,7 +53,15 @@ function CommunitySliderElement({
   );
 }
 
+type CommunitySliderProps = {
+  photoUrl: string;
+  name: string;
+  description: string;
+  subDescription: string;
+};
 export default function CommunitySlider() {
+  const { data, isLoading } = useGetCommunityContentQuery({});
+  isLoading && <div>Loading...</div>;
   return (
     <div
       className=" w-screen  h-screen 
@@ -99,9 +69,22 @@ export default function CommunitySlider() {
         md:flex-row md:rotate-6 md:-ml-10 md:gap-6
         "
     >
-      {fakeData.map((data) => (
-        <CommunitySliderElement key={data.id} {...data} />
-      ))}
+      {data?.cards.map(
+        (currentElement: CommunitySliderProps, index: number) => (
+          <CommunitySliderElement
+            key={index}
+            image={currentElement.photoUrl}
+            name={currentElement.name}
+            desc={currentElement.description}
+            subText={currentElement.subDescription}
+            subTextColor={
+              index % 2 === 0
+                ? "text-blue_light opacity-60"
+                : "text-white opacity-60"
+            }
+          />
+        )
+      )}
     </div>
   );
 }

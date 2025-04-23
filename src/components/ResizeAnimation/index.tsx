@@ -9,8 +9,6 @@ export default function ResizableText() {
   // Track scroll progress
   const { scrollYProgress } = useScroll();
 
-  console.log(isMobile);
-
   // Smooth animations driven by scroll progress
   const width = useSpring(
     useTransform(scrollYProgress, [0.4, 0.9], [10, window.innerWidth / 2]), // Start very small and grow

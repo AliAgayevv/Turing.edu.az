@@ -38,7 +38,7 @@ export interface IQAProps {
 
 export interface IStepProps {
   stepTitle: string;
-  stepType: string;
+  stepType: any;
   stepDetail: string;
 }
 

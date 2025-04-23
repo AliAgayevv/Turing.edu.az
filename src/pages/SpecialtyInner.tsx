@@ -18,8 +18,6 @@ const SpecialtyInner = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetSpecialityByIdQuery(id);
 
-  console.log(data);
-
   const handleGoForm = () => {
     const formElement = document.getElementById("form");
     if (formElement) {

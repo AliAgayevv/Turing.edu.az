@@ -25,8 +25,6 @@ export default function TuringAdvantage() {
     }
   };
 
-  console.log("data", data);
-
   useEffect(() => {
     updateVisibleCount();
     window.addEventListener("resize", updateVisibleCount);
@@ -58,21 +56,31 @@ export default function TuringAdvantage() {
       </div>
 
       <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 mt-[72px] gap-[48px] md:gap-[72px] md:px-8 lg:px-16">
-        {data.advantages.slice(0, visibleCount).map((item, index) => (
-          <motion.div
-            ref={index === 0 ? ref : null}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={liAnimation}
-            key={index}
-            className="w-11/12 mx-auto relative z-10"
-          >
-            <h4 className="font-[500] text-xl text-white">{item.title}</h4>
-            <p className="text-[14px] text-[#A2A1A4] break-words">
-              {item.description}
-            </p>
-          </motion.div>
-        ))}
+        {data.advantages.slice(0, visibleCount).map(
+          (
+            item: {
+              title: string;
+              description: string;
+              icon?: string;
+              desc: string;
+            },
+            index: number
+          ) => (
+            <motion.div
+              ref={index === 0 ? ref : null}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={liAnimation}
+              key={index}
+              className="w-11/12 mx-auto relative z-10"
+            >
+              <h4 className="font-[500] text-xl text-white">{item.title}</h4>
+              <p className="text-[14px] text-[#A2A1A4] break-words">
+                {item.description}
+              </p>
+            </motion.div>
+          )
+        )}
       </div>
 
       {visibleCount < data.advantages.length && (

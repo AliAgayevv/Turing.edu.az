@@ -113,8 +113,6 @@ export default function Community() {
 
   const { data: communityContent } = useGetCommunityContentQuery({});
 
-  console.log(communityContent);
-
   const handleMouseMove = (event: { clientX: any; clientY: any }) => {
     if (isMobile) return;
     const { clientX, clientY } = event;

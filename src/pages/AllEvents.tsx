@@ -15,8 +15,6 @@ export default function AllEvents() {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const { data } = useGetEventsQuery({});
 
-  console.log("Backend data: ", data);
-
   // Extract unique categories from events data
   const categories = data
     ? ["all", ...new Set(data.map((event: any) => event.category))]
@@ -62,7 +60,7 @@ export default function AllEvents() {
                       : "text-[#6C737F] border-transparent"
                   }`}
                 >
-                  {category}
+                  {category as string}
                 </div>
               ))}
             </div>

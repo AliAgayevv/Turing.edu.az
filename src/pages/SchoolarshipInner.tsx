@@ -52,8 +52,6 @@ export default function ScholarshipInner() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  console.log("Scholarship data", scholarshipData);
-
   // Convert backend step format to the format expected by Steps_box component
   const formatStepsForComponent = (): StepBoxProps[] => {
     if (!scholarshipData?.steps) return [];

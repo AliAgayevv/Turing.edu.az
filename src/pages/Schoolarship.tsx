@@ -14,8 +14,6 @@ export default function Schoolarship() {
 
   const { data } = useGetScholarshipQuery({});
 
-  console.log("Scholarship data", data);
-
   // const [selectedCategory, setSelectedCategory] = useState("all");
 
   // const handleSelect = (category: string) => {
@@ -58,7 +56,7 @@ export default function Schoolarship() {
           <div className="flex flex-col gap-5 md:grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 md:gap-7">
             {data &&
               data.map((item: any) => (
-                <Link to={`/schoolarship/${item.id}`}>
+                <Link to={`/schoolarship/${item.id}`} key={item.id}>
                   <SpecialtyCard
                     id={item.id}
                     key={item.id}

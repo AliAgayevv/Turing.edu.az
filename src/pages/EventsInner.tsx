@@ -44,8 +44,6 @@ export default function EventsInner() {
   const { data, isLoading, error } = useGetEventByIdQuery(id);
   const eventData = data as EventData | undefined;
 
-  console.log(eventData);
-
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
 
   const handleOpenFullScreen = (imageSrc: string) => {

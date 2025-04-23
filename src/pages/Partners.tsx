@@ -2,17 +2,12 @@ import Slider from "react-slick";
 import FormSection from "../components/FormSection";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import photo1 from "../assets/vectors/partners/partner1.svg.svg";
-import photo2 from "../assets/vectors/partners/partner2.svg.svg";
-import photo3 from "../assets/vectors/partners/partner3.svg.svg";
-import photo4 from "../assets/vectors/partners/partner4.svg.svg";
-import photo5 from "../assets/vectors/partners/partner5.svg.svg";
-import photo6 from "../assets/vectors/partners/partner6.svg";
-import photo7 from "../assets/vectors/partners/partner7.svg";
+import { useGetHomeContentQuery } from "../store/services/homeSlice";
 
 // TODO:  mobilde logolarin boyun azald margin veya padding azalt, mobilde
 
 export default function Partners() {
+  const { data: homeContent } = useGetHomeContentQuery({});
   const sliderSettings = {
     dots: false,
     centerMode: true,
@@ -39,17 +34,10 @@ export default function Partners() {
       },
     ],
   };
-
-  const partners = [
-    photo1,
-    photo2,
-    photo3,
-    photo4,
-    photo5,
-    photo6,
-    photo7,
-    photo3,
-  ];
+  console.log(
+    "Console log from partners component for backend home data: ",
+    homeContent
+  );
 
   return (
     <div className="w-full pt-24 mb-20">
@@ -60,18 +48,28 @@ export default function Partners() {
         Together Strong
       </h1>
       <Slider {...sliderSettings} className="-mb-10 mt-10">
-        {partners.map((logo, index) => (
-          <div
-            key={index}
-            className="max-h-[100px] border w-[114px] sm:w-[90px] md:w-[100px] lg:w-[114px] h-auto min-h-20 flex-shrink-0 mx-4 flex justify-center items-center"
-          >
-            <img
-              src={logo}
-              alt={`${index}`}
-              className={`w-full object-contain flex justify-center items-center mx-auto max-h-[100px] max-w-[400px] h-full sm:p-1 `}
-            />
-          </div>
-        ))}
+        {homeContent &&
+          homeContent.partners.map(
+            (
+              currentPartner: {
+                name: string;
+                logoUrl: string;
+                websiteUrl: string;
+              },
+              index: number
+            ) => (
+              <div
+                key={index}
+                className="max-h-[100px] border w-[114px] sm:w-[90px] md:w-[100px] lg:w-[114px] h-auto min-h-20 flex-shrink-0 mx-4 flex justify-center items-center"
+              >
+                <img
+                  src={currentPartner.logoUrl}
+                  alt={`${index}`}
+                  className={`w-full object-contain flex justify-center items-center mx-auto max-h-[100px] max-w-[400px] h-full sm:p-1 `}
+                />
+              </div>
+            )
+          )}
       </Slider>
 
       <FormSection />

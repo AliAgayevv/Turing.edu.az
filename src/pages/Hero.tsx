@@ -21,6 +21,8 @@ export default function Hero(): JSX.Element {
   // Type the API response
   const { data, isLoading, error } = useGetHomeContentQuery({});
 
+  isLoading && <div>Loading...</div>;
+
   const handleCloseModal = (): void => {
     setIsApplyNowClicked(false);
   };
